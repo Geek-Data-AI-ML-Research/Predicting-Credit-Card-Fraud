@@ -1,0 +1,52 @@
+{
+  "mcp_update_succeeded": false,
+  "studio_http_update_succeeded": true,
+  "project_id": "prj_01M6EB3QGMT4RCCZ3D23CJ34RP",
+  "project_slug": "playground-cc",
+  "strategies": [
+    {
+      "id": "rds_01M6EFCC3KZQT37SK7QXWD2S8A",
+      "title": "S6E11 core rule \u2014 prove the split",
+      "priority": 10,
+      "status": "planned"
+    },
+    {
+      "id": "rds_01M6EFCC3V46MTPDSB2MV9PVSP",
+      "title": "Stage 1 \u2014 Split discovery (adversarial + chronology)",
+      "priority": 20,
+      "status": "in_progress"
+    },
+    {
+      "id": "rds_01M6EFCC471C0YM3Z6RWYRG0SB",
+      "title": "Stage 2 \u2014 Master CV harness + promotion gate",
+      "priority": 30,
+      "status": "planned"
+    },
+    {
+      "id": "rds_01M6EFCC4G48FBXBFYEZ211ZPQ",
+      "title": "Stage 3 \u2014 Baseline under locked CV",
+      "priority": 40,
+      "status": "planned"
+    },
+    {
+      "id": "rds_01M6EFCC4PEBYQDW1T320X6MS5",
+      "title": "Stage 4 \u2014 One-variable feature/modeling levers",
+      "priority": 50,
+      "status": "planned"
+    },
+    {
+      "id": "rds_01M6EFCC4XF4287TC08BAJPDM3",
+      "title": "Stage 5 \u2014 Overfitting curve + multi-metric + stack policy",
+      "priority": 60,
+      "status": "planned"
+    }
+  ],
+  "mcp_list_roadmap_succeeded": true,
+  "mcp_tool_count": 26,
+  "roadmap_tools": [
+    "list_roadmap",
+    "add_roadmap_strategy",
+    "update_roadmap_strategy"
+  ],
+  "strategy_count": 6
+}

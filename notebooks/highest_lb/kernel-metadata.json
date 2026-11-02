@@ -1,0 +1,25 @@
+{
+  "id": "sidhaarthshree/s6e11-highest-public-lb-0-95154-self-trained",
+  "id_no": 142068248,
+  "title": "S6E11 | Highest Public LB 0.95154 | Self-Trained",
+  "code_file": "s6e11-highest-public-lb-0-95154-self-trained.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [
+    "gpu"
+  ],
+  "dataset_sources": [
+    "uditjain13/credit-card-fraud-detection-2026"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [
+    "playground-series-s6e11"
+  ],
+  "model_sources": [],
+  "docker_image": "gcr.io/kaggle-images/python@sha256:17b2fc7f27c25c6c2fd4230ec8e66097ab2b89fc88e1e4d6f338b72e1ee0bc3e",
+  "machine_shape": "NvidiaTeslaT4"
+}

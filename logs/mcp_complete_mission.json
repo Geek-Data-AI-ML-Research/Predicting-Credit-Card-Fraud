@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": "3991e675-3141-4275-ae1f-cbc1d479fe08",
+  "result": {
+    "content": [
+      {
+        "text": "Error executing tool complete_mission",
+        "type": "text"
+      }
+    ],
+    "isError": true
+  }
+}

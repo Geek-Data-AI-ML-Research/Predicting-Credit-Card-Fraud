@@ -1,0 +1,17 @@
+# macOS AppleDouble / Finder junk
+._*
+.DS_Store
+
+# Local envs
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Competition data & bulky public artifact banks (fetch via Kaggle)
+data/
+original/
+artifacts/
+artifacts_extra/
+notebooks/outputs/

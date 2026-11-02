@@ -1,0 +1,117 @@
+{
+  "stage": 1,
+  "ts_utc": "2026-11-02T16:03:54.220780+00:00",
+  "n_train": 699960,
+  "n_test": 299984,
+  "chronology": {
+    "columns": {
+      "id": {
+        "train_min": 0,
+        "train_max": 699959,
+        "test_min": 699960,
+        "test_max": 999943,
+        "overlap_n": 0,
+        "train_monotonic_increasing": true,
+        "train_fraud_rate_by_id_quintile": {
+          "0": 0.016286644951140065,
+          "1": 0.017229555974627123,
+          "2": 0.016993828218755357,
+          "3": 0.01649379964569404,
+          "4": 0.01649379964569404
+        },
+        "univariate_fraud_auc": 0.49854846965794763,
+        "contiguous_non_overlapping_ranges": true,
+        "fraud_rate_quintile_range_pp": 0.09429110234870572
+      },
+      "day_of_week": {
+        "train_min": 0.0,
+        "train_max": 6.0,
+        "test_min": 0.0,
+        "test_max": 6.0,
+        "train_mean": 2.981733241899537,
+        "test_mean": 2.9713384713851405,
+        "dist_l1_train_vs_test": 0.008304785417650562,
+        "univariate_fraud_auc": 0.5081316130469079,
+        "train_fraud_rate_by_value": {
+          "0": 0.01582328837967936,
+          "1": 0.01656108243391209,
+          "2": 0.01672464939339884,
+          "3": 0.01639917335828338,
+          "4": 0.016759667538143366,
+          "5": 0.016794197604727567,
+          "6": 0.017829988968067027
+        }
+      },
+      "time_of_day_hour": {
+        "train_min": 0.0,
+        "train_max": 23.0,
+        "test_min": 0.0,
+        "test_max": 23.0,
+        "train_mean": 11.761914966569519,
+        "test_mean": 11.746939836791295,
+        "dist_l1_train_vs_test": 0.009603415281373075,
+        "univariate_fraud_auc": 0.49980140144983265,
+        "train_fraud_rate_by_value": {
+          "0": 0.01693404634581105,
+          "1": 0.01440893286975127,
+          "2": 0.016748548459133542,
+          "3": 0.017502873882893906,
+          "4": 0.016380854875863833,
+          "5": 0.01780242229680432,
+          "6": 0.017133045956016658,
+          "7": 0.016622452063534705,
+          "8": 0.01653592604868707,
+          "9": 0.01765556167400881,
+          "10": 0.01698178068064627,
+          "11": 0.016750656540563562,
+          "12": 0.017438764643237487,
+          "13": 0.016855915749838208,
+          "14": 0.015754560530679935,
+          "15": 0.017617398699957477,
+          "16": 0.01650296114401271,
+          "17": 0.015656272193169347,
+          "18": 0.016596760196702344,
+          "19": 0.016051965897379845,
+          "20": 0.015396193283371483,
+          "21": 0.01833253078351792,
+          "22": 0.01714792861897366,
+          "23": 0.016214111233051297
+        }
+      }
+    },
+    "time_order_suspected": false,
+    "notes": [
+      "id ranges contiguous non-overlapping (often a Kaggle write artifact; not sufficient alone for prequential CV)"
+    ]
+  },
+  "adversarial": {
+    "oof_auc": 0.5007983635501114,
+    "fold_aucs": [
+      0.4999390438262984,
+      0.5019397578256534,
+      0.5012557672810017,
+      0.5013774469844319,
+      0.4994977968720021
+    ],
+    "top_features": {
+      "merchant_risk_score": 444.8,
+      "merchant_category": 396.4,
+      "distance_from_home_km": 391.20000000000005,
+      "account_balance_usd": 386.0,
+      "amount_usd": 382.2,
+      "velocity_score": 370.6,
+      "hours_since_last_txn": 363.79999999999995,
+      "card_age_months": 297.4,
+      "customer_age": 272.2,
+      "device_type": 221.60000000000002
+    }
+  },
+  "decision": {
+    "locked_cv": "stratified_kfold_5_rs42",
+    "cv_contract": "StratifiedKFold(n_splits=5, shuffle=True, random_state=42)",
+    "adv_auc": 0.5007983635501114,
+    "adv_iid_ok": true,
+    "time_order_suspected": false,
+    "rationale": "Adv AUC=0.50080 \u2248 0.50 and chronology audit found no time-order structure \u2192 lock shuffled stratified 5-fold."
+  }
+}

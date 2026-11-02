@@ -1,0 +1,189 @@
+{
+  "stage": 2,
+  "ts_utc": "2026-11-02T16:11:01.790884+00:00",
+  "cv_contract": "StratifiedKFold(n_splits=5, shuffle=True, random_state=42)",
+  "promotion_rule": "OOF ROC-AUC improves AND \u22654/5 folds improve",
+  "baseline": {
+    "label": "baseline_d4_l15",
+    "params": {
+      "n_estimators": 2000,
+      "max_depth": 4,
+      "num_leaves": 15,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "colsample_bytree": 0.5,
+      "random_state": 42,
+      "n_jobs": -1
+    },
+    "oof_roc_auc": 0.946976990764746,
+    "oof_pr_auc": 0.5096428711618571,
+    "oof_brier": 0.011022083315996606,
+    "fold_valid_roc_auc_mean": 0.946981678421861,
+    "fold_valid_roc_auc_std": 0.003581562041432696,
+    "train_valid_gap_mean": 0.011465322908666753,
+    "folds": [
+      {
+        "fold": 0,
+        "valid_roc_auc": 0.9449927927357477,
+        "train_roc_auc": 0.955755654840853,
+        "train_valid_gap": 0.010762862105105353,
+        "valid_pr_auc": 0.4961072793692663,
+        "valid_brier": 0.011206695995447305
+      },
+      {
+        "fold": 1,
+        "valid_roc_auc": 0.9487137187281888,
+        "train_roc_auc": 0.9598916016937986,
+        "train_valid_gap": 0.011177882965609842,
+        "valid_pr_auc": 0.5154034243595683,
+        "valid_brier": 0.010973635098924735
+      },
+      {
+        "fold": 2,
+        "valid_roc_auc": 0.9515504638071556,
+        "train_roc_auc": 0.959691908154994,
+        "train_valid_gap": 0.008141444347838367,
+        "valid_pr_auc": 0.5276201141411869,
+        "valid_brier": 0.01079265375131939
+      },
+      {
+        "fold": 3,
+        "valid_roc_auc": 0.947488836610625,
+        "train_roc_auc": 0.9589838623684673,
+        "train_valid_gap": 0.011495025757842336,
+        "valid_pr_auc": 0.5135489218740891,
+        "valid_brier": 0.010962886642146166
+      },
+      {
+        "fold": 4,
+        "valid_roc_auc": 0.9421625802275881,
+        "train_roc_auc": 0.957911979594526,
+        "train_valid_gap": 0.015749399366937866,
+        "valid_pr_auc": 0.4966009915808966,
+        "valid_brier": 0.011174545092145431
+      }
+    ],
+    "cv_contract": "StratifiedKFold(n_splits=5, shuffle=True, random_state=42)"
+  },
+  "challenger": {
+    "label": "challenger_d8_l63",
+    "params": {
+      "n_estimators": 2000,
+      "max_depth": 8,
+      "num_leaves": 63,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "colsample_bytree": 0.5,
+      "random_state": 42,
+      "n_jobs": -1
+    },
+    "oof_roc_auc": 0.9458681276772416,
+    "oof_pr_auc": 0.5033065378434057,
+    "oof_brier": 0.01110559565660108,
+    "fold_valid_roc_auc_mean": 0.9458800980443213,
+    "fold_valid_roc_auc_std": 0.003787607291105509,
+    "train_valid_gap_mean": 0.026832204110908187,
+    "folds": [
+      {
+        "fold": 0,
+        "valid_roc_auc": 0.9435008114010414,
+        "train_roc_auc": 0.9696821477279608,
+        "train_valid_gap": 0.026181336326919435,
+        "valid_pr_auc": 0.48690758738380396,
+        "valid_brier": 0.011315040186852674
+      },
+      {
+        "fold": 1,
+        "valid_roc_auc": 0.9476362661702865,
+        "train_roc_auc": 0.9734595283012372,
+        "train_valid_gap": 0.025823262130950653,
+        "valid_pr_auc": 0.5090731733047027,
+        "valid_brier": 0.011056349993007206
+      },
+      {
+        "fold": 2,
+        "valid_roc_auc": 0.9508264531732858,
+        "train_roc_auc": 0.9749806144255591,
+        "train_valid_gap": 0.02415416125227321,
+        "valid_pr_auc": 0.5214216043141275,
+        "valid_brier": 0.010875315915640286
+      },
+      {
+        "fold": 3,
+        "valid_roc_auc": 0.9464412658196097,
+        "train_roc_auc": 0.9729146331143905,
+        "train_valid_gap": 0.02647336729478078,
+        "valid_pr_auc": 0.5082219650887073,
+        "valid_brier": 0.011046274479388038
+      },
+      {
+        "fold": 4,
+        "valid_roc_auc": 0.9409956936573832,
+        "train_roc_auc": 0.9725245872070001,
+        "train_valid_gap": 0.031528893549616854,
+        "valid_pr_auc": 0.4918771298987991,
+        "valid_brier": 0.0112349977081172
+      }
+    ],
+    "cv_contract": "StratifiedKFold(n_splits=5, shuffle=True, random_state=42)"
+  },
+  "promotion_gate": {
+    "promote": false,
+    "oof_delta": -0.0011088630875043526,
+    "oof_improved": false,
+    "fold_wins": 0,
+    "fold_deltas": [
+      -0.0014919813347062938,
+      -0.0010774525579022587,
+      -0.0007240106338697316,
+      -0.001047570791015251,
+      -0.001166886570204917
+    ],
+    "min_fold_wins_required": 4,
+    "folds_gate_passed": false,
+    "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+    "reason": "REJECT: OOF did not improve"
+  },
+  "control_fold_vector": [
+    {
+      "fold": 0,
+      "valid_roc_auc": 0.9449927927357477,
+      "train_roc_auc": 0.955755654840853,
+      "train_valid_gap": 0.010762862105105353,
+      "valid_pr_auc": 0.4961072793692663,
+      "valid_brier": 0.011206695995447305
+    },
+    {
+      "fold": 1,
+      "valid_roc_auc": 0.9487137187281888,
+      "train_roc_auc": 0.9598916016937986,
+      "train_valid_gap": 0.011177882965609842,
+      "valid_pr_auc": 0.5154034243595683,
+      "valid_brier": 0.010973635098924735
+    },
+    {
+      "fold": 2,
+      "valid_roc_auc": 0.9515504638071556,
+      "train_roc_auc": 0.959691908154994,
+      "train_valid_gap": 0.008141444347838367,
+      "valid_pr_auc": 0.5276201141411869,
+      "valid_brier": 0.01079265375131939
+    },
+    {
+      "fold": 3,
+      "valid_roc_auc": 0.947488836610625,
+      "train_roc_auc": 0.9589838623684673,
+      "train_valid_gap": 0.011495025757842336,
+      "valid_pr_auc": 0.5135489218740891,
+      "valid_brier": 0.010962886642146166
+    },
+    {
+      "fold": 4,
+      "valid_roc_auc": 0.9421625802275881,
+      "train_roc_auc": 0.957911979594526,
+      "train_valid_gap": 0.015749399366937866,
+      "valid_pr_auc": 0.4966009915808966,
+      "valid_brier": 0.011174545092145431
+    }
+  ]
+}

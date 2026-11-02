@@ -1,0 +1,24 @@
+{
+  "id": "goodpjw2008/s6e11-part-5-3-leaves-plain-glm-lb-0-95160",
+  "id_no": 142035291,
+  "title": "S6E11 Part 5 | 3 Leaves, Plain GLM | LB 0.95160",
+  "code_file": "s6e11-part-5-3-leaves-plain-glm-lb-0-95160.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [],
+  "dataset_sources": [
+    "uditjain13/credit-card-fraud-detection-2026",
+    "goodpjw2008/s6e11-fraud-series-artifacts"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [
+    "playground-series-s6e11"
+  ],
+  "model_sources": [],
+  "docker_image": "gcr.io/kaggle-images/python@sha256:17b2fc7f27c25c6c2fd4230ec8e66097ab2b89fc88e1e4d6f338b72e1ee0bc3e",
+  "machine_shape": "None"
+}
