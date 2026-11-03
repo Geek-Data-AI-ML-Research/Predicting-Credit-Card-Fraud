@@ -1,0 +1,123 @@
+{
+  "stage": "7.2_gpu_gated",
+  "created_utc": "2026-11-02T19:14:55.163383+00:00",
+  "elapsed_sec": 69.3,
+  "top_members": [
+    "Predicting-Cre:lgb_diglead_l3_bag",
+    "Predicting-Cre:glm_dl_s50_bag",
+    "Predicting-Cre:lgb_k_s100_0",
+    "Predicting-Cre:ebm_i25_bag4",
+    "Predicting-Cre:lgb_k_l7",
+    "Predicting-Cre:lgb_dig_l7",
+    "s6e11-digit-to:joint_token_predictions:oof",
+    "Predicting-Cre:glm_ohk2_bag",
+    "dir:artifacts_extra/masaya_records/logistic/out/lr_final",
+    "dir:artifacts_extra/masaya_records/distillation/out/final/blend_",
+    "dir:artifacts_extra/masaya_records/distillation/out/final/baseli",
+    "s6e11-oof-pred:9d26cfb564230caa",
+    "s6e11-tree-ens:oof_stack_reference:stack_oof",
+    "crossfit:lgb_enriched_s100",
+    "crossfit:lgb_te_s20_cnt",
+    "crossfit:xgb_te_s20",
+    "crossfit:lgb_te_s100",
+    "s6e11-oof-pred:d5bd0671dd68108f",
+    "s6e11-oof-pred:0958aef8e20ba93c",
+    "Predicting-Cre:realmlp_dig",
+    "s6e11-oof-pred:ddfa69a32874765c",
+    "preds:te_xgb_smooth50",
+    "Predicting-Cre:lgb_rawdig_l4",
+    "s6e11-oof-pred:e13d1e5d005b82ad",
+    "s6e11-tree-ens:encoded_xgboost:foldmean"
+  ],
+  "control_oof": 0.9511399094205631,
+  "solvers": {
+    "gated_meta_net": {
+      "oof_auc": 0.949528633821104,
+      "fold_aucs": [
+        0.9493529610771985,
+        0.9516581525122378,
+        0.9554693284310125,
+        0.9509053693753656,
+        0.9453205224519796
+      ],
+      "gate": {
+        "promote": false,
+        "oof_delta": -0.001611275599459172,
+        "oof_improved": false,
+        "fold_wins": 0,
+        "fold_deltas": [
+          -0.001009082273567774,
+          -6.797426154814268e-05,
+          -0.0003634641387663118,
+          -0.00078940904174718,
+          -0.0007622942202081262
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "pass_abs": false
+    },
+    "meta_xgb_cuda": {
+      "oof_auc": 0.9460063212011853,
+      "fold_aucs": [
+        0.9498097985688425,
+        0.9514698930307939,
+        0.9553167502711917,
+        0.9514637516860656,
+        0.945420165109921
+      ],
+      "gate": {
+        "promote": false,
+        "oof_delta": -0.005133588219377816,
+        "oof_improved": false,
+        "fold_wins": 0,
+        "fold_deltas": [
+          -0.0005522447819237275,
+          -0.0002562337429921069,
+          -0.0005160422985871493,
+          -0.0002310267310472458,
+          -0.0006626515622667473
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "pass_abs": false
+    },
+    "blend_71_gated_xgb": {
+      "oof_auc": 0.9509173811972088,
+      "fold_aucs": [
+        0.9499929351822438,
+        0.9517003791122169,
+        0.9558859673246531,
+        0.9514946790196116,
+        0.9456047130627648
+      ],
+      "gate": {
+        "promote": false,
+        "oof_delta": -0.00022252822335433464,
+        "oof_improved": false,
+        "fold_wins": 1,
+        "fold_deltas": [
+          -0.0003691081685224251,
+          -2.574766156904218e-05,
+          5.3174754874318886e-05,
+          -0.00020009939750120775,
+          -0.0004781036094229085
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "pass_abs": false
+    }
+  },
+  "best_solver": "best_7_1",
+  "promoted": [],
+  "policy": "NO_KAGGLE_SUBMIT",
+  "keep_pod_warm": true
+}

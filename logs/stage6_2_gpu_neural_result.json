@@ -1,0 +1,32 @@
+{
+  "stage": "6.2",
+  "created_utc": "2026-11-02T18:50:15.227453+00:00",
+  "realmlp": {
+    "name": "self_realmlp_smooth50",
+    "status": "REJECT",
+    "oof_delta": -0.00638,
+    "fold_wins": "0/5",
+    "fold_aucs": [
+      0.941299,
+      0.944719,
+      0.948172,
+      0.944343,
+      0.939037
+    ],
+    "decision": "REJECT: OOF did not improve"
+  },
+  "tabm": {
+    "name": "self_tabm_smooth50",
+    "status": "EARLY_ABORT_FOLD1_0.944",
+    "fold0_auc": 0.941218,
+    "fold1_auc": 0.944289,
+    "control_te_xgb_smooth50": 0.949447,
+    "reason": "Folds 0-1 at 0.941/0.944 match RealMLP band; wide te_smooth50 floats into TabM overfit noisy TE; aborted for Stage 6.3b CUDA."
+  },
+  "policy": "NO_KAGGLE_SUBMIT",
+  "next": [
+    "stage6_3b_xgb_cuda_sweep",
+    "stage7_1_gpu_fast",
+    "stage7_2_gpu_meta_stacker"
+  ]
+}

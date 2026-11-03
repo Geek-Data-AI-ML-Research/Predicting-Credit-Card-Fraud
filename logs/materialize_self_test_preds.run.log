@@ -1,0 +1,28 @@
+building digit/TE frames...
+
+=== te_xgb_smooth50 (test materialize) ===
+  te_xgb_smooth50 fold0 auc=0.946943 it=3426 (409s)
+  te_xgb_smooth50 fold1 auc=0.949737 it=3453 (822s)
+  te_xgb_smooth50 fold2 auc=0.953323 it=3965 (1263s)
+  te_xgb_smooth50 fold3 auc=0.948437 it=3184 (1647s)
+  te_xgb_smooth50 fold4 auc=0.943845 it=3168 (2032s)
+  OOF 0.948436
+
+=== te_lgbm_leaves3 (test materialize) ===
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  te_lgbm_leaves3 fold0 auc=0.946349 it=3000 (51s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  te_lgbm_leaves3 fold1 auc=0.949164 it=2947 (96s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  te_lgbm_leaves3 fold2 auc=0.952906 it=2998 (143s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  te_lgbm_leaves3 fold3 auc=0.948149 it=2999 (192s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  te_lgbm_leaves3 fold4 auc=0.943597 it=2999 (240s)
+  OOF 0.948005
+done in 2285s

@@ -1,0 +1,36 @@
+{
+  "status": "EARLY_ABORT",
+  "tag": "t01_lgb_diglead_super",
+  "oof_auc": 0.5170215356091895,
+  "fold_aucs": [
+    0.9265519133859403,
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "pr_auc": 0.09187100313392203,
+  "delta_vs_diglead": -0.43360522607804264,
+  "gate_vs_diglead": {
+    "promote": false,
+    "oof_delta": -0.43360522607804264,
+    "oof_improved": false,
+    "fold_wins": 0,
+    "fold_deltas": [
+      -0.023251456828213057,
+      -0.451204569227593,
+      -0.4555770109217314,
+      -0.45156699090688246,
+      -0.4452335772922583
+    ],
+    "min_fold_wins_required": 4,
+    "folds_gate_passed": false,
+    "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+    "reason": "REJECT: OOF did not improve"
+  },
+  "promote_base": false,
+  "canary_aborted": true,
+  "test_id": "T01_diglead_lgb_l3_l4_bag",
+  "created_utc": "2026-11-03T05:19:54.841232+00:00",
+  "elapsed_sec": 353.1
+}

@@ -1,0 +1,2284 @@
+{
+  "campaign": "stage9_pivot_full73_ortho",
+  "created_utc": "2026-11-02T20:08:24.635253+00:00",
+  "pod": "83f0f0fwi39ccy",
+  "keep_warm": true,
+  "policy": "NO_KAGGLE_SUBMIT",
+  "results": {
+    "stage10_bank_top10_audit.json": {
+      "m": 73,
+      "top10": [
+        {
+          "rank": 1,
+          "name": ".:lgb_diglead_l3_bag",
+          "oof_auc": 0.950626761687232
+        },
+        {
+          "rank": 2,
+          "name": ".:lgb_diglead_bag",
+          "oof_auc": 0.9505103584240805
+        },
+        {
+          "rank": 3,
+          "name": ".:glm_dl_s50_bag",
+          "oof_auc": 0.9505074547049912
+        },
+        {
+          "rank": 4,
+          "name": ".:lgb_k_0",
+          "oof_auc": 0.950492468252919
+        },
+        {
+          "rank": 5,
+          "name": ".:lgb_dig_s100_bag5",
+          "oof_auc": 0.9504875308366474
+        },
+        {
+          "rank": 6,
+          "name": ".:lgb_k_s100_0",
+          "oof_auc": 0.9504477640177773
+        },
+        {
+          "rank": 7,
+          "name": ".:xgb_k",
+          "oof_auc": 0.9504326104474176
+        },
+        {
+          "rank": 8,
+          "name": ".:lgb_dig_s100_bag",
+          "oof_auc": 0.9504258336734523
+        },
+        {
+          "rank": 9,
+          "name": ".:lgb_k_s100_1",
+          "oof_auc": 0.9503626681191157
+        },
+        {
+          "rank": 10,
+          "name": ".:lgb_k_1",
+          "oof_auc": 0.9503353403326493
+        }
+      ],
+      "lgb_diglead_l3_bag": 0.950626761687232,
+      "te_lgbm_leaves3": 0.9480050673556188
+    },
+    "stage4_levers_result.json": {
+      "stage": 4,
+      "ts_utc": "2026-11-02T17:07:14.386256+00:00",
+      "cv_contract": "StratifiedKFold(n_splits=5, shuffle=True, random_state=42)",
+      "control": {
+        "name": "te_xgb",
+        "oof_roc_auc": 0.9493151648507883,
+        "folds": [
+          0.948377176934883,
+          0.9499878108367139,
+          0.9538388037360206,
+          0.9503588999994941,
+          0.94443184206051
+        ],
+        "gap": 0.005430155941154769
+      },
+      "promotion_rule": "OOF\u2191 AND \u22654/5 folds\u2191 vs control",
+      "gates": [
+        {
+          "promote": false,
+          "oof_delta": -0.0017487515526526387,
+          "oof_improved": false,
+          "fold_wins": 0,
+          "fold_deltas": [
+            -0.0022725803613111717,
+            -0.0007434848954861462,
+            -0.001760852326302853,
+            -0.002715114449373335,
+            -0.0013096398213331417
+          ],
+          "min_fold_wins_required": 4,
+          "folds_gate_passed": false,
+          "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+          "reason": "REJECT: OOF did not improve",
+          "lever": "stage3:raw_lgbm",
+          "challenger_oof": 0.9475664132981356,
+          "challenger_folds": [
+            0.9461045965735718,
+            0.9492443259412278,
+            0.9520779514097177,
+            0.9476437855501207,
+            0.9431222022391769
+          ],
+          "variable": "view=raw_lgbm",
+          "gap": 0.005380399345211439
+        },
+        {
+          "promote": false,
+          "oof_delta": -0.004604141947218698,
+          "oof_improved": false,
+          "fold_wins": 0,
+          "fold_deltas": [
+            -0.005054105810811338,
+            -0.004418528967441326,
+            -0.0037525713637929226,
+            -0.004258025940567678,
+            -0.005867378299116988
+          ],
+          "min_fold_wins_required": 4,
+          "folds_gate_passed": false,
+          "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+          "reason": "REJECT: OOF did not improve",
+          "lever": "stage3:digit_lgbm",
+          "challenger_oof": 0.9447110229035696,
+          "challenger_folds": [
+            0.9433230711240717,
+            0.9455692818692726,
+            0.9500862323722277,
+            0.9461008740589264,
+            0.938564463761393
+          ],
+          "variable": "view=digit_lgbm",
+          "gap": 0.013042782593690405
+        },
+        {
+          "promote": false,
+          "oof_delta": -9.340787379352733e-06,
+          "oof_improved": false,
+          "fold_wins": 2,
+          "fold_deltas": [
+            -4.615328638679639e-05,
+            -1.600043242022675e-05,
+            0.00010310250481981864,
+            -0.00018061115356693414,
+            0.0001237776921825251
+          ],
+          "min_fold_wins_required": 4,
+          "folds_gate_passed": false,
+          "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+          "reason": "REJECT: OOF did not improve",
+          "lever": "stage3:te_lgbm",
+          "challenger_oof": 0.9493058240634089,
+          "challenger_folds": [
+            0.9483310236484962,
+            0.9499718104042937,
+            0.9539419062408404,
+            0.9501782888459271,
+            0.9445556197526925
+          ],
+          "variable": "view=te_lgbm",
+          "gap": 0.006524147376446199
+        },
+        {
+          "promote": false,
+          "oof_delta": -0.0016832679079450408,
+          "oof_improved": false,
+          "fold_wins": 0,
+          "fold_deltas": [
+            -0.0024150253030202906,
+            -0.00040748202902396446,
+            -0.001572327180819233,
+            -0.0029774817691392563,
+            -0.0013660879921806313
+          ],
+          "min_fold_wins_required": 4,
+          "folds_gate_passed": false,
+          "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+          "reason": "REJECT: OOF did not improve",
+          "lever": "stage3:raw_xgb",
+          "challenger_oof": 0.9476318969428432,
+          "challenger_folds": [
+            0.9459621516318627,
+            0.9495803288076899,
+            0.9522664765552014,
+            0.9473814182303548,
+            0.9430657540683294
+          ],
+          "variable": "view=raw_xgb",
+          "gap": 0.00442849971092849
+        },
+        {
+          "promote": false,
+          "oof_delta": -0.007639238321810127,
+          "oof_improved": false,
+          "fold_wins": 0,
+          "fold_deltas": [
+            -0.008251327903642691,
+            -0.007198973466693737,
+            -0.006373923496685863,
+            -0.00760003450463187,
+            -0.009134275405153991
+          ],
+          "min_fold_wins_required": 4,
+          "folds_gate_passed": false,
+          "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+          "reason": "REJECT: OOF did not improve",
+          "lever": "stage3:digit_xgb",
+          "challenger_oof": 0.9416759265289781,
+          "challenger_folds": [
+            0.9401258490312403,
+            0.9427888373700202,
+            0.9474648802393347,
+            0.9427588654948622,
+            0.935297566655356
+          ],
+          "variable": "view=digit_xgb",
+          "gap": 0.03760198565687352
+        },
+        {
+          "promote": false,
+          "oof_delta": -0.0002265269432276673,
+          "oof_improved": false,
+          "fold_wins": 1,
+          "fold_deltas": [
+            9.006846089065768e-06,
+            -0.0003158248281792675,
+            -0.00018702748388010892,
+            -0.00037526676864263475,
+            -0.00026067079853087094
+          ],
+          "min_fold_wins_required": 4,
+          "folds_gate_passed": false,
+          "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+          "reason": "REJECT: OOF did not improve",
+          "lever": "te_lgbm_leaves7",
+          "challenger_oof": 0.9490886379075606,
+          "challenger_folds": [
+            0.9483861837809721,
+            0.9496719860085346,
+            0.9536517762521405,
+            0.9499836332308514,
+            0.9441711712619791
+          ],
+          "variable": "num_leaves:4\u21927 (TE-LGBM)",
+          "gap": 0.009418471299933163
+        },
+        {
+          "promote": true,
+          "oof_delta": 0.00013134981565521286,
+          "oof_improved": true,
+          "fold_wins": 5,
+          "fold_deltas": [
+            0.00017360443271741133,
+            3.6002914934329944e-05,
+            0.00018188820526621186,
+            9.542621230707038e-05,
+            0.0001744138795669592
+          ],
+          "min_fold_wins_required": 4,
+          "folds_gate_passed": true,
+          "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+          "reason": "PASS: OOF\u2191 and fold majority",
+          "lever": "te_xgb_smooth50",
+          "challenger_oof": 0.9494465146664435,
+          "challenger_folds": [
+            0.9485507813676004,
+            0.9500238137516482,
+            0.9540206919412868,
+            0.9504543262118011,
+            0.944606255940077
+          ],
+          "variable": "TE smooth:20\u219250 (TE-XGB)",
+          "gap": 0.005591526222552057
+        },
+        {
+          "promote": false,
+          "oof_delta": -0.0001783104273486158,
+          "oof_improved": false,
+          "fold_wins": 0,
+          "fold_deltas": [
+            -8.360280433494793e-06,
+            -2.5648231753216955e-05,
+            -4.0991495233289044e-05,
+            -0.0003448971742207041,
+            -0.00025046992084631903
+          ],
+          "min_fold_wins_required": 4,
+          "folds_gate_passed": false,
+          "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+          "reason": "REJECT: OOF did not improve",
+          "lever": "te_xgb_depth3",
+          "challenger_oof": 0.9491368544234396,
+          "challenger_folds": [
+            0.9483688166544495,
+            0.9499621626049607,
+            0.9537978122407873,
+            0.9500140028252734,
+            0.9441813721396637
+          ],
+          "variable": "max_depth:2\u21923 (TE-XGB)",
+          "gap": 0.008573126008215493
+        },
+        {
+          "promote": false,
+          "oof_delta": -0.004479007204121976,
+          "oof_improved": false,
+          "fold_wins": 0,
+          "fold_deltas": [
+            -0.0036078969726225374,
+            -0.004728116128258186,
+            -0.003919995638013929,
+            -0.005101249816629405,
+            -0.005305205226682319
+          ],
+          "min_fold_wins_required": 4,
+          "folds_gate_passed": false,
+          "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+          "reason": "REJECT: OOF did not improve",
+          "lever": "te_glm",
+          "challenger_oof": 0.9448361576466663,
+          "challenger_folds": [
+            0.9447692799622605,
+            0.9452596947084557,
+            0.9499188080980067,
+            0.9452576501828647,
+            0.9391266368338277
+          ],
+          "variable": "model_family: GLM on TE view",
+          "gap": 5.5222207834426665e-05
+        }
+      ],
+      "promoted": [
+        "te_xgb_smooth50"
+      ],
+      "rejected": [
+        "stage3:raw_lgbm",
+        "stage3:digit_lgbm",
+        "stage3:te_lgbm",
+        "stage3:raw_xgb",
+        "stage3:digit_xgb",
+        "te_lgbm_leaves7",
+        "te_xgb_depth3",
+        "te_glm"
+      ],
+      "new_arms": [
+        {
+          "name": "te_lgbm_leaves7",
+          "oof_roc_auc": 0.9490886379075606,
+          "oof_pr_auc": 0.5243629752192736,
+          "oof_brier": 0.010825787921269403,
+          "fold_valid_roc_auc_mean": 0.9491729501068956,
+          "fold_valid_roc_auc_std": 0.0034133165859242284,
+          "train_valid_gap_mean": 0.009418471299933163,
+          "folds": [
+            {
+              "fold": 0,
+              "valid_roc_auc": 0.9483861837809721,
+              "train_roc_auc": 0.9616925367175355,
+              "train_valid_gap": 0.01330635293656346,
+              "valid_pr_auc": 0.5143850296701354,
+              "valid_brier": 0.010966250183499561,
+              "best_iteration": 1931
+            },
+            {
+              "fold": 1,
+              "valid_roc_auc": 0.9496719860085346,
+              "train_roc_auc": 0.9570298943047036,
+              "train_valid_gap": 0.007357908296169002,
+              "valid_pr_auc": 0.5268147748895436,
+              "valid_brier": 0.010807528009491753,
+              "best_iteration": 1272
+            },
+            {
+              "fold": 2,
+              "valid_roc_auc": 0.9536517762521405,
+              "train_roc_auc": 0.9561079604637076,
+              "train_valid_gap": 0.002456184211567125,
+              "valid_pr_auc": 0.5454825354058827,
+              "valid_brier": 0.0105627126133938,
+              "best_iteration": 1225
+            },
+            {
+              "fold": 3,
+              "valid_roc_auc": 0.9499836332308514,
+              "train_roc_auc": 0.9572806051682718,
+              "train_valid_gap": 0.0072969719374204045,
+              "valid_pr_auc": 0.5320078510865178,
+              "valid_brier": 0.010724224419909457,
+              "best_iteration": 1300
+            },
+            {
+              "fold": 4,
+              "valid_roc_auc": 0.9441711712619791,
+              "train_roc_auc": 0.960846110379925,
+              "train_valid_gap": 0.01667493911794582,
+              "valid_pr_auc": 0.5049288028511735,
+              "valid_brier": 0.01106822438005244,
+              "best_iteration": 1620
+            }
+          ],
+          "elapsed_sec": 146.45387411117554,
+          "variable": "num_leaves:4\u21927 (TE-LGBM)"
+        },
+        {
+          "name": "te_xgb_smooth50",
+          "oof_roc_auc": 0.9494465146664435,
+          "oof_pr_auc": 0.525918585628938,
+          "oof_brier": 0.010800103283107201,
+          "fold_valid_roc_auc_mean": 0.9495311738424828,
+          "fold_valid_roc_auc_std": 0.0034083230072431817,
+          "train_valid_gap_mean": 0.005591526222552057,
+          "folds": [
+            {
+              "fold": 0,
+              "valid_roc_auc": 0.9485507813676004,
+              "train_roc_auc": 0.9565722823092309,
+              "train_valid_gap": 0.008021500941630455,
+              "valid_pr_auc": 0.5150370058062714,
+              "valid_brier": 0.010960383340716362,
+              "best_iteration": 2955
+            },
+            {
+              "fold": 1,
+              "valid_roc_auc": 0.9500238137516482,
+              "train_roc_auc": 0.9548416724504731,
+              "train_valid_gap": 0.004817858698824895,
+              "valid_pr_auc": 0.5306066088756421,
+              "valid_brier": 0.010749844834208488,
+              "best_iteration": 2346
+            },
+            {
+              "fold": 2,
+              "valid_roc_auc": 0.9540206919412868,
+              "train_roc_auc": 0.952182732120199,
+              "train_valid_gap": -0.001837959821087809,
+              "valid_pr_auc": 0.545762229121567,
+              "valid_brier": 0.010555309243500233,
+              "best_iteration": 1634
+            },
+            {
+              "fold": 3,
+              "valid_roc_auc": 0.9504543262118011,
+              "train_roc_auc": 0.9555661756014298,
+              "train_valid_gap": 0.005111849389628609,
+              "valid_pr_auc": 0.5339172916091514,
+              "valid_brier": 0.010686988942325115,
+              "best_iteration": 2715
+            },
+            {
+              "fold": 4,
+              "valid_roc_auc": 0.944606255940077,
+              "train_roc_auc": 0.9564506378438411,
+              "train_valid_gap": 0.011844381903764134,
+              "valid_pr_auc": 0.5068162152156694,
+              "valid_brier": 0.011047986336052418,
+              "best_iteration": 2398
+            }
+          ],
+          "elapsed_sec": 557.6582062244415,
+          "variable": "TE smooth:20\u219250 (TE-XGB)"
+        },
+        {
+          "name": "te_xgb_depth3",
+          "oof_roc_auc": 0.9491368544234396,
+          "oof_pr_auc": 0.5231390591790837,
+          "oof_brier": 0.010839597350149924,
+          "fold_valid_roc_auc_mean": 0.9492648332930269,
+          "fold_valid_roc_auc_std": 0.003472745470536526,
+          "train_valid_gap_mean": 0.008573126008215493,
+          "folds": [
+            {
+              "fold": 0,
+              "valid_roc_auc": 0.9483688166544495,
+              "train_roc_auc": 0.9586887607141376,
+              "train_valid_gap": 0.010319944059688058,
+              "valid_pr_auc": 0.5128239575564302,
+              "valid_brier": 0.010986436158418655,
+              "best_iteration": 1470
+            },
+            {
+              "fold": 1,
+              "valid_roc_auc": 0.9499621626049607,
+              "train_roc_auc": 0.9577296814021372,
+              "train_valid_gap": 0.00776751879717652,
+              "valid_pr_auc": 0.5270249728776272,
+              "valid_brier": 0.010808153077960014,
+              "best_iteration": 1432
+            },
+            {
+              "fold": 2,
+              "valid_roc_auc": 0.9537978122407873,
+              "train_roc_auc": 0.9541375682470095,
+              "train_valid_gap": 0.0003397560062221583,
+              "valid_pr_auc": 0.5447646901251779,
+              "valid_brier": 0.010578515008091927,
+              "best_iteration": 942
+            },
+            {
+              "fold": 3,
+              "valid_roc_auc": 0.9500140028252734,
+              "train_roc_auc": 0.9575956103804171,
+              "train_valid_gap": 0.007581607555143699,
+              "valid_pr_auc": 0.5305026682884492,
+              "valid_brier": 0.01073594018816948,
+              "best_iteration": 1385
+            },
+            {
+              "fold": 4,
+              "valid_roc_auc": 0.9441813721396637,
+              "train_roc_auc": 0.9610381757625107,
+              "train_valid_gap": 0.016856803622847027,
+              "valid_pr_auc": 0.5036589783175434,
+              "valid_brier": 0.011088942177593708,
+              "best_iteration": 1740
+            }
+          ],
+          "elapsed_sec": 364.57286381721497,
+          "variable": "max_depth:2\u21923 (TE-XGB)"
+        },
+        {
+          "name": "te_glm",
+          "oof_roc_auc": 0.9448361576466663,
+          "oof_pr_auc": 0.5047330373433864,
+          "oof_brier": 0.011084475858869463,
+          "fold_valid_roc_auc_mean": 0.944866413957083,
+          "fold_valid_roc_auc_std": 0.0038336959492961597,
+          "train_valid_gap_mean": 5.5222207834426665e-05,
+          "folds": [
+            {
+              "fold": 0,
+              "valid_roc_auc": 0.9447692799622605,
+              "train_roc_auc": 0.9451362310358289,
+              "train_valid_gap": 0.00036695107356843337,
+              "valid_pr_auc": 0.49690946038823747,
+              "valid_brier": 0.011188715736187906,
+              "best_iteration": 1
+            },
+            {
+              "fold": 1,
+              "valid_roc_auc": 0.9452596947084557,
+              "train_roc_auc": 0.9447638622213931,
+              "train_valid_gap": -0.0004958324870626418,
+              "valid_pr_auc": 0.5098710458656112,
+              "valid_brier": 0.01101651104311055,
+              "best_iteration": 1
+            },
+            {
+              "fold": 2,
+              "valid_roc_auc": 0.9499188080980067,
+              "train_roc_auc": 0.9435790844445413,
+              "train_valid_gap": -0.006339723653465357,
+              "valid_pr_auc": 0.5246861826140155,
+              "valid_brier": 0.010830030549983875,
+              "best_iteration": 1
+            },
+            {
+              "fold": 3,
+              "valid_roc_auc": 0.9452576501828647,
+              "train_roc_auc": 0.9447541664067796,
+              "train_valid_gap": -0.0005034837760851119,
+              "valid_pr_auc": 0.5038364449318301,
+              "valid_brier": 0.011106609130490606,
+              "best_iteration": 1
+            },
+            {
+              "fold": 4,
+              "valid_roc_auc": 0.9391266368338277,
+              "train_roc_auc": 0.9463748367160445,
+              "train_valid_gap": 0.00724819988221681,
+              "valid_pr_auc": 0.4897096806408888,
+              "valid_brier": 0.01128051283457438,
+              "best_iteration": 1
+            }
+          ],
+          "elapsed_sec": 20.173386096954346,
+          "variable": "model_family: GLM on TE view"
+        }
+      ]
+    },
+    "stage6_2_gpu_neural_result.json": {
+      "stage": "6.2",
+      "created_utc": "2026-11-02T18:50:15.227453+00:00",
+      "realmlp": {
+        "name": "self_realmlp_smooth50",
+        "status": "REJECT",
+        "oof_delta": -0.00638,
+        "fold_wins": "0/5",
+        "fold_aucs": [
+          0.941299,
+          0.944719,
+          0.948172,
+          0.944343,
+          0.939037
+        ],
+        "decision": "REJECT: OOF did not improve"
+      },
+      "tabm": {
+        "name": "self_tabm_smooth50",
+        "status": "EARLY_ABORT_FOLD1_0.944",
+        "fold0_auc": 0.941218,
+        "fold1_auc": 0.944289,
+        "control_te_xgb_smooth50": 0.949447,
+        "reason": "Folds 0-1 at 0.941/0.944 match RealMLP band; wide te_smooth50 floats into TabM overfit noisy TE; aborted for Stage 6.3b CUDA."
+      },
+      "policy": "NO_KAGGLE_SUBMIT",
+      "next": [
+        "stage6_3b_xgb_cuda_sweep",
+        "stage7_1_gpu_fast",
+        "stage7_2_gpu_meta_stacker"
+      ]
+    },
+    "stage6_3_results.json": {
+      "stage": "6.3",
+      "created_utc": "2026-11-02T18:30:11.245366+00:00",
+      "ebm": {
+        "status": "EARLY_ABORT_FOLD0_0.9475",
+        "fold0_auc": 0.947517,
+        "control_te_xgb_smooth50": 0.949447,
+        "delta_vs_control": -0.0019299999999999873,
+        "reason": "Fold0 already -0.00193 below control; zero chance of Stage 2.2 (OOF\u2191 and \u22654/5). Aborted to free RTX 4090 for CUDA jobs."
+      },
+      "catboost": {
+        "name": "te_smooth50_catboost_d3",
+        "status": "REJECT",
+        "oof_approx_from_folds": null,
+        "note": "Completed 5/5 then rejected vs te_xgb_smooth50 (OOF \u0394\u2248-0.003, 0/5 folds)",
+        "fold_aucs": [
+          0.944458,
+          0.947736,
+          0.95134,
+          0.946651,
+          0.942313
+        ]
+      },
+      "policy": "NO_KAGGLE_SUBMIT",
+      "next": [
+        "stage6_2_gpu_neural",
+        "stage6_3b_xgb_cuda_sweep",
+        "stage7_2_gpu_meta_stacker"
+      ]
+    },
+    "stage6_3b_xgb_cuda_result.json": {
+      "stage": "6.3b",
+      "created_utc": "2026-11-02T18:55:32.708089+00:00",
+      "elapsed_sec": 286.3,
+      "device": "cuda",
+      "control": {
+        "name": "te_xgb_smooth50",
+        "oof": 0.9494465146664435,
+        "folds": [
+          0.9485507813676004,
+          0.9500238137516482,
+          0.9540206919412868,
+          0.9504543262118011,
+          0.944606255940077
+        ]
+      },
+      "arms": [
+        {
+          "name": "te_xgb_smooth50_bin4096",
+          "oof_roc_auc": 0.9478731887774531,
+          "folds": [
+            {
+              "fold": 0,
+              "valid_roc_auc": 0.9463943652300492,
+              "train_valid_gap": 0.007914574718791423,
+              "best_iteration": 4549
+            },
+            {
+              "fold": 1,
+              "valid_roc_auc": 0.9489458966700742,
+              "train_valid_gap": 0.0029966246631849547,
+              "best_iteration": 3167
+            },
+            {
+              "fold": 2,
+              "valid_roc_auc": 0.9528183928206799,
+              "train_valid_gap": -0.001875542175628464,
+              "best_iteration": 3059
+            },
+            {
+              "fold": 3,
+              "valid_roc_auc": 0.9479780996633019,
+              "train_valid_gap": 0.005628939796583521,
+              "best_iteration": 4241
+            },
+            {
+              "fold": 4,
+              "valid_roc_auc": 0.9435883618419536,
+              "train_valid_gap": 0.010918750331627702,
+              "best_iteration": 4089
+            }
+          ],
+          "gate_vs_te_xgb_smooth50": {
+            "promote": false,
+            "oof_delta": -0.0015733258889903956,
+            "oof_improved": false,
+            "fold_wins": 0,
+            "fold_deltas": [
+              -0.0021564161375512425,
+              -0.0010779170815740091,
+              -0.0012022991206068756,
+              -0.0024762265484992163,
+              -0.001017894098123362
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "promote": false,
+          "params": {
+            "max_depth": 2,
+            "learning_rate": 0.03,
+            "n_estimators": 6000,
+            "subsample": 0.8,
+            "colsample_bytree": 0.5,
+            "reg_lambda": 30.0,
+            "reg_alpha": 5.0,
+            "tree_method": "hist",
+            "device": "cuda",
+            "max_bin": 4096,
+            "eval_metric": "auc"
+          }
+        },
+        {
+          "name": "te_xgb_smooth100_depth2",
+          "oof_roc_auc": 0.9479374979329833,
+          "folds": [
+            {
+              "fold": 0,
+              "valid_roc_auc": 0.9464542269517257,
+              "train_valid_gap": 0.007819134989285104,
+              "best_iteration": 4546
+            },
+            {
+              "fold": 1,
+              "valid_roc_auc": 0.9490134685515859,
+              "train_valid_gap": 0.0029301363310048067,
+              "best_iteration": 3182
+            },
+            {
+              "fold": 2,
+              "valid_roc_auc": 0.952835925093703,
+              "train_valid_gap": -0.0005843164095875597,
+              "best_iteration": 3992
+            },
+            {
+              "fold": 3,
+              "valid_roc_auc": 0.9478108152122597,
+              "train_valid_gap": 0.005160637982188576,
+              "best_iteration": 3722
+            },
+            {
+              "fold": 4,
+              "valid_roc_auc": 0.9437922877337799,
+              "train_valid_gap": 0.01075576498884534,
+              "best_iteration": 4056
+            }
+          ],
+          "gate_vs_te_xgb_smooth50": {
+            "promote": false,
+            "oof_delta": -0.0015090167334601556,
+            "oof_improved": false,
+            "fold_wins": 0,
+            "fold_deltas": [
+              -0.0020965544158747518,
+              -0.0010103452000623792,
+              -0.0011847668475838402,
+              -0.0026435109995414097,
+              -0.0008139682062970888
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "promote": false,
+          "params": {
+            "max_depth": 2,
+            "learning_rate": 0.03,
+            "n_estimators": 6000,
+            "subsample": 0.8,
+            "colsample_bytree": 0.5,
+            "reg_lambda": 30.0,
+            "reg_alpha": 5.0,
+            "tree_method": "hist",
+            "device": "cuda",
+            "max_bin": 4096,
+            "eval_metric": "auc"
+          }
+        }
+      ],
+      "promoted": [],
+      "policy": "NO_KAGGLE_SUBMIT"
+    },
+    "stage7_1_gpu_result.json": {
+      "stage": "7.1_gpu",
+      "created_utc": "2026-11-02T19:12:04.276454+00:00",
+      "elapsed_sec": 808.1,
+      "n_members": 48,
+      "members": [
+        "Predicting-Cre:lgb_diglead_l3_bag",
+        "Predicting-Cre:glm_dl_s50_bag",
+        "Predicting-Cre:lgb_k_s100_0",
+        "Predicting-Cre:ebm_i25_bag4",
+        "Predicting-Cre:lgb_k_l7",
+        "Predicting-Cre:lgb_dig_l7",
+        "s6e11-digit-to:joint_token_predictions:oof",
+        "Predicting-Cre:glm_ohk2_bag",
+        "dir:artifacts_extra/masaya_records/logistic/out/lr_final",
+        "dir:artifacts_extra/masaya_records/distillation/out/final/blend_",
+        "dir:artifacts_extra/masaya_records/distillation/out/final/baseli",
+        "s6e11-oof-pred:9d26cfb564230caa",
+        "s6e11-tree-ens:oof_stack_reference:stack_oof",
+        "crossfit:lgb_enriched_s100",
+        "crossfit:lgb_te_s20_cnt",
+        "crossfit:xgb_te_s20",
+        "crossfit:lgb_te_s100",
+        "s6e11-oof-pred:d5bd0671dd68108f",
+        "s6e11-oof-pred:0958aef8e20ba93c",
+        "Predicting-Cre:realmlp_dig",
+        "s6e11-oof-pred:ddfa69a32874765c",
+        "preds:te_xgb_smooth50",
+        "Predicting-Cre:lgb_rawdig_l4",
+        "s6e11-oof-pred:e13d1e5d005b82ad",
+        "s6e11-tree-ens:encoded_xgboost:foldmean",
+        "Predicting-Cre:lgb_raw",
+        "Predicting-Cre:ebm_b4",
+        "crossfit:ebm_raw",
+        "s6e11-oof-pred:42eb4cf755012e69",
+        "s6e11-tree-ens:encoded_lightgbm:foldmean",
+        "s6e11-oof-pred:015ea1ed1f5bd220",
+        "Predicting-Cre:realmlp_te",
+        "s6e11-oof-pred:30a64e99a4f93aee",
+        "s6e11-oof-pred:750a3a13593f5e05",
+        "s6e11-oof-pred:5160560b658e88f4",
+        "s6e11-oof-pred:983fbb55a2b59a74",
+        "s6e11-oof-pred:74dcf78882edd49f",
+        "s6e11-oof-pred:9b95a64105ce0e91",
+        "s6e11-oof-pred:15d0d127372ea048",
+        "s6e11-oof-pred:10bad431843b4481",
+        "s6e11-tree-ens:raw_xgboost:foldmean",
+        "s6e11-tree-ens:raw_lightgbm:foldmean",
+        "s6e11-oof-pred:888d3d64c3854ba8",
+        "s6e11-oof-pred:5546bd639f98c251",
+        "s6e11-tree-ens:raw_catboost:foldmean",
+        "s6e11-oof-pred:spline_glm_88df84742d",
+        "Predicting-Cre:realmlp_v1",
+        "s6e11-oof-pred:e0749b53ac73f63d"
+      ],
+      "controls": {
+        "nested_hillclimb_mix": {
+          "oof": 0.9511399094205631,
+          "folds": [
+            0.9503620433507662,
+            0.951726126773786,
+            0.9558327925697788,
+            0.9516947784171128,
+            0.9460828166721877
+          ]
+        },
+        "nested_mega_logit": {
+          "oof": 0.951126115107945,
+          "folds": [
+            0.9504904192724932,
+            0.9516764103121993,
+            0.9557366050979433,
+            0.9516887986458353,
+            0.9462637121328847
+          ]
+        },
+        "gate_baseline_oof": 0.9511399094205631
+      },
+      "solvers": {
+        "nested_nn_logit_probit": {
+          "oof_auc": 0.9450888549159708,
+          "fold_aucs": [
+            0.9494590755569009,
+            0.9516548247205839,
+            0.9554224348440455,
+            0.9508717900621962,
+            0.9454033583638366
+          ],
+          "meta": [
+            {
+              "l2": 0.0001,
+              "tr_auc": 0.9508230475078893,
+              "va_auc": 0.9494590755569009
+            },
+            {
+              "l2": 0.0005,
+              "tr_auc": 0.9502802810102824,
+              "va_auc": 0.9516548247205839
+            },
+            {
+              "l2": 0.0001,
+              "tr_auc": 0.949344371927182,
+              "va_auc": 0.9554224348440455
+            },
+            {
+              "l2": 0.0001,
+              "tr_auc": 0.9504423979749842,
+              "va_auc": 0.9508717900621962
+            },
+            {
+              "l2": 0.0005,
+              "tr_auc": 0.9521069931095528,
+              "va_auc": 0.9454033583638366
+            }
+          ],
+          "gate_vs_nested_hill": {
+            "promote": false,
+            "oof_delta": -0.0060510545045923125,
+            "oof_improved": false,
+            "fold_wins": 0,
+            "fold_deltas": [
+              -0.0009029677938653391,
+              -7.130205320204919e-05,
+              -0.0004103577257332791,
+              -0.0008229883549165651,
+              -0.0006794583083511441
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "pass_abs": false
+        },
+        "nested_probit_hillclimb": {
+          "oof_auc": 0.950924777284575,
+          "fold_aucs": [
+            0.949985979938715,
+            0.9516858343944463,
+            0.9558813034448467,
+            0.9514813414419508,
+            0.9455889254722945
+          ],
+          "meta": [
+            {
+              "nnz": 10,
+              "va_auc": 0.949985979938715
+            },
+            {
+              "nnz": 8,
+              "va_auc": 0.9516858343944463
+            },
+            {
+              "nnz": 11,
+              "va_auc": 0.9558813034448467
+            },
+            {
+              "nnz": 7,
+              "va_auc": 0.9514813414419508
+            },
+            {
+              "nnz": 12,
+              "va_auc": 0.9455889254722945
+            }
+          ],
+          "gate_vs_nested_hill": {
+            "promote": false,
+            "oof_delta": -0.00021513213598811642,
+            "oof_improved": false,
+            "fold_wins": 1,
+            "fold_deltas": [
+              -0.0003760634120512085,
+              -4.0292379339668116e-05,
+              4.851087506785312e-05,
+              -0.00021343697516196247,
+              -0.0004938911998932927
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "pass_abs": false
+        },
+        "nested_hybrid_rank_logit_mix": {
+          "oof_auc": 0.950924777284575,
+          "fold_aucs": [
+            0.949985979938715,
+            0.9516858343944463,
+            0.9558813034448467,
+            0.9514813414419508,
+            0.9455889254722945
+          ],
+          "meta": [
+            {
+              "alpha": 0.0,
+              "va_auc": 0.949985979938715
+            },
+            {
+              "alpha": 0.0,
+              "va_auc": 0.9516858343944463
+            },
+            {
+              "alpha": 0.0,
+              "va_auc": 0.9558813034448467
+            },
+            {
+              "alpha": 0.0,
+              "va_auc": 0.9514813414419508
+            },
+            {
+              "alpha": 0.0,
+              "va_auc": 0.9455889254722945
+            }
+          ],
+          "gate_vs_nested_hill": {
+            "promote": false,
+            "oof_delta": -0.00021513213598811642,
+            "oof_improved": false,
+            "fold_wins": 1,
+            "fold_deltas": [
+              -0.0003760634120512085,
+              -4.0292379339668116e-05,
+              4.851087506785312e-05,
+              -0.00021343697516196247,
+              -0.0004938911998932927
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "pass_abs": false
+        },
+        "nested_pruned_ridge_pos": {
+          "oof_auc": 0.9463728442960734,
+          "fold_aucs": [
+            0.9456498495405973,
+            0.9497690823310322,
+            0.9537557456606686,
+            0.9494189153765636,
+            0.9423139807655259
+          ],
+          "meta": [
+            {
+              "va_auc": 0.9456498495405973
+            },
+            {
+              "va_auc": 0.9497690823310322
+            },
+            {
+              "va_auc": 0.9537557456606686
+            },
+            {
+              "va_auc": 0.9494189153765636
+            },
+            {
+              "va_auc": 0.9423139807655259
+            }
+          ],
+          "gate_vs_nested_hill": {
+            "promote": false,
+            "oof_delta": -0.004767065124489767,
+            "oof_improved": false,
+            "fold_wins": 0,
+            "fold_deltas": [
+              -0.004712193810168963,
+              -0.001957044442753797,
+              -0.0020770469091102584,
+              -0.0022758630405491642,
+              -0.0037688359066618826
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "pass_abs": false
+        }
+      },
+      "best_solver": "nested_probit_hillclimb",
+      "promoted": [],
+      "est_public": {
+        "nested_nn_logit_probit": 0.9456088549159708,
+        "nested_probit_hillclimb": 0.951444777284575,
+        "nested_hybrid_rank_logit_mix": 0.951444777284575,
+        "nested_pruned_ridge_pos": 0.9468928442960733
+      },
+      "policy": "NO_KAGGLE_SUBMIT",
+      "keep_pod_warm": true
+    },
+    "stage7_2_gpu_gated_result.json": {
+      "stage": "7.2_gpu_gated",
+      "created_utc": "2026-11-02T19:14:55.163383+00:00",
+      "elapsed_sec": 69.3,
+      "top_members": [
+        "Predicting-Cre:lgb_diglead_l3_bag",
+        "Predicting-Cre:glm_dl_s50_bag",
+        "Predicting-Cre:lgb_k_s100_0",
+        "Predicting-Cre:ebm_i25_bag4",
+        "Predicting-Cre:lgb_k_l7",
+        "Predicting-Cre:lgb_dig_l7",
+        "s6e11-digit-to:joint_token_predictions:oof",
+        "Predicting-Cre:glm_ohk2_bag",
+        "dir:artifacts_extra/masaya_records/logistic/out/lr_final",
+        "dir:artifacts_extra/masaya_records/distillation/out/final/blend_",
+        "dir:artifacts_extra/masaya_records/distillation/out/final/baseli",
+        "s6e11-oof-pred:9d26cfb564230caa",
+        "s6e11-tree-ens:oof_stack_reference:stack_oof",
+        "crossfit:lgb_enriched_s100",
+        "crossfit:lgb_te_s20_cnt",
+        "crossfit:xgb_te_s20",
+        "crossfit:lgb_te_s100",
+        "s6e11-oof-pred:d5bd0671dd68108f",
+        "s6e11-oof-pred:0958aef8e20ba93c",
+        "Predicting-Cre:realmlp_dig",
+        "s6e11-oof-pred:ddfa69a32874765c",
+        "preds:te_xgb_smooth50",
+        "Predicting-Cre:lgb_rawdig_l4",
+        "s6e11-oof-pred:e13d1e5d005b82ad",
+        "s6e11-tree-ens:encoded_xgboost:foldmean"
+      ],
+      "control_oof": 0.9511399094205631,
+      "solvers": {
+        "gated_meta_net": {
+          "oof_auc": 0.949528633821104,
+          "fold_aucs": [
+            0.9493529610771985,
+            0.9516581525122378,
+            0.9554693284310125,
+            0.9509053693753656,
+            0.9453205224519796
+          ],
+          "gate": {
+            "promote": false,
+            "oof_delta": -0.001611275599459172,
+            "oof_improved": false,
+            "fold_wins": 0,
+            "fold_deltas": [
+              -0.001009082273567774,
+              -6.797426154814268e-05,
+              -0.0003634641387663118,
+              -0.00078940904174718,
+              -0.0007622942202081262
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "pass_abs": false
+        },
+        "meta_xgb_cuda": {
+          "oof_auc": 0.9460063212011853,
+          "fold_aucs": [
+            0.9498097985688425,
+            0.9514698930307939,
+            0.9553167502711917,
+            0.9514637516860656,
+            0.945420165109921
+          ],
+          "gate": {
+            "promote": false,
+            "oof_delta": -0.005133588219377816,
+            "oof_improved": false,
+            "fold_wins": 0,
+            "fold_deltas": [
+              -0.0005522447819237275,
+              -0.0002562337429921069,
+              -0.0005160422985871493,
+              -0.0002310267310472458,
+              -0.0006626515622667473
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "pass_abs": false
+        },
+        "blend_71_gated_xgb": {
+          "oof_auc": 0.9509173811972088,
+          "fold_aucs": [
+            0.9499929351822438,
+            0.9517003791122169,
+            0.9558859673246531,
+            0.9514946790196116,
+            0.9456047130627648
+          ],
+          "gate": {
+            "promote": false,
+            "oof_delta": -0.00022252822335433464,
+            "oof_improved": false,
+            "fold_wins": 1,
+            "fold_deltas": [
+              -0.0003691081685224251,
+              -2.574766156904218e-05,
+              5.3174754874318886e-05,
+              -0.00020009939750120775,
+              -0.0004781036094229085
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "pass_abs": false
+        }
+      },
+      "best_solver": "best_7_1",
+      "promoted": [],
+      "policy": "NO_KAGGLE_SUBMIT",
+      "keep_pod_warm": true
+    },
+    "stage7_align_handoff.json": {
+      "stage": "7_align_handoff",
+      "created_utc": "2026-11-02T19:15:16.048652+00:00",
+      "elapsed_sec": 16.7,
+      "nested_hill": {
+        "oof": 0.9511733714239196,
+        "folds": [
+          0.9504624133432997,
+          0.9516500940363699,
+          0.9558920247754741,
+          0.9517514440906829,
+          0.9461110749366106
+        ],
+        "aligned_probit_oof": 0.9511734734102006
+      },
+      "candidates": [
+        {
+          "name": "nested_hill",
+          "raw_pooled_auc": 0.9511733714239196,
+          "mean_fold_auc": 0.9511734102364875,
+          "fold_aucs": [
+            0.9504624133432997,
+            0.9516500940363699,
+            0.9558920247754741,
+            0.9517514440906829,
+            0.9461110749366106
+          ],
+          "aligned_probit_pooled_auc": 0.9511734734102006,
+          "fold_deltas_vs_ctrl": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "fold_wins": 5
+        },
+        {
+          "name": "nested_nn_logit_probit",
+          "raw_pooled_auc": 0.9450888547295242,
+          "mean_fold_auc": 0.9505622973310798,
+          "fold_aucs": [
+            0.9494590771111453,
+            0.951654824720584,
+            0.9554224363976365,
+            0.9508717900621962,
+            0.9454033583638367
+          ],
+          "aligned_probit_pooled_auc": 0.9505623902585432,
+          "aligned_zscore_pooled_auc": 0.9444172352932485,
+          "fold_deltas_vs_ctrl": [
+            -0.0010033362321544281,
+            4.730684214138137e-06,
+            -0.0004695883778376153,
+            -0.000879654028486665,
+            -0.0007077165727739088
+          ],
+          "fold_wins": 1,
+          "gate_raw": {
+            "promote": false,
+            "oof_delta": -0.006084516694395359,
+            "oof_improved": false,
+            "fold_wins": 1,
+            "fold_deltas": [
+              -0.0010033362321544281,
+              4.730684214138137e-06,
+              -0.0004695883778376153,
+              -0.000879654028486665,
+              -0.0007077165727739088
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "gate_aligned_pooled": {
+            "promote": false,
+            "oof_delta": -0.0006109811653763897,
+            "oof_improved": false,
+            "fold_wins": 1,
+            "fold_deltas": [
+              -0.0010033362321544281,
+              4.730684214138137e-06,
+              -0.0004695883778376153,
+              -0.000879654028486665,
+              -0.0007077165727739088
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "pass_aligned": false,
+          "scale_gap_raw_minus_aligned": -0.005473535529018969
+        },
+        {
+          "name": "nested_probit_hillclimb",
+          "raw_pooled_auc": 0.9509247768495329,
+          "mean_fold_auc": 0.95092467693832,
+          "fold_aucs": [
+            0.9499859783844709,
+            0.9516858343944463,
+            0.9558813034448466,
+            0.9514813398883598,
+            0.9455889285794763
+          ],
+          "aligned_probit_pooled_auc": 0.9509247551595804,
+          "aligned_zscore_pooled_auc": 0.9509245872333577,
+          "fold_deltas_vs_ctrl": [
+            -0.0004764349588288752,
+            3.5740358076408185e-05,
+            -1.0721330627516679e-05,
+            -0.00027010420232309595,
+            -0.0005221463571343232
+          ],
+          "fold_wins": 1,
+          "gate_raw": {
+            "promote": false,
+            "oof_delta": -0.00024859457438664023,
+            "oof_improved": false,
+            "fold_wins": 1,
+            "fold_deltas": [
+              -0.0004764349588288752,
+              3.5740358076408185e-05,
+              -1.0721330627516679e-05,
+              -0.00027010420232309595,
+              -0.0005221463571343232
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "gate_aligned_pooled": {
+            "promote": false,
+            "oof_delta": -0.00024861626433914097,
+            "oof_improved": false,
+            "fold_wins": 1,
+            "fold_deltas": [
+              -0.0004764349588288752,
+              3.5740358076408185e-05,
+              -1.0721330627516679e-05,
+              -0.00027010420232309595,
+              -0.0005221463571343232
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "pass_aligned": false,
+          "scale_gap_raw_minus_aligned": 2.1689952500736354e-08
+        },
+        {
+          "name": "nested_hybrid_rank_logit_mix",
+          "raw_pooled_auc": 0.9509247768495329,
+          "mean_fold_auc": 0.95092467693832,
+          "fold_aucs": [
+            0.9499859783844709,
+            0.9516858343944463,
+            0.9558813034448466,
+            0.9514813398883598,
+            0.9455889285794763
+          ],
+          "aligned_probit_pooled_auc": 0.9509247551595804,
+          "aligned_zscore_pooled_auc": 0.9509245872333577,
+          "fold_deltas_vs_ctrl": [
+            -0.0004764349588288752,
+            3.5740358076408185e-05,
+            -1.0721330627516679e-05,
+            -0.00027010420232309595,
+            -0.0005221463571343232
+          ],
+          "fold_wins": 1,
+          "gate_raw": {
+            "promote": false,
+            "oof_delta": -0.00024859457438664023,
+            "oof_improved": false,
+            "fold_wins": 1,
+            "fold_deltas": [
+              -0.0004764349588288752,
+              3.5740358076408185e-05,
+              -1.0721330627516679e-05,
+              -0.00027010420232309595,
+              -0.0005221463571343232
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "gate_aligned_pooled": {
+            "promote": false,
+            "oof_delta": -0.00024861626433914097,
+            "oof_improved": false,
+            "fold_wins": 1,
+            "fold_deltas": [
+              -0.0004764349588288752,
+              3.5740358076408185e-05,
+              -1.0721330627516679e-05,
+              -0.00027010420232309595,
+              -0.0005221463571343232
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "pass_aligned": false,
+          "scale_gap_raw_minus_aligned": 2.1689952500736354e-08
+        },
+        {
+          "name": "nested_pruned_ridge_pos",
+          "raw_pooled_auc": 0.9463728449797107,
+          "mean_fold_auc": 0.948181515357098,
+          "fold_aucs": [
+            0.9456498588660633,
+            0.9497690792238503,
+            0.9537557487678502,
+            0.9494189169301548,
+            0.9423139729975715
+          ],
+          "aligned_probit_pooled_auc": 0.9481817281657468,
+          "aligned_zscore_pooled_auc": 0.94620750433604,
+          "fold_deltas_vs_ctrl": [
+            -0.004812554477236386,
+            -0.0018810148125195658,
+            -0.002136276007623894,
+            -0.0023325271605281195,
+            -0.003797101939039149
+          ],
+          "fold_wins": 0,
+          "gate_raw": {
+            "promote": false,
+            "oof_delta": -0.004800526444208808,
+            "oof_improved": false,
+            "fold_wins": 0,
+            "fold_deltas": [
+              -0.004812554477236386,
+              -0.0018810148125195658,
+              -0.002136276007623894,
+              -0.0023325271605281195,
+              -0.003797101939039149
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "gate_aligned_pooled": {
+            "promote": false,
+            "oof_delta": -0.0029916432581728047,
+            "oof_improved": false,
+            "fold_wins": 0,
+            "fold_deltas": [
+              -0.004812554477236386,
+              -0.0018810148125195658,
+              -0.002136276007623894,
+              -0.0023325271605281195,
+              -0.003797101939039149
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "pass_aligned": false,
+          "scale_gap_raw_minus_aligned": -0.0018088831860360033
+        },
+        {
+          "name": "gated_meta_net",
+          "raw_pooled_auc": 0.949528633821104,
+          "mean_fold_auc": 0.9505412667695587,
+          "fold_aucs": [
+            0.9493529610771985,
+            0.9516581525122378,
+            0.9554693284310125,
+            0.9509053693753656,
+            0.9453205224519796
+          ],
+          "aligned_probit_pooled_auc": 0.9505413669146975,
+          "aligned_zscore_pooled_auc": 0.9491135223737012,
+          "fold_deltas_vs_ctrl": [
+            -0.001109452266101263,
+            8.058475867933623e-06,
+            -0.00042269634446157056,
+            -0.0008460747153172798,
+            -0.0007905524846310019
+          ],
+          "fold_wins": 1,
+          "gate_raw": {
+            "promote": false,
+            "oof_delta": -0.0016447376028155825,
+            "oof_improved": false,
+            "fold_wins": 1,
+            "fold_deltas": [
+              -0.001109452266101263,
+              8.058475867933623e-06,
+              -0.00042269634446157056,
+              -0.0008460747153172798,
+              -0.0007905524846310019
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "gate_aligned_pooled": {
+            "promote": false,
+            "oof_delta": -0.0006320045092220727,
+            "oof_improved": false,
+            "fold_wins": 1,
+            "fold_deltas": [
+              -0.001109452266101263,
+              8.058475867933623e-06,
+              -0.00042269634446157056,
+              -0.0008460747153172798,
+              -0.0007905524846310019
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "pass_aligned": false,
+          "scale_gap_raw_minus_aligned": -0.0010127330935935097
+        },
+        {
+          "name": "meta_xgb_cuda",
+          "raw_pooled_auc": 0.9460063212011853,
+          "mean_fold_auc": 0.9506960717333628,
+          "fold_aucs": [
+            0.9498097985688425,
+            0.9514698930307939,
+            0.9553167502711917,
+            0.9514637516860656,
+            0.945420165109921
+          ],
+          "aligned_probit_pooled_auc": 0.9508200038135063,
+          "aligned_zscore_pooled_auc": 0.944624947849601,
+          "fold_deltas_vs_ctrl": [
+            -0.0006526147744572164,
+            -0.00018020100557603058,
+            -0.0005752745042824081,
+            -0.0002876924046173457,
+            -0.000690909826689623
+          ],
+          "fold_wins": 0,
+          "gate_raw": {
+            "promote": false,
+            "oof_delta": -0.005167050222734226,
+            "oof_improved": false,
+            "fold_wins": 0,
+            "fold_deltas": [
+              -0.0006526147744572164,
+              -0.00018020100557603058,
+              -0.0005752745042824081,
+              -0.0002876924046173457,
+              -0.000690909826689623
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "gate_aligned_pooled": {
+            "promote": false,
+            "oof_delta": -0.0003533676104132688,
+            "oof_improved": false,
+            "fold_wins": 0,
+            "fold_deltas": [
+              -0.0006526147744572164,
+              -0.00018020100557603058,
+              -0.0005752745042824081,
+              -0.0002876924046173457,
+              -0.000690909826689623
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "pass_aligned": false,
+          "scale_gap_raw_minus_aligned": -0.0048136826123209575
+        },
+        {
+          "name": "blend_71_gated_xgb",
+          "raw_pooled_auc": 0.9509173811972088,
+          "mean_fold_auc": 0.950935734740298,
+          "fold_aucs": [
+            0.9499929351822438,
+            0.9517003791122169,
+            0.9558859673246531,
+            0.9514946790196116,
+            0.9456047130627648
+          ],
+          "aligned_probit_pooled_auc": 0.9509358135550345,
+          "aligned_zscore_pooled_auc": 0.9509173357042425,
+          "fold_deltas_vs_ctrl": [
+            -0.000469478161055914,
+            5.028507584703412e-05,
+            -6.057450820939891e-06,
+            -0.00025676507107130764,
+            -0.0005063618738457842
+          ],
+          "fold_wins": 1,
+          "gate_raw": {
+            "promote": false,
+            "oof_delta": -0.000255990226710745,
+            "oof_improved": false,
+            "fold_wins": 1,
+            "fold_deltas": [
+              -0.000469478161055914,
+              5.028507584703412e-05,
+              -6.057450820939891e-06,
+              -0.00025676507107130764,
+              -0.0005063618738457842
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "gate_aligned_pooled": {
+            "promote": false,
+            "oof_delta": -0.00023755786888501884,
+            "oof_improved": false,
+            "fold_wins": 1,
+            "fold_deltas": [
+              -0.000469478161055914,
+              5.028507584703412e-05,
+              -6.057450820939891e-06,
+              -0.00025676507107130764,
+              -0.0005063618738457842
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "pass_aligned": false,
+          "scale_gap_raw_minus_aligned": -1.8432357825726164e-05
+        },
+        {
+          "name": "best_7_1",
+          "raw_pooled_auc": 0.9509247768495329,
+          "mean_fold_auc": 0.95092467693832,
+          "fold_aucs": [
+            0.9499859783844709,
+            0.9516858343944463,
+            0.9558813034448466,
+            0.9514813398883598,
+            0.9455889285794763
+          ],
+          "aligned_probit_pooled_auc": 0.9509247551595804,
+          "aligned_zscore_pooled_auc": 0.9509245872333577,
+          "fold_deltas_vs_ctrl": [
+            -0.0004764349588288752,
+            3.5740358076408185e-05,
+            -1.0721330627516679e-05,
+            -0.00027010420232309595,
+            -0.0005221463571343232
+          ],
+          "fold_wins": 1,
+          "gate_raw": {
+            "promote": false,
+            "oof_delta": -0.00024859457438664023,
+            "oof_improved": false,
+            "fold_wins": 1,
+            "fold_deltas": [
+              -0.0004764349588288752,
+              3.5740358076408185e-05,
+              -1.0721330627516679e-05,
+              -0.00027010420232309595,
+              -0.0005221463571343232
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "gate_aligned_pooled": {
+            "promote": false,
+            "oof_delta": -0.00024861626433914097,
+            "oof_improved": false,
+            "fold_wins": 1,
+            "fold_deltas": [
+              -0.0004764349588288752,
+              3.5740358076408185e-05,
+              -1.0721330627516679e-05,
+              -0.00027010420232309595,
+              -0.0005221463571343232
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "pass_aligned": false,
+          "scale_gap_raw_minus_aligned": 2.1689952500736354e-08
+        },
+        {
+          "name": "best_7_2",
+          "raw_pooled_auc": 0.9509173811972088,
+          "mean_fold_auc": 0.950935734740298,
+          "fold_aucs": [
+            0.9499929351822438,
+            0.9517003791122169,
+            0.9558859673246531,
+            0.9514946790196116,
+            0.9456047130627648
+          ],
+          "aligned_probit_pooled_auc": 0.9509358135550345,
+          "aligned_zscore_pooled_auc": 0.9509173357042425,
+          "fold_deltas_vs_ctrl": [
+            -0.000469478161055914,
+            5.028507584703412e-05,
+            -6.057450820939891e-06,
+            -0.00025676507107130764,
+            -0.0005063618738457842
+          ],
+          "fold_wins": 1,
+          "gate_raw": {
+            "promote": false,
+            "oof_delta": -0.000255990226710745,
+            "oof_improved": false,
+            "fold_wins": 1,
+            "fold_deltas": [
+              -0.000469478161055914,
+              5.028507584703412e-05,
+              -6.057450820939891e-06,
+              -0.00025676507107130764,
+              -0.0005063618738457842
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "gate_aligned_pooled": {
+            "promote": false,
+            "oof_delta": -0.00023755786888501884,
+            "oof_improved": false,
+            "fold_wins": 1,
+            "fold_deltas": [
+              -0.000469478161055914,
+              5.028507584703412e-05,
+              -6.057450820939891e-06,
+              -0.00025676507107130764,
+              -0.0005063618738457842
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "pass_aligned": false,
+          "scale_gap_raw_minus_aligned": -1.8432357825726164e-05
+        }
+      ],
+      "handoff": {
+        "source": "nested_hill",
+        "aligned_pooled_auc": 0.9511734734102006,
+        "platt_mean_p": 0.01672293154059916,
+        "logit_mean": -7.39953127512083,
+        "base_rate_target": 0.017,
+        "paths": {
+          "oof": "preds/stage7/campaign_best_oof.npy",
+          "test": "preds/stage7/campaign_best_test.npy",
+          "oof_logit": "preds/stage7/campaign_best_oof_logit.npy",
+          "test_logit": "preds/stage7/campaign_best_test_logit.npy"
+        }
+      },
+      "policy": "NO_KAGGLE_SUBMIT",
+      "keep_pod_warm": true
+    },
+    "stage8_1_raw_dual_realmlp_result.json": {
+      "stage": "8.1_raw_dual_realmlp",
+      "created_utc": "2026-11-02T19:51:55.205317+00:00",
+      "elapsed_sec": 1760.3,
+      "status": "EARLY_ABORT_FOLD0_0.9394",
+      "fold_aucs": [
+        0.9393611250565687
+      ],
+      "control": 0.949447,
+      "policy": "NO_KAGGLE_SUBMIT",
+      "keep_pod_warm": true,
+      "oof_auc": null,
+      "promote": false
+    },
+    "stage8_2_residual_xgb_result.json": {
+      "stage": "8.2_residual_xgb",
+      "created_utc": "2026-11-02T19:17:20.368322+00:00",
+      "elapsed_sec": 120.9,
+      "base": "campaign_best:nested_hill",
+      "base_auc": 0.9511409420860395,
+      "oof_auc": 0.9511320740028977,
+      "fold_aucs": [
+        0.9504626262747777,
+        0.9516527398016298,
+        0.9558917420219348,
+        0.9517514922520001,
+        0.9461111106692008
+      ],
+      "gate_vs_base": {
+        "promote": false,
+        "oof_delta": -8.86808314182197e-06,
+        "oof_improved": false,
+        "fold_wins": 4,
+        "fold_deltas": [
+          2.1293147789425149e-07,
+          2.645765259767785e-06,
+          -2.827535392491143e-07,
+          4.8161317267592096e-08,
+          3.573258999800544e-08
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": true,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "promote": false,
+      "policy": "NO_KAGGLE_SUBMIT",
+      "keep_pod_warm": true
+    },
+    "stage8_3_pseudolabel_result.json": {
+      "stage": "8.3_pseudolabel",
+      "created_utc": "2026-11-02T19:22:34.071018+00:00",
+      "status": "EARLY_ABORT_FOLD0_max_0.9434",
+      "fold0": {
+        "ArmA": 0.943448,
+        "ArmB": 0.938263
+      },
+      "fold1_partial": {
+        "ArmA": 0.945065,
+        "ArmB": 0.94189
+      },
+      "promote": false,
+      "reason": "Fold0 max 0.9434 << 0.9500; te_smooth50 saturated (killed mid fold2). Pivot to Stage 8.1 / 9.",
+      "policy": "NO_KAGGLE_SUBMIT",
+      "keep_pod_warm": true,
+      "next": [
+        "stage8_1_raw_dual_realmlp",
+        "stage9_1_full73_power_hillclimb",
+        "stage9_2_orig20k_orthogonal_residual"
+      ]
+    },
+    "stage9_1_full73_power_hillclimb_result.json": {
+      "stage": "9.1_full73_power_hillclimb",
+      "created_utc": "2026-11-02T20:04:31.392588+00:00",
+      "elapsed_sec": 750.1,
+      "n_members": 73,
+      "top15": [
+        {
+          "name": ".:lgb_diglead_l3_bag",
+          "oof_auc": 0.950626761687232
+        },
+        {
+          "name": ".:lgb_diglead_bag",
+          "oof_auc": 0.9505103584240805
+        },
+        {
+          "name": ".:glm_dl_s50_bag",
+          "oof_auc": 0.9505074547049912
+        },
+        {
+          "name": ".:lgb_k_0",
+          "oof_auc": 0.950492468252919
+        },
+        {
+          "name": ".:lgb_dig_s100_bag5",
+          "oof_auc": 0.9504875308366474
+        },
+        {
+          "name": ".:lgb_k_s100_0",
+          "oof_auc": 0.9504477640177773
+        },
+        {
+          "name": ".:xgb_k",
+          "oof_auc": 0.9504326104474176
+        },
+        {
+          "name": ".:lgb_dig_s100_bag",
+          "oof_auc": 0.9504258336734523
+        },
+        {
+          "name": ".:lgb_k_s100_1",
+          "oof_auc": 0.9503626681191157
+        },
+        {
+          "name": ".:lgb_k_1",
+          "oof_auc": 0.9503353403326493
+        },
+        {
+          "name": ".:ebm_i25_bag4",
+          "oof_auc": 0.9502616704399554
+        },
+        {
+          "name": ".:lgb_k_2",
+          "oof_auc": 0.9502188171221956
+        },
+        {
+          "name": ".:lgb_k_l7",
+          "oof_auc": 0.950214585406242
+        },
+        {
+          "name": ".:lgb_dig_l7",
+          "oof_auc": 0.9501554321823792
+        },
+        {
+          "name": "s6e11-digit-to:joint_token_predictions:oof",
+          "oof_auc": 0.9501449241150902
+        }
+      ],
+      "nested_hill_full73": {
+        "oof": 0.9511209221355565,
+        "folds": [
+          0.9503161511774325,
+          0.951678425319564,
+          0.9558059170012345,
+          0.95158925541771,
+          0.946208099793928
+        ],
+        "submission": "/tmp/s6e11_work/submissions/nested_hill_full73_0.95112.csv",
+        "spearman_vs_0.95111": null
+      },
+      "power_hill": {
+        "oof": 0.9510387950879906,
+        "folds": [
+          0.9501586689215022,
+          0.951683454293226,
+          0.9558972091082236,
+          0.951649085755892,
+          0.9458051884292576
+        ],
+        "gate_vs_full73_hill": {
+          "promote": false,
+          "oof_delta": -8.212704756593858e-05,
+          "oof_improved": false,
+          "fold_wins": 3,
+          "fold_deltas": [
+            -0.00015748225593026355,
+            5.028973661946878e-06,
+            9.129210698910484e-05,
+            5.983033818202088e-05,
+            -0.00040291136467029975
+          ],
+          "min_fold_wins_required": 4,
+          "folds_gate_passed": false,
+          "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+          "reason": "REJECT: OOF did not improve"
+        },
+        "gate_vs_ref_0.95114": {
+          "promote": false,
+          "oof_delta": -0.0001345763359289487,
+          "oof_improved": false,
+          "fold_wins": 3,
+          "fold_deltas": [
+            -0.0010147025024173084,
+            0.0005100828693064274,
+            0.004723837684304066,
+            0.0004757143319724655,
+            -0.0053681829946619075
+          ],
+          "min_fold_wins_required": 4,
+          "folds_gate_passed": false,
+          "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+          "reason": "REJECT: OOF did not improve"
+        },
+        "promote": false
+      },
+      "campaign_best": "nested_hill_full73",
+      "policy": "NO_KAGGLE_SUBMIT",
+      "keep_pod_warm": true
+    },
+    "stage9_2_orig20k_orthogonal_residual_result.json": {
+      "stage": "9.2_orig20k_orthogonal_residual",
+      "created_utc": "2026-11-02T20:08:19.684501+00:00",
+      "elapsed_sec": 222.0,
+      "base": {
+        "name": "campaign_best",
+        "oof": 0.949406453510567,
+        "folds": [
+          0.9490603015262042,
+          0.9500270840604397,
+          0.9543897676502933,
+          0.9498923395702716,
+          0.9439986760671426
+        ]
+      },
+      "n_orig": 20000,
+      "n_orig_fraud": 339,
+      "n_external_features": 17,
+      "arms": {
+        "ortho_logit_offset": {
+          "oof_auc": 0.9464925280868592,
+          "fold_aucs": [
+            0.9456838688412348,
+            0.9480654332207419,
+            0.9507350243502999,
+            0.9469947077113278,
+            0.9421746391999588
+          ],
+          "gate_vs_base": {
+            "promote": false,
+            "oof_delta": -0.0029139254237077195,
+            "oof_improved": false,
+            "fold_wins": 0,
+            "fold_deltas": [
+              -0.003376432684969455,
+              -0.0019616508396977927,
+              -0.0036547432999933793,
+              -0.002897631858943872,
+              -0.001824036867183798
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "promote": false,
+          "delta": -0.0029139254237077195
+        },
+        "ortho_xgb_residual": {
+          "oof_auc": 0.9491864213719218,
+          "fold_aucs": [
+            0.9489240347058413,
+            0.9504208618643566,
+            0.9545301299250648,
+            0.9498576307965363,
+            0.9441069023146677
+          ],
+          "gate_vs_base": {
+            "promote": false,
+            "oof_delta": -0.00022003213864518756,
+            "oof_improved": false,
+            "fold_wins": 3,
+            "fold_deltas": [
+              -0.00013626682036294024,
+              0.0003937778039169171,
+              0.00014036227477154384,
+              -3.4708773735347975e-05,
+              0.00010822624752504506
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "promote": false,
+          "delta": -0.00022003213864518756
+        }
+      },
+      "policy": "NO_KAGGLE_SUBMIT",
+      "keep_pod_warm": true
+    },
+    "stage9_results.json": {
+      "stage9_1": {
+        "stage": "9.1_full73_power_hillclimb",
+        "created_utc": "2026-11-02T20:04:31.392588+00:00",
+        "elapsed_sec": 750.1,
+        "n_members": 73,
+        "top15": [
+          {
+            "name": ".:lgb_diglead_l3_bag",
+            "oof_auc": 0.950626761687232
+          },
+          {
+            "name": ".:lgb_diglead_bag",
+            "oof_auc": 0.9505103584240805
+          },
+          {
+            "name": ".:glm_dl_s50_bag",
+            "oof_auc": 0.9505074547049912
+          },
+          {
+            "name": ".:lgb_k_0",
+            "oof_auc": 0.950492468252919
+          },
+          {
+            "name": ".:lgb_dig_s100_bag5",
+            "oof_auc": 0.9504875308366474
+          },
+          {
+            "name": ".:lgb_k_s100_0",
+            "oof_auc": 0.9504477640177773
+          },
+          {
+            "name": ".:xgb_k",
+            "oof_auc": 0.9504326104474176
+          },
+          {
+            "name": ".:lgb_dig_s100_bag",
+            "oof_auc": 0.9504258336734523
+          },
+          {
+            "name": ".:lgb_k_s100_1",
+            "oof_auc": 0.9503626681191157
+          },
+          {
+            "name": ".:lgb_k_1",
+            "oof_auc": 0.9503353403326493
+          },
+          {
+            "name": ".:ebm_i25_bag4",
+            "oof_auc": 0.9502616704399554
+          },
+          {
+            "name": ".:lgb_k_2",
+            "oof_auc": 0.9502188171221956
+          },
+          {
+            "name": ".:lgb_k_l7",
+            "oof_auc": 0.950214585406242
+          },
+          {
+            "name": ".:lgb_dig_l7",
+            "oof_auc": 0.9501554321823792
+          },
+          {
+            "name": "s6e11-digit-to:joint_token_predictions:oof",
+            "oof_auc": 0.9501449241150902
+          }
+        ],
+        "nested_hill_full73": {
+          "oof": 0.9511209221355565,
+          "folds": [
+            0.9503161511774325,
+            0.951678425319564,
+            0.9558059170012345,
+            0.95158925541771,
+            0.946208099793928
+          ],
+          "submission": "/tmp/s6e11_work/submissions/nested_hill_full73_0.95112.csv",
+          "spearman_vs_0.95111": null
+        },
+        "power_hill": {
+          "oof": 0.9510387950879906,
+          "folds": [
+            0.9501586689215022,
+            0.951683454293226,
+            0.9558972091082236,
+            0.951649085755892,
+            0.9458051884292576
+          ],
+          "gate_vs_full73_hill": {
+            "promote": false,
+            "oof_delta": -8.212704756593858e-05,
+            "oof_improved": false,
+            "fold_wins": 3,
+            "fold_deltas": [
+              -0.00015748225593026355,
+              5.028973661946878e-06,
+              9.129210698910484e-05,
+              5.983033818202088e-05,
+              -0.00040291136467029975
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "gate_vs_ref_0.95114": {
+            "promote": false,
+            "oof_delta": -0.0001345763359289487,
+            "oof_improved": false,
+            "fold_wins": 3,
+            "fold_deltas": [
+              -0.0010147025024173084,
+              0.0005100828693064274,
+              0.004723837684304066,
+              0.0004757143319724655,
+              -0.0053681829946619075
+            ],
+            "min_fold_wins_required": 4,
+            "folds_gate_passed": false,
+            "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+            "reason": "REJECT: OOF did not improve"
+          },
+          "promote": false
+        },
+        "campaign_best": "nested_hill_full73",
+        "policy": "NO_KAGGLE_SUBMIT",
+        "keep_pod_warm": true
+      },
+      "updated_utc": "2026-11-02T20:08:19.684850+00:00",
+      "stage9_2": {
+        "stage": "9.2_orig20k_orthogonal_residual",
+        "created_utc": "2026-11-02T20:08:19.684501+00:00",
+        "elapsed_sec": 222.0,
+        "base": {
+          "name": "campaign_best",
+          "oof": 0.949406453510567,
+          "folds": [
+            0.9490603015262042,
+            0.9500270840604397,
+            0.9543897676502933,
+            0.9498923395702716,
+            0.9439986760671426
+          ]
+        },
+        "n_orig": 20000,
+        "n_orig_fraud": 339,
+        "n_external_features": 17,
+        "arms": {
+          "ortho_logit_offset": {
+            "oof_auc": 0.9464925280868592,
+            "fold_aucs": [
+              0.9456838688412348,
+              0.9480654332207419,
+              0.9507350243502999,
+              0.9469947077113278,
+              0.9421746391999588
+            ],
+            "gate_vs_base": {
+              "promote": false,
+              "oof_delta": -0.0029139254237077195,
+              "oof_improved": false,
+              "fold_wins": 0,
+              "fold_deltas": [
+                -0.003376432684969455,
+                -0.0019616508396977927,
+                -0.0036547432999933793,
+                -0.002897631858943872,
+                -0.001824036867183798
+              ],
+              "min_fold_wins_required": 4,
+              "folds_gate_passed": false,
+              "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+              "reason": "REJECT: OOF did not improve"
+            },
+            "promote": false,
+            "delta": -0.0029139254237077195
+          },
+          "ortho_xgb_residual": {
+            "oof_auc": 0.9491864213719218,
+            "fold_aucs": [
+              0.9489240347058413,
+              0.9504208618643566,
+              0.9545301299250648,
+              0.9498576307965363,
+              0.9441069023146677
+            ],
+            "gate_vs_base": {
+              "promote": false,
+              "oof_delta": -0.00022003213864518756,
+              "oof_improved": false,
+              "fold_wins": 3,
+              "fold_deltas": [
+                -0.00013626682036294024,
+                0.0003937778039169171,
+                0.00014036227477154384,
+                -3.4708773735347975e-05,
+                0.00010822624752504506
+              ],
+              "min_fold_wins_required": 4,
+              "folds_gate_passed": false,
+              "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+              "reason": "REJECT: OOF did not improve"
+            },
+            "promote": false,
+            "delta": -0.00022003213864518756
+          }
+        },
+        "policy": "NO_KAGGLE_SUBMIT",
+        "keep_pod_warm": true
+      }
+    }
+  }
+}

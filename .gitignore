@@ -15,3 +15,6 @@ original/
 artifacts/
 artifacts_extra/
 notebooks/outputs/
+
+# Bulky OOF/test prediction banks (regenerable)
+preds/

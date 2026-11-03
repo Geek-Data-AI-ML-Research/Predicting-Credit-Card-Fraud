@@ -1,0 +1,213 @@
+{
+  "updated_utc": "2026-11-02T20:08:24.636901+00:00",
+  "policy": "NO_KAGGLE_SUBMIT",
+  "stage9_1_full73_power_hillclimb": {
+    "stage": "9.1_full73_power_hillclimb",
+    "created_utc": "2026-11-02T20:04:31.392588+00:00",
+    "elapsed_sec": 750.1,
+    "n_members": 73,
+    "top15": [
+      {
+        "name": ".:lgb_diglead_l3_bag",
+        "oof_auc": 0.950626761687232
+      },
+      {
+        "name": ".:lgb_diglead_bag",
+        "oof_auc": 0.9505103584240805
+      },
+      {
+        "name": ".:glm_dl_s50_bag",
+        "oof_auc": 0.9505074547049912
+      },
+      {
+        "name": ".:lgb_k_0",
+        "oof_auc": 0.950492468252919
+      },
+      {
+        "name": ".:lgb_dig_s100_bag5",
+        "oof_auc": 0.9504875308366474
+      },
+      {
+        "name": ".:lgb_k_s100_0",
+        "oof_auc": 0.9504477640177773
+      },
+      {
+        "name": ".:xgb_k",
+        "oof_auc": 0.9504326104474176
+      },
+      {
+        "name": ".:lgb_dig_s100_bag",
+        "oof_auc": 0.9504258336734523
+      },
+      {
+        "name": ".:lgb_k_s100_1",
+        "oof_auc": 0.9503626681191157
+      },
+      {
+        "name": ".:lgb_k_1",
+        "oof_auc": 0.9503353403326493
+      },
+      {
+        "name": ".:ebm_i25_bag4",
+        "oof_auc": 0.9502616704399554
+      },
+      {
+        "name": ".:lgb_k_2",
+        "oof_auc": 0.9502188171221956
+      },
+      {
+        "name": ".:lgb_k_l7",
+        "oof_auc": 0.950214585406242
+      },
+      {
+        "name": ".:lgb_dig_l7",
+        "oof_auc": 0.9501554321823792
+      },
+      {
+        "name": "s6e11-digit-to:joint_token_predictions:oof",
+        "oof_auc": 0.9501449241150902
+      }
+    ],
+    "nested_hill_full73": {
+      "oof": 0.9511209221355565,
+      "folds": [
+        0.9503161511774325,
+        0.951678425319564,
+        0.9558059170012345,
+        0.95158925541771,
+        0.946208099793928
+      ],
+      "submission": "/tmp/s6e11_work/submissions/nested_hill_full73_0.95112.csv",
+      "spearman_vs_0.95111": null
+    },
+    "power_hill": {
+      "oof": 0.9510387950879906,
+      "folds": [
+        0.9501586689215022,
+        0.951683454293226,
+        0.9558972091082236,
+        0.951649085755892,
+        0.9458051884292576
+      ],
+      "gate_vs_full73_hill": {
+        "promote": false,
+        "oof_delta": -8.212704756593858e-05,
+        "oof_improved": false,
+        "fold_wins": 3,
+        "fold_deltas": [
+          -0.00015748225593026355,
+          5.028973661946878e-06,
+          9.129210698910484e-05,
+          5.983033818202088e-05,
+          -0.00040291136467029975
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "gate_vs_ref_0.95114": {
+        "promote": false,
+        "oof_delta": -0.0001345763359289487,
+        "oof_improved": false,
+        "fold_wins": 3,
+        "fold_deltas": [
+          -0.0010147025024173084,
+          0.0005100828693064274,
+          0.004723837684304066,
+          0.0004757143319724655,
+          -0.0053681829946619075
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "promote": false
+    },
+    "campaign_best": "nested_hill_full73",
+    "policy": "NO_KAGGLE_SUBMIT",
+    "keep_pod_warm": true
+  },
+  "stage9_2_orig20k_orthogonal_residual": {
+    "stage": "9.2_orig20k_orthogonal_residual",
+    "created_utc": "2026-11-02T20:08:19.684501+00:00",
+    "elapsed_sec": 222.0,
+    "base": {
+      "name": "campaign_best",
+      "oof": 0.949406453510567,
+      "folds": [
+        0.9490603015262042,
+        0.9500270840604397,
+        0.9543897676502933,
+        0.9498923395702716,
+        0.9439986760671426
+      ]
+    },
+    "n_orig": 20000,
+    "n_orig_fraud": 339,
+    "n_external_features": 17,
+    "arms": {
+      "ortho_logit_offset": {
+        "oof_auc": 0.9464925280868592,
+        "fold_aucs": [
+          0.9456838688412348,
+          0.9480654332207419,
+          0.9507350243502999,
+          0.9469947077113278,
+          0.9421746391999588
+        ],
+        "gate_vs_base": {
+          "promote": false,
+          "oof_delta": -0.0029139254237077195,
+          "oof_improved": false,
+          "fold_wins": 0,
+          "fold_deltas": [
+            -0.003376432684969455,
+            -0.0019616508396977927,
+            -0.0036547432999933793,
+            -0.002897631858943872,
+            -0.001824036867183798
+          ],
+          "min_fold_wins_required": 4,
+          "folds_gate_passed": false,
+          "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+          "reason": "REJECT: OOF did not improve"
+        },
+        "promote": false,
+        "delta": -0.0029139254237077195
+      },
+      "ortho_xgb_residual": {
+        "oof_auc": 0.9491864213719218,
+        "fold_aucs": [
+          0.9489240347058413,
+          0.9504208618643566,
+          0.9545301299250648,
+          0.9498576307965363,
+          0.9441069023146677
+        ],
+        "gate_vs_base": {
+          "promote": false,
+          "oof_delta": -0.00022003213864518756,
+          "oof_improved": false,
+          "fold_wins": 3,
+          "fold_deltas": [
+            -0.00013626682036294024,
+            0.0003937778039169171,
+            0.00014036227477154384,
+            -3.4708773735347975e-05,
+            0.00010822624752504506
+          ],
+          "min_fold_wins_required": 4,
+          "folds_gate_passed": false,
+          "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+          "reason": "REJECT: OOF did not improve"
+        },
+        "promote": false,
+        "delta": -0.00022003213864518756
+      }
+    },
+    "policy": "NO_KAGGLE_SUBMIT",
+    "keep_pod_warm": true
+  }
+}

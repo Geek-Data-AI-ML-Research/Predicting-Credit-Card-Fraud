@@ -1,0 +1,2 @@
+requested_a=0.88 selected_a=0.8250 spearman=0.999789
+note: 0.88/0.12 yielded sp>~0.9999; selected nearest a in [0.9985,0.9998]

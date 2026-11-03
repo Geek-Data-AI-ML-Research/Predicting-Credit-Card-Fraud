@@ -1,0 +1,174 @@
+{
+  "stage": "10.3_reinject_hillclimb",
+  "created_utc": "2026-11-02T20:19:01.429294+00:00",
+  "elapsed_sec": 555.9,
+  "base_gates_vs_diglead": {
+    "s9:ortho_logit_offset": {
+      "oof_auc": 0.9464925285219014,
+      "delta_vs_diglead": -0.004134233165330681,
+      "fold_wins": 0,
+      "gate": {
+        "promote": false,
+        "oof_delta": -0.004134233165330681,
+        "oof_improved": false,
+        "fold_wins": 0,
+        "fold_deltas": [
+          -0.0041194998186742104,
+          -0.0031391360068511176,
+          -0.004841989678613379,
+          -0.004572281641963771,
+          -0.0030589411994811355
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "inject": true
+    },
+    "s9:ortho_xgb_residual": {
+      "oof_auc": 0.9491864213719218,
+      "delta_vs_diglead": -0.0014403403153102623,
+      "fold_wins": 0,
+      "gate": {
+        "promote": false,
+        "oof_delta": -0.0014403403153102623,
+        "oof_improved": false,
+        "fold_wins": 0,
+        "fold_deltas": [
+          -0.0008793355083120957,
+          -0.0007837073632364078,
+          -0.0010468809966666104,
+          -0.0017093601103461697,
+          -0.0011266749775906693
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "inject": true
+    }
+  },
+  "audit": {
+    "ctrl_nested_hill": 0.9511733714239196,
+    "ctrl_diglead_l3_bag": 0.950626761687232,
+    "expanded_nested_hill_oof": 0.9511102766571358,
+    "power_hill_oof": 0.9510678254425072,
+    "power_hill_folds": [
+      0.9501916033595738,
+      0.9517404244706072,
+      0.9558741879986398,
+      0.9516615859480713,
+      0.9458709581453545
+    ],
+    "fold_wins_vs_nested_hill": 1,
+    "fold_wins_vs_expanded_hill": 3,
+    "spearman_power_vs_0.95111": null,
+    "spearman_mix_vs_0.95111": null,
+    "gate_vs_nested_hill": {
+      "promote": false,
+      "oof_delta": -0.00010554598141232496,
+      "oof_improved": false,
+      "fold_wins": 1,
+      "fold_deltas": [
+        -0.00027080998372597254,
+        9.033043423734011e-05,
+        -1.7836776834312396e-05,
+        -8.985814261164293e-05,
+        -0.00024011679125612861
+      ],
+      "min_fold_wins_required": 4,
+      "folds_gate_passed": false,
+      "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+      "reason": "REJECT: OOF did not improve"
+    },
+    "gate_vs_expanded_hill": {
+      "promote": false,
+      "oof_delta": -4.245121462853607e-05,
+      "oof_improved": false,
+      "fold_wins": 3,
+      "fold_deltas": [
+        -0.00015017730741995194,
+        4.164400340067598e-05,
+        0.00012120028492113022,
+        9.168050470753641e-05,
+        -0.00031541468018836394
+      ],
+      "min_fold_wins_required": 4,
+      "folds_gate_passed": false,
+      "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+      "reason": "REJECT: OOF did not improve"
+    },
+    "n_members": 75,
+    "n_injected": 2
+  },
+  "candidates": {
+    "power_hill": "/tmp/s6e11_work/submissions/stage10_power_hill_0.95107.csv",
+    "nested_mix_expanded": "/tmp/s6e11_work/submissions/stage10_nested_mix_expanded_0.95111.csv"
+  },
+  "top15": [
+    {
+      "name": ".:lgb_diglead_l3_bag",
+      "oof_auc": 0.950626761687232
+    },
+    {
+      "name": ".:lgb_diglead_bag",
+      "oof_auc": 0.9505103584240805
+    },
+    {
+      "name": ".:glm_dl_s50_bag",
+      "oof_auc": 0.9505074547049912
+    },
+    {
+      "name": ".:lgb_k_0",
+      "oof_auc": 0.950492468252919
+    },
+    {
+      "name": ".:lgb_dig_s100_bag5",
+      "oof_auc": 0.9504875308366474
+    },
+    {
+      "name": ".:lgb_k_s100_0",
+      "oof_auc": 0.9504477640177773
+    },
+    {
+      "name": ".:xgb_k",
+      "oof_auc": 0.9504326104474176
+    },
+    {
+      "name": ".:lgb_dig_s100_bag",
+      "oof_auc": 0.9504258336734523
+    },
+    {
+      "name": ".:lgb_k_s100_1",
+      "oof_auc": 0.9503626681191157
+    },
+    {
+      "name": ".:lgb_k_1",
+      "oof_auc": 0.9503353403326493
+    },
+    {
+      "name": ".:ebm_i25_bag4",
+      "oof_auc": 0.9502616704399554
+    },
+    {
+      "name": ".:lgb_k_2",
+      "oof_auc": 0.9502188171221956
+    },
+    {
+      "name": ".:lgb_k_l7",
+      "oof_auc": 0.950214585406242
+    },
+    {
+      "name": ".:lgb_dig_l7",
+      "oof_auc": 0.9501554321823792
+    },
+    {
+      "name": "s6e11-digit-to:joint_token_predictions:oof",
+      "oof_auc": 0.9501449241150902
+    }
+  ],
+  "policy": "NO_KAGGLE_SUBMIT",
+  "keep_pod_warm": true
+}

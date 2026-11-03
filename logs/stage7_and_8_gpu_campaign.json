@@ -1,0 +1,43 @@
+{
+  "campaign": "stage7_and_8_gpu",
+  "created_utc": "2026-11-02T18:58:00+00:00",
+  "pod": "83f0f0fwi39ccy",
+  "keep_warm": true,
+  "policy": "NO_KAGGLE_SUBMIT",
+  "gate": {
+    "control": "nested_hillclimb_mix",
+    "control_oof_target": 0.95118,
+    "rule": "OOF > control AND >=4/5 folds"
+  },
+  "status": {
+    "stage6_2_realmlp": "REJECT_OOF_0.9435",
+    "stage6_2_tabm": "EARLY_ABORT_FOLD1_0.944",
+    "stage6_3_catboost_ebm": "REJECT_ABORT",
+    "stage6_3b_xgb_cuda": "REJECT_bin4096_0.94787_multi_0.94794",
+    "stage7_1_gpu": "REJECT_best_probit_0.950925_vs_hill_0.951140_wins_1_5",
+    "stage7_align_handoff": "DONE_source_nested_hill_platt_p_0.01672",
+    "stage7_2_gated": "RUNNING_OR_NEXT",
+    "stage8_2_residual": "QUEUED",
+    "stage8_3_pseudo": "QUEUED",
+    "stage8_1_raw_realmlp": "QUEUED"
+  },
+  "mcp_sync": {
+    "project_id": "prj_01M6EB3QGMT4RCCZ3D23CJ34RP",
+    "log": "logs/mcp_campaign_sync_20261102.json",
+    "via": "register_external_asset workaround"
+  },
+  "stage6_3b": {
+    "te_xgb_smooth50_bin4096": 0.947873,
+    "te_xgb_smooth100_depth2": 0.947937,
+    "control": 0.949447,
+    "promote": []
+  },
+  "scripts": [
+    "scripts/stage7_1_gpu_solver.py",
+    "scripts/stage7_2_gpu_gated_meta.py",
+    "scripts/stage8_2_gpu_residual_xgb.py",
+    "scripts/stage8_3_gpu_pseudolabel.py",
+    "scripts/stage8_1_raw_dual_realmlp.py",
+    "scripts/orch_gpu_campaign.sh"
+  ]
+}

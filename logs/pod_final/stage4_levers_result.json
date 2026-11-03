@@ -1,0 +1,519 @@
+{
+  "stage": 4,
+  "ts_utc": "2026-11-02T17:07:14.386256+00:00",
+  "cv_contract": "StratifiedKFold(n_splits=5, shuffle=True, random_state=42)",
+  "control": {
+    "name": "te_xgb",
+    "oof_roc_auc": 0.9493151648507883,
+    "folds": [
+      0.948377176934883,
+      0.9499878108367139,
+      0.9538388037360206,
+      0.9503588999994941,
+      0.94443184206051
+    ],
+    "gap": 0.005430155941154769
+  },
+  "promotion_rule": "OOF\u2191 AND \u22654/5 folds\u2191 vs control",
+  "gates": [
+    {
+      "promote": false,
+      "oof_delta": -0.0017487515526526387,
+      "oof_improved": false,
+      "fold_wins": 0,
+      "fold_deltas": [
+        -0.0022725803613111717,
+        -0.0007434848954861462,
+        -0.001760852326302853,
+        -0.002715114449373335,
+        -0.0013096398213331417
+      ],
+      "min_fold_wins_required": 4,
+      "folds_gate_passed": false,
+      "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+      "reason": "REJECT: OOF did not improve",
+      "lever": "stage3:raw_lgbm",
+      "challenger_oof": 0.9475664132981356,
+      "challenger_folds": [
+        0.9461045965735718,
+        0.9492443259412278,
+        0.9520779514097177,
+        0.9476437855501207,
+        0.9431222022391769
+      ],
+      "variable": "view=raw_lgbm",
+      "gap": 0.005380399345211439
+    },
+    {
+      "promote": false,
+      "oof_delta": -0.004604141947218698,
+      "oof_improved": false,
+      "fold_wins": 0,
+      "fold_deltas": [
+        -0.005054105810811338,
+        -0.004418528967441326,
+        -0.0037525713637929226,
+        -0.004258025940567678,
+        -0.005867378299116988
+      ],
+      "min_fold_wins_required": 4,
+      "folds_gate_passed": false,
+      "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+      "reason": "REJECT: OOF did not improve",
+      "lever": "stage3:digit_lgbm",
+      "challenger_oof": 0.9447110229035696,
+      "challenger_folds": [
+        0.9433230711240717,
+        0.9455692818692726,
+        0.9500862323722277,
+        0.9461008740589264,
+        0.938564463761393
+      ],
+      "variable": "view=digit_lgbm",
+      "gap": 0.013042782593690405
+    },
+    {
+      "promote": false,
+      "oof_delta": -9.340787379352733e-06,
+      "oof_improved": false,
+      "fold_wins": 2,
+      "fold_deltas": [
+        -4.615328638679639e-05,
+        -1.600043242022675e-05,
+        0.00010310250481981864,
+        -0.00018061115356693414,
+        0.0001237776921825251
+      ],
+      "min_fold_wins_required": 4,
+      "folds_gate_passed": false,
+      "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+      "reason": "REJECT: OOF did not improve",
+      "lever": "stage3:te_lgbm",
+      "challenger_oof": 0.9493058240634089,
+      "challenger_folds": [
+        0.9483310236484962,
+        0.9499718104042937,
+        0.9539419062408404,
+        0.9501782888459271,
+        0.9445556197526925
+      ],
+      "variable": "view=te_lgbm",
+      "gap": 0.006524147376446199
+    },
+    {
+      "promote": false,
+      "oof_delta": -0.0016832679079450408,
+      "oof_improved": false,
+      "fold_wins": 0,
+      "fold_deltas": [
+        -0.0024150253030202906,
+        -0.00040748202902396446,
+        -0.001572327180819233,
+        -0.0029774817691392563,
+        -0.0013660879921806313
+      ],
+      "min_fold_wins_required": 4,
+      "folds_gate_passed": false,
+      "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+      "reason": "REJECT: OOF did not improve",
+      "lever": "stage3:raw_xgb",
+      "challenger_oof": 0.9476318969428432,
+      "challenger_folds": [
+        0.9459621516318627,
+        0.9495803288076899,
+        0.9522664765552014,
+        0.9473814182303548,
+        0.9430657540683294
+      ],
+      "variable": "view=raw_xgb",
+      "gap": 0.00442849971092849
+    },
+    {
+      "promote": false,
+      "oof_delta": -0.007639238321810127,
+      "oof_improved": false,
+      "fold_wins": 0,
+      "fold_deltas": [
+        -0.008251327903642691,
+        -0.007198973466693737,
+        -0.006373923496685863,
+        -0.00760003450463187,
+        -0.009134275405153991
+      ],
+      "min_fold_wins_required": 4,
+      "folds_gate_passed": false,
+      "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+      "reason": "REJECT: OOF did not improve",
+      "lever": "stage3:digit_xgb",
+      "challenger_oof": 0.9416759265289781,
+      "challenger_folds": [
+        0.9401258490312403,
+        0.9427888373700202,
+        0.9474648802393347,
+        0.9427588654948622,
+        0.935297566655356
+      ],
+      "variable": "view=digit_xgb",
+      "gap": 0.03760198565687352
+    },
+    {
+      "promote": false,
+      "oof_delta": -0.0002265269432276673,
+      "oof_improved": false,
+      "fold_wins": 1,
+      "fold_deltas": [
+        9.006846089065768e-06,
+        -0.0003158248281792675,
+        -0.00018702748388010892,
+        -0.00037526676864263475,
+        -0.00026067079853087094
+      ],
+      "min_fold_wins_required": 4,
+      "folds_gate_passed": false,
+      "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+      "reason": "REJECT: OOF did not improve",
+      "lever": "te_lgbm_leaves7",
+      "challenger_oof": 0.9490886379075606,
+      "challenger_folds": [
+        0.9483861837809721,
+        0.9496719860085346,
+        0.9536517762521405,
+        0.9499836332308514,
+        0.9441711712619791
+      ],
+      "variable": "num_leaves:4\u21927 (TE-LGBM)",
+      "gap": 0.009418471299933163
+    },
+    {
+      "promote": true,
+      "oof_delta": 0.00013134981565521286,
+      "oof_improved": true,
+      "fold_wins": 5,
+      "fold_deltas": [
+        0.00017360443271741133,
+        3.6002914934329944e-05,
+        0.00018188820526621186,
+        9.542621230707038e-05,
+        0.0001744138795669592
+      ],
+      "min_fold_wins_required": 4,
+      "folds_gate_passed": true,
+      "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+      "reason": "PASS: OOF\u2191 and fold majority",
+      "lever": "te_xgb_smooth50",
+      "challenger_oof": 0.9494465146664435,
+      "challenger_folds": [
+        0.9485507813676004,
+        0.9500238137516482,
+        0.9540206919412868,
+        0.9504543262118011,
+        0.944606255940077
+      ],
+      "variable": "TE smooth:20\u219250 (TE-XGB)",
+      "gap": 0.005591526222552057
+    },
+    {
+      "promote": false,
+      "oof_delta": -0.0001783104273486158,
+      "oof_improved": false,
+      "fold_wins": 0,
+      "fold_deltas": [
+        -8.360280433494793e-06,
+        -2.5648231753216955e-05,
+        -4.0991495233289044e-05,
+        -0.0003448971742207041,
+        -0.00025046992084631903
+      ],
+      "min_fold_wins_required": 4,
+      "folds_gate_passed": false,
+      "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+      "reason": "REJECT: OOF did not improve",
+      "lever": "te_xgb_depth3",
+      "challenger_oof": 0.9491368544234396,
+      "challenger_folds": [
+        0.9483688166544495,
+        0.9499621626049607,
+        0.9537978122407873,
+        0.9500140028252734,
+        0.9441813721396637
+      ],
+      "variable": "max_depth:2\u21923 (TE-XGB)",
+      "gap": 0.008573126008215493
+    },
+    {
+      "promote": false,
+      "oof_delta": -0.004479007204121976,
+      "oof_improved": false,
+      "fold_wins": 0,
+      "fold_deltas": [
+        -0.0036078969726225374,
+        -0.004728116128258186,
+        -0.003919995638013929,
+        -0.005101249816629405,
+        -0.005305205226682319
+      ],
+      "min_fold_wins_required": 4,
+      "folds_gate_passed": false,
+      "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+      "reason": "REJECT: OOF did not improve",
+      "lever": "te_glm",
+      "challenger_oof": 0.9448361576466663,
+      "challenger_folds": [
+        0.9447692799622605,
+        0.9452596947084557,
+        0.9499188080980067,
+        0.9452576501828647,
+        0.9391266368338277
+      ],
+      "variable": "model_family: GLM on TE view",
+      "gap": 5.5222207834426665e-05
+    }
+  ],
+  "promoted": [
+    "te_xgb_smooth50"
+  ],
+  "rejected": [
+    "stage3:raw_lgbm",
+    "stage3:digit_lgbm",
+    "stage3:te_lgbm",
+    "stage3:raw_xgb",
+    "stage3:digit_xgb",
+    "te_lgbm_leaves7",
+    "te_xgb_depth3",
+    "te_glm"
+  ],
+  "new_arms": [
+    {
+      "name": "te_lgbm_leaves7",
+      "oof_roc_auc": 0.9490886379075606,
+      "oof_pr_auc": 0.5243629752192736,
+      "oof_brier": 0.010825787921269403,
+      "fold_valid_roc_auc_mean": 0.9491729501068956,
+      "fold_valid_roc_auc_std": 0.0034133165859242284,
+      "train_valid_gap_mean": 0.009418471299933163,
+      "folds": [
+        {
+          "fold": 0,
+          "valid_roc_auc": 0.9483861837809721,
+          "train_roc_auc": 0.9616925367175355,
+          "train_valid_gap": 0.01330635293656346,
+          "valid_pr_auc": 0.5143850296701354,
+          "valid_brier": 0.010966250183499561,
+          "best_iteration": 1931
+        },
+        {
+          "fold": 1,
+          "valid_roc_auc": 0.9496719860085346,
+          "train_roc_auc": 0.9570298943047036,
+          "train_valid_gap": 0.007357908296169002,
+          "valid_pr_auc": 0.5268147748895436,
+          "valid_brier": 0.010807528009491753,
+          "best_iteration": 1272
+        },
+        {
+          "fold": 2,
+          "valid_roc_auc": 0.9536517762521405,
+          "train_roc_auc": 0.9561079604637076,
+          "train_valid_gap": 0.002456184211567125,
+          "valid_pr_auc": 0.5454825354058827,
+          "valid_brier": 0.0105627126133938,
+          "best_iteration": 1225
+        },
+        {
+          "fold": 3,
+          "valid_roc_auc": 0.9499836332308514,
+          "train_roc_auc": 0.9572806051682718,
+          "train_valid_gap": 0.0072969719374204045,
+          "valid_pr_auc": 0.5320078510865178,
+          "valid_brier": 0.010724224419909457,
+          "best_iteration": 1300
+        },
+        {
+          "fold": 4,
+          "valid_roc_auc": 0.9441711712619791,
+          "train_roc_auc": 0.960846110379925,
+          "train_valid_gap": 0.01667493911794582,
+          "valid_pr_auc": 0.5049288028511735,
+          "valid_brier": 0.01106822438005244,
+          "best_iteration": 1620
+        }
+      ],
+      "elapsed_sec": 146.45387411117554,
+      "variable": "num_leaves:4\u21927 (TE-LGBM)"
+    },
+    {
+      "name": "te_xgb_smooth50",
+      "oof_roc_auc": 0.9494465146664435,
+      "oof_pr_auc": 0.525918585628938,
+      "oof_brier": 0.010800103283107201,
+      "fold_valid_roc_auc_mean": 0.9495311738424828,
+      "fold_valid_roc_auc_std": 0.0034083230072431817,
+      "train_valid_gap_mean": 0.005591526222552057,
+      "folds": [
+        {
+          "fold": 0,
+          "valid_roc_auc": 0.9485507813676004,
+          "train_roc_auc": 0.9565722823092309,
+          "train_valid_gap": 0.008021500941630455,
+          "valid_pr_auc": 0.5150370058062714,
+          "valid_brier": 0.010960383340716362,
+          "best_iteration": 2955
+        },
+        {
+          "fold": 1,
+          "valid_roc_auc": 0.9500238137516482,
+          "train_roc_auc": 0.9548416724504731,
+          "train_valid_gap": 0.004817858698824895,
+          "valid_pr_auc": 0.5306066088756421,
+          "valid_brier": 0.010749844834208488,
+          "best_iteration": 2346
+        },
+        {
+          "fold": 2,
+          "valid_roc_auc": 0.9540206919412868,
+          "train_roc_auc": 0.952182732120199,
+          "train_valid_gap": -0.001837959821087809,
+          "valid_pr_auc": 0.545762229121567,
+          "valid_brier": 0.010555309243500233,
+          "best_iteration": 1634
+        },
+        {
+          "fold": 3,
+          "valid_roc_auc": 0.9504543262118011,
+          "train_roc_auc": 0.9555661756014298,
+          "train_valid_gap": 0.005111849389628609,
+          "valid_pr_auc": 0.5339172916091514,
+          "valid_brier": 0.010686988942325115,
+          "best_iteration": 2715
+        },
+        {
+          "fold": 4,
+          "valid_roc_auc": 0.944606255940077,
+          "train_roc_auc": 0.9564506378438411,
+          "train_valid_gap": 0.011844381903764134,
+          "valid_pr_auc": 0.5068162152156694,
+          "valid_brier": 0.011047986336052418,
+          "best_iteration": 2398
+        }
+      ],
+      "elapsed_sec": 557.6582062244415,
+      "variable": "TE smooth:20\u219250 (TE-XGB)"
+    },
+    {
+      "name": "te_xgb_depth3",
+      "oof_roc_auc": 0.9491368544234396,
+      "oof_pr_auc": 0.5231390591790837,
+      "oof_brier": 0.010839597350149924,
+      "fold_valid_roc_auc_mean": 0.9492648332930269,
+      "fold_valid_roc_auc_std": 0.003472745470536526,
+      "train_valid_gap_mean": 0.008573126008215493,
+      "folds": [
+        {
+          "fold": 0,
+          "valid_roc_auc": 0.9483688166544495,
+          "train_roc_auc": 0.9586887607141376,
+          "train_valid_gap": 0.010319944059688058,
+          "valid_pr_auc": 0.5128239575564302,
+          "valid_brier": 0.010986436158418655,
+          "best_iteration": 1470
+        },
+        {
+          "fold": 1,
+          "valid_roc_auc": 0.9499621626049607,
+          "train_roc_auc": 0.9577296814021372,
+          "train_valid_gap": 0.00776751879717652,
+          "valid_pr_auc": 0.5270249728776272,
+          "valid_brier": 0.010808153077960014,
+          "best_iteration": 1432
+        },
+        {
+          "fold": 2,
+          "valid_roc_auc": 0.9537978122407873,
+          "train_roc_auc": 0.9541375682470095,
+          "train_valid_gap": 0.0003397560062221583,
+          "valid_pr_auc": 0.5447646901251779,
+          "valid_brier": 0.010578515008091927,
+          "best_iteration": 942
+        },
+        {
+          "fold": 3,
+          "valid_roc_auc": 0.9500140028252734,
+          "train_roc_auc": 0.9575956103804171,
+          "train_valid_gap": 0.007581607555143699,
+          "valid_pr_auc": 0.5305026682884492,
+          "valid_brier": 0.01073594018816948,
+          "best_iteration": 1385
+        },
+        {
+          "fold": 4,
+          "valid_roc_auc": 0.9441813721396637,
+          "train_roc_auc": 0.9610381757625107,
+          "train_valid_gap": 0.016856803622847027,
+          "valid_pr_auc": 0.5036589783175434,
+          "valid_brier": 0.011088942177593708,
+          "best_iteration": 1740
+        }
+      ],
+      "elapsed_sec": 364.57286381721497,
+      "variable": "max_depth:2\u21923 (TE-XGB)"
+    },
+    {
+      "name": "te_glm",
+      "oof_roc_auc": 0.9448361576466663,
+      "oof_pr_auc": 0.5047330373433864,
+      "oof_brier": 0.011084475858869463,
+      "fold_valid_roc_auc_mean": 0.944866413957083,
+      "fold_valid_roc_auc_std": 0.0038336959492961597,
+      "train_valid_gap_mean": 5.5222207834426665e-05,
+      "folds": [
+        {
+          "fold": 0,
+          "valid_roc_auc": 0.9447692799622605,
+          "train_roc_auc": 0.9451362310358289,
+          "train_valid_gap": 0.00036695107356843337,
+          "valid_pr_auc": 0.49690946038823747,
+          "valid_brier": 0.011188715736187906,
+          "best_iteration": 1
+        },
+        {
+          "fold": 1,
+          "valid_roc_auc": 0.9452596947084557,
+          "train_roc_auc": 0.9447638622213931,
+          "train_valid_gap": -0.0004958324870626418,
+          "valid_pr_auc": 0.5098710458656112,
+          "valid_brier": 0.01101651104311055,
+          "best_iteration": 1
+        },
+        {
+          "fold": 2,
+          "valid_roc_auc": 0.9499188080980067,
+          "train_roc_auc": 0.9435790844445413,
+          "train_valid_gap": -0.006339723653465357,
+          "valid_pr_auc": 0.5246861826140155,
+          "valid_brier": 0.010830030549983875,
+          "best_iteration": 1
+        },
+        {
+          "fold": 3,
+          "valid_roc_auc": 0.9452576501828647,
+          "train_roc_auc": 0.9447541664067796,
+          "train_valid_gap": -0.0005034837760851119,
+          "valid_pr_auc": 0.5038364449318301,
+          "valid_brier": 0.011106609130490606,
+          "best_iteration": 1
+        },
+        {
+          "fold": 4,
+          "valid_roc_auc": 0.9391266368338277,
+          "train_roc_auc": 0.9463748367160445,
+          "train_valid_gap": 0.00724819988221681,
+          "valid_pr_auc": 0.4897096806408888,
+          "valid_brier": 0.01128051283457438,
+          "best_iteration": 1
+        }
+      ],
+      "elapsed_sec": 20.173386096954346,
+      "variable": "model_family: GLM on TE view"
+    }
+  ]
+}

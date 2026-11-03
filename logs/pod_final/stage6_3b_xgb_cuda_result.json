@@ -1,0 +1,155 @@
+{
+  "stage": "6.3b",
+  "created_utc": "2026-11-02T18:55:32.708089+00:00",
+  "elapsed_sec": 286.3,
+  "device": "cuda",
+  "control": {
+    "name": "te_xgb_smooth50",
+    "oof": 0.9494465146664435,
+    "folds": [
+      0.9485507813676004,
+      0.9500238137516482,
+      0.9540206919412868,
+      0.9504543262118011,
+      0.944606255940077
+    ]
+  },
+  "arms": [
+    {
+      "name": "te_xgb_smooth50_bin4096",
+      "oof_roc_auc": 0.9478731887774531,
+      "folds": [
+        {
+          "fold": 0,
+          "valid_roc_auc": 0.9463943652300492,
+          "train_valid_gap": 0.007914574718791423,
+          "best_iteration": 4549
+        },
+        {
+          "fold": 1,
+          "valid_roc_auc": 0.9489458966700742,
+          "train_valid_gap": 0.0029966246631849547,
+          "best_iteration": 3167
+        },
+        {
+          "fold": 2,
+          "valid_roc_auc": 0.9528183928206799,
+          "train_valid_gap": -0.001875542175628464,
+          "best_iteration": 3059
+        },
+        {
+          "fold": 3,
+          "valid_roc_auc": 0.9479780996633019,
+          "train_valid_gap": 0.005628939796583521,
+          "best_iteration": 4241
+        },
+        {
+          "fold": 4,
+          "valid_roc_auc": 0.9435883618419536,
+          "train_valid_gap": 0.010918750331627702,
+          "best_iteration": 4089
+        }
+      ],
+      "gate_vs_te_xgb_smooth50": {
+        "promote": false,
+        "oof_delta": -0.0015733258889903956,
+        "oof_improved": false,
+        "fold_wins": 0,
+        "fold_deltas": [
+          -0.0021564161375512425,
+          -0.0010779170815740091,
+          -0.0012022991206068756,
+          -0.0024762265484992163,
+          -0.001017894098123362
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "promote": false,
+      "params": {
+        "max_depth": 2,
+        "learning_rate": 0.03,
+        "n_estimators": 6000,
+        "subsample": 0.8,
+        "colsample_bytree": 0.5,
+        "reg_lambda": 30.0,
+        "reg_alpha": 5.0,
+        "tree_method": "hist",
+        "device": "cuda",
+        "max_bin": 4096,
+        "eval_metric": "auc"
+      }
+    },
+    {
+      "name": "te_xgb_smooth100_depth2",
+      "oof_roc_auc": 0.9479374979329833,
+      "folds": [
+        {
+          "fold": 0,
+          "valid_roc_auc": 0.9464542269517257,
+          "train_valid_gap": 0.007819134989285104,
+          "best_iteration": 4546
+        },
+        {
+          "fold": 1,
+          "valid_roc_auc": 0.9490134685515859,
+          "train_valid_gap": 0.0029301363310048067,
+          "best_iteration": 3182
+        },
+        {
+          "fold": 2,
+          "valid_roc_auc": 0.952835925093703,
+          "train_valid_gap": -0.0005843164095875597,
+          "best_iteration": 3992
+        },
+        {
+          "fold": 3,
+          "valid_roc_auc": 0.9478108152122597,
+          "train_valid_gap": 0.005160637982188576,
+          "best_iteration": 3722
+        },
+        {
+          "fold": 4,
+          "valid_roc_auc": 0.9437922877337799,
+          "train_valid_gap": 0.01075576498884534,
+          "best_iteration": 4056
+        }
+      ],
+      "gate_vs_te_xgb_smooth50": {
+        "promote": false,
+        "oof_delta": -0.0015090167334601556,
+        "oof_improved": false,
+        "fold_wins": 0,
+        "fold_deltas": [
+          -0.0020965544158747518,
+          -0.0010103452000623792,
+          -0.0011847668475838402,
+          -0.0026435109995414097,
+          -0.0008139682062970888
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "promote": false,
+      "params": {
+        "max_depth": 2,
+        "learning_rate": 0.03,
+        "n_estimators": 6000,
+        "subsample": 0.8,
+        "colsample_bytree": 0.5,
+        "reg_lambda": 30.0,
+        "reg_alpha": 5.0,
+        "tree_method": "hist",
+        "device": "cuda",
+        "max_bin": 4096,
+        "eval_metric": "auc"
+      }
+    }
+  ],
+  "promoted": [],
+  "policy": "NO_KAGGLE_SUBMIT"
+}

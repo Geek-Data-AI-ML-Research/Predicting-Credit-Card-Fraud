@@ -1,0 +1,38 @@
+[    4.2s] train 699960 test 299984
+[   34.1s] assembled crossfit:ebm_raw auc 0.9481282260135275
+[   35.2s] assembled crossfit:lgb_enriched_s100 auc 0.9490541043956897
+[   36.3s] assembled crossfit:lgb_te_s100 auc 0.9487278433839463
+[   37.4s] assembled crossfit:lgb_te_s20_cnt auc 0.948768888853485
+[   38.4s] assembled crossfit:xgb_enriched_d1_s100 auc 0.9489934124903232
+[   39.4s] assembled crossfit:xgb_te_s20 auc 0.9487341601941902
+[   39.4s] 67 members collected
+[   58.7s]   0.950627  Predicting-Cre:lgb_diglead_l3_bag
+[   58.7s]   0.950510  Predicting-Cre:lgb_diglead_bag
+[   58.7s]   0.950507  Predicting-Cre:glm_dl_s50_bag
+[   58.7s]   0.950492  Predicting-Cre:lgb_k_0
+[   58.7s]   0.950488  Predicting-Cre:lgb_dig_s100_bag5
+[   58.7s]   0.950433  Predicting-Cre:xgb_k
+[   58.7s]   0.950426  Predicting-Cre:lgb_dig_s100_bag
+[   58.7s]   0.950335  Predicting-Cre:lgb_k_1
+[   58.7s]   0.950262  Predicting-Cre:ebm_i25_bag4
+[   58.7s]   0.950219  Predicting-Cre:lgb_k_2
+[   58.7s]   0.950215  Predicting-Cre:lgb_k_l7
+[   58.7s]   0.950155  Predicting-Cre:lgb_dig_l7
+[   58.7s]   0.950145  s6e11-digit-to:joint_token_predictions:oof
+[   58.7s]   0.950115  Predicting-Cre:glm_ohk2_bag
+[   58.7s]   0.950112  Predicting-Cre:glm_joint
+[   58.7s]   0.950092  dir:artifacts_extra/masaya_records/logistic/out/lr_final
+[   58.7s]   0.949907  Predicting-Cre:glm_ohk_c01
+[   58.7s]   0.949864  dir:artifacts_extra/masaya_records/distillation/out/final/blend_
+[   58.7s]   0.949808  Predicting-Cre:ebm_dig
+[   58.7s]   0.949575  dir:artifacts_extra/masaya_records/distillation/out/final/baseli
+[   58.7s]   0.949511  s6e11-oof-pred:9d26cfb564230caa
+[   58.7s]   0.949510  s6e11-oof-pred:37984c74f5880f09
+[   58.7s]   0.949510  s6e11-oof-pred:59abebeed6b8fa2d
+[   58.7s]   0.949251  s6e11-tree-ens:oof_stack_reference:stack_oof
+[   58.7s]   0.949054  crossfit:lgb_enriched_s100
+[   59.2s] 46 kept (AUC >= 0.94813)
+[  486.1s] nested-CV: {'mean': 0.950549, 'hill': 0.950949, 'stack': 0.951005, 'stack_c01': 0.950986, 'mix': 0.951117}
+[  544.3s] BEST=mix CV=0.951117 wrote /Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/hillclimb_mix_0.95112.csv
+[  544.3s] hill weights: {'Predicting-Cre:ebm_i25_bag4': 0.125, 'Predicting-Cre:glm_dl_s50_bag': 0.25, 'Predicting-Cre:lgb_diglead_l3_bag': 0.125, 'Predicting-Cre:lgb_rawdig_l4': 0.125, 'Predicting-Cre:lgb_k_0': 0.125, 'Predicting-Cre:lgb_k_l7': 0.125, 's6e11-digit-to:joint_token_predictions:oof': 0.125}
+/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/hillclimb_mix_0.95112.csv

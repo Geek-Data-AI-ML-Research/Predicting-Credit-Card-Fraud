@@ -1,0 +1,128 @@
+{
+  "stage": "9.1_full73_power_hillclimb",
+  "created_utc": "2026-11-02T20:04:31.392588+00:00",
+  "elapsed_sec": 750.1,
+  "n_members": 73,
+  "top15": [
+    {
+      "name": ".:lgb_diglead_l3_bag",
+      "oof_auc": 0.950626761687232
+    },
+    {
+      "name": ".:lgb_diglead_bag",
+      "oof_auc": 0.9505103584240805
+    },
+    {
+      "name": ".:glm_dl_s50_bag",
+      "oof_auc": 0.9505074547049912
+    },
+    {
+      "name": ".:lgb_k_0",
+      "oof_auc": 0.950492468252919
+    },
+    {
+      "name": ".:lgb_dig_s100_bag5",
+      "oof_auc": 0.9504875308366474
+    },
+    {
+      "name": ".:lgb_k_s100_0",
+      "oof_auc": 0.9504477640177773
+    },
+    {
+      "name": ".:xgb_k",
+      "oof_auc": 0.9504326104474176
+    },
+    {
+      "name": ".:lgb_dig_s100_bag",
+      "oof_auc": 0.9504258336734523
+    },
+    {
+      "name": ".:lgb_k_s100_1",
+      "oof_auc": 0.9503626681191157
+    },
+    {
+      "name": ".:lgb_k_1",
+      "oof_auc": 0.9503353403326493
+    },
+    {
+      "name": ".:ebm_i25_bag4",
+      "oof_auc": 0.9502616704399554
+    },
+    {
+      "name": ".:lgb_k_2",
+      "oof_auc": 0.9502188171221956
+    },
+    {
+      "name": ".:lgb_k_l7",
+      "oof_auc": 0.950214585406242
+    },
+    {
+      "name": ".:lgb_dig_l7",
+      "oof_auc": 0.9501554321823792
+    },
+    {
+      "name": "s6e11-digit-to:joint_token_predictions:oof",
+      "oof_auc": 0.9501449241150902
+    }
+  ],
+  "nested_hill_full73": {
+    "oof": 0.9511209221355565,
+    "folds": [
+      0.9503161511774325,
+      0.951678425319564,
+      0.9558059170012345,
+      0.95158925541771,
+      0.946208099793928
+    ],
+    "submission": "/tmp/s6e11_work/submissions/nested_hill_full73_0.95112.csv",
+    "spearman_vs_0.95111": null
+  },
+  "power_hill": {
+    "oof": 0.9510387950879906,
+    "folds": [
+      0.9501586689215022,
+      0.951683454293226,
+      0.9558972091082236,
+      0.951649085755892,
+      0.9458051884292576
+    ],
+    "gate_vs_full73_hill": {
+      "promote": false,
+      "oof_delta": -8.212704756593858e-05,
+      "oof_improved": false,
+      "fold_wins": 3,
+      "fold_deltas": [
+        -0.00015748225593026355,
+        5.028973661946878e-06,
+        9.129210698910484e-05,
+        5.983033818202088e-05,
+        -0.00040291136467029975
+      ],
+      "min_fold_wins_required": 4,
+      "folds_gate_passed": false,
+      "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+      "reason": "REJECT: OOF did not improve"
+    },
+    "gate_vs_ref_0.95114": {
+      "promote": false,
+      "oof_delta": -0.0001345763359289487,
+      "oof_improved": false,
+      "fold_wins": 3,
+      "fold_deltas": [
+        -0.0010147025024173084,
+        0.0005100828693064274,
+        0.004723837684304066,
+        0.0004757143319724655,
+        -0.0053681829946619075
+      ],
+      "min_fold_wins_required": 4,
+      "folds_gate_passed": false,
+      "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+      "reason": "REJECT: OOF did not improve"
+    },
+    "promote": false
+  },
+  "campaign_best": "nested_hill_full73",
+  "policy": "NO_KAGGLE_SUBMIT",
+  "keep_pod_warm": true
+}

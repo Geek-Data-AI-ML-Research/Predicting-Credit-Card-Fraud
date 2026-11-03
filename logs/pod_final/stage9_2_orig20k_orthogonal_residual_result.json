@@ -1,0 +1,81 @@
+{
+  "stage": "9.2_orig20k_orthogonal_residual",
+  "created_utc": "2026-11-02T20:08:19.684501+00:00",
+  "elapsed_sec": 222.0,
+  "base": {
+    "name": "campaign_best",
+    "oof": 0.949406453510567,
+    "folds": [
+      0.9490603015262042,
+      0.9500270840604397,
+      0.9543897676502933,
+      0.9498923395702716,
+      0.9439986760671426
+    ]
+  },
+  "n_orig": 20000,
+  "n_orig_fraud": 339,
+  "n_external_features": 17,
+  "arms": {
+    "ortho_logit_offset": {
+      "oof_auc": 0.9464925280868592,
+      "fold_aucs": [
+        0.9456838688412348,
+        0.9480654332207419,
+        0.9507350243502999,
+        0.9469947077113278,
+        0.9421746391999588
+      ],
+      "gate_vs_base": {
+        "promote": false,
+        "oof_delta": -0.0029139254237077195,
+        "oof_improved": false,
+        "fold_wins": 0,
+        "fold_deltas": [
+          -0.003376432684969455,
+          -0.0019616508396977927,
+          -0.0036547432999933793,
+          -0.002897631858943872,
+          -0.001824036867183798
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "promote": false,
+      "delta": -0.0029139254237077195
+    },
+    "ortho_xgb_residual": {
+      "oof_auc": 0.9491864213719218,
+      "fold_aucs": [
+        0.9489240347058413,
+        0.9504208618643566,
+        0.9545301299250648,
+        0.9498576307965363,
+        0.9441069023146677
+      ],
+      "gate_vs_base": {
+        "promote": false,
+        "oof_delta": -0.00022003213864518756,
+        "oof_improved": false,
+        "fold_wins": 3,
+        "fold_deltas": [
+          -0.00013626682036294024,
+          0.0003937778039169171,
+          0.00014036227477154384,
+          -3.4708773735347975e-05,
+          0.00010822624752504506
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "promote": false,
+      "delta": -0.00022003213864518756
+    }
+  },
+  "policy": "NO_KAGGLE_SUBMIT",
+  "keep_pod_warm": true
+}

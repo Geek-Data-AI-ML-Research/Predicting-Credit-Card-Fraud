@@ -1,0 +1,27 @@
+[stopwatch] START Tue Nov  3 05:10:19 UTC 2026 pod=p4sli9zvpc097s
+[stopwatch] complete marker Tue Nov  3 06:13:09 UTC 2026
+[stopwatch] stopping pod p4sli9zvpc097s
+{
+  "containerDiskInGb": 40,
+  "costPerHr": 0.89,
+  "createdAt": "2026-11-03 04:57:23.283 +0000 UTC",
+  "desiredStatus": "EXITED",
+  "env": {
+    "JUPYTER_PASSWORD": "vz8qcgzls5t6p6bac9pv",
+    "PUBLIC_KEY": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMTBQ+kv9bk+FNGJVJeo1yVcus106FYAMKziLKlVKXr5 casmi26-kaggle-runpod@h-MacBook-Pro-sl-Moran"
+  },
+  "gpuCount": 1,
+  "gpuId": "NVIDIA GeForce RTX 4090",
+  "id": "p4sli9zvpc097s",
+  "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+  "memoryInGb": 83,
+  "name": "s6e11-unattended-10tests",
+  "ports": [
+    "8888/http",
+    "22/tcp"
+  ],
+  "vcpuCount": 16,
+  "volumeInGb": 80,
+  "volumeMountPath": "/workspace"
+}
+[stopwatch] DONE Tue Nov  3 06:13:25 UTC 2026

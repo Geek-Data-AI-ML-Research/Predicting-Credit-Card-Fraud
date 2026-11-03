@@ -11,6 +11,8 @@ Grounded in **Fraud Detection Handbook Chapter 5.2 (Validation Strategies)**, ad
 | Real-world fraud (Handbook 5.2) | Transactions arrive over time with label delay \(\delta_{\text{delay}}\) → **Prequential / rolling time-block** validation |
 | Kaggle S6E11 | 699,960 train / 299,984 test rows, synthetically generated from [Udit Jain’s 20k NumPy dataset](https://www.kaggle.com/datasets/uditjain13/credit-card-fraud-detection-2026). **Do not assume** the train/test split — **prove** it, then lock CV |
 
+**PROVEN (executed):** train↔test is an **i.i.d. / random-like synthetic split** (not temporal). Adv OOF AUC **0.50080**; chronology `time_order_suspected=false` (contiguous `id` = Kaggle write artifact). **Locked CV:** `StratifiedKFold(n_splits=5, shuffle=True, random_state=42)`. Proof: `logs/core_rule_split_proof.json` (`scripts/prove_the_split.py`).
+
 Official leaderboard metric: **ROC-AUC**. Diagnostics: PR-AUC (AP), Brier score, Train−Valid gap.
 
 ---
@@ -46,16 +48,27 @@ Official leaderboard metric: **ROC-AUC**. Diagnostics: PR-AUC (AP), Brier score,
 
 ### Stage 4 — Feature / modeling levers (one variable at a time)
 
-- [ ] **4.1** Digit keys / target encoding / raw / GLM / NN arms — each proposed as a single lever
-- [ ] **4.2** Reject levers that fail Stage 2.2 even if public LB ticks up
+- [x] **4.1** Levers vs control `te_xgb` (OOF 0.949315): Stage3 views + `num_leaves:4→7`, `TE smooth:20→50`, `max_depth:2→3`, `GLM on TE`. Script: `scripts/validation_stage4_levers.py`.
+- [x] **4.2** Gate: **only `te_xgb_smooth50` PROMOTED** (OOF **0.949447**, Δ=+0.000131, 5/5 folds). All other levers REJECTED (incl. deeper trees, leaves7, GLM, digit/raw views). Artifact: `logs/stage4_levers_result.json`.
 
 ### Stage 5 — Overfitting curve + multi-metric diagnostics
 
-- [ ] **5.1 Depth sweep** — `max_depth` / `num_leaves` 2→12; plot Train−Valid gap vs Valid AUC
-- [ ] **5.2 Calibration / PR** — Brier + PR-AUC as secondary; do not optimize LB solely on PR
-- [ ] **5.3 Stack policy** — Ensemble only members with honest OOF under locked folds; no submit until human approval
+- [x] **5.1 Depth sweep** — TE-LGBM `num_leaves` ∈ {2,3,4,5,7,8,12,15,31}. Best **leaves=3** OOF **0.949371** gap 0.0043; deeper leaves raise gap (31→0.025) and lower OOF. Artifact: `logs/stage5_diagnostics_result.json`.
+- [x] **5.2 Calibration / PR** — Logged per sweep point; best ROC at leaves=3 also strong PR (0.5255) / Brier (0.01081). Do not chase PR alone.
+- [x] **5.3 Stack policy** — Honest members only (gap≤0.0136, OOF≥raw_lgbm). Rank-mean of 7 members OOF **0.949697** (logit-LR worse). **No submit without approval.**
 
 ---
+
+## MCP sync (standing rule)
+
+At **every** validation / training / submit step, update Studio via MCP before moving on:
+
+1. `propose_lever_execution` (one variable) when starting a lever  
+2. `report_mission_progress` with metrics / status notes  
+3. `register_external_asset` for new JSON / OOF / submission artifacts  
+4. `complete_mission` with `fold_scores` + notes (include `publicScore` / file / ref on Kaggle submit)  
+
+No Kaggle submit without human approval; after any approved submit, report the score via MCP.
 
 ## Execution order
 
@@ -63,6 +76,7 @@ Official leaderboard metric: **ROC-AUC**. Diagnostics: PR-AUC (AP), Brier score,
 2. Run Stage 2 harness on a shallow baseline (`scripts/validation_stage2_handbook_cv.py`)
 3. Lock CV contract in writing (this file + Studio roadmap when MCP supports it)
 4. Only then resume FE / stack / submit experiments under the Stage 2.2 gate
+5. Keep Studio current using the MCP sync rule above after each step
 
 ## Related local artifacts
 

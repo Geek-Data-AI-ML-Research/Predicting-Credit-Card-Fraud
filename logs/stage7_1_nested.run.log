@@ -1,0 +1,22 @@
+included self:te_xgb_smooth50
+included self:te_lgbm_leaves3
+bank stackable=73
+  0.950627  Predicting-Cre:lgb_diglead_l3_bag
+  0.950510  Predicting-Cre:lgb_diglead_bag
+  0.950507  Predicting-Cre:glm_dl_s50_bag
+  0.950492  Predicting-Cre:lgb_k_0
+  0.950488  Predicting-Cre:lgb_dig_s100_bag5
+  0.950448  Predicting-Cre:lgb_k_s100_0
+  0.950433  Predicting-Cre:xgb_k
+  0.950426  Predicting-Cre:lgb_dig_s100_bag
+  0.950363  Predicting-Cre:lgb_k_s100_1
+  0.950335  Predicting-Cre:lgb_k_1
+  0.950262  Predicting-Cre:ebm_i25_bag4
+  0.950219  Predicting-Cre:lgb_k_2
+  0.950215  Predicting-Cre:lgb_k_l7
+  0.950155  Predicting-Cre:lgb_dig_l7
+  0.950145  s6e11-digit-to:joint_token_predictions:oof
+after corr prune>0.995: 48
+controls nested: hillclimb_mix=0.951176 mega_logit=0.951061
+
+=== fold 0 ===

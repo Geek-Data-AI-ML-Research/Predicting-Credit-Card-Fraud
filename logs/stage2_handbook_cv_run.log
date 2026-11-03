@@ -1,0 +1,66 @@
+Loaded train=699,960 test=299,984 n_features=24
+CV contract: StratifiedKFold(5, shuffle=True, random_state=42)
+
+[Stage 2.1] Handbook CV logger — baseline (depth=4, leaves=15)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  [baseline_d4_l15] fold 0: valid_auc=0.944993 gap=0.010763 pr=0.496107 brier=0.011207
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  [baseline_d4_l15] fold 1: valid_auc=0.948714 gap=0.011178 pr=0.515403 brier=0.010974
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  [baseline_d4_l15] fold 2: valid_auc=0.951550 gap=0.008141 pr=0.527620 brier=0.010793
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  [baseline_d4_l15] fold 3: valid_auc=0.947489 gap=0.011495 pr=0.513549 brier=0.010963
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  [baseline_d4_l15] fold 4: valid_auc=0.942163 gap=0.015749 pr=0.496601 brier=0.011175
+
+--- CV Summary [baseline_d4_l15] ---
+OOF ROC-AUC : 0.946977 (Fold Mean: 0.946982 ± 0.003582)
+Train−Valid Gap (mean): 0.011465
+OOF PR-AUC  : 0.509643 | OOF Brier: 0.011022
+ fold  valid_roc_auc  train_roc_auc  train_valid_gap  valid_pr_auc  valid_brier
+    0       0.944993       0.955756         0.010763      0.496107     0.011207
+    1       0.948714       0.959892         0.011178      0.515403     0.010974
+    2       0.951550       0.959692         0.008141      0.527620     0.010793
+    3       0.947489       0.958984         0.011495      0.513549     0.010963
+    4       0.942163       0.957912         0.015749      0.496601     0.011175
+
+[Stage 2.1] Challenger (depth=8, leaves=63) — exercises promotion gate
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  [challenger_d8_l63] fold 0: valid_auc=0.943501 gap=0.026181 pr=0.486908 brier=0.011315
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  [challenger_d8_l63] fold 1: valid_auc=0.947636 gap=0.025823 pr=0.509073 brier=0.011056
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  [challenger_d8_l63] fold 2: valid_auc=0.950826 gap=0.024154 pr=0.521422 brier=0.010875
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  [challenger_d8_l63] fold 3: valid_auc=0.946441 gap=0.026473 pr=0.508222 brier=0.011046
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  [challenger_d8_l63] fold 4: valid_auc=0.940996 gap=0.031529 pr=0.491877 brier=0.011235
+
+--- CV Summary [challenger_d8_l63] ---
+OOF ROC-AUC : 0.945868 (Fold Mean: 0.945880 ± 0.003788)
+Train−Valid Gap (mean): 0.026832
+OOF PR-AUC  : 0.503307 | OOF Brier: 0.011106
+ fold  valid_roc_auc  train_roc_auc  train_valid_gap  valid_pr_auc  valid_brier
+    0       0.943501       0.969682         0.026181      0.486908     0.011315
+    1       0.947636       0.973460         0.025823      0.509073     0.011056
+    2       0.950826       0.974981         0.024154      0.521422     0.010875
+    3       0.946441       0.972915         0.026473      0.508222     0.011046
+    4       0.940996       0.972525         0.031529      0.491877     0.011235
+
+--- Stage 2.2 Promotion gate ---
+  OOF Δ = -0.001109  (need > 0) → FAIL
+  Fold wins = 0/5  (need ≥4) → FAIL
+  fold Δ: ['-0.001492', '-0.001077', '-0.000724', '-0.001048', '-0.001167']
+  DECISION: REJECT — REJECT: OOF did not improve
+
+Wrote /Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/logs/stage2_handbook_cv_result.json

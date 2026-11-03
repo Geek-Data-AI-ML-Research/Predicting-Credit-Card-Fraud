@@ -1,0 +1,22 @@
+{
+  "stage": "8.3_pseudolabel",
+  "created_utc": "2026-11-02T19:22:34.071018+00:00",
+  "status": "EARLY_ABORT_FOLD0_max_0.9434",
+  "fold0": {
+    "ArmA": 0.943448,
+    "ArmB": 0.938263
+  },
+  "fold1_partial": {
+    "ArmA": 0.945065,
+    "ArmB": 0.94189
+  },
+  "promote": false,
+  "reason": "Fold0 max 0.9434 << 0.9500; te_smooth50 saturated (killed mid fold2). Pivot to Stage 8.1 / 9.",
+  "policy": "NO_KAGGLE_SUBMIT",
+  "keep_pod_warm": true,
+  "next": [
+    "stage8_1_raw_dual_realmlp",
+    "stage9_1_full73_power_hillclimb",
+    "stage9_2_orig20k_orthogonal_residual"
+  ]
+}

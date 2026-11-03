@@ -1,0 +1,46 @@
+{
+  "synced_utc": "2026-11-02T19:16:00+00:00",
+  "project_id": "prj_01M6EB3QGMT4RCCZ3D23CJ34RP",
+  "slug": "playground-cc",
+  "method": "register_external_asset + propose_lever_execution + report_mcp_gap",
+  "blocked_proper_path": {
+    "get_next_mission": "No queued missions available",
+    "advise_project": "project_not_found",
+    "REST progress/dead-ends/levers/roadmap": "401 invalid_token with MCP PAT",
+    "MCP missing tools": ["add_progress_note", "add_dead_end", "open_lever", "close_lever", "upsert_roadmap", "log_oof"]
+  },
+  "gaps_filed": [
+    "gap_01M6EV1A0PDGJJF7VFZ63X7M5K",
+    "gap_01M6EV1DH9SGEBFQ2BWFR3MPN0"
+  ],
+  "credits_registered": [
+    "crd_01M6EV0E37Z1HBWCTEZBQYF3BP",
+    "crd_01M6EV0MRXNGQ60PC0WEWRVCBC",
+    "crd_01M6EV0NS4MSQAQXVM9XQ6SNPA",
+    "crd_01M6EV0Q0VTQ1DRAPEFGEMREDE",
+    "crd_01M6EV0RGY93KF9NZ3YK676V70",
+    "crd_01M6EV0TTRWX87RKNX9SKFJF0S",
+    "crd_01M6EV0WQ1ZBQ09GQ9QKHS63NX",
+    "crd_01M6EV11YRP69HSBGWG7CFA329"
+  ],
+  "levers_proposed_structural": [
+    "te_smooth50_realmlp_td_cuda",
+    "xgb_cuda_max_bin_4096_te_smooth50",
+    "nested_probit_hillclimb_gpu_meta"
+  ],
+  "roadmap_snapshot": {
+    "stages_1_5": "executed",
+    "stage_6_1": "executed (audit)",
+    "stage_6_2": "REJECT/ABORT RealMLP+TabM",
+    "stage_6_3": "REJECT/ABORT CatBoost+EBM",
+    "stage_6_3b": "REJECT XGB CUDA",
+    "stage_7_1": "REJECT best 0.950925 vs nested_hill 0.951140",
+    "stage_7_align": "handoff nested_hill Platt p≈0.0167",
+    "stage_7_2": "running_or_queued",
+    "stage_8_x": "queued",
+    "policy": "NO_KAGGLE_SUBMIT KEEP_POD_WARM",
+    "best_public": 0.95163,
+    "nested_hill_control": 0.95114,
+    "goal_threshold": 0.952
+  }
+}

@@ -1,0 +1,11 @@
+Research finding: Anchor88 T01-T06 inject HURT (0.95154) because inject CV << hillclimb.
+Fix: blend our two strongest LB files (hillclimb 0.95163 + mega_logit 0.95158) with
+tail-preserving mid-rank mix and light TabPFN diversity.
+
+Best public LB now: 0.95165 (+0.00002 vs prior best 0.95163)
+Winning files:
+  - sub_lb_hill_mega_midblend.csv  0.95165
+  - sub_lb_h80_m10_t10.csv         0.95165
+  - sub_lb_avg_two_winners.csv     0.95165
+Prior: hillclimb_mix 0.95163, mega 0.95158, anchor 0.95154
+Daily submit quota exhausted (0 remaining).

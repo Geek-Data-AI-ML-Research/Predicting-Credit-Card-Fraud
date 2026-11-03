@@ -1,0 +1,35 @@
+{
+  "stage": "8.2_residual_xgb",
+  "created_utc": "2026-11-02T19:17:20.368322+00:00",
+  "elapsed_sec": 120.9,
+  "base": "campaign_best:nested_hill",
+  "base_auc": 0.9511409420860395,
+  "oof_auc": 0.9511320740028977,
+  "fold_aucs": [
+    0.9504626262747777,
+    0.9516527398016298,
+    0.9558917420219348,
+    0.9517514922520001,
+    0.9461111106692008
+  ],
+  "gate_vs_base": {
+    "promote": false,
+    "oof_delta": -8.86808314182197e-06,
+    "oof_improved": false,
+    "fold_wins": 4,
+    "fold_deltas": [
+      2.1293147789425149e-07,
+      2.645765259767785e-06,
+      -2.827535392491143e-07,
+      4.8161317267592096e-08,
+      3.573258999800544e-08
+    ],
+    "min_fold_wins_required": 4,
+    "folds_gate_passed": true,
+    "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+    "reason": "REJECT: OOF did not improve"
+  },
+  "promote": false,
+  "policy": "NO_KAGGLE_SUBMIT",
+  "keep_pod_warm": true
+}

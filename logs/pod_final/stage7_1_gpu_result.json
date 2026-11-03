@@ -1,0 +1,291 @@
+{
+  "stage": "7.1_gpu",
+  "created_utc": "2026-11-02T19:12:04.276454+00:00",
+  "elapsed_sec": 808.1,
+  "n_members": 48,
+  "members": [
+    "Predicting-Cre:lgb_diglead_l3_bag",
+    "Predicting-Cre:glm_dl_s50_bag",
+    "Predicting-Cre:lgb_k_s100_0",
+    "Predicting-Cre:ebm_i25_bag4",
+    "Predicting-Cre:lgb_k_l7",
+    "Predicting-Cre:lgb_dig_l7",
+    "s6e11-digit-to:joint_token_predictions:oof",
+    "Predicting-Cre:glm_ohk2_bag",
+    "dir:artifacts_extra/masaya_records/logistic/out/lr_final",
+    "dir:artifacts_extra/masaya_records/distillation/out/final/blend_",
+    "dir:artifacts_extra/masaya_records/distillation/out/final/baseli",
+    "s6e11-oof-pred:9d26cfb564230caa",
+    "s6e11-tree-ens:oof_stack_reference:stack_oof",
+    "crossfit:lgb_enriched_s100",
+    "crossfit:lgb_te_s20_cnt",
+    "crossfit:xgb_te_s20",
+    "crossfit:lgb_te_s100",
+    "s6e11-oof-pred:d5bd0671dd68108f",
+    "s6e11-oof-pred:0958aef8e20ba93c",
+    "Predicting-Cre:realmlp_dig",
+    "s6e11-oof-pred:ddfa69a32874765c",
+    "preds:te_xgb_smooth50",
+    "Predicting-Cre:lgb_rawdig_l4",
+    "s6e11-oof-pred:e13d1e5d005b82ad",
+    "s6e11-tree-ens:encoded_xgboost:foldmean",
+    "Predicting-Cre:lgb_raw",
+    "Predicting-Cre:ebm_b4",
+    "crossfit:ebm_raw",
+    "s6e11-oof-pred:42eb4cf755012e69",
+    "s6e11-tree-ens:encoded_lightgbm:foldmean",
+    "s6e11-oof-pred:015ea1ed1f5bd220",
+    "Predicting-Cre:realmlp_te",
+    "s6e11-oof-pred:30a64e99a4f93aee",
+    "s6e11-oof-pred:750a3a13593f5e05",
+    "s6e11-oof-pred:5160560b658e88f4",
+    "s6e11-oof-pred:983fbb55a2b59a74",
+    "s6e11-oof-pred:74dcf78882edd49f",
+    "s6e11-oof-pred:9b95a64105ce0e91",
+    "s6e11-oof-pred:15d0d127372ea048",
+    "s6e11-oof-pred:10bad431843b4481",
+    "s6e11-tree-ens:raw_xgboost:foldmean",
+    "s6e11-tree-ens:raw_lightgbm:foldmean",
+    "s6e11-oof-pred:888d3d64c3854ba8",
+    "s6e11-oof-pred:5546bd639f98c251",
+    "s6e11-tree-ens:raw_catboost:foldmean",
+    "s6e11-oof-pred:spline_glm_88df84742d",
+    "Predicting-Cre:realmlp_v1",
+    "s6e11-oof-pred:e0749b53ac73f63d"
+  ],
+  "controls": {
+    "nested_hillclimb_mix": {
+      "oof": 0.9511399094205631,
+      "folds": [
+        0.9503620433507662,
+        0.951726126773786,
+        0.9558327925697788,
+        0.9516947784171128,
+        0.9460828166721877
+      ]
+    },
+    "nested_mega_logit": {
+      "oof": 0.951126115107945,
+      "folds": [
+        0.9504904192724932,
+        0.9516764103121993,
+        0.9557366050979433,
+        0.9516887986458353,
+        0.9462637121328847
+      ]
+    },
+    "gate_baseline_oof": 0.9511399094205631
+  },
+  "solvers": {
+    "nested_nn_logit_probit": {
+      "oof_auc": 0.9450888549159708,
+      "fold_aucs": [
+        0.9494590755569009,
+        0.9516548247205839,
+        0.9554224348440455,
+        0.9508717900621962,
+        0.9454033583638366
+      ],
+      "meta": [
+        {
+          "l2": 0.0001,
+          "tr_auc": 0.9508230475078893,
+          "va_auc": 0.9494590755569009
+        },
+        {
+          "l2": 0.0005,
+          "tr_auc": 0.9502802810102824,
+          "va_auc": 0.9516548247205839
+        },
+        {
+          "l2": 0.0001,
+          "tr_auc": 0.949344371927182,
+          "va_auc": 0.9554224348440455
+        },
+        {
+          "l2": 0.0001,
+          "tr_auc": 0.9504423979749842,
+          "va_auc": 0.9508717900621962
+        },
+        {
+          "l2": 0.0005,
+          "tr_auc": 0.9521069931095528,
+          "va_auc": 0.9454033583638366
+        }
+      ],
+      "gate_vs_nested_hill": {
+        "promote": false,
+        "oof_delta": -0.0060510545045923125,
+        "oof_improved": false,
+        "fold_wins": 0,
+        "fold_deltas": [
+          -0.0009029677938653391,
+          -7.130205320204919e-05,
+          -0.0004103577257332791,
+          -0.0008229883549165651,
+          -0.0006794583083511441
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "pass_abs": false
+    },
+    "nested_probit_hillclimb": {
+      "oof_auc": 0.950924777284575,
+      "fold_aucs": [
+        0.949985979938715,
+        0.9516858343944463,
+        0.9558813034448467,
+        0.9514813414419508,
+        0.9455889254722945
+      ],
+      "meta": [
+        {
+          "nnz": 10,
+          "va_auc": 0.949985979938715
+        },
+        {
+          "nnz": 8,
+          "va_auc": 0.9516858343944463
+        },
+        {
+          "nnz": 11,
+          "va_auc": 0.9558813034448467
+        },
+        {
+          "nnz": 7,
+          "va_auc": 0.9514813414419508
+        },
+        {
+          "nnz": 12,
+          "va_auc": 0.9455889254722945
+        }
+      ],
+      "gate_vs_nested_hill": {
+        "promote": false,
+        "oof_delta": -0.00021513213598811642,
+        "oof_improved": false,
+        "fold_wins": 1,
+        "fold_deltas": [
+          -0.0003760634120512085,
+          -4.0292379339668116e-05,
+          4.851087506785312e-05,
+          -0.00021343697516196247,
+          -0.0004938911998932927
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "pass_abs": false
+    },
+    "nested_hybrid_rank_logit_mix": {
+      "oof_auc": 0.950924777284575,
+      "fold_aucs": [
+        0.949985979938715,
+        0.9516858343944463,
+        0.9558813034448467,
+        0.9514813414419508,
+        0.9455889254722945
+      ],
+      "meta": [
+        {
+          "alpha": 0.0,
+          "va_auc": 0.949985979938715
+        },
+        {
+          "alpha": 0.0,
+          "va_auc": 0.9516858343944463
+        },
+        {
+          "alpha": 0.0,
+          "va_auc": 0.9558813034448467
+        },
+        {
+          "alpha": 0.0,
+          "va_auc": 0.9514813414419508
+        },
+        {
+          "alpha": 0.0,
+          "va_auc": 0.9455889254722945
+        }
+      ],
+      "gate_vs_nested_hill": {
+        "promote": false,
+        "oof_delta": -0.00021513213598811642,
+        "oof_improved": false,
+        "fold_wins": 1,
+        "fold_deltas": [
+          -0.0003760634120512085,
+          -4.0292379339668116e-05,
+          4.851087506785312e-05,
+          -0.00021343697516196247,
+          -0.0004938911998932927
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "pass_abs": false
+    },
+    "nested_pruned_ridge_pos": {
+      "oof_auc": 0.9463728442960734,
+      "fold_aucs": [
+        0.9456498495405973,
+        0.9497690823310322,
+        0.9537557456606686,
+        0.9494189153765636,
+        0.9423139807655259
+      ],
+      "meta": [
+        {
+          "va_auc": 0.9456498495405973
+        },
+        {
+          "va_auc": 0.9497690823310322
+        },
+        {
+          "va_auc": 0.9537557456606686
+        },
+        {
+          "va_auc": 0.9494189153765636
+        },
+        {
+          "va_auc": 0.9423139807655259
+        }
+      ],
+      "gate_vs_nested_hill": {
+        "promote": false,
+        "oof_delta": -0.004767065124489767,
+        "oof_improved": false,
+        "fold_wins": 0,
+        "fold_deltas": [
+          -0.004712193810168963,
+          -0.001957044442753797,
+          -0.0020770469091102584,
+          -0.0022758630405491642,
+          -0.0037688359066618826
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "pass_abs": false
+    }
+  },
+  "best_solver": "nested_probit_hillclimb",
+  "promoted": [],
+  "est_public": {
+    "nested_nn_logit_probit": 0.9456088549159708,
+    "nested_probit_hillclimb": 0.951444777284575,
+    "nested_hybrid_rank_logit_mix": 0.951444777284575,
+    "nested_pruned_ridge_pos": 0.9468928442960733
+  },
+  "policy": "NO_KAGGLE_SUBMIT",
+  "keep_pod_warm": true
+}

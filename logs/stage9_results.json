@@ -1,0 +1,23 @@
+{
+  "campaign": "stage9_pivot",
+  "updated_utc": "2026-11-02T19:24:00+00:00",
+  "diagnosis": {
+    "why_7_1_lost": "corr>0.995 prune 73→48 removed multi-seed variance (~0.00015); unbounded ndtri tails vs nested_hill bounded ranks+logits",
+    "why_8_2_delta0": "nested_hill already saturated te_smooth50+raw; residual early-stop iter1-142 Δ≈0",
+    "why_8_3_abort": "Fold0 ArmA=0.9434 ArmB=0.9383 << 0.9500 canary; te_smooth50 PL/distill dead"
+  },
+  "controls": {
+    "nested_hill_pruned48": 0.95114,
+    "best_public": 0.95163,
+    "goal": 0.952
+  },
+  "status": {
+    "stage8_3": "EARLY_ABORT_FOLD0_max_0.9434",
+    "stage8_1_raw_dual_realmlp": "RUNNING_fold0_canary",
+    "stage9_1_full73_power_hillclimb": "QUEUED",
+    "stage9_2_orig20k_orthogonal_residual": "QUEUED"
+  },
+  "policy": "NO_KAGGLE_SUBMIT",
+  "keep_pod_warm": true,
+  "pod": "83f0f0fwi39ccy"
+}

@@ -1,0 +1,4 @@
+submitted: sub_stage10_anchor88_12.csv
+blend: a=0.825 (requested 0.88 out of spearman band at 0.99990)
+publicScore: 0.95154
+vs hillclimb_mix_0.95111 LB 0.95163 (Δ=-0.00009)

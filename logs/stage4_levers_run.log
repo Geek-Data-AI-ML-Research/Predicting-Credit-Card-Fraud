@@ -1,0 +1,121 @@
+Control te_xgb: OOF=0.949315 folds=[0.94838, 0.94999, 0.95384, 0.95036, 0.94443]
+
+--- Stage 2.2 Promotion gate ---
+  OOF Δ = -0.001749  (need > 0) → FAIL
+  Fold wins = 0/5  (need ≥4) → FAIL
+  fold Δ: ['-0.002273', '-0.000743', '-0.001761', '-0.002715', '-0.001310']
+  DECISION: REJECT — REJECT: OOF did not improve
+
+--- Stage 2.2 Promotion gate ---
+  OOF Δ = -0.004604  (need > 0) → FAIL
+  Fold wins = 0/5  (need ≥4) → FAIL
+  fold Δ: ['-0.005054', '-0.004419', '-0.003753', '-0.004258', '-0.005867']
+  DECISION: REJECT — REJECT: OOF did not improve
+
+--- Stage 2.2 Promotion gate ---
+  OOF Δ = -0.000009  (need > 0) → FAIL
+  Fold wins = 2/5  (need ≥4) → FAIL
+  fold Δ: ['-0.000046', '-0.000016', '+0.000103', '-0.000181', '+0.000124']
+  DECISION: REJECT — REJECT: OOF did not improve
+
+--- Stage 2.2 Promotion gate ---
+  OOF Δ = -0.001683  (need > 0) → FAIL
+  Fold wins = 0/5  (need ≥4) → FAIL
+  fold Δ: ['-0.002415', '-0.000407', '-0.001572', '-0.002977', '-0.001366']
+  DECISION: REJECT — REJECT: OOF did not improve
+
+--- Stage 2.2 Promotion gate ---
+  OOF Δ = -0.007639  (need > 0) → FAIL
+  Fold wins = 0/5  (need ≥4) → FAIL
+  fold Δ: ['-0.008251', '-0.007199', '-0.006374', '-0.007600', '-0.009134']
+  DECISION: REJECT — REJECT: OOF did not improve
+
+=== Lever te_lgbm_leaves7 ===
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 0: auc=0.948386 gap=0.013306 pr=0.514385 (36s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 1: auc=0.949672 gap=0.007358 pr=0.526815 (62s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 2: auc=0.953652 gap=0.002456 pr=0.545483 (88s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 3: auc=0.949984 gap=0.007297 pr=0.532008 (115s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 4: auc=0.944171 gap=0.016675 pr=0.504929 (146s)
+==> te_lgbm_leaves7: OOF=0.949089 gap=0.009418
+
+--- Stage 2.2 Promotion gate ---
+  OOF Δ = -0.000227  (need > 0) → FAIL
+  Fold wins = 1/5  (need ≥4) → FAIL
+  fold Δ: ['+0.000009', '-0.000316', '-0.000187', '-0.000375', '-0.000261']
+  DECISION: REJECT — REJECT: OOF did not improve
+
+=== Lever te_xgb_smooth50 ===
+  fold 0: auc=0.948551 gap=0.008022 pr=0.515037 (136s)
+  fold 1: auc=0.950024 gap=0.004818 pr=0.530607 (246s)
+  fold 2: auc=0.954021 gap=-0.001838 pr=0.545762 (326s)
+  fold 3: auc=0.950454 gap=0.005112 pr=0.533917 (450s)
+  fold 4: auc=0.944606 gap=0.011844 pr=0.506816 (557s)
+==> te_xgb_smooth50: OOF=0.949447 gap=0.005592
+
+--- Stage 2.2 Promotion gate ---
+  OOF Δ = +0.000131  (need > 0) → OK
+  Fold wins = 5/5  (need ≥4) → OK
+  fold Δ: ['+0.000174', '+0.000036', '+0.000182', '+0.000095', '+0.000174']
+  DECISION: PROMOTE — PASS: OOF↑ and fold majority
+
+=== Lever te_xgb_depth3 ===
+  fold 0: auc=0.948369 gap=0.010320 pr=0.512824 (76s)
+  fold 1: auc=0.949962 gap=0.007768 pr=0.527025 (151s)
+  fold 2: auc=0.953798 gap=0.000340 pr=0.544765 (204s)
+  fold 3: auc=0.950014 gap=0.007582 pr=0.530503 (277s)
+  fold 4: auc=0.944181 gap=0.016857 pr=0.503659 (364s)
+==> te_xgb_depth3: OOF=0.949137 gap=0.008573
+
+--- Stage 2.2 Promotion gate ---
+  OOF Δ = -0.000178  (need > 0) → FAIL
+  Fold wins = 0/5  (need ≥4) → FAIL
+  fold Δ: ['-0.000008', '-0.000026', '-0.000041', '-0.000345', '-0.000250']
+  DECISION: REJECT — REJECT: OOF did not improve
+
+=== Lever te_glm ===
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=10', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+  fold 0: auc=0.944769 gap=0.000367 pr=0.496909 (4s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=10', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+  fold 1: auc=0.945260 gap=-0.000496 pr=0.509871 (9s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=10', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+  fold 2: auc=0.949919 gap=-0.006340 pr=0.524686 (13s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=10', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+  fold 3: auc=0.945258 gap=-0.000503 pr=0.503836 (16s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=10', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+  fold 4: auc=0.939127 gap=0.007248 pr=0.489710 (20s)
+==> te_glm: OOF=0.944836 gap=0.000055
+
+--- Stage 2.2 Promotion gate ---
+  OOF Δ = -0.004479  (need > 0) → FAIL
+  Fold wins = 0/5  (need ≥4) → FAIL
+  fold Δ: ['-0.003608', '-0.004728', '-0.003920', '-0.005101', '-0.005305']
+  DECISION: REJECT — REJECT: OOF did not improve
+
+=== Stage 4.2 gate summary ===
+  REJECT  stage3:raw_lgbm: OOFΔ=-0.001749 wins=0/5 | view=raw_lgbm
+  REJECT  stage3:digit_lgbm: OOFΔ=-0.004604 wins=0/5 | view=digit_lgbm
+  REJECT  stage3:te_lgbm: OOFΔ=-0.000009 wins=2/5 | view=te_lgbm
+  REJECT  stage3:raw_xgb: OOFΔ=-0.001683 wins=0/5 | view=raw_xgb
+  REJECT  stage3:digit_xgb: OOFΔ=-0.007639 wins=0/5 | view=digit_xgb
+  REJECT  te_lgbm_leaves7: OOFΔ=-0.000227 wins=1/5 | num_leaves:4→7 (TE-LGBM)
+  PROMOTE te_xgb_smooth50: OOFΔ=+0.000131 wins=5/5 | TE smooth:20→50 (TE-XGB)
+  REJECT  te_xgb_depth3: OOFΔ=-0.000178 wins=0/5 | max_depth:2→3 (TE-XGB)
+  REJECT  te_glm: OOFΔ=-0.004479 wins=0/5 | model_family: GLM on TE view
+
+Wrote /Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/logs/stage4_levers_result.json
+Promoted: ['te_xgb_smooth50']

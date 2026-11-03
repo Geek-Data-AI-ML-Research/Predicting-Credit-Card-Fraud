@@ -1,0 +1,110 @@
+train (699960, 26) | test (299984, 25) | fraud 1.6700% | cpus 10 | smoke=False
+artifact ebm_b4: OOF AUC 0.948141
+artifact ebm_dig: OOF AUC 0.949808
+artifact ebm_i25_bag4: OOF AUC 0.950262
+artifact glm_dl_s50_bag: OOF AUC 0.950507
+artifact glm_ohk2_bag: OOF AUC 0.950115
+artifact glm_ohk_c01: OOF AUC 0.949907
+artifact lgb_dig_l7: OOF AUC 0.950155
+artifact lgb_dig_s100_bag5: OOF AUC 0.950488
+artifact lgb_dig_s100_bag: OOF AUC 0.950426
+artifact lgb_diglead_bag: OOF AUC 0.950510
+artifact lgb_diglead_l3_bag: OOF AUC 0.950627
+artifact lgb_rawdig_l4: OOF AUC 0.948375
+artifact realmlp_dig: OOF AUC 0.948529
+artifact realmlp_te: OOF AUC 0.947710
+artifact realmlp_v1: OOF AUC 0.945838
+36 keys, 46 numeric columns
+lgb_k_0 fold 0: AUC 0.94966, 2466 trees (44s)
+lgb_k_0 fold 1: AUC 0.95119, 2111 trees (85s)
+lgb_k_0 fold 2: AUC 0.95536, 1548 trees (117s)
+lgb_k_0 fold 3: AUC 0.95177, 1593 trees (146s)
+lgb_k_0 fold 4: AUC 0.94500, 2018 trees (177s)
+==> lgb_k_0: CV AUC 0.95049 | refit 2434 trees (210s)
+
+lgb_k_l7 fold 0: AUC 0.94944, 1611 trees (27s)
+lgb_k_l7 fold 1: AUC 0.95118, 1453 trees (51s)
+lgb_k_l7 fold 2: AUC 0.95503, 1060 trees (73s)
+lgb_k_l7 fold 3: AUC 0.95158, 1297 trees (99s)
+lgb_k_l7 fold 4: AUC 0.94432, 1562 trees (136s)
+==> lgb_k_l7: CV AUC 0.95021 | refit 1746 trees (167s)
+
+xgb_k fold 0: AUC 0.94964, 2346 trees (79s)
+xgb_k fold 1: AUC 0.95110, 2213 trees (159s)
+xgb_k fold 2: AUC 0.95523, 1924 trees (232s)
+xgb_k fold 3: AUC 0.95141, 1564 trees (294s)
+xgb_k fold 4: AUC 0.94511, 1983 trees (372s)
+==> xgb_k: CV AUC 0.95043 | refit 2508 trees (421s)
+
+glm_joint fold 0: AUC 0.94935 (29s)
+glm_joint fold 1: AUC 0.95068 (64s)
+glm_joint fold 2: AUC 0.95501 (90s)
+glm_joint fold 3: AUC 0.95041 (122s)
+glm_joint fold 4: AUC 0.94526 (149s)
+==> glm_joint (699960, 62230): CV AUC 0.95011 (190s)
+
+lgb_k_1 fold 0: AUC 0.94943, 2631 trees (62s)
+lgb_k_1 fold 1: AUC 0.95084, 1636 trees (100s)
+lgb_k_1 fold 2: AUC 0.95516, 1840 trees (146s)
+lgb_k_1 fold 3: AUC 0.95133, 1530 trees (180s)
+lgb_k_1 fold 4: AUC 0.94516, 2100 trees (226s)
+==> lgb_k_1: CV AUC 0.95034 | refit 2434 trees (267s)
+
+lgb_k_2 fold 0: AUC 0.94929, 1916 trees (35s)
+lgb_k_2 fold 1: AUC 0.95116, 1831 trees (69s)
+lgb_k_2 fold 2: AUC 0.95514, 1428 trees (101s)
+lgb_k_2 fold 3: AUC 0.95127, 1747 trees (138s)
+lgb_k_2 fold 4: AUC 0.94485, 2513 trees (192s)
+==> lgb_k_2: CV AUC 0.95022 | refit 2359 trees (233s)
+
+==> lgb_k (3 seeds): CV AUC 0.95056
+
+lgb_k_s100_0 fold 0: AUC 0.94956, 2636 trees (47s)
+lgb_k_s100_0 fold 1: AUC 0.95104, 1599 trees (79s)
+lgb_k_s100_0 fold 2: AUC 0.95535, 1700 trees (118s)
+lgb_k_s100_0 fold 3: AUC 0.95186, 1952 trees (164s)
+lgb_k_s100_0 fold 4: AUC 0.94496, 2299 trees (210s)
+==> lgb_k_s100_0: CV AUC 0.95045 | refit 2546 trees (263s)
+
+lgb_k_s100_1 fold 0: AUC 0.94928, 1809 trees (42s)
+lgb_k_s100_1 fold 1: AUC 0.95102, 1330 trees (74s)
+lgb_k_s100_1 fold 2: AUC 0.95507, 1333 trees (106s)
+lgb_k_s100_1 fold 3: AUC 0.95151, 1527 trees (142s)
+lgb_k_s100_1 fold 4: AUC 0.94525, 1809 trees (182s)
+==> lgb_k_s100_1: CV AUC 0.95036 | refit 1952 trees (219s)
+
+==> lgb_k_s100 (2 seeds): CV AUC 0.95055
+
+lgb_raw fold 0: AUC 0.94639, 3514 trees (43s)
+lgb_raw fold 1: AUC 0.94943, 4236 trees (96s)
+lgb_raw fold 2: AUC 0.95298, 3880 trees (143s)
+lgb_raw fold 3: AUC 0.94868, 3340 trees (183s)
+lgb_raw fold 4: AUC 0.94337, 3490 trees (222s)
+==> lgb_raw: CV AUC 0.94814 | refit 4615 trees (263s)
+
+
+=== stack summary ===
+  art_ebm_b4                     auc=0.948141  w=+0.1161
+  art_ebm_dig                    auc=0.949808  w=+0.0795
+  art_ebm_i25_bag4               auc=0.950262  w=+0.1853
+  art_glm_dl_s50_bag             auc=0.950507  w=+0.1545
+  art_glm_ohk2_bag               auc=0.950115  w=+0.0893
+  art_glm_ohk_c01                auc=0.949907  w=+0.0224
+  art_lgb_dig_l7                 auc=0.950155  w=+0.0103
+  art_lgb_dig_s100_bag5          auc=0.950488  w=+0.0242
+  art_lgb_dig_s100_bag           auc=0.950426  w=+0.0200
+  art_lgb_diglead_bag            auc=0.950510  w=+0.0228
+  art_lgb_diglead_l3_bag         auc=0.950627  w=+0.0519
+  art_lgb_rawdig_l4              auc=0.948375  w=+0.0473
+  art_realmlp_dig                auc=0.948529  w=-0.0608
+  art_realmlp_te                 auc=0.947710  w=-0.0493
+  art_realmlp_v1                 auc=0.945838  w=-0.0732
+  lgb_k_l7                       auc=0.950215  w=+0.0457
+  xgb_k                          auc=0.950433  w=+0.0713
+  glm_joint                      auc=0.950112  w=+0.0744
+  lgb_k                          auc=0.950556  w=+0.0564
+  lgb_k_s100                     auc=0.950555  w=+0.0701
+  lgb_raw                        auc=0.948144  w=+0.0586
+STACK CV AUC 0.951005
+wrote /Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/self_plus_artifacts_0.95100.csv
+wrote /Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/latest.csv

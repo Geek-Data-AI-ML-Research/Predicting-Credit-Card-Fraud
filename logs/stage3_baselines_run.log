@@ -1,0 +1,90 @@
+train=699,960 fraud=1.6700% | CV=StratifiedKFold(5, shuffle=True, rs=42) | cpus=10
+
+=== Arm raw_lgbm (lgb) ===
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 0: valid_auc=0.946105 gap=0.008826 pr=0.502269 trees=3917 (50s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 1: valid_auc=0.949244 gap=0.001866 pr=0.519727 trees=2258 (80s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 2: valid_auc=0.952078 gap=0.000364 pr=0.534582 trees=3208 (123s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 3: valid_auc=0.947644 gap=0.003625 pr=0.513933 trees=2151 (152s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 4: valid_auc=0.943122 gap=0.012221 pr=0.503550 trees=3697 (202s)
+==> raw_lgbm: OOF AUC=0.947566 (0.947639±0.003355) gap=0.005380
+
+=== Arm digit_lgbm (lgb) ===
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 0: valid_auc=0.943323 gap=0.014414 pr=0.487810 trees=463 (10s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 1: valid_auc=0.945569 gap=0.011760 pr=0.504838 trees=454 (21s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 2: valid_auc=0.950086 gap=0.006839 pr=0.513130 trees=476 (32s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 3: valid_auc=0.946101 gap=0.011733 pr=0.507468 trees=481 (44s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 4: valid_auc=0.938564 gap=0.020468 pr=0.483718 trees=473 (53s)
+==> digit_lgbm: OOF AUC=0.944711 (0.944729±0.004221) gap=0.013043
+
+=== Arm te_lgbm (lgb) ===
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 0: valid_auc=0.948331 gap=0.009991 pr=0.515963 trees=2980 (50s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 1: valid_auc=0.949972 gap=0.007017 pr=0.527278 trees=2747 (94s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 2: valid_auc=0.953942 gap=-0.001940 pr=0.543823 trees=1387 (120s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 3: valid_auc=0.950178 gap=0.005260 pr=0.532255 trees=2224 (159s)
+/private/tmp/kaggle_s6e11_venv/lib/python3.14/site-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+  fold 4: valid_auc=0.944556 gap=0.012293 pr=0.505767 trees=2118 (196s)
+==> te_lgbm: OOF AUC=0.949306 (0.949396±0.003398) gap=0.006524
+
+=== Arm raw_xgb (xgb) ===
+  fold 0: valid_auc=0.945962 gap=0.005892 pr=0.502871 trees=2698 (67s)
+  fold 1: valid_auc=0.949580 gap=0.003278 pr=0.522432 trees=3913 (160s)
+  fold 2: valid_auc=0.952266 gap=-0.001106 pr=0.531941 trees=3193 (239s)
+  fold 3: valid_auc=0.947381 gap=0.004090 pr=0.516135 trees=2598 (304s)
+  fold 4: valid_auc=0.943066 gap=0.009989 pr=0.504530 trees=2951 (378s)
+==> raw_xgb: OOF AUC=0.947632 (0.947651±0.003499) gap=0.004428
+
+=== Arm digit_xgb (xgb) ===
+  fold 0: valid_auc=0.940126 gap=0.042242 pr=0.467618 trees=679 (54s)
+  fold 1: valid_auc=0.942789 gap=0.034336 pr=0.492097 trees=497 (97s)
+  fold 2: valid_auc=0.947465 gap=0.033003 pr=0.498140 trees=616 (151s)
+  fold 3: valid_auc=0.942759 gap=0.037520 pr=0.487767 trees=587 (200s)
+  fold 4: valid_auc=0.935298 gap=0.040909 pr=0.463738 trees=440 (240s)
+==> digit_xgb: OOF AUC=0.941676 (0.941687±0.004444) gap=0.037602
+
+=== Arm te_xgb (xgb) ===
+  fold 0: valid_auc=0.948377 gap=0.007878 pr=0.515598 trees=2856 (133s)
+  fold 1: valid_auc=0.949988 gap=0.004364 pr=0.528676 trees=2146 (236s)
+  fold 2: valid_auc=0.953839 gap=-0.001737 pr=0.545758 trees=1612 (316s)
+  fold 3: valid_auc=0.950359 gap=0.004610 pr=0.533859 trees=2426 (430s)
+  fold 4: valid_auc=0.944432 gap=0.012036 pr=0.506887 trees=2397 (544s)
+==> te_xgb: OOF AUC=0.949315 (0.949399±0.003417) gap=0.005430
+
+=== Stage 3.2 control table ===
+  te_xgb       OOF=0.949315 gap=0.005430 folds=[0.94838, 0.94999, 0.95384, 0.95036, 0.94443]
+  te_lgbm      OOF=0.949306 gap=0.006524 folds=[0.94833, 0.94997, 0.95394, 0.95018, 0.94456]
+  raw_xgb      OOF=0.947632 gap=0.004428 folds=[0.94596, 0.94958, 0.95227, 0.94738, 0.94307]
+  raw_lgbm     OOF=0.947566 gap=0.005380 folds=[0.9461, 0.94924, 0.95208, 0.94764, 0.94312]
+  digit_lgbm   OOF=0.944711 gap=0.013043 folds=[0.94332, 0.94557, 0.95009, 0.9461, 0.93856]
+  digit_xgb    OOF=0.941676 gap=0.037602 folds=[0.94013, 0.94279, 0.94746, 0.94276, 0.9353]
+
+Wrote /Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/logs/stage3_baselines_result.json
+OOF preds in /Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/preds/stage3/

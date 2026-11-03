@@ -1,0 +1,576 @@
+{
+  "stage": "7_align_handoff",
+  "created_utc": "2026-11-02T19:15:16.048652+00:00",
+  "elapsed_sec": 16.7,
+  "nested_hill": {
+    "oof": 0.9511733714239196,
+    "folds": [
+      0.9504624133432997,
+      0.9516500940363699,
+      0.9558920247754741,
+      0.9517514440906829,
+      0.9461110749366106
+    ],
+    "aligned_probit_oof": 0.9511734734102006
+  },
+  "candidates": [
+    {
+      "name": "nested_hill",
+      "raw_pooled_auc": 0.9511733714239196,
+      "mean_fold_auc": 0.9511734102364875,
+      "fold_aucs": [
+        0.9504624133432997,
+        0.9516500940363699,
+        0.9558920247754741,
+        0.9517514440906829,
+        0.9461110749366106
+      ],
+      "aligned_probit_pooled_auc": 0.9511734734102006,
+      "fold_deltas_vs_ctrl": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fold_wins": 5
+    },
+    {
+      "name": "nested_nn_logit_probit",
+      "raw_pooled_auc": 0.9450888547295242,
+      "mean_fold_auc": 0.9505622973310798,
+      "fold_aucs": [
+        0.9494590771111453,
+        0.951654824720584,
+        0.9554224363976365,
+        0.9508717900621962,
+        0.9454033583638367
+      ],
+      "aligned_probit_pooled_auc": 0.9505623902585432,
+      "aligned_zscore_pooled_auc": 0.9444172352932485,
+      "fold_deltas_vs_ctrl": [
+        -0.0010033362321544281,
+        4.730684214138137e-06,
+        -0.0004695883778376153,
+        -0.000879654028486665,
+        -0.0007077165727739088
+      ],
+      "fold_wins": 1,
+      "gate_raw": {
+        "promote": false,
+        "oof_delta": -0.006084516694395359,
+        "oof_improved": false,
+        "fold_wins": 1,
+        "fold_deltas": [
+          -0.0010033362321544281,
+          4.730684214138137e-06,
+          -0.0004695883778376153,
+          -0.000879654028486665,
+          -0.0007077165727739088
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "gate_aligned_pooled": {
+        "promote": false,
+        "oof_delta": -0.0006109811653763897,
+        "oof_improved": false,
+        "fold_wins": 1,
+        "fold_deltas": [
+          -0.0010033362321544281,
+          4.730684214138137e-06,
+          -0.0004695883778376153,
+          -0.000879654028486665,
+          -0.0007077165727739088
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "pass_aligned": false,
+      "scale_gap_raw_minus_aligned": -0.005473535529018969
+    },
+    {
+      "name": "nested_probit_hillclimb",
+      "raw_pooled_auc": 0.9509247768495329,
+      "mean_fold_auc": 0.95092467693832,
+      "fold_aucs": [
+        0.9499859783844709,
+        0.9516858343944463,
+        0.9558813034448466,
+        0.9514813398883598,
+        0.9455889285794763
+      ],
+      "aligned_probit_pooled_auc": 0.9509247551595804,
+      "aligned_zscore_pooled_auc": 0.9509245872333577,
+      "fold_deltas_vs_ctrl": [
+        -0.0004764349588288752,
+        3.5740358076408185e-05,
+        -1.0721330627516679e-05,
+        -0.00027010420232309595,
+        -0.0005221463571343232
+      ],
+      "fold_wins": 1,
+      "gate_raw": {
+        "promote": false,
+        "oof_delta": -0.00024859457438664023,
+        "oof_improved": false,
+        "fold_wins": 1,
+        "fold_deltas": [
+          -0.0004764349588288752,
+          3.5740358076408185e-05,
+          -1.0721330627516679e-05,
+          -0.00027010420232309595,
+          -0.0005221463571343232
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "gate_aligned_pooled": {
+        "promote": false,
+        "oof_delta": -0.00024861626433914097,
+        "oof_improved": false,
+        "fold_wins": 1,
+        "fold_deltas": [
+          -0.0004764349588288752,
+          3.5740358076408185e-05,
+          -1.0721330627516679e-05,
+          -0.00027010420232309595,
+          -0.0005221463571343232
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "pass_aligned": false,
+      "scale_gap_raw_minus_aligned": 2.1689952500736354e-08
+    },
+    {
+      "name": "nested_hybrid_rank_logit_mix",
+      "raw_pooled_auc": 0.9509247768495329,
+      "mean_fold_auc": 0.95092467693832,
+      "fold_aucs": [
+        0.9499859783844709,
+        0.9516858343944463,
+        0.9558813034448466,
+        0.9514813398883598,
+        0.9455889285794763
+      ],
+      "aligned_probit_pooled_auc": 0.9509247551595804,
+      "aligned_zscore_pooled_auc": 0.9509245872333577,
+      "fold_deltas_vs_ctrl": [
+        -0.0004764349588288752,
+        3.5740358076408185e-05,
+        -1.0721330627516679e-05,
+        -0.00027010420232309595,
+        -0.0005221463571343232
+      ],
+      "fold_wins": 1,
+      "gate_raw": {
+        "promote": false,
+        "oof_delta": -0.00024859457438664023,
+        "oof_improved": false,
+        "fold_wins": 1,
+        "fold_deltas": [
+          -0.0004764349588288752,
+          3.5740358076408185e-05,
+          -1.0721330627516679e-05,
+          -0.00027010420232309595,
+          -0.0005221463571343232
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "gate_aligned_pooled": {
+        "promote": false,
+        "oof_delta": -0.00024861626433914097,
+        "oof_improved": false,
+        "fold_wins": 1,
+        "fold_deltas": [
+          -0.0004764349588288752,
+          3.5740358076408185e-05,
+          -1.0721330627516679e-05,
+          -0.00027010420232309595,
+          -0.0005221463571343232
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "pass_aligned": false,
+      "scale_gap_raw_minus_aligned": 2.1689952500736354e-08
+    },
+    {
+      "name": "nested_pruned_ridge_pos",
+      "raw_pooled_auc": 0.9463728449797107,
+      "mean_fold_auc": 0.948181515357098,
+      "fold_aucs": [
+        0.9456498588660633,
+        0.9497690792238503,
+        0.9537557487678502,
+        0.9494189169301548,
+        0.9423139729975715
+      ],
+      "aligned_probit_pooled_auc": 0.9481817281657468,
+      "aligned_zscore_pooled_auc": 0.94620750433604,
+      "fold_deltas_vs_ctrl": [
+        -0.004812554477236386,
+        -0.0018810148125195658,
+        -0.002136276007623894,
+        -0.0023325271605281195,
+        -0.003797101939039149
+      ],
+      "fold_wins": 0,
+      "gate_raw": {
+        "promote": false,
+        "oof_delta": -0.004800526444208808,
+        "oof_improved": false,
+        "fold_wins": 0,
+        "fold_deltas": [
+          -0.004812554477236386,
+          -0.0018810148125195658,
+          -0.002136276007623894,
+          -0.0023325271605281195,
+          -0.003797101939039149
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "gate_aligned_pooled": {
+        "promote": false,
+        "oof_delta": -0.0029916432581728047,
+        "oof_improved": false,
+        "fold_wins": 0,
+        "fold_deltas": [
+          -0.004812554477236386,
+          -0.0018810148125195658,
+          -0.002136276007623894,
+          -0.0023325271605281195,
+          -0.003797101939039149
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "pass_aligned": false,
+      "scale_gap_raw_minus_aligned": -0.0018088831860360033
+    },
+    {
+      "name": "gated_meta_net",
+      "raw_pooled_auc": 0.949528633821104,
+      "mean_fold_auc": 0.9505412667695587,
+      "fold_aucs": [
+        0.9493529610771985,
+        0.9516581525122378,
+        0.9554693284310125,
+        0.9509053693753656,
+        0.9453205224519796
+      ],
+      "aligned_probit_pooled_auc": 0.9505413669146975,
+      "aligned_zscore_pooled_auc": 0.9491135223737012,
+      "fold_deltas_vs_ctrl": [
+        -0.001109452266101263,
+        8.058475867933623e-06,
+        -0.00042269634446157056,
+        -0.0008460747153172798,
+        -0.0007905524846310019
+      ],
+      "fold_wins": 1,
+      "gate_raw": {
+        "promote": false,
+        "oof_delta": -0.0016447376028155825,
+        "oof_improved": false,
+        "fold_wins": 1,
+        "fold_deltas": [
+          -0.001109452266101263,
+          8.058475867933623e-06,
+          -0.00042269634446157056,
+          -0.0008460747153172798,
+          -0.0007905524846310019
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "gate_aligned_pooled": {
+        "promote": false,
+        "oof_delta": -0.0006320045092220727,
+        "oof_improved": false,
+        "fold_wins": 1,
+        "fold_deltas": [
+          -0.001109452266101263,
+          8.058475867933623e-06,
+          -0.00042269634446157056,
+          -0.0008460747153172798,
+          -0.0007905524846310019
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "pass_aligned": false,
+      "scale_gap_raw_minus_aligned": -0.0010127330935935097
+    },
+    {
+      "name": "meta_xgb_cuda",
+      "raw_pooled_auc": 0.9460063212011853,
+      "mean_fold_auc": 0.9506960717333628,
+      "fold_aucs": [
+        0.9498097985688425,
+        0.9514698930307939,
+        0.9553167502711917,
+        0.9514637516860656,
+        0.945420165109921
+      ],
+      "aligned_probit_pooled_auc": 0.9508200038135063,
+      "aligned_zscore_pooled_auc": 0.944624947849601,
+      "fold_deltas_vs_ctrl": [
+        -0.0006526147744572164,
+        -0.00018020100557603058,
+        -0.0005752745042824081,
+        -0.0002876924046173457,
+        -0.000690909826689623
+      ],
+      "fold_wins": 0,
+      "gate_raw": {
+        "promote": false,
+        "oof_delta": -0.005167050222734226,
+        "oof_improved": false,
+        "fold_wins": 0,
+        "fold_deltas": [
+          -0.0006526147744572164,
+          -0.00018020100557603058,
+          -0.0005752745042824081,
+          -0.0002876924046173457,
+          -0.000690909826689623
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "gate_aligned_pooled": {
+        "promote": false,
+        "oof_delta": -0.0003533676104132688,
+        "oof_improved": false,
+        "fold_wins": 0,
+        "fold_deltas": [
+          -0.0006526147744572164,
+          -0.00018020100557603058,
+          -0.0005752745042824081,
+          -0.0002876924046173457,
+          -0.000690909826689623
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "pass_aligned": false,
+      "scale_gap_raw_minus_aligned": -0.0048136826123209575
+    },
+    {
+      "name": "blend_71_gated_xgb",
+      "raw_pooled_auc": 0.9509173811972088,
+      "mean_fold_auc": 0.950935734740298,
+      "fold_aucs": [
+        0.9499929351822438,
+        0.9517003791122169,
+        0.9558859673246531,
+        0.9514946790196116,
+        0.9456047130627648
+      ],
+      "aligned_probit_pooled_auc": 0.9509358135550345,
+      "aligned_zscore_pooled_auc": 0.9509173357042425,
+      "fold_deltas_vs_ctrl": [
+        -0.000469478161055914,
+        5.028507584703412e-05,
+        -6.057450820939891e-06,
+        -0.00025676507107130764,
+        -0.0005063618738457842
+      ],
+      "fold_wins": 1,
+      "gate_raw": {
+        "promote": false,
+        "oof_delta": -0.000255990226710745,
+        "oof_improved": false,
+        "fold_wins": 1,
+        "fold_deltas": [
+          -0.000469478161055914,
+          5.028507584703412e-05,
+          -6.057450820939891e-06,
+          -0.00025676507107130764,
+          -0.0005063618738457842
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "gate_aligned_pooled": {
+        "promote": false,
+        "oof_delta": -0.00023755786888501884,
+        "oof_improved": false,
+        "fold_wins": 1,
+        "fold_deltas": [
+          -0.000469478161055914,
+          5.028507584703412e-05,
+          -6.057450820939891e-06,
+          -0.00025676507107130764,
+          -0.0005063618738457842
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "pass_aligned": false,
+      "scale_gap_raw_minus_aligned": -1.8432357825726164e-05
+    },
+    {
+      "name": "best_7_1",
+      "raw_pooled_auc": 0.9509247768495329,
+      "mean_fold_auc": 0.95092467693832,
+      "fold_aucs": [
+        0.9499859783844709,
+        0.9516858343944463,
+        0.9558813034448466,
+        0.9514813398883598,
+        0.9455889285794763
+      ],
+      "aligned_probit_pooled_auc": 0.9509247551595804,
+      "aligned_zscore_pooled_auc": 0.9509245872333577,
+      "fold_deltas_vs_ctrl": [
+        -0.0004764349588288752,
+        3.5740358076408185e-05,
+        -1.0721330627516679e-05,
+        -0.00027010420232309595,
+        -0.0005221463571343232
+      ],
+      "fold_wins": 1,
+      "gate_raw": {
+        "promote": false,
+        "oof_delta": -0.00024859457438664023,
+        "oof_improved": false,
+        "fold_wins": 1,
+        "fold_deltas": [
+          -0.0004764349588288752,
+          3.5740358076408185e-05,
+          -1.0721330627516679e-05,
+          -0.00027010420232309595,
+          -0.0005221463571343232
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "gate_aligned_pooled": {
+        "promote": false,
+        "oof_delta": -0.00024861626433914097,
+        "oof_improved": false,
+        "fold_wins": 1,
+        "fold_deltas": [
+          -0.0004764349588288752,
+          3.5740358076408185e-05,
+          -1.0721330627516679e-05,
+          -0.00027010420232309595,
+          -0.0005221463571343232
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "pass_aligned": false,
+      "scale_gap_raw_minus_aligned": 2.1689952500736354e-08
+    },
+    {
+      "name": "best_7_2",
+      "raw_pooled_auc": 0.9509173811972088,
+      "mean_fold_auc": 0.950935734740298,
+      "fold_aucs": [
+        0.9499929351822438,
+        0.9517003791122169,
+        0.9558859673246531,
+        0.9514946790196116,
+        0.9456047130627648
+      ],
+      "aligned_probit_pooled_auc": 0.9509358135550345,
+      "aligned_zscore_pooled_auc": 0.9509173357042425,
+      "fold_deltas_vs_ctrl": [
+        -0.000469478161055914,
+        5.028507584703412e-05,
+        -6.057450820939891e-06,
+        -0.00025676507107130764,
+        -0.0005063618738457842
+      ],
+      "fold_wins": 1,
+      "gate_raw": {
+        "promote": false,
+        "oof_delta": -0.000255990226710745,
+        "oof_improved": false,
+        "fold_wins": 1,
+        "fold_deltas": [
+          -0.000469478161055914,
+          5.028507584703412e-05,
+          -6.057450820939891e-06,
+          -0.00025676507107130764,
+          -0.0005063618738457842
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "gate_aligned_pooled": {
+        "promote": false,
+        "oof_delta": -0.00023755786888501884,
+        "oof_improved": false,
+        "fold_wins": 1,
+        "fold_deltas": [
+          -0.000469478161055914,
+          5.028507584703412e-05,
+          -6.057450820939891e-06,
+          -0.00025676507107130764,
+          -0.0005063618738457842
+        ],
+        "min_fold_wins_required": 4,
+        "folds_gate_passed": false,
+        "rule": "Promote only if OOF ROC-AUC improves AND \u22654/5 folds improve (reject fold-variance chasing).",
+        "reason": "REJECT: OOF did not improve"
+      },
+      "pass_aligned": false,
+      "scale_gap_raw_minus_aligned": -1.8432357825726164e-05
+    }
+  ],
+  "handoff": {
+    "source": "nested_hill",
+    "aligned_pooled_auc": 0.9511734734102006,
+    "platt_mean_p": 0.01672293154059916,
+    "logit_mean": -7.39953127512083,
+    "base_rate_target": 0.017,
+    "paths": {
+      "oof": "preds/stage7/campaign_best_oof.npy",
+      "test": "preds/stage7/campaign_best_test.npy",
+      "oof_logit": "preds/stage7/campaign_best_oof_logit.npy",
+      "test_logit": "preds/stage7/campaign_best_test_logit.npy"
+    }
+  },
+  "policy": "NO_KAGGLE_SUBMIT",
+  "keep_pod_warm": true
+}

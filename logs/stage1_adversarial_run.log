@@ -1,0 +1,35 @@
+Loaded train=699,960 test=299,984
+
+[Stage 1.1] Chronology audit
+  id: train[0, 699959] test[699960, 999943] overlap=0 contiguous_blocks=True fraud_AUC=0.49854846965794763
+       fraud_rate_by_id_quintile={'0': 0.016286644951140065, '1': 0.017229555974627123, '2': 0.016993828218755357, '3': 0.01649379964569404, '4': 0.01649379964569404}
+  day_of_week: train[0.0, 6.0] test[0.0, 6.0] L1(train,test)=0.0083 fraud_AUC=0.5081316130469079
+  time_of_day_hour: train[0.0, 23.0] test[0.0, 23.0] L1(train,test)=0.0096 fraud_AUC=0.49980140144983265
+  time_order_suspected=False
+  note: id ranges contiguous non-overlapping (often a Kaggle write artifact; not sufficient alone for prequential CV)
+
+[Stage 1.2] Adversarial validation (train↔test)
+  fold 1: Adv AUC=0.49994
+  fold 2: Adv AUC=0.50194
+  fold 3: Adv AUC=0.50126
+  fold 4: Adv AUC=0.50138
+  fold 5: Adv AUC=0.49950
+  OOF Adversarial AUC: 0.50080  (folds mean±sd 0.50080±0.00092)
+  Top distinguishing features:
+    merchant_risk_score: 444.8
+    merchant_category: 396.4
+    distance_from_home_km: 391.2
+    account_balance_usd: 386.0
+    amount_usd: 382.2
+    velocity_score: 370.6
+    hours_since_last_txn: 363.8
+    card_age_months: 297.4
+    customer_age: 272.2
+    device_type: 221.6
+
+[Stage 1.3] Decision lock
+  locked_cv=stratified_kfold_5_rs42
+  contract: StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+  rationale: Adv AUC=0.50080 ≈ 0.50 and chronology audit found no time-order structure → lock shuffled stratified 5-fold.
+
+Wrote /Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/logs/stage1_adversarial_result.json

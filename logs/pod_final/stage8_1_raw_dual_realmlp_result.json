@@ -1,0 +1,14 @@
+{
+  "stage": "8.1_raw_dual_realmlp",
+  "created_utc": "2026-11-02T19:51:55.205317+00:00",
+  "elapsed_sec": 1760.3,
+  "status": "EARLY_ABORT_FOLD0_0.9394",
+  "fold_aucs": [
+    0.9393611250565687
+  ],
+  "control": 0.949447,
+  "policy": "NO_KAGGLE_SUBMIT",
+  "keep_pod_warm": true,
+  "oof_auc": null,
+  "promote": false
+}

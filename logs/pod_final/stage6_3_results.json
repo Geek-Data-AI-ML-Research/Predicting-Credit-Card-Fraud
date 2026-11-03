@@ -1,0 +1,30 @@
+{
+  "stage": "6.3",
+  "created_utc": "2026-11-02T18:30:11.245366+00:00",
+  "ebm": {
+    "status": "EARLY_ABORT_FOLD0_0.9475",
+    "fold0_auc": 0.947517,
+    "control_te_xgb_smooth50": 0.949447,
+    "delta_vs_control": -0.0019299999999999873,
+    "reason": "Fold0 already -0.00193 below control; zero chance of Stage 2.2 (OOF\u2191 and \u22654/5). Aborted to free RTX 4090 for CUDA jobs."
+  },
+  "catboost": {
+    "name": "te_smooth50_catboost_d3",
+    "status": "REJECT",
+    "oof_approx_from_folds": null,
+    "note": "Completed 5/5 then rejected vs te_xgb_smooth50 (OOF \u0394\u2248-0.003, 0/5 folds)",
+    "fold_aucs": [
+      0.944458,
+      0.947736,
+      0.95134,
+      0.946651,
+      0.942313
+    ]
+  },
+  "policy": "NO_KAGGLE_SUBMIT",
+  "next": [
+    "stage6_2_gpu_neural",
+    "stage6_3b_xgb_cuda_sweep",
+    "stage7_2_gpu_meta_stacker"
+  ]
+}

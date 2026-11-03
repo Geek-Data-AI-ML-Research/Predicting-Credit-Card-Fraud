@@ -1,0 +1,237 @@
+{
+  "title": "S6E11 core rule \u2014 prove the split",
+  "handbook_ref": "Fraud Detection Handbook Ch 5.2",
+  "core_rule": "Validation split must mirror how test was separated from train.",
+  "ts_utc": "2026-11-02T17:32:20.874397+00:00",
+  "n_train": 699960,
+  "n_test": 299984,
+  "chronology": {
+    "time_order_suspected": false,
+    "notes": [
+      "id contiguous but not time-ordered DGP (artifact)"
+    ],
+    "columns": {
+      "id": {
+        "train_range": [
+          0,
+          699959
+        ],
+        "test_range": [
+          699960,
+          999943
+        ],
+        "overlap_n": 0,
+        "contiguous_non_overlapping": true,
+        "fraud_auc": 0.49854846965794763,
+        "fraud_rate_quintile_range_pp": 0.09429110234870572,
+        "interpretation": "Contiguous ids are a Kaggle file-write artifact (train then test), not evidence of a temporal DGP split \u2014 fraud AUC\u22480.50 and flat quintiles."
+      },
+      "day_of_week": {
+        "l1_train_test": 0.008304785417650562,
+        "fraud_auc": 0.5081316130469079
+      },
+      "time_of_day_hour": {
+        "l1_train_test": 0.009603415281373075,
+        "fraud_auc": 0.49980140144983265
+      }
+    }
+  },
+  "adversarial": {
+    "oof_auc": 0.5007983635501114,
+    "fold_aucs": [
+      0.4999390438262984,
+      0.5019397578256534,
+      0.5012557672810017,
+      0.5013774469844319,
+      0.4994977968720021
+    ],
+    "fold_mean": 0.5008019625578775,
+    "fold_std": 0.0009248973993729958
+  },
+  "feature_shifts": [
+    {
+      "feature": "amount_usd",
+      "kind": "numeric",
+      "train_mean": 79.89306786102063,
+      "test_mean": 79.92119527041443,
+      "ks_stat": 0.001533853221014514,
+      "ks_pvalue": 0.7058270099799522
+    },
+    {
+      "feature": "hours_since_last_txn",
+      "kind": "numeric",
+      "train_mean": 6.633734041945255,
+      "test_mean": 6.640316816896902,
+      "ks_stat": 0.0013774436752938546,
+      "ks_pvalue": 0.8199310824813942
+    },
+    {
+      "feature": "txn_count_last_24h",
+      "kind": "numeric",
+      "train_mean": 2.984091948111321,
+      "test_mean": 2.9838058029761587,
+      "ks_stat": 0.0006527631223174901,
+      "ks_pvalue": 0.9999911051287653
+    },
+    {
+      "feature": "distance_from_home_km",
+      "kind": "numeric",
+      "train_mean": 13.587575147151265,
+      "test_mean": 13.602889920795777,
+      "ks_stat": 0.001969062938095012,
+      "ks_pvalue": 0.3890439233533981
+    },
+    {
+      "feature": "card_age_months",
+      "kind": "numeric",
+      "train_mean": 46.86298217040974,
+      "test_mean": 46.84074817323591,
+      "ks_stat": 0.002663803231095885,
+      "ks_pvalue": 0.10138192586480055
+    },
+    {
+      "feature": "customer_age",
+      "kind": "numeric",
+      "train_mean": 51.43028601634379,
+      "test_mean": 51.424259293829,
+      "ks_stat": 0.0007998577723257183,
+      "ks_pvalue": 0.9992850452480806
+    },
+    {
+      "feature": "account_balance_usd",
+      "kind": "numeric",
+      "train_mean": 2064.9980703183037,
+      "test_mean": 2071.4679983932474,
+      "ks_stat": 0.0018576344377622123,
+      "ks_pvalue": 0.46286718885345124
+    },
+    {
+      "feature": "cvv_retry_count",
+      "kind": "numeric",
+      "train_mean": 0.08547202697296988,
+      "test_mean": 0.08536788628726866,
+      "ks_stat": 7.71574762098437e-05,
+      "ks_pvalue": 1.0
+    },
+    {
+      "feature": "velocity_score",
+      "kind": "numeric",
+      "train_mean": 18.92944511114921,
+      "test_mean": 18.938460417888955,
+      "ks_stat": 0.0013851334009924443,
+      "ks_pvalue": 0.8146951872208125
+    },
+    {
+      "feature": "time_of_day_hour",
+      "kind": "numeric",
+      "train_mean": 11.761914966569519,
+      "test_mean": 11.746939836791295,
+      "ks_stat": 0.0015683861788361175,
+      "ks_pvalue": 0.6793008258083771
+    },
+    {
+      "feature": "day_of_week",
+      "kind": "numeric",
+      "train_mean": 2.981733241899537,
+      "test_mean": 2.9713384713851405,
+      "ks_stat": 0.0038251613585496003,
+      "ks_pvalue": 0.004277119669054944
+    },
+    {
+      "feature": "merchant_risk_score",
+      "kind": "numeric",
+      "train_mean": 35.21764789416538,
+      "test_mean": 35.217382927089446,
+      "ks_stat": 0.002152346766987945,
+      "ks_pvalue": 0.2845671439911046
+    },
+    {
+      "feature": "prior_disputes",
+      "kind": "numeric",
+      "train_mean": 0.1527687296416938,
+      "test_mean": 0.15392154248226572,
+      "ks_stat": 0.0008247293199636907,
+      "ks_pvalue": 0.9988054124334821
+    },
+    {
+      "feature": "merchant_category",
+      "kind": "categorical",
+      "dist_l1": 0.004616283003863187
+    },
+    {
+      "feature": "card_type",
+      "kind": "categorical",
+      "dist_l1": 0.0022561773993891275
+    },
+    {
+      "feature": "auth_method",
+      "kind": "categorical",
+      "dist_l1": 0.00462097639854768
+    },
+    {
+      "feature": "channel",
+      "kind": "categorical",
+      "dist_l1": 0.00428540294574134
+    },
+    {
+      "feature": "device_type",
+      "kind": "categorical",
+      "dist_l1": 0.0030978044718150445
+    },
+    {
+      "feature": "is_foreign_transaction",
+      "kind": "numeric",
+      "train_mean": 0.01728384479113092,
+      "test_mean": 0.017394261027254786,
+      "ks_stat": 0.00011041623612373375,
+      "ks_pvalue": 1.0
+    },
+    {
+      "feature": "is_new_merchant",
+      "kind": "numeric",
+      "train_mean": 0.15246585519172523,
+      "test_mean": 0.15282815083471119,
+      "ks_stat": 0.0003622956429858437,
+      "ks_pvalue": 1.0
+    },
+    {
+      "feature": "used_vpn",
+      "kind": "numeric",
+      "train_mean": 0.03380907480427453,
+      "test_mean": 0.032968424982665744,
+      "ks_stat": 0.0008406498216088076,
+      "ks_pvalue": 0.998380948593111
+    },
+    {
+      "feature": "ip_country_mismatch",
+      "kind": "numeric",
+      "train_mean": 0.01616092348134179,
+      "test_mean": 0.0160341884900528,
+      "ks_stat": 0.00012673499128901256,
+      "ks_pvalue": 1.0
+    },
+    {
+      "feature": "billing_shipping_mismatch",
+      "kind": "numeric",
+      "train_mean": 0.012935024858563347,
+      "test_mean": 0.013087364659448503,
+      "ks_stat": 0.00015233980088513732,
+      "ks_pvalue": 1.0
+    },
+    {
+      "feature": "is_ai_generated_scam_attempt",
+      "kind": "numeric",
+      "train_mean": 0.003284473398479913,
+      "test_mean": 0.003430182943090298,
+      "ks_stat": 0.00014570954461035068,
+      "ks_pvalue": 1.0
+    }
+  ],
+  "verdict": {
+    "proven_iid": true,
+    "split_type": "i.i.d. / random-like synthetic split (not temporal)",
+    "locked_cv": "StratifiedKFold(n_splits=5, shuffle=True, random_state=42)",
+    "rationale": "Adv AUC=0.50080\u22480.50 and chronology shows no real time order (contiguous ids = write artifact). Mirror with shuffled stratified K-Fold.",
+    "adv_auc_threshold": 0.52
+  }
+}

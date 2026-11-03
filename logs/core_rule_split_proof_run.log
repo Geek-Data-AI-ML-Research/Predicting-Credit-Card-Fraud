@@ -1,0 +1,29 @@
+=== S6E11 core rule: prove the split ===
+train=699,960 test=299,984
+
+[Chronology]
+  id: {'train_range': [0, 699959], 'test_range': [699960, 999943], 'overlap_n': 0, 'contiguous_non_overlapping': True, 'fraud_auc': 0.49854846965794763, 'fraud_rate_quintile_range_pp': 0.09429110234870572, 'interpretation': 'Contiguous ids are a Kaggle file-write artifact (train then test), not evidence of a temporal DGP split — fraud AUC≈0.50 and flat quintiles.'}
+  day_of_week: {'l1_train_test': 0.008304785417650562, 'fraud_auc': 0.5081316130469079}
+  time_of_day_hour: {'l1_train_test': 0.009603415281373075, 'fraud_auc': 0.49980140144983265}
+  time_order_suspected=False
+
+[Adversarial train↔test]
+  OOF Adv AUC=0.50080 (folds 0.50080±0.00092)
+
+[Feature shift (KS / L1)]
+  day_of_week: KS=0.0038 p=0.00428
+  card_age_months: KS=0.0027 p=0.101
+  merchant_risk_score: KS=0.0022 p=0.285
+  distance_from_home_km: KS=0.0020 p=0.389
+  account_balance_usd: KS=0.0019 p=0.463
+  time_of_day_hour: KS=0.0016 p=0.679
+  amount_usd: KS=0.0015 p=0.706
+  velocity_score: KS=0.0014 p=0.815
+
+[Verdict]
+  split_type=i.i.d. / random-like synthetic split (not temporal)
+  proven_iid=True
+  locked_cv=StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+  rationale=Adv AUC=0.50080≈0.50 and chronology shows no real time order (contiguous ids = write artifact). Mirror with shuffled stratified K-Fold.
+
+Wrote /Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/logs/core_rule_split_proof.json
