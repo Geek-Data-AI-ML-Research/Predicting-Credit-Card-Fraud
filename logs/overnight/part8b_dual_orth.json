@@ -1,0 +1,80 @@
+{
+  "slot6_public": 0.95229,
+  "baseline_p7": 0.952009,
+  "singles_top": [
+    {
+      "name": "gb_bag5",
+      "delta": 8.6e-05
+    },
+    {
+      "name": "gbx_bag3",
+      "delta": 5.5e-05
+    },
+    {
+      "name": "mega:glm_boost",
+      "delta": 5.2e-05
+    },
+    {
+      "name": "mega:glm_boost_xgb",
+      "delta": 4.6e-05
+    },
+    {
+      "name": "gbn_bag5_w128",
+      "delta": 2.9e-05
+    },
+    {
+      "name": "gbn_bag5_w512",
+      "delta": 2.8e-05
+    }
+  ],
+  "dual_vs_single": "\u22480 gain \u2014 dual-anchor (glm+gpt2) \u2248 single-anchor (glm) on Nested CV",
+  "greedy_history": [
+    {
+      "add": "gb_bag5",
+      "oof": 0.952095,
+      "n": 66
+    },
+    {
+      "add": "ebm_i25_bag4",
+      "oof": 0.952116,
+      "n": 67
+    },
+    {
+      "add": "gbx_bag3",
+      "oof": 0.95212,
+      "n": 68
+    }
+  ],
+  "ix": {
+    "best": "gbn128*gbn512",
+    "delta": 7e-06,
+    "on_greedy": 0.952121
+  },
+  "candidates": {
+    "prior_single+alex": 0.952103,
+    "prior_dual+alex": 0.952102,
+    "greedy_dual": 0.95212,
+    "greedy_dual+alex": 0.952129,
+    "greedy_dual+ix": 0.952121
+  },
+  "champion": {
+    "label": "greedy_dual+alex",
+    "oof": 0.9521286810207527,
+    "n": 74,
+    "C": 0.006,
+    "members_dualresid": [
+      "gb_bag5",
+      "ebm_i25_bag4",
+      "gbx_bag3"
+    ],
+    "folds": [
+      0.9511198447210407,
+      0.9524901687837284,
+      0.9568127029246025,
+      0.9523356765999497,
+      0.9478845890285437
+    ],
+    "file": "submissions/sub_part8b_dual_orth_superstack.csv"
+  },
+  "policy": "NO_SUBMIT"
+}

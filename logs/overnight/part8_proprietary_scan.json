@@ -1,0 +1,252 @@
+{
+  "keep7": {
+    "oof": 0.952031,
+    "C": 0.008
+  },
+  "exp1_glm_orthogonal_residuals": {
+    "baseline_p7_65": {
+      "oof": 0.952009,
+      "C": 0.008
+    },
+    "+gbx_bag3_resid": {
+      "oof": 0.952061,
+      "delta": 5.2e-05,
+      "keep": 1,
+      "corr_resid_glm": 3.9e-05,
+      "corr_raw_glm": 0.9952
+    },
+    "+gb_cat_d2_d3_bag_resid": {
+      "oof": 0.952026,
+      "delta": 1.7e-05,
+      "keep": 1,
+      "corr_resid_glm": 3.1e-05,
+      "corr_raw_glm": 0.9984
+    },
+    "+gb_xgb_cuda_d1_bag_resid": {
+      "oof": 0.95204,
+      "delta": 3.1e-05,
+      "keep": 1,
+      "corr_resid_glm": 2.1e-05,
+      "corr_raw_glm": 0.9964
+    },
+    "+all3_resid": {
+      "oof": 0.95205,
+      "delta": 4.1e-05,
+      "keep": 1
+    },
+    "+gbx_bag3_RAW": {
+      "oof": 0.952017,
+      "delta": 8e-06,
+      "keep": 1
+    },
+    "+gb_cat_d2_d3_bag_RAW": {
+      "oof": 0.952002,
+      "delta": -7e-06,
+      "keep": 0
+    },
+    "+gb_xgb_cuda_d1_bag_RAW": {
+      "oof": 0.952009,
+      "delta": 0.0,
+      "keep": 0
+    },
+    "note": "RAW = unorthogonalized booster ranks; resid = foldwise OLS-orthogonal to mega:glm_gen"
+  },
+  "exp2_orig_prototype_matching": {
+    "max_sim_orig_fraud": {
+      "standalone_auc": 0.605711
+    },
+    "mean_top5_sim_orig_fraud": {
+      "standalone_auc": 0.638355
+    },
+    "max_sim_orig_legit": {
+      "standalone_auc": 0.543909
+    },
+    "orig_nn_llr": {
+      "standalone_auc": 0.492997
+    },
+    "keep7_baseline": {
+      "oof": 0.952031,
+      "C": 0.008
+    },
+    "+max_sim_orig_fraud": {
+      "oof": 0.95203,
+      "delta": -1e-06,
+      "keep": 0
+    },
+    "+mean_top5_sim_orig_fraud": {
+      "oof": 0.95203,
+      "delta": -1e-06,
+      "keep": 0
+    },
+    "+max_sim_orig_legit": {
+      "oof": 0.952032,
+      "delta": 1e-06,
+      "keep": 1
+    },
+    "+orig_nn_llr": {
+      "oof": 0.952032,
+      "delta": 1e-06,
+      "keep": 1
+    },
+    "+llr_and_maxfraud": {
+      "oof": 0.952031,
+      "delta": 0.0,
+      "keep": 0
+    },
+    "note": "legit NN uses inverted index with max_df=200 (common flag/cat values dropped)"
+  },
+  "exp3_residual_gtest": {
+    "n_keys_scanned": 179,
+    "top20": [
+      {
+        "key": "FLAG_billing_shipping_mismatchxis_ai_generated_scam_attempt",
+        "G_over_df": 1.473510022734466,
+        "G": 4.420530068203398,
+        "df": 3,
+        "ncell": 4
+      },
+      {
+        "key": "toklen_account_balance_usdxvelocity_score",
+        "G_over_df": 1.0829792409424432,
+        "G": 7.580854686597102,
+        "df": 7,
+        "ncell": 8
+      },
+      {
+        "key": "num_flags_set",
+        "G_over_df": 1.0185291584057174,
+        "G": 5.092645792028587,
+        "df": 5,
+        "ncell": 6
+      },
+      {
+        "key": "toklen_amount_usdxhours_since_last_txn",
+        "G_over_df": 0.9566723089030907,
+        "G": 13.39341232464327,
+        "df": 14,
+        "ncell": 15
+      },
+      {
+        "key": "FLAG_is_new_merchantxis_ai_generated_scam_attempt",
+        "G_over_df": 0.9525007107161437,
+        "G": 2.857502132148431,
+        "df": 3,
+        "ncell": 4
+      },
+      {
+        "key": "FLAG_is_foreign_transactionxis_ai_generated_scam_attempt",
+        "G_over_df": 0.9356847196673387,
+        "G": 2.807054159002016,
+        "df": 3,
+        "ncell": 4
+      },
+      {
+        "key": "FLAG_ip_country_mismatchxis_ai_generated_scam_attempt",
+        "G_over_df": 0.9316474426018878,
+        "G": 2.7949423278056633,
+        "df": 3,
+        "ncell": 4
+      },
+      {
+        "key": "FLAG3_is_foreign_transactionxbilling_shipping_mismatchxis_ai_generated_scam_attempt",
+        "G_over_df": 0.8859735191567596,
+        "G": 6.2018146340973175,
+        "df": 7,
+        "ncell": 8
+      },
+      {
+        "key": "FLAG_is_foreign_transactionxbilling_shipping_mismatch",
+        "G_over_df": 0.8663476789093222,
+        "G": 2.5990430367279664,
+        "df": 3,
+        "ncell": 4
+      },
+      {
+        "key": "FLAG_ip_country_mismatchxbilling_shipping_mismatch",
+        "G_over_df": 0.8542499879279388,
+        "G": 2.5627499637838165,
+        "df": 3,
+        "ncell": 4
+      },
+      {
+        "key": "firstdec_amount_usdxhours_since_last_txn",
+        "G_over_df": 0.8527051591855195,
+        "G": 75.89075916751123,
+        "df": 89,
+        "ncell": 90
+      },
+      {
+        "key": "CxFxF_card_typexis_foreign_transactionxis_ai_generated_scam_attempt",
+        "G_over_df": 0.8215106013387742,
+        "G": 14.787190824097936,
+        "df": 18,
+        "ncell": 19
+      },
+      {
+        "key": "cents_amount_usdxaccount_balance_usd",
+        "G_over_df": 0.8191439120924873,
+        "G": 8190.6199770127805,
+        "df": 9999,
+        "ncell": 10000
+      },
+      {
+        "key": "cents_amount_usdxdistance_from_home_km",
+        "G_over_df": 0.8076792167102456,
+        "G": 8075.984487885746,
+        "df": 9999,
+        "ncell": 10000
+      },
+      {
+        "key": "cents_distance_from_home_kmxaccount_balance_usd",
+        "G_over_df": 0.8011951251337741,
+        "G": 8011.1500562126075,
+        "df": 9999,
+        "ncell": 10000
+      },
+      {
+        "key": "CATxFLAG_card_typexis_foreign_transaction",
+        "G_over_df": 0.796603003995464,
+        "G": 7.169427035959176,
+        "df": 9,
+        "ncell": 10
+      },
+      {
+        "key": "cents_hours_since_last_txnxaccount_balance_usd",
+        "G_over_df": 0.7897064103161033,
+        "G": 7896.274396750718,
+        "df": 9999,
+        "ncell": 10000
+      },
+      {
+        "key": "l1_distance_from_home_kmxvelocity_score",
+        "G_over_df": 0.7784089520187095,
+        "G": 190.71019324458382,
+        "df": 245,
+        "ncell": 246
+      },
+      {
+        "key": "CAT3_merchant_categoryxcard_typexdevice_type",
+        "G_over_df": 0.776685311647362,
+        "G": 372.0322642790864,
+        "df": 479,
+        "ncell": 480
+      },
+      {
+        "key": "CAT3_auth_methodxchannelxdevice_type",
+        "G_over_df": 0.7753587892481678,
+        "G": 154.2963990603854,
+        "df": 199,
+        "ncell": 200
+      }
+    ],
+    "top_key_stack_add": {
+      "key": "FLAG_billing_shipping_mismatchxis_ai_generated_scam_attempt",
+      "oof": 0.9520408130964387,
+      "delta": 9.84189364672261e-06,
+      "keep": 1,
+      "C": 0.008
+    },
+    "calib_auc": 0.9520309712027921
+  },
+  "policy": "NO_SUBMIT"
+}

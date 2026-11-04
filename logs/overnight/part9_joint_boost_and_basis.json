@@ -1,0 +1,229 @@
+{
+  "step1_part7_recipe": {
+    "gpt2": {
+      "source": "masayakawamata s6e11-gpt-2-target-first-classifier-cv-0-9500 (CC BY 4.0)",
+      "recipe": "Chris Deotte target-first GPT-2: train to write rows; continue with label-first shuffled fields; score True/False likelihoods via Bayes. Loaded as oof.npy/test.npy; NOT retrained in Part7. OOF 0.95003, \u03c1(gb_bag5)=0.9598, stack coef ~+0.58.",
+      "stack_use": "rankdata(gpt_o)/n appended to P6 bank"
+    },
+    "gbn_bag5": {
+      "recipe": "Residual MLP via gboost.py kind=mlp (MLPRes): same inputs as GLM booster (raw, encodings, value counts; signed-log + standardized); output ADDED to GLM logit. Two widths bagged over 5 seeds: 512-512 dropout0.4 lr2e-4 \u2192 bag 0.95122; 128-128 dropout0.3 lr3e-4 \u2192 bag 0.95122. Loaded as rank-mean oof/full from ART. NOT trained in the Part7 notebook (CPU); bags precomputed on GPU.",
+      "stack_delta": "+0.00004 nested over Part6 alone; with gpt2 \u2192 nested 0.95206 / LB 0.95222"
+    },
+    "stacker7": {
+      "C": 0.01,
+      "tol": 1e-08,
+      "max_iter": 200,
+      "solver": "newton-cholesky",
+      "n_members": 65,
+      "claimed_nested": 0.95206,
+      "code": "P7_NAMES = P6_NAMES + [gpt2, gbn_bag5_w512, gbn_bag5_w128]; nested LR(C=0.01,tol=1e-8,newton-cholesky) on rlogit(P7_O)"
+    }
+  },
+  "step1_excerpts_heads": {
+    "cell_82_markdown": "---\n# Part 7 \u2014 A language model reads the rows\n\n*Public LB 0.95222 \u00b7 nested CV 0.95206*\n\nPart 6's stack was close to saturated. This part measures that, finds the one kind of model that still adds\nsomething, and shows why the public board cannot confirm it.",
+    "cell_83_markdown": "## 7.1 More of the same adds nothing\n\nEvery candidate below is added on its own to Part 6's 62 members; the score is the nested CV of the converged\nstack (\u00d7 1e-4):\n\n| candidate | own OOF AUC | gain in the stack |\n|---|---|---|\n| LightGBM from the GLM, raw view, 3 seeds | 0.95107 | +0.01 |\n| CatBoost depth 3 from the GLM | 0.95118 | +0.04 |\n| EBM with 10 interactions from the GLM, raw view | 0.95114 | +0.05 |\n| XGBoost depth 2 from the GLM, 5 seeds | 0.95146 | +0.12 |\n\nAll of them start from the same GLM logit, so they mostly agree with the members already there. Bagging has\nstopped helping as well: ten seeds of the GLM booster score 0.95150, five score 0.95151. `gboost.py` (6.2)\nholds the code (`kind=cat`, `kind=ebm`).",
+    "cell_84_markdown": "## 7.2 Residual MLPs: the first gain\n\nAn MLP on the GPU takes the same inputs as the booster (raw columns, encodings, value counts, signed-log\ntransformed and standardized) and adds its output to the GLM's logit, so it also learns only the residual\n(`gboost.py`, `kind=mlp`). It overfits within a few epochs at first (0.95080); a lower learning rate and more\ndropout fix that:\n\n| network | five seeds | bag of five |\n|---|---|---|\n| 512-512, dropout 0.4, lr 2e-4 | 0.95104-0.95119 | 0.95122 |\n| 128-128, dropout 0.3, lr 3e-4 | 0.95102-0.95113 | 0.95122 |\n\nBoth bags together add **+0.44 \u00d7 1e-4** to the stack, on all five folds. That is small, but it is ten times\nwhat the tree variants add, and it comes from a weaker model. Kept as two members they add more than as one\nbag (+0.35). An MLP that doe",
+    "cell_85_markdown": "## 7.3 GPT-2 writes the rows\n\nThe recipe is [Chris Deotte's](https://www.kaggle.com/competitions/playground-series-s6e10/discussion/754683),\nfrom the S6E10 winning solution; [masayakawamata](https://www.kaggle.com/code/masayakawamata/s6e11-gpt-2-target-first-classifier-cv-0-9500)\napplied it to this competition and published the predictions:\n\n1. train a GPT-2 to write rows of the original dataset;\n2. continue training on each fold's training rows, with **the label written first** and the feature order shuffled;\n3. score each held-out row twice, with `is_fraud` True and False, and turn the two likelihoods into a prediction\n   with Bayes' rule.\n\nThis is the generator's own story from Parts 3 and 6 run backwards: the label comes first and every field is\nwritten given it. The model reaches 0.95",
+    "cell_86_code": "P6_SOURCES[\"masa\"] = \"s6e11-gpt-2-target-first-classifier-cv-0-9500\"\nd = src_dir(\"masa\")\ngpt_o = np.load(os.path.join(d, \"oof.npy\"), allow_pickle=False).astype(np.float32).astype(float)\ngpt_t = np.load(os.path.join(d, \"test.npy\"), allow_pickle=False).astype(np.float32).astype(float)\nprint(f\"GPT-2 target-first classifier: OOF AUC {roc_auc_score(y, gpt_o):.6f}, \"\n      f\"rank correlation with the GLM boost bag {spearmanr(gpt_o, P6_O[:, 0 + P6_NAMES.index('gb_bag5')]).correlation:.4f}\")\n\nP7_NAMES = P6_NAMES + [\"gpt2\", \"gbn_bag5_w512\", \"gbn_bag5_w128\"]\nP7_O = [P6_O, (rankdata(gpt_o) / len(y))[:, None]]\nP7_T = [P6_T, (rankdata(gpt_t) / len(te))[:, None]]\nfor n in P7_NAMES[-2:]:      # already rank means of five seeds\n    P7_O.append(np.load(find(f\"{n}_oof.npy\", ART))[:, None])\n    P7_T.append(n",
+    "cell_87_markdown": "## 7.4 Why the public board cannot see it\n\nThe nested CV rose by 4.3 \u00d7 1e-4 and the public board by 0.7 \u00d7 1e-4. Before reading anything\ninto that, we measured how much a public score can say. We drew 60,000 random rows from the out-of-fold\npredictions, 500 times, and compared the two stacks on each draw: the gain is\n**+4.0 \u00b1 3.5** (\u00d7 1e-4). 17% of the draws came out at or below what the public board showed.\n\nEven folds of 140,000 rows disagree (+4.2, +3.1, +6.5, \u22120.1, +7.6). So the public result is about one standard\ndeviation low: neither a confirmation nor a warning. These draws are random and the public rows are one\nfixed set, and Part 5 showed that set can behave unusually, so this is a guide and not a proof. We go with the\n700,000 rows; the private board (80% of the test rows) will de",
+    "cell_74_MLPRes_snip": "class MLPRes:\n    \"\"\"PyTorch MLP on the GPU whose output is added to the GLM's logit (a residual net). Inputs are\n    signed-log transformed and standardized with the training rows' statistics; early stopping on epochs.\"\"\"\n\n    def __init__(self, seed):\n        import torch\n        self.torch, self.seed = torch, seed\n        self.dev = \"cuda\" if torch.cuda.is_available() else \"cpu\"\n\n    def _prep(self, X, fit=False):\n        X = np.sign(X) * np.log1p(np.abs(X.astype(np.float64)))\n        if fit:\n            self.mu, self.sd = X.mean(0), X.std(0) + 1e-6\n        return self.torch.tensor(((X - self.mu) / self.sd).astype(np.float32), device=self.dev)\n\n    def _net(self, d):\n        nn, h = self.torch.nn, int(ARGS.get(\"hidden\", 256))\n        drop = float(ARGS.get(\"drop\", 0.2))\n        return nn"
+  },
+  "step2_basis": {
+    "plain_72": 0.9520362625568277,
+    "rows": [
+      {
+        "config": "plain_72",
+        "C": 0.006,
+        "oof": 0.9520362625568277,
+        "delta": 0.0
+      },
+      {
+        "config": "plain_72+ens",
+        "C": 0.006,
+        "oof": 0.9520357454783032,
+        "delta": -5.170785245534049e-07
+      },
+      {
+        "config": "alpha=0.5",
+        "C": 0.01,
+        "oof": 0.9520138293039185,
+        "delta": -2.2433252909181967e-05,
+        "folds": [
+          0.9510913243369628,
+          0.9522561731405192,
+          0.9567574603402739,
+          0.9523141655806961,
+          0.9476496363733556
+        ]
+      },
+      {
+        "config": "alpha=1.0",
+        "C": 0.006,
+        "oof": 0.9519951231182108,
+        "delta": -4.113943861694391e-05,
+        "folds": [
+          0.9510867486415555,
+          0.9522750896630116,
+          0.9567252637229832,
+          0.9522566143603275,
+          0.9476315183965729
+        ]
+      },
+      {
+        "config": "alpha=1.5",
+        "C": 0.006,
+        "oof": 0.951974666820574,
+        "delta": -6.159573625375003e-05,
+        "folds": [
+          0.9510576065597319,
+          0.9522633414088157,
+          0.9567158209976456,
+          0.9522021392498913,
+          0.9476340414281539
+        ]
+      },
+      {
+        "config": "alpha=2.0",
+        "C": 0.006,
+        "oof": 0.9519619536495437,
+        "delta": -7.430890728399309e-05,
+        "folds": [
+          0.951034134361348,
+          0.9522465346627316,
+          0.9567180705972326,
+          0.952173400925888,
+          0.9476372387181741
+        ]
+      },
+      {
+        "config": "pca_gamma=0.15",
+        "C": 0.01,
+        "oof": 0.952043374872494,
+        "delta": 7.112315666302216e-06,
+        "folds": [
+          0.9511097141562768,
+          0.9523798700459762,
+          0.956757348481731,
+          0.9523381996315305,
+          0.9476313506087585
+        ]
+      },
+      {
+        "config": "pca_gamma=0.25",
+        "C": 0.012,
+        "oof": 0.9520448819823761,
+        "delta": 8.619425548417325e-06,
+        "folds": [
+          0.9510930495482067,
+          0.9524171127264286,
+          0.9567759325357762,
+          0.9523566190049428,
+          0.9475812970179518
+        ]
+      },
+      {
+        "config": "pca_gamma=0.35",
+        "C": 0.012,
+        "oof": 0.9520233094911934,
+        "delta": -1.2953065634313532e-05,
+        "folds": [
+          0.9510467237406955,
+          0.9524793153978767,
+          0.9567710356173387,
+          0.9523596267568768,
+          0.947459436456909
+        ]
+      },
+      {
+        "config": "pca_gamma=0.5",
+        "C": 0.012,
+        "oof": 0.9519011198583273,
+        "delta": -0.00013514269850045668,
+        "folds": [
+          0.950866400309593,
+          0.9525150044874541,
+          0.956691954734626,
+          0.9522438904510624,
+          0.9471879153797083
+        ]
+      },
+      {
+        "config": "part8b_champ",
+        "C": 0.006,
+        "oof": 0.9521286810207527,
+        "delta": 9.241846392493702e-05
+      }
+    ],
+    "best_alpha": {
+      "alpha": 0.5,
+      "oof": 0.9520138293039185,
+      "C": 0.01
+    },
+    "best_pca": {
+      "gamma": 0.25,
+      "oof": 0.9520448819823761,
+      "C": 0.012
+    },
+    "part8b_champ": 0.9521286810207527,
+    "beats_952129": 0
+  },
+  "step3_joint_boost": {
+    "stage1_glm_oof": 0.9504739130267947,
+    "stage1_joint_oof": 0.9510744188151831,
+    "stage1_delta": 0.000600505788388328,
+    "gb_gpt2_joint_oof": 0.9515759607458912,
+    "n_trees_folds": [
+      1250,
+      899,
+      613,
+      1149,
+      545
+    ],
+    "n_refit": 1114,
+    "part8b_baseline": 0.9521286810207527,
+    "adds": {
+      "+gb_gpt2_joint_raw": {
+        "oof": 0.952114342657004,
+        "delta": -1.4338363748644944e-05,
+        "C": 0.006,
+        "folds": [
+          0.9511334909865562,
+          0.952448122400291,
+          0.9567998982286117,
+          0.9523506252513478,
+          0.9478391651385443
+        ],
+        "keep": 0
+      },
+      "+gb_gpt2_joint_resid_std": {
+        "oof": 0.9521155986854875,
+        "delta": -1.3082335265202083e-05,
+        "C": 0.006,
+        "folds": [
+          0.9511234257000551,
+          0.9524691455920097,
+          0.9568013554968525,
+          0.952344799285567,
+          0.9478388513131877
+        ],
+        "keep": 0
+      },
+      "+both_raw+resid": {
+        "oof": 0.9521178149138748,
+        "delta": -1.0866106877838178e-05,
+        "C": 0.006,
+        "folds": [
+          0.9511279019238235,
+          0.952456651614194,
+          0.9568107764719177,
+          0.95234890697984,
+          0.947844422490065
+        ],
+        "keep": 0
+      }
+    }
+  },
+  "policy": "NO_SUBMIT",
+  "runtime_s": 1834.2204627990723,
+  "status": "done"
+}

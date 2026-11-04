@@ -1,0 +1,80 @@
+{
+  "v11_dataset": "malyshevdanil/s6e11-nov04-v11-selected-inputs",
+  "v11_recipe": {
+    "part6": 0.6,
+    "alex": 0.4,
+    "lb": 0.95222
+  },
+  "sha_ok": true,
+  "part6_nested_C01": 0.9515774492111152,
+  "sub_B_clean": {
+    "n": 65,
+    "C": 0.02,
+    "oof": 0.9515985077312161,
+    "folds": [
+      0.9504788961047792,
+      0.9519464275134331,
+      0.9561508328185458,
+      0.9523381996315303,
+      0.9470777129645903
+    ]
+  },
+  "pass1": {
+    "reported_oof": 0.952085,
+    "C": 0.1,
+    "n_flagged": 9,
+    "flagged": [
+      "masaya_gpt2__oof_npy",
+      "alex_oof__oof_983fbb55a2b59a74_npy",
+      "alex_oof__oof_888d3d64c3854ba8_npy",
+      "alex_oof__oof_74dcf78882edd49f_npy",
+      "alex_oof__oof_42eb4cf755012e69_npy",
+      "alex_oof__oof_15d0d127372ea048_npy",
+      "alex_oof__oof_10bad431843b4481_npy",
+      "goodpjw_artifacts__realmlp_dig_oof_npy",
+      "goodpjw_artifacts__ebm_dig_oof_npy"
+    ],
+    "verdict": "DIRTY"
+  },
+  "spearman_test": {
+    "v11_base|v11_base": 1.0,
+    "nov04_part6|v11_base": 0.9994798139020039,
+    "nov04_part6|nov04_part6": 1.0,
+    "nov04_part6|sub_A_expand66": 0.9994574077011211,
+    "nov04_part6|sub_B_clean": 0.9995988686502216,
+    "nov04_part6|pass1_bank63": 0.9947699069626159,
+    "nov04_alex|v11_base": 0.9988291847912967,
+    "nov04_alex|nov04_part6": 0.9967500028608393,
+    "nov04_alex|nov04_alex": 1.0,
+    "nov04_alex|sub_A_expand66": 0.9962848425516174,
+    "nov04_alex|sub_B_clean": 0.9964174543195263,
+    "nov04_alex|pass1_bank63": 0.9980675794659378,
+    "sub_A_expand66|v11_base": 0.998967675192077,
+    "sub_A_expand66|sub_A_expand66": 1.0,
+    "sub_A_expand66|sub_B_clean": 0.9998085481403339,
+    "sub_B_clean|v11_base": 0.999105730468249,
+    "sub_B_clean|sub_B_clean": 1.0,
+    "pass1_bank63|v11_base": 0.9968661447485643,
+    "pass1_bank63|sub_A_expand66": 0.9949553390541089,
+    "pass1_bank63|sub_B_clean": 0.9950964263393549,
+    "pass1_bank63|pass1_bank63": 1.0
+  },
+  "cv": {
+    "alex_proxy": "alex:XGBoost_depth_2,_Part_3_recipe,_5_encoder_seeds,_full_refit",
+    "v11_proxy_oof": 0.9513961483048672,
+    "gpu_boost_oof": 0.9515046447413122,
+    "sub1_weights": [
+      0.5,
+      0.35,
+      0.15
+    ],
+    "sub1_oof": 0.9514482147562457
+  },
+  "files": [
+    "submissions/sub_1_part6_gpu_cat_xgb_plus_alex.csv",
+    "submissions/sub_2_cv_pure_expanded_stack.csv",
+    "submissions/sub_B_clean_local.csv"
+  ],
+  "policy": "NO_AUTO_SUBMIT",
+  "runtime_s": 133.56259775161743
+}

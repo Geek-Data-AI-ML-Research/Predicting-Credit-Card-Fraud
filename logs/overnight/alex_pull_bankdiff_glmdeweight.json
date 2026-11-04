@@ -1,0 +1,29 @@
+{
+  "alex_is_nov04": true,
+  "n_weights": 58,
+  "n_loaded": 58,
+  "missing": [],
+  "recon_rho_logged_w": 0.9958370031676622,
+  "recon_rho_lr": 0.9916209421680796,
+  "alex_nested_oof": 0.9506694792097304,
+  "alex_fixedw_oof": 0.9517398535075448,
+  "n_diffs": 2,
+  "diffs": [
+    {
+      "m": "yek:ps-s6-e11-realmlp-pytabk",
+      "ours": 0.9477104886524447,
+      "bank": 0.948838,
+      "d": -0.0011275113475552878
+    },
+    {
+      "m": "yek:ps-s6-e11-realmlp-pytorc",
+      "ours": 0.9485288055034796,
+      "bank": 0.949087,
+      "d": -0.0005581944965203922
+    }
+  ],
+  "part6_nested": 0.9515774492111152,
+  "glm_gen_coef": 0.006023319410829538,
+  "policy": "NO_SUBMIT",
+  "runtime_s": 150.64297080039978
+}

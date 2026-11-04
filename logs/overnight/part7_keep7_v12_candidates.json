@@ -1,0 +1,163 @@
+{
+  "keep7": {
+    "oof": 0.952030971202792,
+    "C": 0.008,
+    "n": 72,
+    "extras": [
+      "gbx_bag3",
+      "alex:LightGBM tuned",
+      "alex:Spline GLM",
+      "alex:CatBoost",
+      "alex:CatBoost depth 3",
+      "alex:CatBoost tuned",
+      "alex:Joint GLM, full refit"
+    ],
+    "top_pos": [
+      [
+        "gpt2",
+        0.5641443080391773
+      ],
+      [
+        "gb_bag5",
+        0.2392579015945196
+      ],
+      [
+        "gbx_bag3",
+        0.155879565737763
+      ],
+      [
+        "ebm_i25_bag4",
+        0.1251221371321937
+      ],
+      [
+        "maly:ebm_private_int5",
+        0.12469771863313987
+      ],
+      [
+        "maly:xgb_te_s20",
+        0.10261419515234646
+      ],
+      [
+        "gbn_bag5_w128",
+        0.09853548678628184
+      ],
+      [
+        "alex:LightGBM_4_leaves_plus",
+        0.0933807734035301
+      ],
+      [
+        "mega:lgb_raw",
+        0.09081587826836549
+      ],
+      [
+        "mega:xgb_te20",
+        0.08251421108722125
+      ],
+      [
+        "yek:ps-s6-e11-realmlp-pytorc",
+        0.07559600797879136
+      ],
+      [
+        "maly:lgb_enriched_s100",
+        0.07444245753513373
+      ]
+    ],
+    "top_neg": [
+      [
+        "alex:RealMLP_digits",
+        -0.1839741874920576
+      ],
+      [
+        "alex:XGBoost_tuned",
+        -0.12544598841991428
+      ],
+      [
+        "lgb_dig_s100_bag5",
+        -0.08214658910400477
+      ],
+      [
+        "alex:CatBoost",
+        -0.06671627369860726
+      ],
+      [
+        "alex:GLM_on_the_encodings",
+        -0.06619951195615742
+      ],
+      [
+        "lazy:lgb_rawview",
+        -0.06548065669557651
+      ],
+      [
+        "maly:ebm_raw",
+        -0.06384917693849204
+      ],
+      [
+        "alex:Spline GLM",
+        -0.060635831975326016
+      ],
+      [
+        "maly:full_xgb_te20",
+        -0.05990303781171192
+      ],
+      [
+        "alex:LightGBM_4_leaves_raw",
+        -0.0578613727590633
+      ],
+      [
+        "alex:XGBoost_depth_1",
+        -0.050364233449915474
+      ],
+      [
+        "alex:LightGBM_3_leaves,_Part_5_recipe",
+        -0.04645176244263443
+      ]
+    ]
+  },
+  "spearman": {
+    "p7_keep7|p7_keep7": 1.0,
+    "p7_keep7|p7_official": 0.9997129567196186,
+    "p7_keep7|nov04_part6": 0.9942851595530819,
+    "p7_keep7|nov04_alex": 0.9977743597283796,
+    "p7_keep7|v11_base": 0.99645760223252,
+    "p7_official|p7_keep7": 0.9997129567196186,
+    "p7_official|p7_official": 1.0,
+    "p7_official|nov04_part6": 0.9945826173902026,
+    "p7_official|nov04_alex": 0.9979168950871472,
+    "p7_official|v11_base": 0.9966932954357277,
+    "nov04_part6|p7_keep7": 0.9942851595530819,
+    "nov04_part6|p7_official": 0.9945826173902026,
+    "nov04_part6|nov04_part6": 1.0,
+    "nov04_part6|nov04_alex": 0.9967500028608393,
+    "nov04_part6|v11_base": 0.9994798139020039,
+    "nov04_alex|p7_keep7": 0.9977743597283796,
+    "nov04_alex|p7_official": 0.9979168950871472,
+    "nov04_alex|nov04_part6": 0.9967500028608393,
+    "nov04_alex|nov04_alex": 1.0,
+    "nov04_alex|v11_base": 0.9988291847912967,
+    "v11_base|p7_keep7": 0.9964576022325199,
+    "v11_base|p7_official": 0.9966932954357278,
+    "v11_base|nov04_part6": 0.999479813902004,
+    "v11_base|nov04_alex": 0.9988291847912968,
+    "v11_base|v11_base": 1.0
+  },
+  "oof_blends": {
+    "0.35/0.35/0.30": 0.951890439203651,
+    "0.70/0.30": 0.9518957542985516,
+    "best": {
+      "lab": "1.00*p7_keep7",
+      "oof": 0.952030971202792
+    }
+  },
+  "gpt2_rho": {
+    "nov04_alex": 0.9715525142440559,
+    "p7_official": 0.9811568027211327,
+    "p7_keep7": 0.9815244751952558,
+    "coef_keep7": 0.5641443080391773
+  },
+  "files": [
+    "submissions/sub_slot4_p7_keep7_plus_alex.csv",
+    "submissions/sub_slot4_alt_070_keep7_030_alex.csv",
+    "submissions/sub_part7_intact65_keep7_0952031.csv"
+  ],
+  "policy": "NO_SUBMIT"
+}

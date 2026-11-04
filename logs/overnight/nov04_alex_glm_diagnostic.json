@@ -1,0 +1,99 @@
+{
+  "nov04_alex_url": "https://www.kaggle.com/code/alexchilton/credit-card-fraud-lb-0-9521-shallow-tree-stack",
+  "nov04_alex_sha": "41568c44f08868211007ea7c216ba8f988361938707aa744b8e57c35d60dd9d7",
+  "exact_sha_local_copies": [],
+  "rho_ge_0.999_local": [],
+  "best_bank_rho_vs_nov04_alex": {
+    "rho": 0.9945190684783404,
+    "name": "mega:glm_boost"
+  },
+  "best_alex_star_rho": [
+    0.9887226020363242,
+    "alex:XGBoost_depth_2,_Part_3_recipe,_5_encoder_seeds,_full_refit"
+  ],
+  "hit_0.9995": false,
+  "conclusion_alex_oof": "NOT on disk; alex_proxy invalid for weight search",
+  "glm_gen_coef_C01": 0.006023319410829538,
+  "cat_tree_resid": {
+    "oof_foldrank": 0.9508829055459276,
+    "oof_global": 0.9508593178157745,
+    "rho_glm_test": 0.9908375266983267,
+    "rho_v11_test": 0.9942118878762003
+  },
+  "families_vs_v11": [
+    {
+      "name": "ours:ebm_i25_bag4",
+      "rho_v11": 0.9892535166495298,
+      "rho_alex": 0.9848626349151727,
+      "rho_glm": 0.9828816500819612,
+      "uniq": 0.02137747979653859,
+      "oof": 0.9502616704399554
+    },
+    {
+      "name": "maly:ebm_private_int5",
+      "rho_v11": 0.9722216996560676,
+      "rho_alex": 0.9687814618742303,
+      "rho_glm": 0.9658702742697671,
+      "uniq": 0.054784966717867034,
+      "oof": 0.9484831492099345
+    },
+    {
+      "name": "nil:lgb_unified_96key_bag",
+      "rho_v11": 0.9926482795811652,
+      "rho_alex": 0.9902427633688572,
+      "rho_glm": 0.983307111611317,
+      "uniq": 0.014649393044552927,
+      "oof": 0.9507569099789553
+    },
+    {
+      "name": "lazy:xgb_d2_bag",
+      "rho_v11": 0.9936300315532884,
+      "rho_alex": 0.9911978709301661,
+      "rho_glm": 0.9842533041797384,
+      "uniq": 0.012699360395410975,
+      "oof": 0.9507559173373455
+    },
+    {
+      "name": "cat_tree_resid",
+      "rho_v11": 0.9942118878762003,
+      "rho_alex": 0.9923350477729467,
+      "rho_glm": 0.9908375266983267,
+      "uniq": 0.01154272200564177,
+      "oof": 0.9508593178157745
+    },
+    {
+      "name": "cat_raw (GLM-boosted)",
+      "rho_v11": 0.9941469585973877,
+      "rho_alex": 0.9921915718506137,
+      "rho_glm": 0.9981252643734349,
+      "uniq": 0.011671824711564027,
+      "oof": 0.9511706944860246
+    },
+    {
+      "name": "gbx_bag3 (GLM-boosted)",
+      "rho_v11": 0.9967597669961528,
+      "rho_alex": 0.9942751381831716,
+      "rho_glm": 0.9936514471424427,
+      "uniq": 0.006469966897775237,
+      "oof": 0.9514194223697183
+    },
+    {
+      "name": "gb_xgb_cuda_d1_bag (GLM-boosted)",
+      "rho_v11": 0.9959179675902861,
+      "rho_alex": 0.9936671279051285,
+      "rho_glm": 0.9960627990024068,
+      "uniq": 0.008147401830833956,
+      "oof": 0.9512486347512638
+    },
+    {
+      "name": "mega:glm_gen",
+      "rho_v11": 0.9899793218600629,
+      "rho_alex": 0.987968963840841,
+      "rho_glm": 1.0,
+      "uniq": 0.01994094228949006,
+      "oof": 0.9504716815719364
+    }
+  ],
+  "policy": "NO_SUBMIT",
+  "runtime_s": 121.37782883644104
+}

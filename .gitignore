@@ -14,7 +14,36 @@ data/
 original/
 artifacts/
 artifacts_extra/
+external_bank/
 notebooks/outputs/
 
-# Bulky OOF/test prediction banks (regenerable)
+# Bulky OOF/test prediction banks & pod checkpoints (regenerable)
 preds/
+checkpoints/
+cache/
+
+# Runtime / debug logs (keep selected *.json research summaries under logs/)
+*.log
+*.nohup.out
+logs/**/*.log
+logs/overnight/heartbeat.json
+logs/overnight/phaseA_done.json
+logs/overnight/phaseB_ABORT.json
+logs/overnight/part6_cell*.py
+logs/overnight/*_excerpts.json
+logs/overnight/*_nohup.log
+
+# Large Kaggle submission CSVs are regenerable from scripts+preds;
+# do not add new ones by default (existing tracked submissions stay).
+submissions/sub_*.csv
+submissions/sub_slot*.csv
+submissions/sub_part*.csv
+submissions/sub_user_*.csv
+submissions/sub_clean_*.csv
+submissions/sub_A_*.csv
+submissions/sub_B_*.csv
+submissions/sub_1*.csv
+submissions/sub_2*.csv
+
+# Ad-hoc poll / scratch text
+logs/overnight/*_lb_poll.txt

@@ -1,0 +1,60 @@
+{
+  "P_champ": {
+    "label": "mix_8b",
+    "nested_cv": 0.952138,
+    "rho_p7gs": 0.9988717792166303,
+    "rho_part8b_csv": 0.999975830983058
+  },
+  "cv_scan": {
+    "part8b": 0.952129,
+    "gb_super_best": {
+      "w": 0.2,
+      "nested": 0.952103,
+      "solo": 0.951702,
+      "delta": -2.5e-05
+    },
+    "triple_orth": 0.952117,
+    "mix_8b": 0.952138
+  },
+  "anchors": {
+    "p7-pb_e4": 50.68,
+    "p7gs-pb_e4": 29.11,
+    "v12_v13": "none"
+  },
+  "lb": {
+    "sub1_p7gs_upgrade": 0.95181,
+    "sub2_multi_anchor_pb": 0.9509,
+    "prior_slot5": 0.9523,
+    "prior_slot6": 0.95229,
+    "public_p7gs_benchmark": 0.95231
+  },
+  "remaining_slots": 2,
+  "verdict": "BOTH FAILED TO BEAT 0.95231; mix P_champ test diverges from part8b CSV and dragged p7gs down",
+  "part9c_fixed": {
+    "file": "submissions/sub_part9c_clean_super_p7gs_pb.csv",
+    "weights": {
+      "P_super_champ": 0.35,
+      "p7": 0.15,
+      "gs": 0.44,
+      "pb": 0.06
+    },
+    "cv_info": {
+      "P_super_champ_oof": 0.9521424961532393,
+      "folds": [
+        0.9511202146311996,
+        0.9524634439134989,
+        0.956844543769583,
+        0.9524450773621762,
+        0.9478500107564418
+      ]
+    },
+    "diagnostics": {
+      "rho_vs_p7gs": 0.9999417587768606,
+      "d_p7gs_e4": 0.5824122313935476,
+      "rho_vs_slot5": 0.9999241673046028,
+      "d_slot5_e4": 0.7583269539723769,
+      "rho_vs_slot6": 0.9996196313492425,
+      "d_slot6_e4": 3.8036865075752324
+    }
+  }
+}

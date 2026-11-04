@@ -1,0 +1,234 @@
+{
+  "phase": "A.0",
+  "malyshev_v10": {
+    "dataset": "malyshevdanil/s6e11-rank-displacement-v10",
+    "notebook": "malyshevdanil/predicting-credit-card-fraud-getting-started",
+    "runtime_claim_sec": 24.1,
+    "has_oof_arrays": false,
+    "has_only_test_csvs": true,
+    "files": [
+      "our_v9.csv",
+      "leader.csv",
+      "rank_manifest.json",
+      "CREDITS.md",
+      "output/submission.csv"
+    ],
+    "formula": "rank( before + 3.0 * (after - before) ) where before=midrank(our_v9), after=midrank(leader/Subh)",
+    "scale": 3.0,
+    "development_oof_auc": null,
+    "public_score": 0.952,
+    "sources": {
+      "our_v9": "malyshev pooled stack v9 ~0.95197",
+      "leader": "subhanjan33 Fraud Decoded ~0.95198 (title 0.95208)"
+    }
+  },
+  "spearman": {
+    "malyshev_v10_vs_midblend_0.95165": 0.9982616549225433,
+    "malyshev_v10_vs_leader_Subh": 0.9999643062238638,
+    "malyshev_v10_vs_our_v9": 0.9999197006953431,
+    "leader_vs_midblend": 0.9983755894539299,
+    "proxy_part6_rankmean_vs_malyshev": 0.9970244976817391,
+    "proxy_part6_rankmean_vs_midblend": 0.9978818815287788,
+    "note": "true goodpjw submission.csv not in kernels-output yet; proxy=rank-mean of Part6 full members"
+  },
+  "goodpjw_part6_new_artifacts": [
+    "gb_bag5_oof.npy",
+    "gb_s0_oof.npy",
+    "gb_s1_oof.npy",
+    "gb_s2_oof.npy",
+    "gb_s3_oof.npy",
+    "gb_s4_oof.npy",
+    "gbx_bag3_oof.npy",
+    "gbx_bag3_oof.npy"
+  ],
+  "goodpjw_part6_new_oof_aucs": [
+    {
+      "name": "gb_bag5_oof.npy",
+      "oof": 0.9515058163094932,
+      "folds": [
+        0.951393093263651,
+        0.9530331503480858,
+        0.9510043144710042,
+        0.9517525160683865,
+        0.9503279087759361
+      ]
+    },
+    {
+      "name": "gb_s0_oof.npy",
+      "oof": 0.9513689100127609,
+      "folds": [
+        0.9513722178147169,
+        0.9527804106309713,
+        0.9508679759965984,
+        0.9514930291061025,
+        0.9503153581615229
+      ]
+    },
+    {
+      "name": "gb_s1_oof.npy",
+      "oof": 0.9513901924552086,
+      "folds": [
+        0.951208341578957,
+        0.9529921588528524,
+        0.950891321806675,
+        0.9516430453945707,
+        0.9501912042198115
+      ]
+    },
+    {
+      "name": "gb_s2_oof.npy",
+      "oof": 0.951387697054137,
+      "folds": [
+        0.9513152744620506,
+        0.9530349944604543,
+        0.9508520159575409,
+        0.951652997697715,
+        0.9500661254959856
+      ]
+    },
+    {
+      "name": "gb_s3_oof.npy",
+      "oof": 0.9513568292685414,
+      "folds": [
+        0.9512700450994833,
+        0.9528076481861895,
+        0.9508045087021783,
+        0.9516980394043593,
+        0.9501815072187808
+      ]
+    },
+    {
+      "name": "gb_s4_oof.npy",
+      "oof": 0.9514825966870444,
+      "folds": [
+        0.9512529821348601,
+        0.9530206144233164,
+        0.9510423028750765,
+        0.9517535305632278,
+        0.9503237014058783
+      ]
+    },
+    {
+      "name": "gbx_bag3_oof.npy",
+      "oof": 0.9514194223697183,
+      "folds": [
+        0.9513961103152123,
+        0.952902125154472,
+        0.9508067691769012,
+        0.9516758712161657,
+        0.9502922914533489
+      ]
+    },
+    {
+      "name": "gbx_bag3_oof.npy",
+      "oof": 0.9514194223697183,
+      "folds": [
+        0.9513961103152123,
+        0.952902125154472,
+        0.9508067691769012,
+        0.9516758712161657,
+        0.9502922914533489
+      ]
+    }
+  ],
+  "beat_strategy": {
+    "track1": "Ingest gb_*/gbx_* SKF OOFs+full refits + train our multi-seed GPU GLM-boost; nested probit-logit+hill",
+    "track2": "Apply Malyshev operator: rank(midblend + scale*(part6_plus_gpu - midblend)) with scale grid on nested CV if OOFs exist; else scale=3.0 as published for morning diversity submit"
+  },
+  "goodpjw_part6_new_oof_aucs_sklearn": [
+    {
+      "name": "gb_bag5_oof.npy",
+      "oof": 0.951506,
+      "folds": [
+        0.95043,
+        0.95159,
+        0.95627,
+        0.95239,
+        0.94699
+      ],
+      "signature_ok": true
+    },
+    {
+      "name": "gb_s0_oof.npy",
+      "oof": 0.951369,
+      "folds": [
+        0.95039,
+        0.95156,
+        0.95612,
+        0.95223,
+        0.94671
+      ],
+      "signature_ok": true
+    },
+    {
+      "name": "gb_s1_oof.npy",
+      "oof": 0.95139,
+      "folds": [
+        0.95042,
+        0.95134,
+        0.95608,
+        0.95223,
+        0.94701
+      ],
+      "signature_ok": true
+    },
+    {
+      "name": "gb_s2_oof.npy",
+      "oof": 0.951388,
+      "folds": [
+        0.95023,
+        0.95147,
+        0.95621,
+        0.95237,
+        0.94677
+      ],
+      "signature_ok": true
+    },
+    {
+      "name": "gb_s3_oof.npy",
+      "oof": 0.951357,
+      "folds": [
+        0.95026,
+        0.95158,
+        0.9562,
+        0.95219,
+        0.94676
+      ],
+      "signature_ok": true
+    },
+    {
+      "name": "gb_s4_oof.npy",
+      "oof": 0.951483,
+      "folds": [
+        0.95037,
+        0.95152,
+        0.95631,
+        0.95236,
+        0.94706
+      ],
+      "signature_ok": true
+    },
+    {
+      "name": "gbx_bag3_oof.npy",
+      "oof": 0.951419,
+      "folds": [
+        0.9505,
+        0.9514,
+        0.95619,
+        0.95231,
+        0.94682
+      ],
+      "signature_ok": true
+    }
+  ],
+  "goodpjw_part6_missing_from_local_bank": [
+    "gb_bag5_{oof,full}",
+    "gb_s0..s4_{oof,full,glmoof}",
+    "gbx_bag3_{oof,full}"
+  ],
+  "implication": {
+    "malyshev_v10": "TEST-only post-process; copying it ties the public fork cluster (~0.95200) with no CV edge",
+    "goodpjw_gb_members": "SKF(5,rs=42)-aligned GLM-boost OOFs at 0.95136\u20130.95151 \u2014 strongest single members we lacked; ingest + our GPU multi-seed bags for Track1",
+    "track2": "Apply exact displace(midblend, part6_plus_gpu, scale=3) for diversity; do NOT use as sole primary without Track1 CV gate"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "part7_dropped_by_rho_gate_n": 15,
+  "note": "65->60 was NOT 5 drops: rho-gate dropped 15 P7 members (65->50), then clean alex extras filled to ~60",
+  "baseline_65": {
+    "oof": 0.9520093067312951,
+    "C": 0.008
+  },
+  "append_results": {
+    "baseline": {
+      "n": 65,
+      "C": 0.008,
+      "oof": 0.9520093067312951
+    },
+    "+gbx_bag3": {
+      "n": 66,
+      "C": 0.008,
+      "oof": 0.9520171654547834,
+      "delta": 7.858723488296526e-06,
+      "keep": 1
+    },
+    "+gb_cat_d2_d3_bag": {
+      "n": 66,
+      "C": 0.008,
+      "oof": 0.9519977830894666,
+      "delta": -1.1523641828548037e-05,
+      "keep": 0
+    },
+    "+gb_xgb_cuda_d1_bag": {
+      "n": 66,
+      "C": 0.008,
+      "oof": 0.9520077809767545,
+      "delta": -1.5257545405988893e-06,
+      "keep": 0
+    },
+    "+all3_gpu": {
+      "n": 68,
+      "C": 0.008,
+      "oof": 0.9520066044988137,
+      "delta": -2.702232481444078e-06,
+      "keep": 0
+    },
+    "+keep_joint": {
+      "n": 72,
+      "C": 0.008,
+      "oof": 0.952030971202792,
+      "delta": 2.1664471496873894e-05,
+      "keep": 1,
+      "members": [
+        "gbx_bag3",
+        "alex_extra:LightGBM tuned",
+        "alex_extra:Spline GLM",
+        "alex_extra:CatBoost",
+        "alex_extra:CatBoost depth 3",
+        "alex_extra:CatBoost tuned",
+        "alex_extra:Joint GLM, full refit"
+      ]
+    },
+    "+all_clean_alex": {
+      "n": 75,
+      "C": 0.008,
+      "oof": 0.9520182058267185,
+      "delta": 8.899095423342551e-06,
+      "keep": 1
+    }
+  },
+  "kept_gpus": [
+    "gbx_bag3"
+  ],
+  "alex_keeps": [
+    "alex_extra:LightGBM tuned",
+    "alex_extra:Spline GLM",
+    "alex_extra:CatBoost",
+    "alex_extra:CatBoost depth 3",
+    "alex_extra:CatBoost tuned",
+    "alex_extra:Joint GLM, full refit"
+  ],
+  "spearman": {
+    "p7_sub|p7_sub": 1.0,
+    "p7_sub|v11_base": 0.9966932954357277,
+    "p7_sub|nov04_part6": 0.9945826173902026,
+    "p7_sub|nov04_alex": 0.9979168950871472,
+    "p7_sub|our_p7_te": 0.9997522140250664,
+    "v11_base|p7_sub": 0.9966932954357278,
+    "v11_base|v11_base": 1.0,
+    "v11_base|nov04_part6": 0.999479813902004,
+    "v11_base|nov04_alex": 0.9988291847912968,
+    "v11_base|our_p7_te": 0.9960665110469282,
+    "nov04_part6|p7_sub": 0.9945826173902026,
+    "nov04_part6|v11_base": 0.9994798139020039,
+    "nov04_part6|nov04_part6": 1.0,
+    "nov04_part6|nov04_alex": 0.9967500028608393,
+    "nov04_part6|our_p7_te": 0.9939294631755728,
+    "nov04_alex|p7_sub": 0.9979168950871472,
+    "nov04_alex|v11_base": 0.9988291847912967,
+    "nov04_alex|nov04_part6": 0.9967500028608393,
+    "nov04_alex|nov04_alex": 1.0,
+    "nov04_alex|our_p7_te": 0.9973312570855885,
+    "our_p7_te|p7_sub": 0.9997522140250664,
+    "our_p7_te|v11_base": 0.9960665110469281,
+    "our_p7_te|nov04_part6": 0.9939294631755728,
+    "our_p7_te|nov04_alex": 0.9973312570855885,
+    "our_p7_te|our_p7_te": 1.0
+  },
+  "policy": "NO_SUBMIT"
+}

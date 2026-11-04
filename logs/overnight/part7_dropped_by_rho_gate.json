@@ -1,0 +1,81 @@
+{
+  "dropped": [
+    {
+      "name": "alex:LightGBM_4_leaves,_Part_3_recipe",
+      "delta_rho": 0.0033225996920112078,
+      "oof": 0.9503938133372274
+    },
+    {
+      "name": "alex:LightGBM_4_leaves_digits_s100",
+      "delta_rho": 0.004000985649432409,
+      "oof": 0.9495113021817575
+    },
+    {
+      "name": "alex:LightGBM_4_leaves_digits",
+      "delta_rho": 0.00375516677259935,
+      "oof": 0.9495101792761349
+    },
+    {
+      "name": "alex:XGBoost_depth_2_digits",
+      "delta_rho": 0.004041257616489435,
+      "oof": 0.9495100936971531
+    },
+    {
+      "name": "alex:LightGBM_4_leaves_digits,_no_pairs",
+      "delta_rho": 0.0041873296668993865,
+      "oof": 0.9493604797606392
+    },
+    {
+      "name": "alex:XGBoost_depth_2_digits,_no_pairs",
+      "delta_rho": 0.00483143582955281,
+      "oof": 0.9493359525261525
+    },
+    {
+      "name": "yek:ps-s6-e11-realmlp-pytorc",
+      "delta_rho": 0.004399423771519917,
+      "oof": 0.9497032581373509
+    },
+    {
+      "name": "maly:lgb_enriched_s100",
+      "delta_rho": 0.003775722499717471,
+      "oof": 0.9490541043956897
+    },
+    {
+      "name": "alex:LightGBM_4_leaves_plus",
+      "delta_rho": 0.004159095921538736,
+      "oof": 0.9486818668373197
+    },
+    {
+      "name": "alex:XGBoost_depth_2_bag3",
+      "delta_rho": 0.003061692957443518,
+      "oof": 0.9485467013923362
+    },
+    {
+      "name": "alex:LightGBM_4_leaves_b",
+      "delta_rho": 0.00358416941152917,
+      "oof": 0.9484472508469245
+    },
+    {
+      "name": "alex:LightGBM_4_leaves",
+      "delta_rho": 0.003797868763322554,
+      "oof": 0.948378235158142
+    },
+    {
+      "name": "alex:XGBoost_depth_2",
+      "delta_rho": 0.003464959556022329,
+      "oof": 0.9483712938139927
+    },
+    {
+      "name": "alex:XGBoost_depth_2_plus",
+      "delta_rho": 0.003970249231394329,
+      "oof": 0.9483581993596994
+    },
+    {
+      "name": "alex:RealMLP_digits",
+      "delta_rho": 0.030604288283918035,
+      "oof": 0.9479721394595749
+    }
+  ],
+  "n_drop": 15,
+  "part7_nested_1e8": 0.9520072539544124
+}
