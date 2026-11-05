@@ -1,0 +1,317 @@
+{
+  "S_fold0_base": 0.9508405439003548,
+  "rungs": {
+    "rung0": {
+      "name": "rung0",
+      "harvest": {
+        "had_npy": false,
+        "logged_auc": 0.950836,
+        "recomputed_auc": 0.9510501780247974
+      },
+      "masaya": {
+        "code_files": [],
+        "out_files": [
+          "manifest.json"
+        ],
+        "repo_scripts": [
+          "baseline_xgb.py",
+          "common.py",
+          "make_folds.py",
+          "make_predictions.py",
+          "make_queue.py",
+          "run_queue.py",
+          "score_rows.py",
+          "stack_lr.py",
+          "tabtext.py",
+          "train_classifier.py",
+          "train_replica.py"
+        ],
+        "row_text_rule": "is_fraud is {True|False}, {col} is {csv_value}, ...<|endoftext|>",
+        "combine": "log-sum-exp over orders per label, then difference + fold prior",
+        "fold0_auc": 0.9488823016904258,
+        "oof_auc": 0.9500272037932737,
+        "orders_in_public": 10,
+        "fold0_auc_verified": 0.9488823016904258
+      },
+      "S_fold0_base": 0.9508405439003548,
+      "stack_meta": {
+        "source": "p_super_fallback",
+        "n_members": 3,
+        "C": 0.005,
+        "error": "[Errno 2] No such file or directory: 'external_bank/goodpjw_part7_code/s6e11-part-7-gpt-2-mlp-stack-lb-0-95222.ipynb'"
+      },
+      "n_b0": 139992,
+      "passed": true
+    },
+    "rung1": {
+      "name": "rung1",
+      "auc_sum_llr": 0.8535326519724875,
+      "auc_weighted_delta": 0.9039814926568384,
+      "S_fold0": 0.9497488768525097,
+      "Delta_S_fold0": -0.001091667047845024,
+      "gate_auc": 0.94935,
+      "gate_ds": 4e-05,
+      "passed": false,
+      "n_orders": 8,
+      "score_n": 16000,
+      "perm_auc_curve": {
+        "K=1": 0.8502377335646275,
+        "K=2": 0.8509161901401929,
+        "K=4": 0.8526304237544549,
+        "K=6": 0.8522978610049585,
+        "K=8": 0.8535326519724875
+      },
+      "S_fold0_base": 0.9508405439003548,
+      "enrich_bs": 256
+    },
+    "rung2": {
+      "name": "rung2",
+      "auc_weighted_delta": 0.9292469774759559,
+      "auc_sum_llr": 0.9433262607211018,
+      "perm_auc_curve": {
+        "K=1": 0.9412261400510532,
+        "K=2": 0.9431589080991288,
+        "K=4": 0.942960370280174,
+        "K=6": 0.9435067063647082,
+        "K=8": 0.9433262607211018
+      },
+      "S_fold0": 0.949740685984712,
+      "Delta_S_fold0": -0.0010998579156428212,
+      "beats_rung1": true,
+      "passed": false,
+      "score_bs": 256,
+      "score_n": 16000
+    },
+    "rung3": {
+      "name": "rung3",
+      "auc_glm": 0.9494027062223102,
+      "auc_lgb": 0.9501138227546255,
+      "auc_xgb": 0.949947358520516,
+      "auc_mlp": 0.9480365502943295,
+      "best": 0.9501138227546255,
+      "S_fold0": 0.9509135685175496,
+      "Delta_S_fold0": 7.302461719482789e-05,
+      "passed": true
+    },
+    "rung4": {
+      "name": "rung4",
+      "auc": 0.949426271675356,
+      "S_fold0": 0.9508236710235399,
+      "Delta_S_fold0": -1.6872876814844062e-05,
+      "passed": false
+    },
+    "rung5": {
+      "name": "rung5",
+      "promoted": [
+        {
+          "rung": "rung3",
+          "nested_auc": null,
+          "Delta_S_fold0": 7.302461719482789e-05
+        }
+      ],
+      "passed": true
+    }
+  },
+  "npy_inventory": [
+    {
+      "file": "delta24_contrastive_fold0.npy",
+      "shape": [
+        139992,
+        24
+      ],
+      "dtype": "float32",
+      "nans": 0
+    },
+    {
+      "file": "delta24_fold0.npy",
+      "shape": [
+        139992,
+        24
+      ],
+      "dtype": "float32",
+      "nans": 0
+    },
+    {
+      "file": "fold0_stack_base_scores.npy",
+      "shape": [
+        139992
+      ],
+      "dtype": "float32",
+      "nans": 0
+    },
+    {
+      "file": "glm_quad_oof.npy",
+      "shape": [
+        699960
+      ],
+      "dtype": "float32",
+      "nans": 0,
+      "oof_auc": 0.9510501698832965,
+      "rho_vs_gb_bag5_oof": 0.9872699445401861
+    },
+    {
+      "file": "glm_quad_test.npy",
+      "shape": [
+        299984
+      ],
+      "dtype": "float32",
+      "nans": 0,
+      "rho_vs_gb_bag5_test": 0.9866424338022268
+    },
+    {
+      "file": "rung1_llr_fold0.npy",
+      "shape": [
+        139992
+      ],
+      "dtype": "float32",
+      "nans": 0
+    },
+    {
+      "file": "rung1_llr_per_order.npy",
+      "shape": [
+        8,
+        139992
+      ],
+      "dtype": "float32",
+      "nans": 0
+    },
+    {
+      "file": "rung1_score_full.npy",
+      "shape": [
+        699960
+      ],
+      "dtype": "float32",
+      "nans": 0,
+      "oof_auc": 0.9372511043066127,
+      "rho_vs_gb_bag5_oof": 0.917380564160767
+    },
+    {
+      "file": "rung1_score_idx.npy",
+      "shape": [
+        16000
+      ],
+      "dtype": "int32",
+      "nans": 0
+    },
+    {
+      "file": "rung2_llr_per_order.npy",
+      "shape": [
+        8,
+        139992
+      ],
+      "dtype": "float32",
+      "nans": 0
+    },
+    {
+      "file": "rung2_score_full.npy",
+      "shape": [
+        699960
+      ],
+      "dtype": "float32",
+      "nans": 0,
+      "oof_auc": 0.9372656815705832,
+      "rho_vs_gb_bag5_oof": 0.9174488184854275
+    },
+    {
+      "file": "rung3_score_full.npy",
+      "shape": [
+        699960
+      ],
+      "dtype": "float32",
+      "nans": 0,
+      "oof_auc": 0.9507679868326212,
+      "rho_vs_gb_bag5_oof": 0.9867191765807602
+    },
+    {
+      "file": "rung4_score_full.npy",
+      "shape": [
+        699960
+      ],
+      "dtype": "float32",
+      "nans": 0,
+      "oof_auc": 0.950632953267521,
+      "rho_vs_gb_bag5_oof": 0.9863184985382465
+    },
+    {
+      "file": "stack_O_fallback.npy",
+      "shape": [
+        699960,
+        3
+      ],
+      "dtype": "float32",
+      "nans": 0
+    }
+  ],
+  "rung5_true_5fold_refit": false,
+  "nested": {
+    "P7_65_C01": 0.9520072539544124,
+    "P7_65_folds": [
+      0.951016164188012,
+      0.9524022541833014,
+      0.9567348183068636,
+      0.952234659014084,
+      0.9476479584952107
+    ],
+    "P_super_champ": 0.9521424961532393,
+    "P_super_claimed": 0.9521425,
+    "new_P7_plus_gpt2bag5_glmquad_rung3proxy_C01": 0.9520985220429182,
+    "new_folds_C01": [
+      0.9510523314543607,
+      0.9522809560221552,
+      0.9569405230602414,
+      0.9523565288966723,
+      0.9478618320294085
+    ],
+    "new_C005": 0.9521065995303974,
+    "ablation_P7_gpt2bag5_glmquad_C01": 0.9520089562117183,
+    "delta_new_vs_P_super_C01": -4.397411032108778e-05,
+    "delta_ablation_vs_P_super": -0.00013353994152098814,
+    "extras": [
+      "gb_gpt2_bag5",
+      "glm_quad",
+      "rung3_lgb_delta_proxy"
+    ],
+    "testbag_wired": [
+      "gb_bag5",
+      "gbn_bag5_w512",
+      "gbn_bag5_w128"
+    ]
+  },
+  "test_spearman": {
+    "our_new_stack": {
+      "our_new_stack": 1.0,
+      "goodpjw_part9": 0.9968911260242335,
+      "amanatar_sovereign": 0.9977606319704707,
+      "goodpjw_part10": 0.9975508229570645,
+      "p7gs": 0.9973029655593431
+    },
+    "goodpjw_part9": {
+      "our_new_stack": 0.9968911260242334,
+      "goodpjw_part9": 0.9999999999999998,
+      "amanatar_sovereign": 0.9990974578708395,
+      "goodpjw_part10": 0.999774277812523,
+      "p7gs": 0.9996423519899796
+    },
+    "amanatar_sovereign": {
+      "our_new_stack": 0.9977606319704707,
+      "goodpjw_part9": 0.9990974578708394,
+      "amanatar_sovereign": 1.0,
+      "goodpjw_part10": 0.9997743010452645,
+      "p7gs": 0.9993374211319086
+    },
+    "goodpjw_part10": {
+      "our_new_stack": 0.9975508229570647,
+      "goodpjw_part9": 0.9997742778125231,
+      "amanatar_sovereign": 0.9997743010452644,
+      "goodpjw_part10": 1.0,
+      "p7gs": 0.9997154542555723
+    },
+    "p7gs": {
+      "our_new_stack": 0.9973029655593431,
+      "goodpjw_part9": 0.9996423519899795,
+      "amanatar_sovereign": 0.9993374211319087,
+      "goodpjw_part10": 0.9997154542555722,
+      "p7gs": 1.0
+    }
+  }
+}

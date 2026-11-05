@@ -110,6 +110,237 @@ def make_orders_k8(n_cols: int):
     return [o.astype(np.int16) for o in orders[:8]]
 
 
+# Inference batch for Rung 2 / Rung 5 / post-Gate1 enrich (A5000 has ~20GB free at score time)
+SCORE_INFER_BS = int(os.environ.get("LADDER_SCORE_BS", "1536"))
+
+
+@torch.inference_mode()
+def fast_score_k_orders(
+    model,
+    tok,
+    tokens,
+    prefix_t,
+    prefix_f,
+    orders,
+    score_idx: np.ndarray,
+    n_rows_held: int,
+    n_cols: int,
+    *,
+    bs: int | None = None,
+    tag: str = "score",
+):
+    """Score held rows under K column orders with dual y=1/y=0 prefixes in one forward.
+
+    Concatenates prefix batches along batch dim, bfloat16 + inference_mode.
+    Returns (llr[n_held], delta[n_held,n_cols], llr_per_order[K,n_held]).
+    """
+    bs = int(bs or SCORE_INFER_BS)
+    n_prefix = len(prefix_t)
+    K = len(orders)
+    llr = np.zeros(n_rows_held, dtype=np.float64)
+    delta = np.zeros((n_rows_held, n_cols), dtype=np.float64)
+    llr_po = np.zeros((K, n_rows_held), dtype=np.float64)
+    score_idx = np.asarray(score_idx, dtype=np.int64)
+    eos = tok.eos_token_id
+
+    def body_spans(r, order):
+        pos = 0
+        sp = []
+        for jpos, j in enumerate(order):
+            plen = len(tokens.pieces[j][tokens.codes[r, j]])
+            sp.append((pos, pos + plen))
+            pos += plen
+            if jpos < len(order) - 1:
+                pos += len(tokens.comma_ids)
+        return sp
+
+    for oi, order in enumerate(orders):
+        t0 = time.time()
+        log(f"    {tag} order {oi}/{K} bs={bs} …")
+        for s0 in range(0, len(score_idx), bs):
+            rows = [int(x) for x in score_idx[s0 : s0 + bs]]
+            bodies = [tokens.body_ids(r, order) for r in rows]
+            spans = [body_spans(r, order) for r in rows]
+            L = max(len(b) for b in bodies)
+            B = len(rows)
+            # Dual prefix: [y=1 batch || y=0 batch] along batch dim
+            ids = torch.full((2 * B, n_prefix + L), eos, dtype=torch.long, device=DEVICE)
+            for i, body in enumerate(bodies):
+                seq_t = prefix_t + body
+                seq_f = prefix_f + body
+                ids[i, : len(seq_t)] = torch.tensor(seq_t, dtype=torch.long, device=DEVICE)
+                ids[B + i, : len(seq_f)] = torch.tensor(seq_f, dtype=torch.long, device=DEVICE)
+            with torch.autocast(device_type=DEVICE.type, dtype=torch.bfloat16, enabled=DEVICE.type == "cuda"):
+                hidden = model.transformer(input_ids=ids, use_cache=False).last_hidden_state
+            # token logprobs for feature body (after prefix)
+            h = hidden[:, n_prefix - 1 : -1].float()
+            tgt = ids[:, n_prefix:]
+            flat_h = h.reshape(-1, h.shape[-1])
+            flat_t = tgt.reshape(-1)
+            tok_lp = torch.empty(flat_t.shape, dtype=torch.float64, device=DEVICE)
+            for s in range(0, flat_h.shape[0], 8192):
+                e = min(flat_h.shape[0], s + 8192)
+                lp = model.lm_head(flat_h[s:e]).log_softmax(-1)
+                tok_lp[s:e] = lp.gather(1, flat_t[s:e, None])[:, 0].double()
+            tok_lp = tok_lp.view(2 * B, -1)
+            lp_t, lp_f = tok_lp[:B], tok_lp[B:]
+            for i, r in enumerate(rows):
+                blen = len(bodies[i])
+                d = float(lp_t[i, :blen].sum() - lp_f[i, :blen].sum())
+                llr[r] += d
+                llr_po[oi, r] = d
+                for cj, (lo, hi) in enumerate(spans[i]):
+                    delta[r, int(order[cj])] += float(lp_t[i, lo:hi].sum() - lp_f[i, lo:hi].sum())
+            del ids, hidden, h, tok_lp, lp_t, lp_f
+        if DEVICE.type == "cuda":
+            torch.cuda.empty_cache()
+        log(f"    {tag} order {oi}/{K} done in {time.time() - t0:.1f}s")
+    llr /= K
+    delta /= K
+    return llr, delta, llr_po
+
+
+def ridge_oof_delta(delta_si, y_si, seed=0):
+    rng = np.random.default_rng(seed)
+    inner = rng.permutation(len(y_si))
+    mid = len(y_si) // 2
+    tr_i, va_i = inner[:mid], inner[mid:]
+    sc = StandardScaler().fit(delta_si[tr_i])
+    score = np.zeros(len(y_si))
+    score[va_i] = Ridge(alpha=1.0).fit(sc.transform(delta_si[tr_i]), y_si[tr_i]).predict(
+        sc.transform(delta_si[va_i])
+    )
+    score[tr_i] = Ridge(alpha=1.0).fit(sc.transform(delta_si[va_i]), y_si[va_i]).predict(
+        sc.transform(delta_si[tr_i])
+    )
+    return score, float(roc_auc_score(y_si, score))
+
+
+def enrich_rung1_perm_curve(rep: dict) -> dict:
+    """Post-Gate1: fast re-score cached Fold-0 GPT-2 to log cumulative K AUC curve.
+
+    Non-destructive: does not retrain; uses rung1_fold0_gpt2 + saved score_idx if present.
+    """
+    r1 = (rep.get("rungs") or {}).get("rung1") or {}
+    if r1.get("perm_auc_curve"):
+        log("  perm_auc_curve already logged — skip enrich")
+        return rep
+    model_dir = PRED / "rung1_fold0_gpt2"
+    if not (model_dir / "config.json").exists():
+        log("  enrich skip: no cached rung1 model")
+        return rep
+    log("=" * 72)
+    log("POST-GATE1 ENRICH: cumulative K∈{1,2,4,6,8} perm AUC + δ24 Ridge (fast bs)")
+    log("=" * 72)
+    _ensure_tabtext()
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+
+    from tabtext import RowTokens, feature_columns, label_prefix_ids, read_csv_as_strings
+
+    y = pd.read_csv(ROOT / "data" / "train.csv")[TARGET].to_numpy()
+    folds = folds_y(y)
+    a0, b0 = folds[0]
+    train = read_csv_as_strings(ROOT / "data" / "train.csv")
+    cols = feature_columns(train, ID, TARGET)
+    tok = AutoTokenizer.from_pretrained(model_dir)
+    tok.pad_token = tok.eos_token
+    model = AutoModelForCausalLM.from_pretrained(model_dir).to(DEVICE).eval()
+    held = train.iloc[b0].reset_index(drop=True)
+    tokens = RowTokens(held, cols, tok)
+    prefix_t, prefix_f = label_prefix_ids(tok, TARGET)
+    orders = make_orders_k8(len(cols))
+    n_b = len(held)
+    idx_p = PRED / "rung1_score_idx.npy"
+    if idx_p.exists():
+        score_idx = np.load(idx_p).astype(np.int64)
+    else:
+        SCORE_N = min(n_b, 16_000)
+        rng_s = np.random.default_rng(7)
+        y_b = y[b0]
+        pos, neg = np.where(y_b == 1)[0], np.where(y_b == 0)[0]
+        n_pos = min(len(pos), max(200, int(SCORE_N * y_b.mean())))
+        n_neg = min(len(neg), SCORE_N - n_pos)
+        score_idx = np.concatenate(
+            [rng_s.choice(pos, n_pos, replace=False), rng_s.choice(neg, n_neg, replace=False)]
+        )
+        rng_s.shuffle(score_idx)
+    if DEVICE.type == "cuda":
+        torch.cuda.empty_cache()
+    enrich_bs = min(SCORE_INFER_BS, 256)
+    llr = delta = llr_po = None
+    last_err = None
+    for try_bs in (enrich_bs, 128, 64, 32):
+        try:
+            log(f"  enrich scoring n={len(score_idx)} K=8 bs={try_bs}")
+            llr, delta, llr_po = fast_score_k_orders(
+                model,
+                tok,
+                tokens,
+                prefix_t,
+                prefix_f,
+                orders,
+                score_idx,
+                n_b,
+                len(cols),
+                bs=try_bs,
+                tag="enrich",
+            )
+            enrich_bs = try_bs
+            break
+        except torch.cuda.OutOfMemoryError as e:
+            last_err = e
+            log(f"  enrich OOM at bs={try_bs}; retrying smaller")
+            if DEVICE.type == "cuda":
+                torch.cuda.empty_cache()
+    if llr is None:
+        del model
+        if DEVICE.type == "cuda":
+            torch.cuda.empty_cache()
+        raise last_err or RuntimeError("enrich scoring failed")
+    del model
+    if DEVICE.type == "cuda":
+        torch.cuda.empty_cache()
+
+    prior = float(y[a0].mean())
+    logp = math.log(prior / (1 - prior))
+    si = score_idx
+    y_si = y[b0][si]
+    curve = {}
+    for k in (1, 2, 4, 6, 8):
+        # cumulative mean of first k order LLRs
+        s = llr_po[:k, si].mean(0) + logp
+        curve[f"K={k}"] = float(roc_auc_score(y_si, s))
+        log(f"  cum-perm AUC {k=} → {curve[f'K={k}']:.5f}")
+    score_w_si, auc_w = ridge_oof_delta(delta[si], y_si)
+    log(f"  δ24 Ridge Fold-0 AUC={auc_w:.5f}")
+    full = np.load(ROOT / "external_bank" / "masaya_gpt2" / "oof.npy").ravel().astype(np.float64)
+    full[b0[si]] = score_w_si
+    S_with, dS = stack_delta_full(full, y, folds, rep)
+    S_base = float(rep.get("S_fold0_base") or 0.950841)
+    log(f"  S_fold0={S_with:.6f}  S_fold0_base={S_base:.6f}  ΔS={dS:+.6f}")
+
+    np.save(PRED / "delta24_fold0.npy", delta.astype(np.float32))
+    np.save(PRED / "rung1_llr_per_order.npy", llr_po.astype(np.float32))
+    np.save(PRED / "rung1_score_idx.npy", si.astype(np.int32))
+    np.save(PRED / "rung1_score_full.npy", full.astype(np.float32))
+    np.save(PRED / "rung1_llr_fold0.npy", (llr).astype(np.float32))
+
+    r1 = dict(r1)
+    r1["perm_auc_curve"] = curve
+    r1["auc_sum_llr"] = curve.get("K=8", r1.get("auc_sum_llr"))
+    r1["auc_weighted_delta"] = auc_w
+    r1["S_fold0"] = S_with
+    r1["Delta_S_fold0"] = dS
+    r1["S_fold0_base"] = S_base
+    r1["score_n"] = int(len(si))
+    r1["enrich_bs"] = enrich_bs
+    r1["passed"] = bool(auc_w >= GATE1_AUC or dS >= GATE1_DS)
+    rep.setdefault("rungs", {})["rung1"] = r1
+    save_progress(rep)
+    log(f"  GATE1 enrich logged  passed={r1['passed']}  curve={curve}")
+    return rep
+
+
 # ═══════════════════════════════════════════════════════════════════════════
 # RUNG 0
 # ═══════════════════════════════════════════════════════════════════════════
@@ -511,9 +742,9 @@ def rung1(rep: dict) -> dict:
     sc = StandardScaler().fit(d_si[tr_i])
     ridge = Ridge(alpha=1.0).fit(sc.transform(d_si[tr_i]), y_si[tr_i])
     score_w_si = np.zeros(len(si))
-    score_w_si[va_i] = ridge.decision_function(sc.transform(d_si[va_i]))
+    score_w_si[va_i] = ridge.predict(sc.transform(d_si[va_i]))
     ridge2 = Ridge(alpha=1.0).fit(sc.transform(d_si[va_i]), y_si[va_i])
-    score_w_si[tr_i] = ridge2.decision_function(sc.transform(d_si[tr_i]))
+    score_w_si[tr_i] = ridge2.predict(sc.transform(d_si[tr_i]))
     auc_w = float(roc_auc_score(y_si, score_w_si))
     log(f"  column-weighted δ Fold-0 AUC={auc_w:.5f}")
 
@@ -703,60 +934,13 @@ def rung2(rep: dict) -> dict:
         model = AutoModelForCausalLM.from_pretrained(model_dir).to(DEVICE)
         tok = AutoTokenizer.from_pretrained(model_dir)
 
-    # Score Fold-0 with K=8 (reuse rung1 scoring pattern, sum LLR only for gate speed)
-    log("  scoring contrastive model Fold-0 K=8 …")
+    # Score Fold-0 with K=8 — dual-prefix; fall back bs on OOM (1536 OOMs on A5000)
     model.eval()
     held = train.iloc[b0].reset_index(drop=True)
     tokens = RowTokens(held, cols, tok)
     prefix_t, prefix_f = label_prefix_ids(tok, TARGET)
-    n_prefix = len(prefix_t)
     orders = make_orders_k8(len(cols))
     n_b = len(held)
-    llr = np.zeros(n_b)
-    delta = np.zeros((n_b, len(cols)))
-
-    @torch.inference_mode()
-    def score_batch(rows, order):
-        bodies = [tokens.body_ids(r, order) for r in rows]
-        spans = []
-        for r in rows:
-            pos = 0
-            sp = []
-            for jpos, j in enumerate(order):
-                plen = len(tokens.pieces[j][tokens.codes[r, j]])
-                sp.append((pos, pos + plen))
-                pos += plen + (len(tokens.comma_ids) if jpos < len(order) - 1 else 0)
-            spans.append(sp)
-        L = max(len(b) for b in bodies)
-
-        def pack(pref):
-            ids = torch.full((len(rows), len(pref) + L), tok.eos_token_id, dtype=torch.long, device=DEVICE)
-            for i, body in enumerate(bodies):
-                seq = pref + body
-                ids[i, : len(seq)] = torch.tensor(seq, device=DEVICE)
-            return ids
-
-        for pref, sign in ((prefix_t, 1), (prefix_f, -1)):
-            ids = pack(pref)
-            with torch.autocast(device_type=DEVICE.type, dtype=torch.bfloat16, enabled=DEVICE.type == "cuda"):
-                h = model.transformer(input_ids=ids, use_cache=False).last_hidden_state
-            hidden = h[:, n_prefix - 1 : -1].float()
-            tgt = ids[:, n_prefix:]
-            flat = hidden.reshape(-1, hidden.shape[-1])
-            flat_t = tgt.reshape(-1)
-            tok_lp_flat = torch.empty(flat_t.shape, dtype=torch.float64, device=DEVICE)
-            for s in range(0, flat.shape[0], 2048):
-                e = min(flat.shape[0], s + 2048)
-                lp = model.lm_head(flat[s:e]).log_softmax(-1)
-                tok_lp_flat[s:e] = lp.gather(1, flat_t[s:e, None])[:, 0].double()
-            tok_lp = tok_lp_flat.view(tgt.shape)
-            for i, r in enumerate(rows):
-                blen = len(bodies[i])
-                llr[r] += sign * float(tok_lp[i, :blen].sum())
-                for cj, (lo, hi) in enumerate(spans[i]):
-                    delta[r, int(order[cj])] += sign * float(tok_lp[i, lo:hi].sum())
-            del ids, h, hidden, tok_lp, tok_lp_flat
-
     SCORE_N = min(n_b, 16_000)
     rng_s = np.random.default_rng(7)
     if SCORE_N < n_b:
@@ -771,33 +955,51 @@ def rung2(rep: dict) -> dict:
         log(f"  gate-score subsample {len(score_idx)}/{n_b}")
     else:
         score_idx = np.arange(n_b)
-    bs = 96 if DEVICE.type == "cuda" else 8
-    for oi, order in enumerate(orders):
-        log(f"    order {oi}/8")
-        for s0 in range(0, len(score_idx), bs):
-            score_batch([int(x) for x in score_idx[s0 : s0 + bs]], order)
+    if DEVICE.type == "cuda":
+        torch.cuda.empty_cache()
+    llr = delta = llr_po = None
+    last_err = None
+    score_bs = min(SCORE_INFER_BS, 256)
+    for try_bs in (score_bs, 128, 64, 32):
+        try:
+            log(f"  scoring contrastive model Fold-0 K=8 (bs={try_bs}, dual-prefix) …")
+            llr, delta, llr_po = fast_score_k_orders(
+                model,
+                tok,
+                tokens,
+                prefix_t,
+                prefix_f,
+                orders,
+                score_idx,
+                n_b,
+                len(cols),
+                bs=try_bs,
+                tag="rung2",
+            )
+            score_bs = try_bs
+            break
+        except torch.cuda.OutOfMemoryError as e:
+            last_err = e
+            log(f"  rung2 score OOM at bs={try_bs}; retrying smaller")
+            if DEVICE.type == "cuda":
+                torch.cuda.empty_cache()
+    if llr is None:
+        del model
         if DEVICE.type == "cuda":
             torch.cuda.empty_cache()
+        raise last_err or RuntimeError("rung2 scoring failed")
+    del model
+    if DEVICE.type == "cuda":
+        torch.cuda.empty_cache()
 
-    llr /= len(orders)
-    delta /= len(orders)
     prior = float(y[a0].mean())
+    logp = math.log(prior / (1 - prior))
     si = score_idx
     y_si = y[b0][si]
-    # weighted on scored rows
-    rng = np.random.default_rng(0)
-    inner = rng.permutation(len(si))
-    mid = len(si) // 2
-    d_si = delta[si]
-    sc = StandardScaler().fit(d_si[inner[:mid]])
-    score_w_si = np.zeros(len(si))
-    score_w_si[inner[mid:]] = Ridge(alpha=1.0).fit(
-        sc.transform(d_si[inner[:mid]]), y_si[inner[:mid]]
-    ).decision_function(sc.transform(d_si[inner[mid:]]))
-    score_w_si[inner[:mid]] = Ridge(alpha=1.0).fit(
-        sc.transform(d_si[inner[mid:]]), y_si[inner[mid:]]
-    ).decision_function(sc.transform(d_si[inner[:mid]]))
-    auc = float(roc_auc_score(y_si, score_w_si))
+    curve = {f"K={k}": float(roc_auc_score(y_si, llr_po[:k, si].mean(0) + logp)) for k in (1, 2, 4, 6, 8)}
+    for k, v in curve.items():
+        log(f"  cum-perm AUC {k} → {v:.5f}")
+    score_w_si, auc = ridge_oof_delta(delta[si], y_si)
     log(f"  contrastive weighted Fold-0 AUC={auc:.5f} (n={len(si)})")
 
     full = np.load(ROOT / "external_bank" / "masaya_gpt2" / "oof.npy").ravel().astype(np.float64)
@@ -806,14 +1008,19 @@ def rung2(rep: dict) -> dict:
     beat_r1 = auc > float(rep.get("rungs", {}).get("rung1", {}).get("auc_weighted_delta", 0))
     passed = bool((auc >= GATE2_AUC or dS >= GATE2_DS) and beat_r1)
     np.save(PRED / "delta24_contrastive_fold0.npy", delta.astype(np.float32))
+    np.save(PRED / "rung2_llr_per_order.npy", llr_po.astype(np.float32))
     np.save(PRED / "rung2_score_full.npy", full.astype(np.float32))
     out = {
         "name": "rung2",
         "auc_weighted_delta": auc,
+        "auc_sum_llr": curve.get("K=8"),
+        "perm_auc_curve": curve,
         "S_fold0": S_with,
         "Delta_S_fold0": dS,
         "beats_rung1": beat_r1,
         "passed": passed,
+        "score_bs": score_bs,
+        "score_n": int(len(si)),
     }
     rep["rungs"]["rung2"] = out
     save_progress(rep)
@@ -1168,7 +1375,7 @@ def rung5(rep: dict) -> dict:
 
 def main():
     rep = load_progress()
-    log(f"DEVICE={DEVICE} ROOT={ROOT}")
+    log(f"DEVICE={DEVICE} ROOT={ROOT} SCORE_INFER_BS={SCORE_INFER_BS}")
     order = [
         ("rung0", rung0),
         ("rung1", rung1),
@@ -1190,10 +1397,22 @@ def main():
                 and (prev.get("auc_weighted_delta") is not None or prev.get("auc") is not None)
             ):
                 log(f"SKIP {key} (already ran passed={prev.get('passed')})")
+                # After Gate1, ensure cumulative K-curve is logged before later rungs
+                if key == "rung1" and not prev.get("perm_auc_curve"):
+                    try:
+                        rep = enrich_rung1_perm_curve(load_progress())
+                    except Exception as e:
+                        log(f"  enrich after skip failed: {e}")
                 continue
         try:
             fn(rep)
             rep = load_progress()
+            if key == "rung1":
+                # Always attach cumulative perm curve + refreshed ΔS after Gate1
+                try:
+                    rep = enrich_rung1_perm_curve(rep)
+                except Exception as e:
+                    log(f"  enrich after rung1 failed: {e}")
         except Exception as e:
             log(f"FAIL {key}: {e}")
             import traceback

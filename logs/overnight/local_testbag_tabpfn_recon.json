@@ -1,0 +1,26 @@
+{
+  "testbag_spearman_vs_bag5": {
+    "gb_testbag_full.npy": 0.9999309573510595,
+    "gbn_w128_testbag_full.npy": 0.9999286042057541,
+    "gbn_w512_testbag_full.npy": 0.9999787064330213
+  },
+  "testbag_seeds_from_docs": {
+    "gb": "14 GLM-boost refits",
+    "gbn_w128": "8 residual MLP refits",
+    "gbn_w512": "8 residual MLP refits"
+  },
+  "tabpfn100k_oof_auc": 0.9488330057825877,
+  "tabpfn100k_rho_gb": 0.9713654665852732,
+  "tabpfn100k_rho_gpt": 0.94634597033378,
+  "align_delta_rho_id_vs_row": 0.0,
+  "align_pass": true,
+  "wired_files": [
+    "gb_testbag_full.npy",
+    "gbn_w128_testbag_full.npy",
+    "gbn_w512_testbag_full.npy",
+    "gbn_bag5_w128_oof.npy",
+    "gbn_bag5_w128_full.npy",
+    "gbn_bag5_w512_oof.npy",
+    "gbn_bag5_w512_full.npy"
+  ]
+}

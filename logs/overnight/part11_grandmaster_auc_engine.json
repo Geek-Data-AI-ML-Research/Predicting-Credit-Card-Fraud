@@ -1,0 +1,584 @@
+{
+  "gates": {
+    "V3_NESTED": 0.9521489693921668,
+    "V3_FOLD0": 0.9511199364214583,
+    "L4_V3_NESTED": 0.9521794373741388,
+    "V4_NESTED": 0.9522570184189607
+  },
+  "dead_ends": [
+    {
+      "name": "S2_S_extremal",
+      "reason": "Fold0 stack did not beat P_super_v3 Fold0",
+      "metrics": {
+        "fold0_glm_auc": 0.9495061163168195,
+        "fold0_lgb_auc": 0.9487757520223012,
+        "fold0_stack_probe": 0.9511015963379641,
+        "n_feats": 26,
+        "D": 108,
+        "promoted": false
+      }
+    },
+    {
+      "name": "L4_v2_TwoStage",
+      "reason": "did not beat L4_v3 / V3 nested",
+      "metrics": {
+        "nested": 0.9521717182369926,
+        "newton_only": 0.9521661039574747,
+        "fold0": 0.9511779299414097,
+        "gamma": 0.5,
+        "delta_nested": 2.274884482589279e-05,
+        "delta_fold0": 5.799351995139368e-05,
+        "promoted": false
+      }
+    },
+    {
+      "name": "L5_auc_direct",
+      "reason": "did not beat L4_v2 nested",
+      "metrics": {
+        "method": "overlap_newton",
+        "nested": 0.9520413885948926,
+        "fold0": 0.9510420299227166,
+        "delta_vs_l4v2": -0.0001303296421000244,
+        "promoted": false,
+        "overlap_best": {
+          "nested": 0.9520413885948926,
+          "alpha": -0.15
+        },
+        "ranknet_best": {
+          "nested": 0.9519342358789739,
+          "tau": 1.0,
+          "w": [
+            0.20252468325325187,
+            0.19887563759198357,
+            0.19828939183821662,
+            0.19247836385395886,
+            0.19548173778772038,
+            0.27132250493351834
+          ]
+        },
+        "features": [
+          "l4",
+          "gb_super",
+          "gpt2",
+          "glm_quad",
+          "gbn_bag5_w512",
+          "ebm_i25_bag4"
+        ]
+      }
+    },
+    {
+      "name": "L5_auc_direct",
+      "reason": "did not beat L4_v2 nested",
+      "metrics": {
+        "method": "overlap_newton",
+        "nested": 0.9521093993365909,
+        "fold0": 0.9511778646631465,
+        "delta_vs_l4v2": -0.0001435503207299904,
+        "promoted": false,
+        "overlap_best": {
+          "nested": 0.9521093993365909,
+          "alpha": -0.3
+        },
+        "ranknet_best": {
+          "nested": 0.9519567959155595,
+          "tau": 1.0,
+          "w": [
+            0.20226611843013392,
+            0.19672227216089958,
+            0.19613799680669042,
+            0.18967058342282445,
+            0.1933196472883039,
+            0.2684375479260766
+          ]
+        },
+        "features": [
+          "l4",
+          "gb_super",
+          "gpt2",
+          "glm_quad",
+          "gbn_bag5_w512",
+          "ebm_i25_bag4"
+        ]
+      }
+    }
+  ],
+  "policy": "NO_SUBMIT",
+  "step1": {
+    "orth_comparison": [
+      {
+        "name": "masaya_stack_main",
+        "raw": {
+          "nested": 0.9521492969788138,
+          "fold0": 0.9511532096848013,
+          "delta_nested": 3.2758664703091966e-07,
+          "vs_part10": 10.03504288104029,
+          "vs_amanatar": 10.081638213470523
+        },
+        "orth": {
+          "nested": 0.9521451782494897,
+          "fold0": 0.9511196582117173,
+          "delta_nested": -3.7911426770120826e-06,
+          "vs_part10": 10.264189053489359,
+          "vs_amanatar": 10.372173475151625
+        },
+        "prefer_orth": false
+      },
+      {
+        "name": "dhan_18_blend_lm50",
+        "raw": {
+          "nested": 0.9522327215081533,
+          "fold0": 0.9512938858964244,
+          "delta_nested": 8.37521159865462e-05,
+          "vs_part10": 8.084698607748741,
+          "vs_amanatar": 8.694884545877857
+        },
+        "orth": {
+          "nested": 0.9522136024675611,
+          "fold0": 0.9513158831169071,
+          "delta_nested": 6.463307539439356e-05,
+          "vs_part10": 10.393264030513771,
+          "vs_amanatar": 9.739488001639929
+        },
+        "prefer_orth": false
+      },
+      {
+        "name": "dhan_18_blend_pooled2",
+        "raw": {
+          "nested": 0.9522152517740374,
+          "fold0": 0.9512650779771391,
+          "delta_nested": 6.628238187067481e-05,
+          "vs_part10": 9.714192945073918,
+          "vs_amanatar": 9.380585485375681
+        },
+        "orth": {
+          "nested": 0.9522004633903856,
+          "fold0": 0.9512670223368385,
+          "delta_nested": 5.1493998218798964e-05,
+          "vs_part10": 10.221708147661879,
+          "vs_amanatar": 9.421066293473501
+        },
+        "prefer_orth": false
+      }
+    ],
+    "joint_orth": {
+      "nested": 0.9522204339325239,
+      "fold0": 0.951345444844709,
+      "newton": 0.952203139706792,
+      "mix": 0.952216634710495,
+      "folds": [
+        0.951345444844709,
+        0.9523982164006176,
+        0.9569376380419868,
+        0.952523931420621,
+        0.9479138027513547
+      ],
+      "delta_nested": 7.146454035711347e-05,
+      "delta_fold0": 0.00022550842325064213
+    },
+    "joint_raw": {
+      "nested": 0.9522321222066855,
+      "fold0": 0.9513234165393392,
+      "newton": 0.9521988769164079,
+      "mix": 0.9522269994003613,
+      "folds": [
+        0.9513234165393392,
+        0.9524890098049357,
+        0.9569288214137718,
+        0.9524867990451208,
+        0.9479447440672186
+      ],
+      "delta_nested": 8.3152814518761e-05,
+      "delta_fold0": 0.00020348011788084985
+    },
+    "joint_orth_dist": {
+      "vs_part10": 10.268135451965144,
+      "vs_amanatar": 10.073365607092821
+    },
+    "joint_raw_dist": {
+      "vs_part10": 9.253038945502556,
+      "vs_amanatar": 8.97616543623303
+    },
+    "unbundled_raw": {
+      "nested": 0.9521384755569671,
+      "fold0": 0.9511228242074865,
+      "newton": 0.9521333981193115,
+      "mix": 0.9521340907683686,
+      "folds": [
+        0.9511228242074865,
+        0.9524706339320678,
+        0.9568083684060616,
+        0.9524616743734924,
+        0.9478395146964912
+      ],
+      "delta_nested": -1.0493835199687496e-05,
+      "delta_fold0": 2.8877860281939505e-06
+    },
+    "n_raw_members": 2
+  },
+  "step1_recon": {
+    "dhananjay_formulas": {
+      "18_blend_pooled2": "nested-CV wider pool (~116 members) best method=mix3 (rank(hill)+rank(stack C=1)+rank(stack C=0.03)); weights fit OOF via nested folds (honest OOF). Hill weights in runs.json include masaya logreg, gb_bag10, tabpfn lgb, gpt2.",
+      "18_blend_lm50": "50/50 rank mix of nested stack WITH LM members vs WITHOUT LM members; both stacks have nested OOF \u2192 soft_oof is honest. No raw 18 base npy in part4_out.",
+      "raw_base_npy_in_part4_out": false,
+      "dataset_sources": [
+        "uditjain13/credit-card-fraud-detection-2026",
+        "queyrusi/fraud-shared-digit-cnn-weights",
+        "sadamtorres/ps-s6e11-tabpfn-gbdt-oof-test-pairs",
+        "goodpjw2008/s6e11-oof-bank",
+        "malyshevdanil/s6e11-pooled-stack-v9",
+        "wguesdon/s6e11-tree-ensemble-predictions"
+      ],
+      "kernel_sources": [
+        "ektarr/lb-0-95121-realmlp-stacking",
+        "lazyyeou/s6e11-digit-trie-te-joint-glm-nested-stack",
+        "mdmuqtadirfuad/s6e11-v2-gpt2-token-keys-joint-glm",
+        "areebbb/s6e11-pooled-stack-fusion-lb-0-95196",
+        "megayak/s6e11-per-value-digit-te-shallow-tree-stack",
+        "nilanjansaha123/96-key-digit-trie-gpt-2-full-refit-hybrid",
+        "maverickss26/fraud-eda-gbdts-vs-ft-transformer-shap-fastapi",
+        "masayakawamata/s6e11-gpt-2-target-first-classifier-cv-0-9500",
+        "dhananjayk2609/s6e11-fraud-part-2-digits-leak-the-label",
+        "masayakawamata/s6e11-logreg-stacking-same-split-oofs",
+        "yekenot/ps-s6-e11-realmlp-pytorch",
+        "dhananjayk2609/s6e11-fraud-part-0-shared-helper-module",
+        "dhananjayk2609/s6e11-fraud-part-3-glm-and-boosted-trees",
+        "georgymamarin/s6e11-fraud-lb-0-95109-blend-shallow-trees",
+        "malyshevdanil/predicting-credit-card-fraud-getting-started",
+        "goodpjw2008/s6e11-part-10-test-bag-fusion-lb-0-95239",
+        "alexchilton/credit-card-fraud-lb-0-9521-shallow-tree-stack"
+      ]
+    },
+    "masaya_stack": {
+      "members": [
+        "logreg_te",
+        "xgb_te",
+        "gpt2_target_first",
+        "realmlp",
+        "sameer_seed_4",
+        "dhan_05_catboost",
+        "sta_lgb_te"
+      ],
+      "weights": [
+        {
+          "Member": "logreg_te",
+          "Weight": 0.0905032806160795
+        },
+        {
+          "Member": "xgb_te",
+          "Weight": 0.24145999041151464
+        },
+        {
+          "Member": "gpt2_target_first",
+          "Weight": 0.5646965885822645
+        },
+        {
+          "Member": "realmlp",
+          "Weight": 0.06680517888091181
+        },
+        {
+          "Member": "sameer_seed_4",
+          "Weight": 0.1699437840198452
+        },
+        {
+          "Member": "dhan_05_catboost",
+          "Weight": -0.10848601920336616
+        },
+        {
+          "Member": "sta_lgb_te",
+          "Weight": 0.02401142546594637
+        }
+      ],
+      "kernel_sources": [
+        "yekenot/ps-s6-e11-realmlp-pytabkit",
+        "sameershaikh27/s6e11-fraud-seed-and-fold-averaging-measured",
+        "masayakawamata/s6e11-single-xgb-te-features-cv-0-9504",
+        "masayakawamata/s6e11-single-logreg-te-features-cv-0-9502",
+        "georgymamarin/s6e11-fraud-glm-offset-trees-review-budgets",
+        "staesthetics/lgb-model-te-lb-0-94691",
+        "masayakawamata/s6e11-gpt-2-target-first-classifier-cv-0-9500"
+      ],
+      "without_public_models_oof_auc": 0.9514637379258826,
+      "note": "without_public_models is OOF-only ablation (no test); raw members partially pulled"
+    },
+    "areebbb_0_95239": {
+      "formula": "submission.csv = rank(0.4 * goodpjw_part9 + 0.6 * amanatar_sovereign)",
+      "was": "0.95231 = 0.5*part7 + 0.5*getting_started anchors",
+      "new_oofs": false,
+      "datasets": [
+        "goodpjw2008/s6e11-fraud-series-artifacts",
+        "masayakawamata/s6e11-gpt2-target-first-oof"
+      ],
+      "kernels": [
+        "lazyyeou/s6e11-digit-trie-te-joint-glm-nested-stack",
+        "subhanjan33/s6e11-full-adv-eda-ensemble-cv-0-952",
+        "nilanjansaha123/96-key-digit-trie-gpt-2-full-refit-hybrid",
+        "nilanjansaha123/s6e11-digit-trie-glm-probit-stack-0-952",
+        "sohailkhanlml/messi-is-pessi-lb-0-95231",
+        "amanatar/s6e11-sovereign-fusion-solution",
+        "saamhm/eda-blend-lb-0-95197-credit-card-fraud",
+        "malyshevdanil/predicting-credit-card-fraud-getting-started",
+        "goodpjw2008/s6e11-part-10-test-bag-fusion-lb-0-95239",
+        "alexchilton/credit-card-fraud-lb-0-9521-shallow-tree-stack"
+      ]
+    },
+    "nina2025_eos4": {
+      "note": "EoS(4) \u2014 public fusion kernel; only submission.csv published (test-only)",
+      "kernels": [
+        "denpugovkin/s6e11-four-leaves-new-view-can-glm-help",
+        "amanatar/s6e11-sovereign-fusion-solution",
+        "malyshevdanil/predicting-credit-card-fraud-getting-started",
+        "goodpjw2008/s6e11-part-10-test-bag-fusion-lb-0-95239"
+      ],
+      "datasets": []
+    }
+  },
+  "step1_raw_members": [
+    {
+      "name": "sameer_seed_4",
+      "oof_auc": 0.9504100067201825,
+      "max_r_vs_v3": 0.9844047116106468,
+      "delta_rho": 0.0025514280203728923,
+      "aligned": true,
+      "duplicate": false
+    },
+    {
+      "name": "masaya_logreg_te",
+      "oof_auc": 0.9502480981230693,
+      "max_r_vs_v3": 0.9933572649227329,
+      "delta_rho": 0.00046864007134617136,
+      "aligned": true,
+      "duplicate": false
+    },
+    {
+      "name": "masaya_xgb_te",
+      "oof_auc": 0.9504396424046064,
+      "max_r_vs_v3": 0.9840642709593925,
+      "delta_rho": 0.0034654090082877342,
+      "aligned": false,
+      "duplicate": false
+    },
+    {
+      "name": "masaya_gpt2",
+      "oof_auc": 0.9500272037932737,
+      "max_r_vs_v3": 0.9999999999999998,
+      "delta_rho": 4.857635206745314e-06,
+      "aligned": true,
+      "duplicate": true
+    },
+    {
+      "name": "sameer_seed_4",
+      "oof_auc": 0.9504100067201825,
+      "max_r_vs_v3": 0.9844047116106468,
+      "delta_rho": 0.0025514280203728923,
+      "aligned": true,
+      "duplicate": false
+    },
+    {
+      "name": "masaya_logreg_te",
+      "oof_auc": 0.9502480981230693,
+      "max_r_vs_v3": 0.9933572649227329,
+      "delta_rho": 0.00046864007134617136,
+      "aligned": true,
+      "duplicate": false
+    },
+    {
+      "name": "masaya_xgb_te",
+      "oof_auc": 0.9504396424046064,
+      "max_r_vs_v3": 0.9840642709593925,
+      "delta_rho": 0.0034654090082877342,
+      "aligned": false,
+      "duplicate": false
+    },
+    {
+      "name": "masaya_gpt2",
+      "oof_auc": 0.9500272037932737,
+      "max_r_vs_v3": 0.9999999999999998,
+      "delta_rho": 4.857635206745314e-06,
+      "aligned": true,
+      "duplicate": true
+    }
+  ],
+  "v3_verify": {
+    "nested": 0.9521489693921668,
+    "fold0": 0.9511199364214583
+  },
+  "runtime_s": 516.2671511173248,
+  "step2": {
+    "fold0_glm_auc": 0.9495061163168195,
+    "fold0_lgb_auc": 0.9487757520223012,
+    "fold0_stack_probe": 0.9511015963379641,
+    "n_feats": 26,
+    "D": 108,
+    "promoted": false
+  },
+  "step3": {
+    "nested": 0.9522529496573209,
+    "newton_only": 0.9522383097472985,
+    "fold0": 0.9513730964061876,
+    "gamma": 0.5,
+    "delta_nested": 0.0001039802651541244,
+    "delta_fold0": 0.0002531599847293009,
+    "promoted": true
+  },
+  "step3_pure": {
+    "nested": 0.9521717182369926,
+    "newton_only": 0.9521661039574747,
+    "fold0": 0.9511779299414097,
+    "gamma": 0.5,
+    "delta_nested": 2.274884482589279e-05,
+    "delta_fold0": 5.799351995139368e-05
+  },
+  "step4": {
+    "method": "overlap_newton",
+    "nested": 0.9521093993365909,
+    "fold0": 0.9511778646631465,
+    "delta_vs_l4v2": -0.0001435503207299904,
+    "promoted": false,
+    "overlap_best": {
+      "nested": 0.9521093993365909,
+      "alpha": -0.3
+    },
+    "ranknet_best": {
+      "nested": 0.9519567959155595,
+      "tau": 1.0,
+      "w": [
+        0.20226611843013392,
+        0.19672227216089958,
+        0.19613799680669042,
+        0.18967058342282445,
+        0.1933196472883039,
+        0.2684375479260766
+      ]
+    },
+    "features": [
+      "l4",
+      "gb_super",
+      "gpt2",
+      "glm_quad",
+      "gbn_bag5_w512",
+      "ebm_i25_bag4"
+    ]
+  },
+  "step3_full": {
+    "nested": 0.9522529496573209,
+    "newton_only": 0.9522383097472985,
+    "fold0": 0.9513730964061876,
+    "gamma": 0.5,
+    "delta_nested": 0.0001039802651541244,
+    "delta_fold0": 0.0002531599847293009
+  },
+  "v5": {
+    "pure": {
+      "nested": 0.9521717182369926,
+      "fold0": 0.9511779299414097,
+      "recipe": "L4_v2_TwoStage",
+      "files": [
+        "preds/P_super_v5_pure_oof.npy",
+        "preds/P_super_v5_pure_test.npy"
+      ]
+    },
+    "full": {
+      "nested": 0.9522529496573209,
+      "fold0": 0.9513730964061876,
+      "recipe": "L4_v2_on_orth_bank",
+      "files": [
+        "preds/P_super_v5_full_oof.npy",
+        "preds/P_super_v5_full_test.npy"
+      ]
+    },
+    "progression": [
+      {
+        "name": "P_super_v3",
+        "nested": 0.9521489693921668,
+        "fold0": 0.9511199364214583
+      },
+      {
+        "name": "L4_regime_v3",
+        "nested": 0.9521794373741388,
+        "fold0": 0.9511779299414097
+      },
+      {
+        "name": "P_super_v4",
+        "nested": 0.9522570184189607,
+        "fold0": 0.9513081756191063
+      },
+      {
+        "name": "P_super_v5_pure",
+        "nested": 0.9521717182369926,
+        "fold0": 0.9511779299414097,
+        "recipe": "L4_v2_TwoStage"
+      },
+      {
+        "name": "P_super_v5_full",
+        "nested": 0.9522529496573209,
+        "fold0": 0.9513730964061876,
+        "recipe": "L4_v2_on_orth_bank"
+      }
+    ],
+    "test_distance_e4": {
+      "P_super_v5_pure": {
+        "P_super_v5_pure": 0.0,
+        "P_super_v5_full": 4.6138849318644315,
+        "goodpjw_part9": 28.1724921575921,
+        "amanatar_sovereign": 37.03935215078502,
+        "goodpjw_part10": 30.356297986416926,
+        "areebbb_95239": 30.169974487957994,
+        "nina2025_eos4": 29.10235020562868
+      },
+      "P_super_v5_full": {
+        "P_super_v5_pure": 4.6138849318644315,
+        "P_super_v5_full": 0.0,
+        "goodpjw_part9": 35.55589490706667,
+        "amanatar_sovereign": 43.56381862144709,
+        "goodpjw_part10": 37.31136710044769,
+        "areebbb_95239": 36.29415412475856,
+        "nina2025_eos4": 35.09038338948556
+      },
+      "goodpjw_part9": {
+        "P_super_v5_pure": 28.1724921575921,
+        "P_super_v5_full": 35.55589490706667,
+        "goodpjw_part9": 0.0,
+        "amanatar_sovereign": 9.025421291605218,
+        "goodpjw_part10": 2.2572218747696216,
+        "areebbb_95239": 4.198441287225352,
+        "nina2025_eos4": 3.6464527915580636
+      },
+      "amanatar_sovereign": {
+        "P_super_v5_pure": 37.03935215078613,
+        "P_super_v5_full": 43.563818621448206,
+        "goodpjw_part9": 9.025421291606328,
+        "amanatar_sovereign": 0.0,
+        "goodpjw_part10": 2.2569895473545376,
+        "areebbb_95239": 1.4215283627727615,
+        "nina2025_eos4": 2.045328182131989
+      },
+      "goodpjw_part10": {
+        "P_super_v5_pure": 30.356297986418035,
+        "P_super_v5_full": 37.31136710044769,
+        "goodpjw_part9": 2.2572218747685113,
+        "amanatar_sovereign": 2.256989547355648,
+        "goodpjw_part10": 0.0,
+        "areebbb_95239": 0.5534756657621376,
+        "nina2025_eos4": 0.5893670135392881
+      },
+      "areebbb_95239": {
+        "P_super_v5_pure": 30.169974487957994,
+        "P_super_v5_full": 36.29415412475856,
+        "goodpjw_part9": 4.198441287224242,
+        "amanatar_sovereign": 1.4215283627727615,
+        "goodpjw_part10": 0.5534756657610274,
+        "areebbb_95239": 0.0,
+        "nina2025_eos4": 0.06501185751739413
+      },
+      "nina2025_eos4": {
+        "P_super_v5_pure": 29.10235020562868,
+        "P_super_v5_full": 35.09038338948556,
+        "goodpjw_part9": 3.6464527915580636,
+        "amanatar_sovereign": 2.045328182131989,
+        "goodpjw_part10": 0.5893670135392881,
+        "areebbb_95239": 0.06501185751739413,
+        "nina2025_eos4": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,399 @@
+{
+  "gates": {
+    "V3_NESTED": 0.9521489693921668,
+    "V3_FOLD0": 0.9511199364214583
+  },
+  "dead_ends": [
+    {
+      "name": "Rung3_delta_LGB",
+      "reason": "Fold0 \u0394S vs 3-member fallback only; LGB+\u03b4 0.95011 < gb_s0 0.95039; not vs true P_super_v3 Fold0 0.95112"
+    },
+    {
+      "name": "L2_glm_cubic_synergy",
+      "reason": "failed Fold0 gate vs glm_quad and/or P_super_v3 Fold0",
+      "metrics": {
+        "best_C": 0.0005,
+        "fold0_cubic_auc": 0.9499945003063184,
+        "fold0_glm_quad_auc": 0.9499367150551118,
+        "fold0_stack_probe": 0.9511107119811584,
+        "solo_gate": true,
+        "stack_gate": false,
+        "n_pairs2": 1500,
+        "n_trips": 400,
+        "basis_dim": 2208
+      }
+    },
+    {
+      "name": "L3_gb_superquad_full",
+      "reason": "5-fold nested did not beat P_super_v3",
+      "metrics": {
+        "z_super_oof_auc": 0.9512891468592765,
+        "fold0_lgb_auc": 0.9506382621048787,
+        "fold0_gb_s0_auc": 0.9503884126606446,
+        "fold0_stack_probe": 0.9511291422108259,
+        "promoted": false,
+        "gate": true,
+        "bag5_oof_auc": 0.951472895684866,
+        "nested": 0.9521468977841793,
+        "fold0": 0.9511209280293627,
+        "delta_nested": -2.0716079874860682e-06
+      }
+    }
+  ],
+  "lb_top": [
+    "areebbb/s6e11-glm-boost-residual-mlp-pool-lb-0-95239",
+    "malyshevdanil/predicting-credit-card-fraud-getting-started",
+    "nina2025/ps-s6e11-eos-4",
+    "amanatar/s6e11-sovereign-fusion-solution",
+    "goodpjw2008/s6e11-part-10-test-bag-fusion-lb-0-95239"
+  ],
+  "lever1": {
+    "amanatar_dataset_sources": [
+      "amanatar/s6e11-rank3-artifacts"
+    ],
+    "amanatar_rank3_files": [
+      "._sub_titan_pjw7_subh_60_40.csv",
+      "._sub_titan_sovereign_fusion_50_50.csv",
+      "._sub_titan_triad_40_30_30.csv",
+      "._sub_unbundled_newton_cholesky.csv",
+      "sub_titan_pjw7_subh_60_40.csv",
+      "sub_titan_sovereign_fusion_50_50.csv",
+      "sub_titan_triad_40_30_30.csv",
+      "sub_unbundled_newton_cholesky.csv"
+    ],
+    "amanatar_note": "dataset ships only fusion CSVs (unbundled/triad/sovereign); 117 raw OOFs NOT published",
+    "reports": [
+      {
+        "name": "masaya_stack_main",
+        "oof_path": "external_bank/masaya_stack/oof.npy",
+        "test_path": "external_bank/masaya_stack/test.npy",
+        "oof_auc": 0.951532373263635,
+        "rho_v3": 0.9945760694744091,
+        "rho_gb5_oof": 0.9854244545514201,
+        "rho_gb5_test": 0.9849168042487355,
+        "delta_rho": 0.0005076503026846257,
+        "aligned": true,
+        "max_r_vs_v3_bank": 0.9883971039923961,
+        "duplicate": false,
+        "status": "candidate_inject"
+      },
+      {
+        "name": "masaya_without_public_models_oof",
+        "oof_path": "external_bank/masaya_stack/without_public_models_oof.npy",
+        "test_path": null,
+        "oof_auc": 0.9514637379258826,
+        "rho_v3": 0.993882734660965,
+        "rho_gb5_oof": 0.9843211773159528,
+        "status": "oof_only_no_test"
+      },
+      {
+        "name": "masaya_with_shallow_trees_oof",
+        "oof_path": "external_bank/masaya_stack/with_shallow_trees_oof.npy",
+        "test_path": null,
+        "oof_auc": 0.9515245693554424,
+        "rho_v3": 0.9945870457839592,
+        "rho_gb5_oof": 0.9853973620891378,
+        "status": "oof_only_no_test"
+      },
+      {
+        "name": "masaya_without_gpt2_target_first_oof",
+        "oof_path": "external_bank/masaya_stack/without_gpt2_target_first_oof.npy",
+        "test_path": null,
+        "oof_auc": 0.9508528248135092,
+        "rho_v3": 0.9889511277880201,
+        "rho_gb5_oof": 0.9906683543981267,
+        "status": "oof_only_no_test"
+      },
+      {
+        "name": "masaya_two_member_oof",
+        "oof_path": "external_bank/masaya_stack/two_member_oof.npy",
+        "test_path": null,
+        "oof_auc": 0.9507453832296838,
+        "rho_v3": 0.9883266262802902,
+        "rho_gb5_oof": 0.9902560067025371,
+        "status": "oof_only_no_test"
+      },
+      {
+        "name": "dhan_18_blend_lm50_oof",
+        "oof_path": "external_bank/dhananjay_part4_out/oof/18_blend_lm50_oof.npy",
+        "test_path": "external_bank/dhananjay_part4_out/oof/18_blend_lm50_test.npy",
+        "oof_auc": 0.9521815139540355,
+        "rho_v3": 0.9964708961008756,
+        "rho_gb5_oof": 0.9943747869030068,
+        "rho_gb5_test": 0.9969714971061597,
+        "delta_rho": 0.0025967102031528855,
+        "aligned": true,
+        "max_r_vs_v3_bank": 0.9943763505736117,
+        "duplicate": false,
+        "status": "candidate_inject"
+      },
+      {
+        "name": "dhan_18_blend_pooled2_oof",
+        "oof_path": "external_bank/dhananjay_part4_out/oof/18_blend_pooled2_oof.npy",
+        "test_path": "external_bank/dhananjay_part4_out/oof/18_blend_pooled2_test.npy",
+        "oof_auc": 0.9521922206490845,
+        "rho_v3": 0.9972776602482231,
+        "rho_gb5_oof": 0.9914266830900881,
+        "rho_gb5_test": 0.9939930783561823,
+        "delta_rho": 0.002566395266094257,
+        "aligned": true,
+        "max_r_vs_v3_bank": 0.9914290834599098,
+        "duplicate": false,
+        "status": "candidate_inject"
+      },
+      {
+        "name": "amanatar_sub_titan_pjw7_subh_60_40",
+        "oof_path": null,
+        "test_path": "external_bank/amanatar_rank3_artifacts/sub_titan_pjw7_subh_60_40.csv",
+        "rho_gb5_test": 0.9946448326026672,
+        "status": "test_only"
+      },
+      {
+        "name": "amanatar_._sub_titan_pjw7_subh_60_40",
+        "oof_path": null,
+        "test_path": "external_bank/amanatar_rank3_artifacts/._sub_titan_pjw7_subh_60_40.csv",
+        "status": "error:'utf-8' codec can't decode byte 0xb0 in position 37: invalid start byte"
+      },
+      {
+        "name": "amanatar_sub_titan_sovereign_fusion_50_50",
+        "oof_path": null,
+        "test_path": "external_bank/amanatar_rank3_artifacts/sub_titan_sovereign_fusion_50_50.csv",
+        "rho_gb5_test": 0.9948894515576162,
+        "status": "test_only"
+      },
+      {
+        "name": "amanatar_._sub_titan_sovereign_fusion_50_50",
+        "oof_path": null,
+        "test_path": "external_bank/amanatar_rank3_artifacts/._sub_titan_sovereign_fusion_50_50.csv",
+        "status": "error:'utf-8' codec can't decode byte 0xb0 in position 37: invalid start byte"
+      },
+      {
+        "name": "amanatar_sub_titan_triad_40_30_30",
+        "oof_path": null,
+        "test_path": "external_bank/amanatar_rank3_artifacts/sub_titan_triad_40_30_30.csv",
+        "rho_gb5_test": 0.9957054838284035,
+        "status": "test_only"
+      },
+      {
+        "name": "amanatar_._sub_titan_triad_40_30_30",
+        "oof_path": null,
+        "test_path": "external_bank/amanatar_rank3_artifacts/._sub_titan_triad_40_30_30.csv",
+        "status": "error:'utf-8' codec can't decode byte 0xb0 in position 37: invalid start byte"
+      },
+      {
+        "name": "amanatar_sub_unbundled_newton_cholesky",
+        "oof_path": null,
+        "test_path": "external_bank/amanatar_rank3_artifacts/sub_unbundled_newton_cholesky.csv",
+        "rho_gb5_test": 0.99235747783616,
+        "status": "test_only"
+      },
+      {
+        "name": "amanatar_._sub_unbundled_newton_cholesky",
+        "oof_path": null,
+        "test_path": "external_bank/amanatar_rank3_artifacts/._sub_unbundled_newton_cholesky.csv",
+        "status": "error:'utf-8' codec can't decode byte 0xb0 in position 37: invalid start byte"
+      },
+      {
+        "name": "subh_ensemble_sub",
+        "oof_path": null,
+        "test_path": "external_bank/subh_ensemble_out/submission.csv",
+        "rho_gb5_test": 0.9932174278441043,
+        "status": "test_only"
+      },
+      {
+        "name": "amanatar_sovereign_sub",
+        "oof_path": null,
+        "test_path": "external_bank/amanatar_sovereign/submission.csv",
+        "rho_gb5_test": 0.9948894513446107,
+        "status": "test_only"
+      }
+    ],
+    "inject_results": [
+      {
+        "name": "masaya_stack_main",
+        "oof_auc": 0.951532373263635,
+        "delta_rho": 0.0005076503026846257,
+        "nested": 0.9521492969788138,
+        "fold0": 0.9511532096848013,
+        "delta_nested": 3.2758664703091966e-07,
+        "delta_fold0": 3.327326334301439e-05,
+        "promoted": true
+      },
+      {
+        "name": "dhan_18_blend_lm50_oof",
+        "oof_auc": 0.9521815139540355,
+        "delta_rho": 0.0025967102031528855,
+        "nested": 0.9522327215081533,
+        "fold0": 0.9512938858964244,
+        "delta_nested": 8.37521159865462e-05,
+        "delta_fold0": 0.00017394947496607305,
+        "promoted": true
+      },
+      {
+        "name": "dhan_18_blend_pooled2_oof",
+        "oof_auc": 0.9521922206490845,
+        "delta_rho": 0.002566395266094257,
+        "nested": 0.9522152517740374,
+        "fold0": 0.9512650779771391,
+        "delta_nested": 6.628238187067481e-05,
+        "delta_fold0": 0.00014514155568079445,
+        "promoted": true
+      }
+    ],
+    "joint_promoted": {
+      "nested": 0.9522321222066855,
+      "fold0": 0.9513234165393392,
+      "newton": 0.9521988769164079,
+      "mix": 0.9522269994003613,
+      "folds": [
+        0.9513234165393392,
+        0.9524890098049357,
+        0.9569288214137718,
+        0.9524867990451208,
+        0.9479447440672186
+      ],
+      "delta_nested": 8.3152814518761e-05,
+      "delta_fold0": 0.00020348011788084985
+    },
+    "lb_scan_note": "see state['lb_top']"
+  },
+  "v3_verify": {
+    "nested": 0.9521489693921668,
+    "fold0": 0.9511199364214583
+  },
+  "runtime_s": 751.0732362270355,
+  "policy": "NO_SUBMIT",
+  "lever2": {
+    "best_C": 0.0005,
+    "fold0_cubic_auc": 0.9499945003063184,
+    "fold0_glm_quad_auc": 0.9499367150551118,
+    "fold0_stack_probe": 0.9511107119811584,
+    "solo_gate": true,
+    "stack_gate": false,
+    "n_pairs2": 1500,
+    "n_trips": 400,
+    "basis_dim": 2208,
+    "promoted": false
+  },
+  "lever3": {
+    "z_super_oof_auc": 0.9512891468592765,
+    "fold0_lgb_auc": 0.9506382621048787,
+    "fold0_gb_s0_auc": 0.9503884126606446,
+    "fold0_stack_probe": 0.9511291422108259,
+    "promoted": false,
+    "gate": true,
+    "bag5_oof_auc": 0.951472895684866,
+    "nested": 0.9521468977841793,
+    "fold0": 0.9511209280293627,
+    "delta_nested": -2.0716079874860682e-06
+  },
+  "lever4": {
+    "best_C": 0.008,
+    "nested": 0.9521794373741388,
+    "fold0": 0.9511284241499298,
+    "delta_nested": 3.0467981972037705e-05,
+    "delta_fold0": 8.487728471506806e-06,
+    "promoted": true,
+    "n_extra": 15
+  },
+  "v4": {
+    "recipe": "L1_plus_L4_regime",
+    "nested": 0.9522570184189607,
+    "fold0": 0.9513081756191063,
+    "delta_nested": 0.0001080490267939549,
+    "members_added": [
+      "masaya_stack_main",
+      "dhan_18_blend_lm50_oof",
+      "dhan_18_blend_pooled2_oof"
+    ],
+    "files": [
+      "preds/P_super_v4_oof.npy",
+      "preds/P_super_v4_test.npy"
+    ],
+    "test_distance_e4": {
+      "P_super_v4": {
+        "P_super_v4": 0.0,
+        "goodpjw_part9": 20.41826488555887,
+        "amanatar_sovereign": 27.168186263655247,
+        "goodpjw_part10": 21.54289111771068,
+        "p7gs": 17.46728534549602
+      },
+      "goodpjw_part9": {
+        "P_super_v4": 20.41826488555887,
+        "goodpjw_part9": 0.0,
+        "amanatar_sovereign": 9.025421291605218,
+        "goodpjw_part10": 2.2572218747696216,
+        "p7gs": 3.576480100203616
+      },
+      "amanatar_sovereign": {
+        "P_super_v4": 27.168186263655247,
+        "goodpjw_part9": 9.025421291606328,
+        "amanatar_sovereign": 0.0,
+        "goodpjw_part10": 2.2569895473545376,
+        "p7gs": 6.625788680914013
+      },
+      "goodpjw_part10": {
+        "P_super_v4": 21.54289111771068,
+        "goodpjw_part9": 2.2572218747685113,
+        "amanatar_sovereign": 2.256989547355648,
+        "goodpjw_part10": 0.0,
+        "p7gs": 2.845457444277111
+      },
+      "p7gs": {
+        "P_super_v4": 17.46728534549713,
+        "goodpjw_part9": 3.5764801002047264,
+        "amanatar_sovereign": 6.625788680912903,
+        "goodpjw_part10": 2.845457444278221,
+        "p7gs": 0.0
+      }
+    }
+  },
+  "v4_candidates": [
+    {
+      "name": "L1_joint_psuper",
+      "nested": 0.9522321222066855,
+      "fold0": 0.9513234165393392,
+      "meta": {
+        "nested": 0.9522321222066855,
+        "fold0": 0.9513234165393392,
+        "newton": 0.9521988769164079,
+        "mix": 0.9522269994003613,
+        "folds": [
+          0.9513234165393392,
+          0.9524890098049357,
+          0.9569288214137718,
+          0.9524867990451208,
+          0.9479447440672186
+        ],
+        "delta_nested": 8.3152814518761e-05,
+        "delta_fold0": 0.00020348011788084985
+      }
+    },
+    {
+      "name": "L4_regime_v3",
+      "nested": 0.9521794373741388,
+      "fold0": 0.9511284241499298,
+      "meta": {
+        "best_C": 0.008,
+        "nested": 0.9521794373741388,
+        "fold0": 0.9511284241499298,
+        "delta_nested": 3.0467981972037705e-05,
+        "delta_fold0": 8.487728471506806e-06,
+        "promoted": true,
+        "n_extra": 15
+      }
+    },
+    {
+      "name": "L1_plus_L4_regime",
+      "nested": 0.9522570184189607,
+      "fold0": 0.9513081756191063,
+      "meta": {
+        "nested": 0.9522570184189607,
+        "fold0": 0.9513081756191063,
+        "C": 0.008,
+        "delta_nested": 0.0001080490267939549,
+        "delta_fold0": 0.00018823919764798802
+      }
+    }
+  ]
+}

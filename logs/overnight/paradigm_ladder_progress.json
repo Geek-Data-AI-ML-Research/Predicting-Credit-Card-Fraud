@@ -44,6 +44,88 @@
       },
       "n_b0": 139992,
       "passed": true
+    },
+    "rung1": {
+      "name": "rung1",
+      "auc_sum_llr": 0.8535326519724875,
+      "auc_weighted_delta": 0.9039814926568384,
+      "S_fold0": 0.9497488768525097,
+      "Delta_S_fold0": -0.001091667047845024,
+      "gate_auc": 0.94935,
+      "gate_ds": 4e-05,
+      "passed": false,
+      "n_orders": 8,
+      "score_n": 16000,
+      "perm_auc_curve": {
+        "K=1": 0.8502377335646275,
+        "K=2": 0.8509161901401929,
+        "K=4": 0.8526304237544549,
+        "K=6": 0.8522978610049585,
+        "K=8": 0.8535326519724875
+      },
+      "S_fold0_base": 0.9508405439003548,
+      "enrich_bs": 256
+    },
+    "rung2": {
+      "name": "rung2",
+      "auc_weighted_delta": 0.9292469774759559,
+      "auc_sum_llr": 0.9433262607211018,
+      "perm_auc_curve": {
+        "K=1": 0.9412261400510532,
+        "K=2": 0.9431589080991288,
+        "K=4": 0.942960370280174,
+        "K=6": 0.9435067063647082,
+        "K=8": 0.9433262607211018
+      },
+      "S_fold0": 0.949740685984712,
+      "Delta_S_fold0": -0.0010998579156428212,
+      "beats_rung1": true,
+      "passed": false,
+      "score_bs": 256,
+      "score_n": 16000
+    },
+    "rung3": {
+      "name": "rung3",
+      "auc_glm": 0.9494027062223102,
+      "auc_lgb": 0.9501138227546255,
+      "auc_xgb": 0.949947358520516,
+      "auc_mlp": 0.9480365502943295,
+      "best": 0.9501138227546255,
+      "S_fold0": 0.9509135685175496,
+      "Delta_S_fold0": 7.302461719482789e-05,
+      "passed": true
+    },
+    "rung4": {
+      "name": "rung4",
+      "auc": 0.949426271675356,
+      "S_fold0": 0.9508236710235399,
+      "Delta_S_fold0": -1.6872876814844062e-05,
+      "passed": false
+    },
+    "rung5": {
+      "name": "rung5",
+      "promoted": [
+        {
+          "rung": "rung3",
+          "nested_auc": null,
+          "Delta_S_fold0": 7.302461719482789e-05
+        }
+      ],
+      "passed": true
     }
+  },
+  "runtime_s": 2470.606909751892,
+  "device": "cuda",
+  "summary": {
+    "promoted": [
+      {
+        "rung": "rung3",
+        "nested_auc": null,
+        "Delta_S_fold0": 7.302461719482789e-05
+      }
+    ],
+    "best_nested": 0,
+    "policy": "NO_SUBMIT",
+    "note": "NO_SUBMIT \u2014 shut down pod after sync"
   }
 }
