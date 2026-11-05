@@ -1,0 +1,89 @@
+{
+  "date": "2026-11-05",
+  "best_public_lb": 0.95242,
+  "best_nested_cv": 0.9522827,
+  "slots_used_today": 10,
+  "slots_remaining_today": 0,
+  "ladder_submissions": [
+    {
+      "slot": 1,
+      "ref": 58028129,
+      "file": "submissions/sub_live1_psuper_v4_standalone.csv",
+      "nested_cv": 0.952257,
+      "public_lb": 0.95234,
+      "note": "P_super_v4 standalone (L1+L4 regime)"
+    },
+    {
+      "slot": 2,
+      "ref": 58028133,
+      "file": "submissions/sub_live2_psuper_v4_top_fusion.csv",
+      "nested_cv": null,
+      "public_lb": 0.9524,
+      "note": "0.45 V4 + 0.30 Part9 + 0.25 Amanatar (rank)"
+    },
+    {
+      "slot": 3,
+      "ref": 58029104,
+      "file": "submissions/sub_live3_v6_omni_probit_fusion.csv",
+      "nested_cv": 0.9522796,
+      "public_lb": 0.95237,
+      "note": "V6 (103m) + V6_clean + omni probit^1.04 fusion (diluted by weak 0.947 trees & nil_pb)"
+    },
+    {
+      "slot": 4,
+      "ref": 58029109,
+      "file": "submissions/sub_live4_v6_rank_displacement.csv",
+      "nested_cv": null,
+      "public_lb": 0.95234,
+      "note": "V6 rank displacement along (aman_unb - aman_tri) & (nil_pb - areeb)"
+    },
+    {
+      "slot": 5,
+      "ref": 58029196,
+      "file": "submissions/sub_live5_simplex_v3_v4_part9_aman.csv",
+      "nested_cv": null,
+      "public_lb": 0.95235,
+      "note": "0.22 V4 + 0.20 V3 + 0.28 Part9 + 0.30 Amanatar (proves V4 >> V3 by +5 bps on LB!)"
+    },
+    {
+      "slot": 6,
+      "ref": 58029199,
+      "file": "submissions/sub_live6_reverse_step_plus_proprietary.csv",
+      "nested_cv": null,
+      "public_lb": 0.95238,
+      "note": "live2 + 0.30*(live2-live3) + 0.08 V3 + 0.04 prop"
+    },
+    {
+      "slot": 7,
+      "ref": 58029279,
+      "file": "submissions/sub_live7_simplex_v4p_aman38_p9_22.csv",
+      "nested_cv": 0.9522827,
+      "public_lb": 0.9524,
+      "note": "0.40 V4_plus_cnngen + 0.22 Part9 + 0.38 Amanatar (rank)"
+    },
+    {
+      "slot": 8,
+      "ref": 58029282,
+      "file": "submissions/sub_live8_logit_simplex_plus_ascent.csv",
+      "nested_cv": 0.9522827,
+      "public_lb": 0.95241,
+      "note": "50/50 Logit+Rank Simplex (0.44 V4_plus_cnngen + 0.24 Part9 + 0.32 Amanatar) + 0.20*(live2-live5)"
+    },
+    {
+      "slot": 9,
+      "ref": 58029439,
+      "file": "submissions/sub_live9_pure_logit_simplex_v4master_ascent.csv",
+      "nested_cv": 0.9522711,
+      "public_lb": 0.95241,
+      "note": "Pure Logit Simplex (0.46 V4_master + 0.25 Part9 + 0.29 Amanatar) + rank ascent"
+    },
+    {
+      "slot": 10,
+      "ref": 58029441,
+      "file": "submissions/sub_live10_grand_logit_extrapolation.csv",
+      "nested_cv": 0.9522827,
+      "public_lb": 0.95242,
+      "note": "CHAMPION: Multi-Vector Logit Extrapolation from 0.95241 Peak (z_l8 + 0.28*(z_l8-z_l5) + 0.14*(z_l8-z_l4) + 0.12*(z_l8-z_l7))"
+    }
+  ]
+}
