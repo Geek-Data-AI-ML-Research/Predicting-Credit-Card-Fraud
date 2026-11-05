@@ -4,6 +4,7 @@
 
 # Local envs
 .venv/
+.venv_*/
 venv/
 __pycache__/
 *.pyc

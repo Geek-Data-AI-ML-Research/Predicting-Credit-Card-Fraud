@@ -1,0 +1,49 @@
+{
+  "policy": "NO_SUBMIT",
+  "started": "2026-11-05 06:03:54",
+  "S_fold0_base": 0.9508405439003548,
+  "rungs": {
+    "rung0": {
+      "name": "rung0",
+      "harvest": {
+        "had_npy": false,
+        "logged_auc": 0.950836,
+        "recomputed_auc": 0.9510501780247974
+      },
+      "masaya": {
+        "code_files": [],
+        "out_files": [
+          "manifest.json"
+        ],
+        "repo_scripts": [
+          "baseline_xgb.py",
+          "common.py",
+          "make_folds.py",
+          "make_predictions.py",
+          "make_queue.py",
+          "run_queue.py",
+          "score_rows.py",
+          "stack_lr.py",
+          "tabtext.py",
+          "train_classifier.py",
+          "train_replica.py"
+        ],
+        "row_text_rule": "is_fraud is {True|False}, {col} is {csv_value}, ...<|endoftext|>",
+        "combine": "log-sum-exp over orders per label, then difference + fold prior",
+        "fold0_auc": 0.9488823016904258,
+        "oof_auc": 0.9500272037932737,
+        "orders_in_public": 10,
+        "fold0_auc_verified": 0.9488823016904258
+      },
+      "S_fold0_base": 0.9508405439003548,
+      "stack_meta": {
+        "source": "p_super_fallback",
+        "n_members": 3,
+        "C": 0.005,
+        "error": "[Errno 2] No such file or directory: 'external_bank/goodpjw_part7_code/s6e11-part-7-gpt-2-mlp-stack-lb-0-95222.ipynb'"
+      },
+      "n_b0": 139992,
+      "passed": true
+    }
+  }
+}
