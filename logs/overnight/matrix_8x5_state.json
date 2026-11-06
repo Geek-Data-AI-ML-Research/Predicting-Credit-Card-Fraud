@@ -1,0 +1,374 @@
+{
+  "campaign": "8x5_autonomous_matrix_no_submit",
+  "policy": "STRICT_NO_SUBMIT",
+  "mode": "LOCAL_CPU_NO_GPU_YET",
+  "pid": 51364,
+  "gpu_pod_id": null,
+  "blacklisted_pods": [
+    "lheroidmuab1j4"
+  ],
+  "spend_usd": 0.0,
+  "v4p_baseline_oof_auc": 0.9522827,
+  "v4p_baseline_fold0_auc": 0.951361,
+  "v_champ_oof_auc": 0.9523071344526307,
+  "v_champ_fold0_auc": 0.9513936295284794,
+  "current_paradigm": "P6",
+  "current_lever": "L6.5",
+  "strikes_by_paradigm": {
+    "P4": 5,
+    "P1": 5,
+    "P2": 5,
+    "P5": 5,
+    "P8": 4,
+    "P6": 5,
+    "P7": 5
+  },
+  "promoted_levers": [
+    {
+      "paradigm_id": "P8",
+      "lever_id": "L8.1",
+      "hypothesis": "Step-0 Calibration + 12% Nested Hill + 4% GB_Super",
+      "delta_fold0": 3.265e-05,
+      "delta_oof": 2.443e-05,
+      "new_auc": 0.9523071344526307,
+      "delta_rho": 5e-05
+    }
+  ],
+  "dead_levers": [
+    {
+      "paradigm_id": "P4",
+      "lever_id": "L4.1",
+      "hypothesis": "Row-ID Rolling Neighbor Residual Windows",
+      "delta_fold0": 3.069943467637337e-05,
+      "delta_oof": 0.0,
+      "ci90": [
+        0.0,
+        0.0
+      ],
+      "delta_rho": 0.0004077658520434957,
+      "reason": "Failed 5-fold nested CV / CI90 / |\u0394\u03c1| gate"
+    },
+    {
+      "paradigm_id": "P4",
+      "lever_id": "L4.2",
+      "hypothesis": "Row-ID Modulo Prompt-Batch Periodicity",
+      "delta_fold0": 0.0,
+      "ks_stat": 7.805471818811416e-05,
+      "reason": "Fold0 canary delta +0.00e+00 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P1",
+      "lever_id": "L1.2",
+      "hypothesis": "GLM-Importance-Weighted Full-Row Prototype kNN",
+      "delta_fold0": 1.790489507325077e-06,
+      "ks_stat": 1.4190710549588648e-05,
+      "reason": "Fold0 canary delta +1.79e-06 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P1",
+      "lever_id": "L1.5",
+      "hypothesis": "Orig20k Residual Error Transfer",
+      "delta_fold0": 0.0,
+      "ks_stat": 1.758098984627754e-05,
+      "reason": "Fold0 canary delta +0.00e+00 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P2",
+      "lever_id": "L2.1",
+      "hypothesis": "Out-of-Fold Key-Residual Propagation (smooth=15)",
+      "delta_fold0": 0.0,
+      "ks_stat": 1.2286690682650203e-05,
+      "reason": "Fold0 canary delta +0.00e+00 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P2",
+      "lever_id": "L2.2",
+      "hypothesis": "2-Hop Diffusion Key-Residual Propagation (smooth=40)",
+      "delta_fold0": 0.0,
+      "ks_stat": 1.2349364273189778e-05,
+      "reason": "Fold0 canary delta +0.00e+00 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P2",
+      "lever_id": "L2.4",
+      "hypothesis": "2-Hop Bipartite Key-Residual Message Passing (smooth=25)",
+      "delta_fold0": 0.0,
+      "ks_stat": 1.1010740200628755e-05,
+      "reason": "Fold0 canary delta +0.00e+00 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P2",
+      "lever_id": "L2.5",
+      "hypothesis": "Long-Range Key-Residual Attention Surrogate (smooth=80)",
+      "delta_fold0": 0.0,
+      "ks_stat": 1.28762796259424e-05,
+      "reason": "Fold0 canary delta +0.00e+00 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P5",
+      "lever_id": "L5.1",
+      "hypothesis": "Leave-One-Float-Out Conditional Quantile Inversion",
+      "delta_fold0": 3.152007569950932e-06,
+      "ks_stat": 0.0060483676107505446,
+      "reason": "Fold0 canary delta +3.15e-06 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P5",
+      "lever_id": "L5.2",
+      "hypothesis": "Gaussian Copula Mahalanobis & Pairwise Rank Discrepancy",
+      "delta_fold0": 3.152007569950932e-06,
+      "ks_stat": 0.0060483676107505446,
+      "reason": "Fold0 canary delta +3.15e-06 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P5",
+      "lever_id": "L5.3",
+      "hypothesis": "Cubic B-Spline GAM with 2-Way Flag Conditioning",
+      "delta_fold0": 0.0,
+      "ks_stat": 1.2792460842403486e-05,
+      "reason": "Fold0 canary delta +0.00e+00 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P5",
+      "lever_id": "L5.4",
+      "hypothesis": "2nd/3rd-Order Key-Logit Interaction Ridge",
+      "delta_fold0": 0.0,
+      "ks_stat": 1.2792460842403486e-05,
+      "reason": "Fold0 canary delta +0.00e+00 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P5",
+      "lever_id": "L5.5",
+      "hypothesis": "Monotonic Tail Saturation Spline Residual",
+      "delta_fold0": 0.0,
+      "ks_stat": 1.2792460842403486e-05,
+      "reason": "Fold0 canary delta +0.00e+00 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P8",
+      "lever_id": "L8.2",
+      "hypothesis": "Unified Promoted Feature Re-Boost",
+      "delta_fold0": 3.497049818945719e-06,
+      "ks_stat": 1.400326127010132e-05,
+      "reason": "Fold0 canary delta +3.50e-06 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P8",
+      "lever_id": "L8.3",
+      "hypothesis": "8-Block Differentially-Regularized L4 Regime Stacker",
+      "delta_fold0": 3.497049818945719e-06,
+      "ks_stat": 1.400326127010132e-05,
+      "reason": "Fold0 canary delta +3.50e-06 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P8",
+      "lever_id": "L8.4",
+      "hypothesis": "Direct Differentiable Pairwise RankNet L-BFGS Meta-Optimizer",
+      "delta_fold0": 3.497049818945719e-06,
+      "ks_stat": 1.400326127010132e-05,
+      "reason": "Fold0 canary delta +3.50e-06 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P8",
+      "lever_id": "L8.5",
+      "hypothesis": "32-Stratum Affine Logit Post-Calibration",
+      "delta_fold0": 3.497049818945719e-06,
+      "ks_stat": 1.400326127010132e-05,
+      "reason": "Fold0 canary delta +3.50e-06 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P4",
+      "lever_id": "L4.3",
+      "hypothesis": "Velocity & Merchant-Risk Step-Grid Parity Forensics",
+      "delta_fold0": 3.675477071807265e-05,
+      "delta_oof": 0.0,
+      "ci90": [
+        0.0,
+        0.0
+      ],
+      "delta_rho": 0.0001639610584231732,
+      "reason": "Failed 5-fold nested CV / CI90 / |\u0394\u03c1| gate"
+    },
+    {
+      "paradigm_id": "P4",
+      "lever_id": "L4.4",
+      "hypothesis": "Float Mantissa, Decimal Remainder & Benford Digit Trie",
+      "delta_fold0": 1.4768429946077077e-05,
+      "delta_oof": 0.0,
+      "ci90": [
+        0.0,
+        0.0
+      ],
+      "delta_rho": 0.0017439096864453711,
+      "reason": "Failed 5-fold nested CV / CI90 / |\u0394\u03c1| gate"
+    },
+    {
+      "paradigm_id": "P4",
+      "lever_id": "L4.5",
+      "hypothesis": "Rare Exact Multi-Column Tuple Co-Occurrence Count",
+      "delta_fold0": 3.832766601541415e-06,
+      "ks_stat": 0.0026930110292016684,
+      "reason": "Fold0 canary delta +3.83e-06 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P1",
+      "lever_id": "L1.1",
+      "hypothesis": "4-Block Chimera Splice Matching vs orig20k",
+      "delta_fold0": 0.0,
+      "ks_stat": 0.12673583442975161,
+      "reason": "Fold0 canary delta +0.00e+00 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P1",
+      "lever_id": "L1.3",
+      "hypothesis": "1D Wasserstein Optimal-Transport Quantile Alignment",
+      "delta_fold0": 2.477776364973039e-05,
+      "delta_oof": 0.0,
+      "ci90": [
+        0.0,
+        0.0
+      ],
+      "delta_rho": 0.002763159807113502,
+      "reason": "Failed 5-fold nested CV / CI90 / |\u0394\u03c1| gate"
+    },
+    {
+      "paradigm_id": "P1",
+      "lever_id": "L1.4",
+      "hypothesis": "Orig20k Appended Training Fold Booster",
+      "delta_fold0": 1.2806973558765478e-05,
+      "delta_oof": 0.0,
+      "ci90": [
+        0.0,
+        0.0
+      ],
+      "delta_rho": 0.3294400141634817,
+      "reason": "Failed 5-fold nested CV / CI90 / |\u0394\u03c1| gate"
+    },
+    {
+      "paradigm_id": "P2",
+      "lever_id": "L2.3",
+      "hypothesis": "Bipartite Row-to-Key Spectral SVD-24",
+      "delta_fold0": 0.0,
+      "ks_stat": 0.0037118853017305,
+      "reason": "Fold0 canary delta +0.00e+00 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P6",
+      "lever_id": "L6.2",
+      "hypothesis": "Dedicated Stealth-Fraud (y=1, V4p<0.12) Zero-Weight Easy-Fraud Specialist",
+      "delta_fold0": 0.0,
+      "ks_stat": 0.4409501840098138,
+      "reason": "Fold0 canary delta +0.00e+00 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P6",
+      "lever_id": "L6.4",
+      "hypothesis": "Out-of-Fold Consensus CleanLab 0.3% Label-Flip Pruning",
+      "delta_fold0": 0.0,
+      "ks_stat": 0.21336606341008016,
+      "reason": "Fold0 canary delta +0.00e+00 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P7",
+      "lever_id": "L7.1",
+      "hypothesis": "PLE Quantile-Embedded Ridge/MLP Surrogate",
+      "delta_fold0": 7.73081146621113e-06,
+      "ks_stat": 0.001314862399838912,
+      "reason": "Fold0 canary delta +7.73e-06 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P7",
+      "lever_id": "L7.2",
+      "hypothesis": "Inter-Family Epistemic Dispersion Gate",
+      "delta_fold0": 7.73081146621113e-06,
+      "ks_stat": 0.001314862399838912,
+      "reason": "Fold0 canary delta +7.73e-06 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P7",
+      "lever_id": "L7.3",
+      "hypothesis": "Forced-Blindness Specialist 1 \u2014 Blind to High-Card Exact TE",
+      "delta_fold0": 7.73081146621113e-06,
+      "ks_stat": 0.001314862399838912,
+      "reason": "Fold0 canary delta +7.73e-06 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P7",
+      "lever_id": "L7.4",
+      "hypothesis": "Forced-Blindness Specialist 2 \u2014 Blind to Merchant-Risk & Velocity",
+      "delta_fold0": 3.823441135253347e-06,
+      "ks_stat": 0.002214163653236678,
+      "reason": "Fold0 canary delta +3.82e-06 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P7",
+      "lever_id": "L7.5",
+      "hypothesis": "Empirical-Bayes 2-Level Flag->Key Hierarchy",
+      "delta_fold0": 3.848309044984788e-06,
+      "ks_stat": 0.7848877078690211,
+      "reason": "Fold0 canary delta +3.85e-06 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P6",
+      "lever_id": "L6.1",
+      "hypothesis": "5-Class Fraud Sub-Archetype Multi-Task Booster",
+      "delta_fold0": 7.948405677082881e-06,
+      "ks_stat": 0.0013067723632499972,
+      "reason": "Fold0 canary delta +7.95e-06 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P6",
+      "lever_id": "L6.3",
+      "hypothesis": "Huberized Gradient-Clipped Booster",
+      "delta_fold0": 8.16910837675433e-06,
+      "ks_stat": 0.001346314445873853,
+      "reason": "Fold0 canary delta +8.17e-06 < +1.0e-5"
+    },
+    {
+      "paradigm_id": "P6",
+      "lever_id": "L6.5",
+      "hypothesis": "Overlap-Band Focal-Weighted Booster",
+      "delta_fold0": 3.1520075700619543e-06,
+      "ks_stat": 0.0015075002525765102,
+      "reason": "Fold0 canary delta +3.15e-06 < +1.0e-5"
+    }
+  ],
+  "completed_levers": [
+    "P8_L8.1",
+    "P4_L4.1",
+    "P4_L4.2",
+    "P1_L1.2",
+    "P1_L1.5",
+    "P2_L2.1",
+    "P2_L2.2",
+    "P2_L2.4",
+    "P2_L2.5",
+    "P5_L5.1",
+    "P5_L5.2",
+    "P5_L5.3",
+    "P5_L5.4",
+    "P5_L5.5",
+    "P8_L8.2",
+    "P8_L8.3",
+    "P8_L8.4",
+    "P8_L8.5",
+    "P4_L4.3",
+    "P4_L4.4",
+    "P4_L4.5",
+    "P1_L1.1",
+    "P1_L1.3",
+    "P1_L1.4",
+    "P2_L2.3",
+    "P6_L6.2",
+    "P6_L6.4",
+    "P7_L7.1",
+    "P7_L7.2",
+    "P7_L7.3",
+    "P7_L7.4",
+    "P7_L7.5",
+    "P6_L6.1",
+    "P6_L6.3",
+    "P6_L6.5"
+  ],
+  "last_update_utc": "2026-11-06T20:56:14Z"
+}

@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-06 eve",
+  "goal_lb": 0.953,
+  "our_best_lb": 0.95242,
+  "lb_top": 0.95281,
+  "lb_top_team": "Bulsah Kecici",
+  "math": {
+    "best_oof": "P_super_v4p 0.952283",
+    "lb_minus_oof_offset": "+0.00014 (champ)",
+    "oof_needed_for_lb_0953": "~0.95286",
+    "oof_gap": "+0.00058",
+    "note": "Even LB #1 (0.95281) is below .953; target = beat world top by +0.00019. AUC gaps in absolute units (0.0001 = 1e-4)."
+  },
+  "exhausted_evidence": {
+    "best_single_add_to_v4p_oof": "glm_softpseudo_w0.35 +0.000031 @alpha0.12 (full-OOF screen, 57 members)",
+    "amanatar_71model_oof": 0.952083,
+    "amanatar71_vs_champ_spearman": 0.994316,
+    "sameer_digit_cnn_oof": 0.94543,
+    "georgy_h10": "~0.9503 outer folds, huge fold variance (0.9446-0.9553)",
+    "public_notebook_ceiling_lb": 0.95239,
+    "nina_updated_max": "0.95239a-d variants",
+    "nov06_ladder": "multipeak .95239 / orth .95219 / reverse .95238/.95236 - all < champ"
+  },
+  "generator_facts": {
+    "source": "20k-row original (credit_card_fraud_2026.csv, fraud 1.695%) -> synthetic 700k train / 300k test",
+    "fingerprints": [
+      "quantised values (velocity 0.1 grid, amount 13,387 uniques)",
+      "additive 6-flag log-odds structure",
+      "per-value risk repeats; test value coverage 97.8-100%",
+      "GPT-2-style tokenisation of numbers (Bulsah/Masaya)"
+    ],
+    "bulsah_trajectory": "his only public notebook = LR stack CV .95095 / LB .95112 (Nov1); now LB #1 .95281 => private evolution of value-TE+digit+GPT2-token recipe is the strongest lead"
+  },
+  "ranked_routes": [
+    {
+      "rank": 1,
+      "route": "Bulsah-style encoding refinement at scale: per-column tuned TE smoothing, GPT-2 token keys for every formatted column, token-pair + leading/trailing digit keys, pairwise interaction TE w/ hierarchical shrinkage; LR+shallow-tree+Cat ensemble, 10+ seeds, jointly stacked (not another test-only member)",
+      "ev": "HIGH - only evidenced path with +0.0017 private headroom over its public version",
+      "gate": "nested OOF >0.95238 solo-stack before any submit",
+      "cost": "1-2 days CPU/GPU"
+    },
+    {
+      "rank": 2,
+      "route": "Scaled autoregressive GPT-2 target-first (larger, all column-order permutations, LLR features into stack)",
+      "ev": "MEDIUM - Masaya GPT2 members already stack-level .9515-.9517; rung1/2 small-budget LLR FAILED (dead end) so must scale, not repeat",
+      "cost": "GPU days"
+    },
+    {
+      "rank": 3,
+      "route": "Transductive self-training: champ pseudo-labels on 300k test, retrain GLM/tree members, iterate 2 rounds",
+      "ev": "MEDIUM-LOW - softpseudo GLM was #1 blend add (+0.000031) but tiny",
+      "cost": "hours"
+    },
+    {
+      "rank": 4,
+      "route": "Massive seed/fold bagging + full-refit testbag of V4 recipe (variance reduction only)",
+      "ev": "LOW - expected +0.00005..0.00015 LB, cannot close gap alone",
+      "cost": "hours"
+    },
+    {
+      "rank": 5,
+      "route": "Joint additive Bayes GLM (all per-value log-odds + pairwise quantised interactions) + GLM-offset residual trees (Georgy)",
+      "ev": "LOW - solo GLMs .9499-.9505, stack adds ~0",
+      "cost": "hours-days"
+    },
+    {
+      "rank": 6,
+      "route": "Original 20k as hierarchical TE prior / weighted extra training rows",
+      "ev": "LOW - cheap, 2.8% data, prior smoothing only",
+      "cost": "minutes"
+    }
+  ],
+  "discipline": "No submit unless nested OOF >= 0.95238 (v4p +0.0001) AND Fold0 beats champ. 6 slots left today; LB noise SE ~0.001 means single lucky submits are not a strategy (private crash).",
+  "verdict": "0.953 is NOT reachable by remixing any public artifact (proven). Only route 1 (and possibly 2) plausibly closes +0.00058 OOF. Everything else is <+0.00015."
+}

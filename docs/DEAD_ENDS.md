@@ -120,3 +120,16 @@ Amanatar 0.95237 formula (for fusion design, not to re-derive blindly):
 ---
 
 *Last updated: 2026-11-05 · Authors: paradigm ladder + Part10 P_super upgrade session.*
+
+---
+
+## 7. Own TE-GLM / pair-TE rehash (2026-11-06) — DEAD
+
+Re-ran interaction-TE GLM + shallow LGB4 under SKF(5,rs=42) with multi-smoothing TE + screened pairs (`scripts/own_generator_research.py`).
+
+| Member | Solo OOF | ρ vs V4p | Best blend Δ |
+|--------|----------|----------|--------------|
+| `own_teglm` | 0.949763 | 0.9807 | **+2.5e−7** @α=0.02 (Fold0 Δ **negative**) |
+| `own_telgb` | 0.949012 | 0.9741 | **0** (α=0 preferred) |
+
+Same family as Stage 3/4 TE + Rung3 residual trees. Does **not** move V4p. Artifacts: `logs/overnight/own_generator_research.json`, `preds/own_te{glm,lgb}_{oof,test}.npy`.
