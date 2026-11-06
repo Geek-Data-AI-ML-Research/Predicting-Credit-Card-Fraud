@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-06",
+  "goal": 0.953,
+  "prior_best": 0.95242,
+  "lb_top": 0.95274,
+  "research": "Public ceiling 0.95274. Peak public: Part10/Areeb 0.95239, QueyP8 0.95235, Sohail 0.95231. Strategy: multi-peak + orth (TabPack/Part10cv/Masaya/Sameer/Nina) then adaptive ascent.",
+  "ladder": [
+    {
+      "slot": 1,
+      "file": "submissions/nov06_ladder/sub_n06_s1_multipeak_fusion.csv",
+      "public_lb": null,
+      "ref": null,
+      "note": "multipeak"
+    }
+  ]
+}
