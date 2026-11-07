@@ -1,0 +1,226 @@
+{
+  "started_utc": "2026-11-07T03:50:24Z",
+  "goal": 0.953,
+  "prior_best_lb": 0.95243,
+  "mem": [
+    {
+      "stage": "start",
+      "avail_mb": 2893,
+      "rss_mb": 150.9,
+      "cpu_count": 11
+    },
+    {
+      "stage": "bank",
+      "avail_mb": 3399,
+      "rss_mb": 156.8,
+      "cpu_count": 11
+    },
+    {
+      "stage": "blend",
+      "avail_mb": 2898,
+      "rss_mb": 307.6,
+      "cpu_count": 11
+    },
+    {
+      "stage": "mps",
+      "avail_mb": 3320,
+      "rss_mb": 313.5,
+      "cpu_count": 11
+    },
+    {
+      "stage": "candidates",
+      "avail_mb": 2708,
+      "rss_mb": 313.5,
+      "cpu_count": 11
+    },
+    {
+      "stage": "end",
+      "avail_mb": 3495,
+      "rss_mb": 313.5,
+      "cpu_count": 11
+    }
+  ],
+  "mps": {
+    "skipped": true
+  },
+  "ladder": [
+    {
+      "name": "s5_peak_plus_blend",
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/nov07_ladder/sub_s5_peak_plus_blend.csv",
+      "submit_ok": false,
+      "rho_vs_ev4": 0.999999003443029
+    }
+  ],
+  "oof_auc": {
+    "v4p": 0.9522827412110886,
+    "v4p_hc": 0.9523071344526307,
+    "v4p_7hc": 0.9522893544714001,
+    "v4p_hc_master": 0.9522987751200661,
+    "v7_clean": 0.9524528611643281,
+    "v7_master": 0.9524861793552201,
+    "v7_pure_master": 0.9522817574567661
+  },
+  "blend_results": [
+    {
+      "C": 0.05,
+      "auc": 0.9523080963305544,
+      "delta": 9.618779236442165e-07,
+      "dfold": [
+        1.3364947285543494e-05,
+        2.2744570407962073e-05,
+        3.0552918145243524e-05,
+        4.0746027875182556e-05,
+        4.2448763473812434e-05
+      ],
+      "coef": [
+        1.3733979482786494,
+        0.001318032178251588,
+        -0.0003130209294495408,
+        -0.0018588341962919679,
+        0.08614048637671326,
+        0.09481530649884984
+      ]
+    },
+    {
+      "C": 0.1,
+      "auc": 0.9523082210011695,
+      "delta": 1.0865485388089624e-06,
+      "dfold": [
+        1.3399140661340958e-05,
+        2.2955858767104154e-05,
+        3.0726920323020934e-05,
+        4.088895823584071e-05,
+        4.274705292195424e-05
+      ],
+      "coef": [
+        1.3742866042031263,
+        0.0013294723665200916,
+        -0.0003145893618568181,
+        -0.0018681207942940416,
+        0.08669931326079625,
+        0.09542861283035349
+      ]
+    },
+    {
+      "C": 0.2,
+      "auc": 0.9523082733305106,
+      "delta": 1.1388778798915311e-06,
+      "dfold": [
+        1.3451984969825581e-05,
+        2.3148504035730433e-05,
+        3.086674350194496e-05,
+        4.0982173688086654e-05,
+        4.2896197645969636e-05
+      ],
+      "coef": [
+        1.3747319556930504,
+        0.0013352304221248027,
+        -0.0003153768630342377,
+        -0.0018727834347644992,
+        0.0869802776625383,
+        0.09573696424006416
+      ]
+    },
+    {
+      "C": 0.5,
+      "auc": 0.9523083262813404,
+      "delta": 1.1918287097234526e-06,
+      "dfold": [
+        1.3501720789399485e-05,
+        2.3185790216539992e-05,
+        3.095374459072264e-05,
+        4.114996150272887e-05,
+        4.301427055231066e-05
+      ],
+      "coef": [
+        1.374999495688783,
+        0.0013386974706956893,
+        -0.00031585041991373747,
+        -0.0018755872373537386,
+        0.08714935523832915,
+        0.0959225213998234
+      ]
+    },
+    {
+      "C": 1.0,
+      "auc": 0.9523083406998761,
+      "delta": 1.2062472454221762e-06,
+      "dfold": [
+        1.3523480210553274e-05,
+        2.3210647670635076e-05,
+        3.099103077197629e-05,
+        4.117792613833604e-05,
+        4.3039128006294725e-05
+      ],
+      "coef": [
+        1.3750887306695618,
+        0.0013398551950805245,
+        -0.000316008448653512,
+        -0.0018765228770364346,
+        0.0872057978063013,
+        0.09598446507978983
+      ]
+    }
+  ],
+  "promoted_blend": {
+    "auc": 0.9523083406998761,
+    "C": 1.0,
+    "delta_rho": 7.119209522898906e-05,
+    "kept": true
+  },
+  "candidates": [
+    {
+      "name": "s1_peak_strong_ascent",
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/nov07_ladder/sub_s1_peak_strong_ascent.csv",
+      "top": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_nov07_s1_peak_strong_ascent.csv",
+      "msg": "Nov07-S1: Stronger ascent from 0.95243 peak + hc/7hc axes",
+      "rho_vs_ev4": 0.999995248687242
+    },
+    {
+      "name": "s2_reverse_ev2_7hc",
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/nov07_ladder/sub_s2_reverse_ev2_7hc.csv",
+      "top": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_nov07_s2_reverse_ev2_7hc.csv",
+      "msg": "Nov07-S2: Reinforced reverse-ev2 + 7hc proprietary axes",
+      "rho_vs_ev4": 0.9999974448002524
+    },
+    {
+      "name": "s3_peak_master_resid",
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/nov07_ladder/sub_s3_peak_master_resid.csv",
+      "top": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_nov07_s3_peak_master_resid.csv",
+      "msg": "Nov07-S3: Peak + v4p_hc_master residual + 7hc",
+      "rho_vs_ev4": 0.9999962625136092
+    },
+    {
+      "name": "s4_ev456_consensus",
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/nov07_ladder/sub_s4_ev456_consensus.csv",
+      "top": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_nov07_s4_ev456_consensus.csv",
+      "msg": "Nov07-S4: EV4/5/6 consensus ridge + verified ascent",
+      "rho_vs_ev4": 0.9999962075775611
+    },
+    {
+      "name": "s7_anti_soft_toward_hc",
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/nov07_ladder/sub_s7_anti_soft_toward_hc.csv",
+      "top": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_nov07_s7_anti_soft_toward_hc.csv",
+      "msg": "Nov07-S7: Anti-softpseudo toward pure hc (leakage reverse)",
+      "rho_vs_ev4": 0.9999588807275427
+    },
+    {
+      "name": "s8_live10_prop_axes",
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/nov07_ladder/sub_s8_live10_prop_axes.csv",
+      "top": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_nov07_s8_live10_prop_axes.csv",
+      "msg": "Nov07-S8: Live10 + proprietary-only multi-axis ridge",
+      "rho_vs_ev4": 0.9999763106144309
+    },
+    {
+      "name": "s5_peak_plus_blend",
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/nov07_ladder/sub_s5_peak_plus_blend.csv",
+      "top": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_nov07_s5_peak_plus_blend.csv",
+      "msg": "Nov07-S5: Peak + OOF blend C=1.0 auc=0.9523083",
+      "rho_vs_ev4": 0.999999003443029
+    }
+  ],
+  "recent_subs_preview": [],
+  "elapsed_s": 88.0,
+  "best_lb": 0.95243,
+  "submitted": 0
+}

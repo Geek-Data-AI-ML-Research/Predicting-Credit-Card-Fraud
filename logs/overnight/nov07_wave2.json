@@ -1,0 +1,55 @@
+{
+  "started": "2026-11-07T04:05:05Z",
+  "mem": [
+    {
+      "avail_mb": 7825,
+      "rss_mb": 918.4,
+      "cpu_count": 11
+    }
+  ],
+  "mps_available": true,
+  "torch": "2.15.0",
+  "mps_oof": 0.949183831628879,
+  "mps_delta": -0.003123302823751728,
+  "candidates": [
+    {
+      "name": "w2_overshoot_ascent",
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/nov07_ladder/sub_w2_overshoot_ascent.csv",
+      "msg": "Nov07-W2A: Overshoot ascent from 0.95243 (0.90 live10-gap + reverse-ev2 + hc/7hc)",
+      "rho_vs_ev4": 0.9999486718504392
+    },
+    {
+      "name": "w2_pure_prop_ridge",
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/nov07_ladder/sub_w2_pure_prop_ridge.csv",
+      "msg": "Nov07-W2B: Pure proprietary ridge on v4p_hc (7hc+master+anti-soft+pure)",
+      "rho_vs_ev4": 0.9995679995323428
+    },
+    {
+      "name": "w2_strong_anti_soft",
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/nov07_ladder/sub_w2_strong_anti_soft.csv",
+      "msg": "Nov07-W2C: Strong anti-softpseudo toward hc from 0.95243 peak",
+      "rho_vs_ev4": 0.9998241850021706
+    }
+  ],
+  "ladder": [
+    {
+      "file": "sub_w2_pure_prop_ridge.csv",
+      "public_lb": 0.95233,
+      "ref": 58078477,
+      "msg": "Nov07-W2B: Pure proprietary ridge on v4p_hc (7hc+master+anti-soft+pure)"
+    },
+    {
+      "file": "sub_w2_overshoot_ascent.csv",
+      "public_lb": 0.95243,
+      "ref": 58078490,
+      "msg": "Nov07-W2A: Overshoot ascent from 0.95243 (0.90 live10-gap + reverse-ev2 + hc/7hc)"
+    },
+    {
+      "file": "sub_w2_strong_anti_soft.csv",
+      "public_lb": 0.95243,
+      "ref": 58078498,
+      "msg": "Nov07-W2C: Strong anti-softpseudo toward hc from 0.95243 peak"
+    }
+  ],
+  "best_lb": 0.95243
+}

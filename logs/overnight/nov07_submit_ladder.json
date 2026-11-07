@@ -1,0 +1,47 @@
+{
+  "best_lb": 0.95243,
+  "ladder": [
+    {
+      "file": "sub_s2_reverse_ev2_7hc.csv",
+      "public_lb": 0.95242,
+      "msg": "Nov07-S2: Reinforced reverse-ev2 + hc/7hc from 0.95243",
+      "ref": 58078304
+    },
+    {
+      "file": "sub_s1_peak_strong_ascent.csv",
+      "public_lb": 0.95243,
+      "msg": "Nov07-S1: Stronger ascent from 0.95243 + hc/7hc",
+      "ref": 58078321
+    },
+    {
+      "file": "sub_s7_anti_soft_toward_hc.csv",
+      "public_lb": 0.95243,
+      "msg": "Nov07-S7: Anti-softpseudo toward pure v4p_hc",
+      "ref": 58078331
+    },
+    {
+      "file": "sub_s5_peak_plus_blend.csv",
+      "public_lb": 0.95243,
+      "msg": "Nov07-S5: Peak + OOF logit blend + ascent",
+      "ref": 58078350
+    },
+    {
+      "file": "sub_s3_peak_master_resid.csv",
+      "public_lb": 0.95243,
+      "msg": "Nov07-S3: Peak + hc_master residual + 7hc",
+      "ref": 58078359
+    },
+    {
+      "file": "sub_s8_live10_prop_axes.csv",
+      "public_lb": 0.95241,
+      "msg": "Nov07-S8: Live10 + proprietary multi-axis",
+      "ref": 58078377
+    },
+    {
+      "file": "sub_s4_ev456_consensus.csv",
+      "public_lb": 0.95242,
+      "msg": "Nov07-S4: EV4/5/6 consensus + ascent",
+      "ref": 58078387
+    }
+  ]
+}

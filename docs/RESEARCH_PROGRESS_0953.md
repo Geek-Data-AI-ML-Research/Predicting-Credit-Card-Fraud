@@ -45,3 +45,12 @@
 | `2026-11-06T20:56:10Z` | `P6` | `L6.1` | 5-Class Fraud Sub-Archetype Multi-Task Booster | `3361.2 / 5180.9` | `+7.95e-06` | — | — | — | **STRIKE_3_DEAD** | **`0.9523071`** |
 | `2026-11-06T20:56:14Z` | `P6` | `L6.3` | Huberized Gradient-Clipped Booster | `3361.2 / 5209.3` | `+8.17e-06` | — | — | — | **STRIKE_4_DEAD** | **`0.9523071`** |
 | `2026-11-06T20:56:17Z` | `P6` | `L6.5` | Overlap-Band Focal-Weighted Booster | `3361.2 / 5196.4` | `+3.15e-06` | — | — | — | **STRIKE_5_DEAD** | **`0.9523071`** |
+
+## Nov07 Local CPU/MPS Submit Day (UTC)
+
+- **Host:** Apple Silicon MPS available (`torch 2.15.0`); peak research RSS ~0.8–0.9 GB; host avail mostly **6.7–8.3 GB**.
+- **OOF bank check:** `v4p_hc=0.9523071` (honest champ); `v7_clean/master` OOF higher but known soft-pseudo inflation (do not trust for LB).
+- **Nested logit blend** of residuals onto `v4p_hc`: best `C=1.0` → OOF `0.9523083` (`+1.21e-6`), `|Δρ|=7e-5` (promoted locally, negligible).
+- **MPS RankNet residual** on bank ranks: OOF **`0.94918` (`−3.12e-3`)** → rejected.
+- **All 10 daily slots used.** Public best remains **`0.95243`** (tied by S1/S3/S5/S7/W2A/W2C). Pure-prop ridge dropped to `0.95233`. Logs: `logs/overnight/nov07_submit_ladder.json`, `nov07_wave2.json`.
+- **Plateau diagnosis:** further logit-axis remixes of the `live10/ev4` peak are ρ≥0.9995 vs champ and do not move Public LB. Need a new orthogonal OOF-gated head (likely Paradigm 3 GPU / new family), not more extrapolation.
