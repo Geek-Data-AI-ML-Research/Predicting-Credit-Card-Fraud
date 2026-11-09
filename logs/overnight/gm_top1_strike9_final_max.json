@@ -1,0 +1,13 @@
+{
+  "file": "sub_gm_top1_strike9_final_max.csv",
+  "coords_rel_st2": [
+    2.824,
+    1.209
+  ],
+  "step_rms": 0.00972,
+  "dist_st8_1e4": 0.13,
+  "dist_st7_1e4": 0.469,
+  "dist_st6_1e4": 1.097,
+  "p_mean": 0.016699998834038065,
+  "elapsed_sec": 9.9
+}

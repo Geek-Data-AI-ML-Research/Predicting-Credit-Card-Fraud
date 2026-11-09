@@ -1,0 +1,85 @@
+{
+  "cands": [
+    {
+      "name": "Ref_Att3_095317",
+      "coords": [
+        0.0,
+        1.19,
+        1.53,
+        -0.95,
+        -0.13
+      ],
+      "lin_gain_1e5": 12.52,
+      "quad_gain_1e5": 9.95,
+      "pred_lb": 0.953169,
+      "rms_v8": 0.05499,
+      "rms_a3": 0.00499,
+      "dist_a3_1e4": 0.024,
+      "dist_a2_1e4": 0.233,
+      "dist_s3_1e4": 0.8,
+      "dist_v8_1e4": 3.866,
+      "p_mean": 0.016699998834038065
+    },
+    {
+      "name": "Strike1A_DeDragC2_BoostC1_Balanced",
+      "coords": [
+        0.3,
+        0.25,
+        1.85,
+        -1.25,
+        -0.55
+      ],
+      "lin_gain_1e5": 21.2,
+      "quad_gain_1e5": 16.89,
+      "pred_lb": 0.953239,
+      "rms_v8": 0.0712,
+      "rms_a3": 0.04145,
+      "dist_a3_1e4": 2.638,
+      "dist_a2_1e4": 3.51,
+      "dist_s3_1e4": 4.855,
+      "dist_v8_1e4": 7.999,
+      "p_mean": 0.01669999883403806
+    },
+    {
+      "name": "Strike1B_5Axis_QuadOpt_Strong",
+      "coords": [
+        0.42,
+        0.1,
+        2.05,
+        -1.45,
+        -0.75
+      ],
+      "lin_gain_1e5": 25.14,
+      "quad_gain_1e5": 19.06,
+      "pred_lb": 0.953261,
+      "rms_v8": 0.08456,
+      "rms_a3": 0.05524,
+      "dist_a3_1e4": 4.836,
+      "dist_a2_1e4": 6.107,
+      "dist_s3_1e4": 7.835,
+      "dist_v8_1e4": 11.479,
+      "p_mean": 0.016699998834038065
+    },
+    {
+      "name": "Strike1C_ZeroC2_HighContrastive",
+      "coords": [
+        0.35,
+        0.0,
+        1.95,
+        -1.35,
+        -0.65
+      ],
+      "lin_gain_1e5": 23.45,
+      "quad_gain_1e5": 18.28,
+      "pred_lb": 0.953253,
+      "rms_v8": 0.07795,
+      "rms_a3": 0.05141,
+      "dist_a3_1e4": 4.035,
+      "dist_a2_1e4": 5.08,
+      "dist_s3_1e4": 6.631,
+      "dist_v8_1e4": 9.791,
+      "p_mean": 0.016699998834038065
+    }
+  ],
+  "elapsed_sec": 26.0
+}
