@@ -1,0 +1,16 @@
+{
+  "title": "S6E11 Strike9 LB 0.95330 Frozen Submission",
+  "id": "moranzavdi/s6e11-strike9-lb-095330",
+  "licenses": [
+    {
+      "name": "CC0-1.0"
+    }
+  ],
+  "keywords": [
+    "tabular",
+    "fraud",
+    "playground"
+  ],
+  "subtitle": "Frozen submission that scored Public LB 0.95330 (Strike 9)",
+  "description": "Frozen submission CSV for playground-series-s6e11 that scored Public LB 0.95330 (Kaggle ref 58151250). Used by the companion public notebook."
+}

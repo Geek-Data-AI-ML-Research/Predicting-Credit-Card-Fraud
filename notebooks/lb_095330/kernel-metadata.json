@@ -1,0 +1,24 @@
+{
+  "id": "moranzavdi/s6e11-grandmaster-ladder-lb-0-95330",
+  "title": "S6E11 | Grandmaster Ladder | LB 0.95330",
+  "code_file": "s6e11-grandmaster-ladder-lb-0-95330.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "keywords": [
+    "beginner",
+    "finance",
+    "tabular data"
+  ],
+  "dataset_sources": [
+    "moranzavdi/s6e11-strike9-lb-095330"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [
+    "playground-series-s6e11"
+  ],
+  "model_sources": []
+}
