@@ -1,0 +1,82 @@
+{
+  "base_7m_oof": 0.9526611592872501,
+  "fam_oof": 0.9528578489972972,
+  "fam_delta_1e5": 19.67,
+  "fam_folds_1e5": [
+    6.18,
+    8.78,
+    30.85,
+    24.71,
+    27.04
+  ],
+  "s06_oof": 0.9528105344478396,
+  "s06_delta_1e5": 14.94,
+  "s06_folds_1e5": [
+    5.45,
+    3.7,
+    28.14,
+    20.83,
+    20.11
+  ],
+  "weights": {
+    "soft_diff": 0.045,
+    "idf_p3": 0.0225,
+    "gb_soft_bag3": 0.025,
+    "soft_clean035": 0.01
+  },
+  "recommended_order_update": [
+    "slotA (soft x040) still first \u2014 single-axis probe",
+    "if A gains: slotI softfamily x035 (boosted family)",
+    "then slotJ x050 / slotM (family+cont)",
+    "slotK only if I/J keep climbing",
+    "slotL = soft@0.06 mid alternate if family hurts"
+  ],
+  "rows": [
+    {
+      "file": "sub_day2_slotI_softfamily_x035.csv",
+      "note": "St9 + 0.35*FAM(soft0.045+idf0.0225+gb0.025+c0350.01) OOF\u0394@1=+19.67e-5",
+      "dist_st9_1e4": 1.33,
+      "dist_st8_1e4": 1.327,
+      "step_rms": 0.02777,
+      "p_mean": 0.01669999882801941,
+      "ks_st9": 0.001596751826764095
+    },
+    {
+      "file": "sub_day2_slotJ_softfamily_x050.csv",
+      "note": "St9 + 0.50*FAM(soft0.045+idf0.0225+gb0.025+c0350.01) OOF\u0394@1=+19.67e-5",
+      "dist_st9_1e4": 2.711,
+      "dist_st8_1e4": 2.652,
+      "step_rms": 0.03968,
+      "p_mean": 0.01669999882801941,
+      "ks_st9": 0.001596751826764095
+    },
+    {
+      "file": "sub_day2_slotK_softfamily_x065.csv",
+      "note": "St9 + 0.65*FAM(soft0.045+idf0.0225+gb0.025+c0350.01) OOF\u0394@1=+19.67e-5",
+      "dist_st9_1e4": 4.578,
+      "dist_st8_1e4": 4.462,
+      "step_rms": 0.05159,
+      "p_mean": 0.01669999882801941,
+      "ks_st9": 0.001596751826764095
+    },
+    {
+      "file": "sub_day2_slotL_softdiff_x060.csv",
+      "note": "St9 + 0.55*(soft@0.06 pack) OOF\u0394@1=+14.94e-5",
+      "dist_st9_1e4": 1.923,
+      "dist_st8_1e4": 1.966,
+      "step_rms": 0.03341,
+      "p_mean": 0.01669999882801941,
+      "ks_st9": 0.001596751826764095
+    },
+    {
+      "file": "sub_day2_slotM_softfamily_x040_cont.csv",
+      "note": "St9 + 0.40*FAM + 0.30*(St9-St8)",
+      "dist_st9_1e4": 1.702,
+      "dist_st8_1e4": 1.759,
+      "step_rms": 0.03151,
+      "p_mean": 0.01669999882801941,
+      "ks_st9": 0.001596751826764095
+    }
+  ],
+  "elapsed_sec": 25.5
+}

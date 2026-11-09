@@ -18,3 +18,18 @@ kaggle competitions submit -c playground-series-s6e11 -f submissions/sub_day2_sl
 ```
 
 Generated in 65.0s. Do **not** submit until daily quota resets.
+
+## Boost research (Strike 10B) — use AFTER Slot A lands
+SoftPseudo **family pack** OOF Δ `+19.67e-5` (5/5) vs soft-only `+11.63e-5`.
+Weights: soft_diff=0.045, idf_p3=0.0225, gb_soft_bag3=0.025, soft_clean035=0.01.
+
+1. Keep **Slot A** (`soft x040`) as first submit (single-axis).
+2. If A ≥ 0.95330: **Slot I** `sub_day2_slotI_softfamily_x035.csv` (family boost).
+3. Then **Slot J** / **Slot M** (family step-up / +cont).
+4. **Slot L** if family regresses (soft@0.06 only).
+
+```bash
+kaggle competitions submit -c playground-series-s6e11 -f submissions/sub_day2_slotI_softfamily_x035.csv -m "Day2 SlotI: St9+0.35*SoftFamily(diff+idf+gb+c035)"
+kaggle competitions submit -c playground-series-s6e11 -f submissions/sub_day2_slotJ_softfamily_x050.csv -m "Day2 SlotJ: St9+0.50*SoftFamily"
+kaggle competitions submit -c playground-series-s6e11 -f submissions/sub_day2_slotM_softfamily_x040_cont.csv -m "Day2 SlotM: St9+0.40*SoftFamily+0.30*(St9-St8)"
+```
