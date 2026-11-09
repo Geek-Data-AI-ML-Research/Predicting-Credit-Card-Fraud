@@ -1,0 +1,153 @@
+{
+  "v8_base_auc": 0.952596976791099,
+  "minimax_weights": [
+    [
+      0.07953,
+      0.02841,
+      -0.03999,
+      -0.02789
+    ],
+    [
+      0.03255,
+      -3e-05,
+      -0.00991,
+      -0.01162
+    ],
+    [
+      0.07473,
+      -0.00044,
+      -0.03072,
+      -0.02681
+    ],
+    [
+      0.05248,
+      0.00413,
+      -0.019,
+      -0.00961
+    ],
+    [
+      0.07983,
+      -0.0005,
+      -0.01646,
+      -0.00436
+    ]
+  ],
+  "rows": [
+    {
+      "name": "v8_Champion (Baseline)",
+      "nested_oof_auc": 0.952596976791099,
+      "nested_delta": 0.0,
+      "fold_deltas_1e5": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "min_fold_delta_1e5": 0.0,
+      "fold_wins": 0,
+      "ks_vs_v8": 0.0,
+      "spearman_vs_v8": 1.0
+    },
+    {
+      "name": "Pure_5F_Candidate_C (0.025*d_xgbf_tabm)",
+      "nested_oof_auc": 0.9526188832702615,
+      "nested_delta": 2.1906479162447923e-05,
+      "fold_deltas_1e5": [
+        1.16,
+        4.66,
+        0.3,
+        2.42,
+        -1.75
+      ],
+      "min_fold_delta_1e5": -1.75,
+      "fold_wins": 4,
+      "ks_vs_v8": 0.0013967411595285362,
+      "spearman_vs_v8": 0.9998847481614948
+    },
+    {
+      "name": "HistLGB_HessClipped (36 non-tree feats)",
+      "nested_oof_auc": 0.9525915244715133,
+      "nested_delta": -5.452319585708132e-06,
+      "fold_deltas_1e5": [
+        -0.95,
+        -0.25,
+        0.3,
+        0.04,
+        0.0
+      ],
+      "min_fold_delta_1e5": -0.95,
+      "fold_wins": 2,
+      "ks_vs_v8": 0.0004100218678328993,
+      "spearman_vs_v8": 0.9999999177355536
+    },
+    {
+      "name": "HistXGB_HessClipped (36 non-tree feats)",
+      "nested_oof_auc": 0.9525950775219033,
+      "nested_delta": -1.899269195693165e-06,
+      "fold_deltas_1e5": [
+        -1.52,
+        0.12,
+        0.39,
+        0.16,
+        0.01
+      ],
+      "min_fold_delta_1e5": -1.52,
+      "fold_wins": 4,
+      "ks_vs_v8": 0.0008867139580777117,
+      "spearman_vs_v8": 0.9999994285714178
+    },
+    {
+      "name": "HistLGB+HistXGB Combined",
+      "nested_oof_auc": 0.9525946477003798,
+      "nested_delta": -2.329090719177529e-06,
+      "fold_deltas_1e5": [
+        -1.08,
+        -0.13,
+        0.34,
+        0.06,
+        0.0
+      ],
+      "min_fold_delta_1e5": -1.08,
+      "fold_wins": 3,
+      "ks_vs_v8": 0.0006133660461892232,
+      "spearman_vs_v8": 0.9999997595866918
+    },
+    {
+      "name": "Spline_Interaction_Ridge",
+      "nested_oof_auc": 0.9526011217472425,
+      "nested_delta": 4.1449561435369375e-06,
+      "fold_deltas_1e5": [
+        -0.95,
+        0.1,
+        0.04,
+        -0.48,
+        -3.02
+      ],
+      "min_fold_delta_1e5": -3.02,
+      "fold_wins": 2,
+      "ks_vs_v8": 0.0004333564456771022,
+      "spearman_vs_v8": 0.9999985924742233
+    },
+    {
+      "name": "GM_Minimax_Portfolio_5F",
+      "nested_oof_auc": 0.9526036567992876,
+      "nested_delta": 6.680008188597597e-06,
+      "fold_deltas_1e5": [
+        -8.8,
+        3.75,
+        -0.57,
+        4.47,
+        -1.36
+      ],
+      "min_fold_delta_1e5": -8.8,
+      "fold_wins": 2,
+      "ks_vs_v8": 0.0035535228545522657,
+      "spearman_vs_v8": 0.9997146377849992
+    }
+  ],
+  "beats_pureC": false,
+  "folds_ok": false,
+  "qualifies_slot3": false,
+  "elapsed_sec": 430.5
+}

@@ -1,0 +1,133 @@
+{
+  "v8_base_auc": 0.952596976791099,
+  "ks_step1_pchip_f02": 9.048085284701912e-05,
+  "w_h1_fit0": -0.023999999999999997,
+  "w_h1_fit2": -0.011499999999999996,
+  "w_h1_test": -0.017749999999999995,
+  "w_h2_fit0": -0.003999999999999997,
+  "w_h2_fit2": -0.0049999999999999975,
+  "w_h2_test": -0.004499999999999997,
+  "rows": [
+    {
+      "name": "Ref: Pure_5F_Candidate_C",
+      "nested_oof_auc": 0.9526188832702615,
+      "nested_delta": 2.1906479162447923e-05,
+      "fold_deltas_1e5": [
+        1.16,
+        4.66,
+        0.3,
+        2.42,
+        -1.75
+      ],
+      "fold_wins": 4,
+      "df0_vs_c0_1e5": 0.47,
+      "df2_vs_c0_1e5": 0.08,
+      "both_f02_up": true,
+      "ks_vs_v8": 0.0018367646274468075,
+      "dist_v8_1e4": 1.129,
+      "dist_s1_1e4": 1.889,
+      "dist_s2_1e4": 0.215
+    },
+    {
+      "name": "Cand 0: Baseline_Pure5F_SmoothGamma",
+      "nested_oof_auc": 0.9526214691600746,
+      "nested_delta": 2.449236897561491e-05,
+      "fold_deltas_1e5": [
+        0.69,
+        5.34,
+        0.22,
+        2.42,
+        -1.84
+      ],
+      "fold_wins": 4,
+      "df0_vs_c0_1e5": 0.0,
+      "df2_vs_c0_1e5": 0.0,
+      "both_f02_up": true,
+      "ks_vs_v8": 0.0013067363592725034,
+      "dist_v8_1e4": 0.756,
+      "dist_s1_1e4": 1.299,
+      "dist_s2_1e4": 0.136
+    },
+    {
+      "name": "Cand 1: H1_TripleOrth_Contrastive_F02",
+      "nested_oof_auc": 0.9526259070859495,
+      "nested_delta": 2.893029485051546e-05,
+      "fold_deltas_1e5": [
+        2.73,
+        5.34,
+        0.77,
+        2.42,
+        -1.84
+      ],
+      "fold_wins": 4,
+      "df0_vs_c0_1e5": 2.04,
+      "df2_vs_c0_1e5": 0.55,
+      "both_f02_up": true,
+      "ks_vs_v8": 0.0016400874713318192,
+      "dist_v8_1e4": 1.41,
+      "dist_s1_1e4": 2.817,
+      "dist_s2_1e4": 0.995
+    },
+    {
+      "name": "Cand 2: H2_BoundaryGated_LM_Upgrade_F02",
+      "nested_oof_auc": 0.9526268651727923,
+      "nested_delta": 2.988838169326602e-05,
+      "fold_deltas_1e5": [
+        2.9,
+        5.34,
+        1.32,
+        2.42,
+        -1.84
+      ],
+      "fold_wins": 4,
+      "df0_vs_c0_1e5": 2.21,
+      "df2_vs_c0_1e5": 1.1,
+      "both_f02_up": true,
+      "ks_vs_v8": 0.0018167635607232446,
+      "dist_v8_1e4": 1.427,
+      "dist_s1_1e4": 2.843,
+      "dist_s2_1e4": 1.017
+    },
+    {
+      "name": "Cand 3: H3_Combined_TripleOrth_Portfolio",
+      "nested_oof_auc": 0.9526250505503454,
+      "nested_delta": 2.8073759246405317e-05,
+      "fold_deltas_1e5": [
+        2.73,
+        5.03,
+        0.75,
+        2.4,
+        -1.84
+      ],
+      "fold_wins": 4,
+      "df0_vs_c0_1e5": 2.04,
+      "df2_vs_c0_1e5": 0.54,
+      "both_f02_up": true,
+      "ks_vs_v8": 0.0015667502266787925,
+      "dist_v8_1e4": 1.417,
+      "dist_s1_1e4": 2.846,
+      "dist_s2_1e4": 1.012
+    }
+  ],
+  "winner": {
+    "name": "Cand 2: H2_BoundaryGated_LM_Upgrade_F02",
+    "nested_oof_auc": 0.9526268651727923,
+    "nested_delta": 2.988838169326602e-05,
+    "fold_deltas_1e5": [
+      2.9,
+      5.34,
+      1.32,
+      2.42,
+      -1.84
+    ],
+    "fold_wins": 4,
+    "df0_vs_c0_1e5": 2.21,
+    "df2_vs_c0_1e5": 1.1,
+    "both_f02_up": true,
+    "ks_vs_v8": 0.0018167635607232446,
+    "dist_v8_1e4": 1.427,
+    "dist_s1_1e4": 2.843,
+    "dist_s2_1e4": 1.017
+  },
+  "elapsed_sec": 77.8
+}

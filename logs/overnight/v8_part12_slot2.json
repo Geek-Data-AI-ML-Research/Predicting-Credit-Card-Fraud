@@ -1,0 +1,59 @@
+{
+  "elapsed_s": 139.32,
+  "base_part12_oof_auc": 0.9525651344492123,
+  "v8_nested_oof_auc": 0.9525969767910991,
+  "v8_meanw_oof_auc": 0.95266838819418,
+  "folds_won": 5,
+  "fold_deltas": [
+    9.640977789426852e-05,
+    6.484688311658715e-06,
+    2.081811772303155e-06,
+    6.750352351292399e-05,
+    3.087917222888148e-05
+  ],
+  "mean_weights": {
+    "v4p_hc": 0.028,
+    "B_xgb_llr": -0.0364,
+    "P4_L4.3": -0.04,
+    "P4_L4.2": -0.0168,
+    "P4_L4.5": -0.0218,
+    "P4_L4.3_ext": 0.036,
+    "gpt2_bidir": -0.0254,
+    "xgb_gpt2_3ep": 0.024
+  },
+  "max_ks_resid": 1.8767063732716416e-05,
+  "ks_composite_dz": 1.666736510641531e-06,
+  "slot2_file": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_v8_part12_fsl_prop_rect.csv",
+  "slot2_sha16": "1341acaf7595f82d",
+  "LB_1": 0.95247,
+  "LB_2": 0.95307,
+  "candidates": [
+    {
+      "file": "sub_v8_part12_fsl_prop_rect.csv",
+      "oof_auc": 0.9525969767910991,
+      "rho_part12_095298": 0.9994040371657387,
+      "rho_maly_095292": 0.9991319822150229,
+      "rho_slot1_095247": 0.9955234029113952,
+      "max_ks_resid": 1.8767063732716416e-05,
+      "sha16": "1341acaf7595f82d"
+    },
+    {
+      "file": "sub_v8_part12_exact7030_prop_rect.csv",
+      "oof_auc": 0.9525969767910991,
+      "rho_part12_095298": 0.9994211410256697,
+      "rho_maly_095292": 0.9990829429774036,
+      "rho_slot1_095247": 0.9952867340571862,
+      "max_ks_resid": 1.8767063732716416e-05,
+      "sha16": "4cf58db017c12056"
+    },
+    {
+      "file": "sub_v8_pure_oof_cv095260.csv",
+      "oof_auc": 0.9525969767910991,
+      "rho_part12_095298": 0.9986954177244712,
+      "rho_maly_095292": 0.997426333251307,
+      "rho_slot1_095247": 0.9907389879948235,
+      "max_ks_resid": 1.8767063732716416e-05,
+      "sha16": "a45ef32d9a5c7ae8"
+    }
+  ]
+}

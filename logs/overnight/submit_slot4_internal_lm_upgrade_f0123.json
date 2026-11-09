@@ -1,0 +1,143 @@
+{
+  "cand0_auc": 0.9526214691600746,
+  "slot3_reconstruct": 0.9526268651727923,
+  "ks_step1": 8.631401157044305e-05,
+  "rows": [
+    {
+      "name": "Ref_Slot3_Champion_F02",
+      "nested_oof_auc": 0.9526268651727923,
+      "nested_delta_v8": 2.988838169326602e-05,
+      "delta_vs_slot3_oof": -3.4827207784360326e-08,
+      "fold_deltas_1e5": [
+        2.9,
+        5.34,
+        1.32,
+        2.42,
+        -1.84
+      ],
+      "d_f0123_vs_c0_1e5": [
+        2.21,
+        0.0,
+        1.1,
+        0.0
+      ],
+      "wins4": 2,
+      "ks_vs_v8": 0.0018167635607232446,
+      "dist_v8_1e4": 1.427,
+      "dist_s3_1e4": 0.0,
+      "p_mean": 0.016699998972276944,
+      "n_nan": 0,
+      "n_rows": 299984
+    },
+    {
+      "name": "SubCand_A_4FoldTest_Slot3_Plus_PosLM_F13",
+      "nested_oof_auc": 0.9526298829971905,
+      "nested_delta_v8": 3.290620609153194e-05,
+      "delta_vs_slot3_oof": 2.982997190481562e-06,
+      "fold_deltas_1e5": [
+        2.9,
+        5.87,
+        1.32,
+        3.25,
+        -1.84
+      ],
+      "d_f0123_vs_c0_1e5": [
+        2.21,
+        0.53,
+        1.1,
+        0.83
+      ],
+      "wins4": 4,
+      "ks_vs_v8": 0.0017334257827084087,
+      "dist_v8_1e4": 1.137,
+      "dist_s3_1e4": 0.104,
+      "p_mean": 0.016699998953314383,
+      "n_nan": 0,
+      "n_rows": 299984
+    },
+    {
+      "name": "SubCand_B_Internal_v8_LM_Substitution_F0123",
+      "nested_oof_auc": 0.9526260788654015,
+      "nested_delta_v8": 2.910207430251166e-05,
+      "delta_vs_slot3_oof": -8.211345985387197e-07,
+      "fold_deltas_1e5": [
+        2.9,
+        5.01,
+        1.32,
+        2.45,
+        -1.84
+      ],
+      "d_f0123_vs_c0_1e5": [
+        2.21,
+        -0.33,
+        1.1,
+        0.03
+      ],
+      "wins4": 3,
+      "ks_vs_v8": 0.0018167635607232446,
+      "dist_v8_1e4": 1.386,
+      "dist_s3_1e4": 0.04,
+      "p_mean": 0.0166999989675519,
+      "n_nan": 0,
+      "n_rows": 299984
+    },
+    {
+      "name": "SubCand_C_50_50_RankLogit_Blend",
+      "nested_oof_auc": 0.9526274274956876,
+      "nested_delta_v8": 3.0450704588624866e-05,
+      "delta_vs_slot3_oof": 5.274956875744863e-07,
+      "fold_deltas_1e5": [
+        2.9,
+        5.12,
+        1.29,
+        2.79,
+        -1.84
+      ],
+      "d_f0123_vs_c0_1e5": [
+        2.21,
+        -0.22,
+        1.08,
+        0.37
+      ],
+      "wins4": 3,
+      "ks_vs_v8": 0.000300016000853387,
+      "dist_v8_1e4": 1.249,
+      "dist_s3_1e4": 0.055,
+      "p_mean": 0.016699998830201724,
+      "n_nan": 0,
+      "n_rows": 299984
+    }
+  ],
+  "winner": {
+    "name": "SubCand_A_4FoldTest_Slot3_Plus_PosLM_F13",
+    "nested_oof_auc": 0.9526298829971905,
+    "nested_delta_v8": 3.290620609153194e-05,
+    "delta_vs_slot3_oof": 2.982997190481562e-06,
+    "fold_deltas_1e5": [
+      2.9,
+      5.87,
+      1.32,
+      3.25,
+      -1.84
+    ],
+    "d_f0123_vs_c0_1e5": [
+      2.21,
+      0.53,
+      1.1,
+      0.83
+    ],
+    "wins4": 4,
+    "ks_vs_v8": 0.0017334257827084087,
+    "dist_v8_1e4": 1.137,
+    "dist_s3_1e4": 0.104,
+    "p_mean": 0.016699998953314383,
+    "n_nan": 0,
+    "n_rows": 299984
+  },
+  "gate_status": "SUBMITTED",
+  "kaggle": "Traceback (most recent call last):\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/urllib3/connectionpool.py\", line 779, in urlopen\n    self._prepare_proxy(conn)\n    ~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/urllib3/connectionpool.py\", line 1074, in _prepare_proxy\n    conn.connect()\n    ~~~~~~~~~~~~^^\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/urllib3/connection.py\", line 844, in connect\n    self._tunnel()\n    ~~~~~~~~~~~~^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py\", line 1001, in _tunnel\n    raise OSError(f\"Tunnel connection failed: {code} {message.strip()}\")\nOSError: Tunnel connection failed: 403 Forbidden\n\nThe above exception was the direct cause of the following exception:\n\nurllib3.exceptions.ProxyError: ('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden'))\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/requests/adapters.py\", line 696, in send\n    resp = conn.urlopen(\n        method=request.method,\n    ...<9 lines>...\n        chunked=chunked,\n    )\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/urllib3/connectionpool.py\", line 847, in urlopen\n    retries = retries.increment(\n        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]\n    )\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/urllib3/util/retry.py\", line 555, in increment\n    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nurllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.kaggle.com', port=443): Max retries exceeded with url: /v1/security.OAuthService/IntrospectToken (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/bin/kaggle\", line 6, in <module>\n    sys.exit(main())\n             ~~~~^^\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/kaggle/cli.py\", line 83, in main\n    api.authenticate()\n    ~~~~~~~~~~~~~~~~^^\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/kaggle/api/kaggle_api_extended.py\", line 1496, in authenticate\n    if self._authenticate_with_access_token():\n       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/kaggle/api/kaggle_api_extended.py\", line 1567, in _authenticate_with_access_token\n    username = self._introspect_token(access_token)\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/kaggle/api/kaggle_api_extended.py\", line 1609, in _introspect_token\n    response = kaggle.security.oauth_client.introspect_token(request)\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/kagglesdk/security/services/oauth_service.py\", line 44, in introspect_token\n    return self._client.call(\"security.OAuthService\", \"IntrospectToken\", request, IntrospectTokenResponse)\n           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/kagglesdk/kaggle_http_client.py",
+  "elapsed_sec": 190.0,
+  "kaggle_ref": 58136360,
+  "public_lb": 0.9531,
+  "submissions_remaining": 3
+}

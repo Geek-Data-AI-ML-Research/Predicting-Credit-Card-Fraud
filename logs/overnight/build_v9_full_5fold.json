@@ -1,0 +1,32 @@
+{
+  "local_only": true,
+  "test4_surrogate": true,
+  "cand0_auc": 0.9526214691600746,
+  "ks_pchip": 8.000411449626821e-05,
+  "h2_auc": 0.9526197160650003,
+  "h2_delta_s3": -7.183934999765995e-06,
+  "h2_fold_deltas_1e5": [
+    0.41,
+    4.97,
+    0.72,
+    1.95,
+    -2.15
+  ],
+  "h2_vs_c0_1e5": [
+    -0.28,
+    -0.37,
+    0.5,
+    -0.48,
+    -0.31
+  ],
+  "f4_ok": false,
+  "oof_ok": false,
+  "dist_s3_1e4": 0.397,
+  "ks_v8": 0.0033301776094725177,
+  "submitted_slot4": false,
+  "boost_auc": 0.9518535567755743,
+  "boost_delta_h2_1e5": -76.62,
+  "slot5_ready": false,
+  "kaggle": "",
+  "elapsed_sec": 225.0
+}

@@ -103,9 +103,11 @@ def test_step0_backbone_and_splits():
         assert float(st.get("spend_usd", 0.0)) <= 20.00
 
 
-def verify_lever_fold0_disk(paradigm_id: str, lever_id: str) -> dict:
+def verify_lever_fold0_disk(paradigm_id: str, lever_id: str, matrix_dir: str = "matrix_v2") -> dict:
     """Programmatic Fold-0 canary gate verification called by pytest and orchestrator."""
-    npz_path = ROOT / "preds" / "matrix_8x5" / f"{paradigm_id}_{lever_id}_fold0.npz"
+    npz_path = ROOT / "preds" / matrix_dir / f"{paradigm_id}_{lever_id}_fold0.npz"
+    if not npz_path.exists():
+        npz_path = ROOT / "preds" / "matrix_8x5" / f"{paradigm_id}_{lever_id}_fold0.npz"
     assert npz_path.exists(), f"Missing {npz_path}"
     d = np.load(npz_path)
     delta_f0 = d["delta_fold0"].astype(np.float64).ravel()
@@ -115,8 +117,9 @@ def verify_lever_fold0_disk(paradigm_id: str, lever_id: str) -> dict:
     assert float(np.std(delta_f0)) > 1e-5, "Constant delta_fold0"
 
     ks_stat = float(ks_2samp(delta_f0, delta_te).statistic)
-    # Note: discrete/quantized step-grid residuals can have up to ~0.05 KS on raw scale while mean/std match
+    # Per-feature KS filter target is 0.012; residual canary allows up to ~0.05 on raw scale
     assert abs(float(delta_f0.mean() - delta_te.mean())) < 0.05, "Mean drift between Fold0 and Test"
+    assert ks_stat < 0.05, f"KS drift too high: {ks_stat}"
 
     bank = np.load(ROOT / "preds" / "v4p_bank_cache.npz")
     y = pd.read_csv(ROOT / "data" / "train.csv", usecols=["is_fraud"])["is_fraud"].to_numpy()

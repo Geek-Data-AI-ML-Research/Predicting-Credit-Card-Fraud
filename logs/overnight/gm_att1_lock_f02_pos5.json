@@ -1,0 +1,177 @@
+{
+  "rows": [
+    {
+      "name": "Ref_Slot3_Champion_F02",
+      "nested_oof_auc": 0.9526268651727923,
+      "delta_v8": 2.988838169326602e-05,
+      "delta_s3": -3.4827207784360326e-08,
+      "fold_deltas_v8_1e5": [
+        2.9,
+        5.34,
+        1.32,
+        2.42,
+        -1.84
+      ],
+      "fold_deltas_c0_1e5": [
+        2.21,
+        0.0,
+        1.1,
+        0.0,
+        0.0
+      ],
+      "fold_deltas_s3_1e5": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "wins_vs_c0": 2,
+      "wins_vs_s3": 5,
+      "ks_v8": 0.0018167635607232446,
+      "dist_v8_1e4": 1.427,
+      "dist_s3_1e4": 0.0,
+      "dist_s4_1e4": 0.104,
+      "p_mean": 0.016699998972276944
+    },
+    {
+      "name": "Att1A_LockF02_5F_PosLM_Twin_F134",
+      "nested_oof_auc": 0.9526255486113187,
+      "delta_v8": 2.8571820219647215e-05,
+      "delta_s3": -1.351388681403165e-06,
+      "fold_deltas_v8_1e5": [
+        2.9,
+        5.46,
+        1.32,
+        2.68,
+        -2.52
+      ],
+      "fold_deltas_c0_1e5": [
+        2.21,
+        0.12,
+        1.1,
+        0.26,
+        -0.68
+      ],
+      "fold_deltas_s3_1e5": [
+        0.0,
+        0.12,
+        0.0,
+        0.26,
+        -0.68
+      ],
+      "wins_vs_c0": 4,
+      "wins_vs_s3": 4,
+      "ks_v8": 0.002046775828044134,
+      "dist_v8_1e4": 1.158,
+      "dist_s3_1e4": 0.088,
+      "dist_s4_1e4": 0.049,
+      "p_mean": 0.01669999893124225
+    },
+    {
+      "name": "Att1B_LockF02_Plus_All5_Twin_gTabM",
+      "nested_oof_auc": 0.9526278431472709,
+      "delta_v8": 3.086635617188804e-05,
+      "delta_s3": 9.431472708376631e-07,
+      "fold_deltas_v8_1e5": [
+        2.9,
+        5.46,
+        1.88,
+        2.68,
+        -2.52
+      ],
+      "fold_deltas_c0_1e5": [
+        2.21,
+        0.12,
+        1.66,
+        0.26,
+        -0.68
+      ],
+      "fold_deltas_s3_1e5": [
+        0.0,
+        0.12,
+        0.56,
+        0.26,
+        -0.68
+      ],
+      "wins_vs_c0": 4,
+      "wins_vs_s3": 4,
+      "ks_v8": 0.002056776361405943,
+      "dist_v8_1e4": 1.106,
+      "dist_s3_1e4": 0.16,
+      "dist_s4_1e4": 0.071,
+      "p_mean": 0.016699998915707774
+    },
+    {
+      "name": "Att1C_BestOOF_Plus_AntiSlot4_Step",
+      "nested_oof_auc": 0.9526278431472709,
+      "delta_v8": 3.086635617188804e-05,
+      "delta_s3": 9.431472708376631e-07,
+      "fold_deltas_v8_1e5": [
+        2.9,
+        5.46,
+        1.88,
+        2.68,
+        -2.52
+      ],
+      "fold_deltas_c0_1e5": [
+        2.21,
+        0.12,
+        1.66,
+        0.26,
+        -0.68
+      ],
+      "fold_deltas_s3_1e5": [
+        0.0,
+        0.12,
+        0.56,
+        0.26,
+        -0.68
+      ],
+      "wins_vs_c0": 4,
+      "wins_vs_s3": 4,
+      "ks_v8": 0.0020801109392500905,
+      "dist_v8_1e4": 1.189,
+      "dist_s3_1e4": 0.105,
+      "dist_s4_1e4": 0.089,
+      "p_mean": 0.016699998915809273
+    }
+  ],
+  "winner": {
+    "name": "Att1B_LockF02_Plus_All5_Twin_gTabM",
+    "nested_oof_auc": 0.9526278431472709,
+    "delta_v8": 3.086635617188804e-05,
+    "delta_s3": 9.431472708376631e-07,
+    "fold_deltas_v8_1e5": [
+      2.9,
+      5.46,
+      1.88,
+      2.68,
+      -2.52
+    ],
+    "fold_deltas_c0_1e5": [
+      2.21,
+      0.12,
+      1.66,
+      0.26,
+      -0.68
+    ],
+    "fold_deltas_s3_1e5": [
+      0.0,
+      0.12,
+      0.56,
+      0.26,
+      -0.68
+    ],
+    "wins_vs_c0": 4,
+    "wins_vs_s3": 4,
+    "ks_v8": 0.002056776361405943,
+    "dist_v8_1e4": 1.106,
+    "dist_s3_1e4": 0.16,
+    "dist_s4_1e4": 0.071,
+    "p_mean": 0.016699998915707774
+  },
+  "submitted": false,
+  "kaggle": "Traceback (most recent call last):\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/urllib3/connection.py\", line 239, in _new_conn\n    sock = connection.create_connection(\n        (self._dns_host, self.port),\n    ...<2 lines>...\n        socket_options=self.socket_options,\n    )\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/urllib3/util/connection.py\", line 60, in create_connection\n    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):\n               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py\", line 983, in getaddrinfo\n    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):\n               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsocket.gaierror: [Errno 8] nodename nor servname provided, or not known\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/urllib3/connectionpool.py\", line 793, in urlopen\n    response = self._make_request(\n        conn,\n    ...<10 lines>...\n        **response_kw,\n    )\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/urllib3/connectionpool.py\", line 494, in _make_request\n    raise new_e\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/urllib3/connectionpool.py\", line 470, in _make_request\n    self._validate_conn(conn)\n    ~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/urllib3/connectionpool.py\", line 1125, in _validate_conn\n    conn.connect()\n    ~~~~~~~~~~~~^^\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/urllib3/connection.py\", line 827, in connect\n    self.sock = sock = self._new_conn()\n                       ~~~~~~~~~~~~~~^^\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/urllib3/connection.py\", line 246, in _new_conn\n    raise NameResolutionError(self.host, self, e) from e\nurllib3.exceptions.NameResolutionError: HTTPSConnection(host='api.kaggle.com', port=443): Failed to resolve 'api.kaggle.com' ([Errno 8] nodename nor servname provided, or not known)\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/requests/adapters.py\", line 696, in send\n    resp = conn.urlopen(\n        method=request.method,\n    ...<9 lines>...\n        chunked=chunked,\n    )\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/urllib3/connectionpool.py\", line 847, in urlopen\n    retries = retries.increment(\n        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]\n    )\n  File \"/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/.venv_forensics/lib/python3.14/site-packages/urllib3/util/retry.py\", line 555, in increment\n    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nurllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.kaggle.com', port=443): Max retries exceeded with url: /v1/security.OAuthService/IntrospectToken (Caused by NameResolutionError(\"HTTPSConnection(host='api.kaggle.com', port=443): Failed to resolve 'api.kaggle.com' ([Errno 8] nodename nor servname provided, or not known)\"))\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Volumes/pics/kaggle/cc/Predi",
+  "elapsed_sec": 158.7
+}

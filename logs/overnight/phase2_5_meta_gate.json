@@ -1,0 +1,102 @@
+{
+  "v8_base_auc": 0.952596976791099,
+  "candidates": [
+    {
+      "name": "Candidate A (14-Term Uncertainty Ridge)",
+      "nested_oof_auc": 0.9525994663501778,
+      "nested_delta": 2.489559078777681e-06,
+      "fold_deltas_1e5": [
+        -3.82,
+        -0.52,
+        -3.08,
+        -1.93,
+        2.67
+      ],
+      "fold_wins": 1,
+      "ks_vs_v8": 0.004140220811776618,
+      "spearman_vs_v8": 0.9999557972038604
+    },
+    {
+      "name": "Candidate B (Shallow d=2,3 LGB init_score)",
+      "nested_oof_auc": 0.9526081049175754,
+      "nested_delta": 1.1128126476411815e-05,
+      "fold_deltas_1e5": [
+        1.24,
+        1.31,
+        -0.06,
+        0.72,
+        -13.8
+      ],
+      "fold_wins": 3,
+      "ks_vs_v8": 0.003493519654381605,
+      "spearman_vs_v8": 0.9999462473485717
+    },
+    {
+      "name": "Candidate C (Joint Powell Simplex)",
+      "nested_oof_auc": 0.9526188832702615,
+      "nested_delta": 2.1906479162447923e-05,
+      "fold_deltas_1e5": [
+        1.16,
+        4.66,
+        0.3,
+        2.42,
+        -1.75
+      ],
+      "fold_wins": 4,
+      "ks_vs_v8": 0.001233399114619449,
+      "spearman_vs_v8": 0.999916480899378
+    },
+    {
+      "name": "Candidate D (Candidate C + gpt2m F[2])",
+      "nested_oof_auc": 0.9526196136436772,
+      "nested_delta": 2.2636852578195032e-05,
+      "fold_deltas_1e5": [
+        1.16,
+        4.66,
+        0.64,
+        2.42,
+        -1.75
+      ],
+      "fold_wins": 4,
+      "ks_vs_v8": 0.0013367379593578477,
+      "spearman_vs_v8": 0.999911567033475
+    }
+  ],
+  "c_weights": [
+    [
+      0.025,
+      -0.025,
+      0.0
+    ],
+    [
+      0.025,
+      -0.025,
+      0.0
+    ],
+    [
+      0.025,
+      -0.025,
+      0.0
+    ],
+    [
+      0.025,
+      -0.025,
+      0.0
+    ],
+    [
+      0.025,
+      -0.025,
+      0.0
+    ]
+  ],
+  "gpt2m_avail_folds": [
+    2
+  ],
+  "qualified_count": 2,
+  "winner": "Candidate D (Candidate C + gpt2m F[2])",
+  "winner_nested_delta": 2.2636852578195032e-05,
+  "winner_fold_wins": 4,
+  "winner_ks": 0.0013367379593578477,
+  "winner_spearman": 0.999911567033475,
+  "elapsed_sec": 259.7
+}

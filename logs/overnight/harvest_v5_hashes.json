@@ -1,0 +1,62 @@
+{
+  "preds/P_super_v5_harvest_oof.npy": {
+    "sha256_16": "ecef8d27ac924c0a",
+    "bytes": 5599808
+  },
+  "preds/P_super_v5_harvest_test.npy": {
+    "sha256_16": "ebb4a8137d0dc588",
+    "bytes": 2400000
+  },
+  "preds/matrix_v2/harvest_p4_cuda_xgb_oof.npy": {
+    "sha256_16": "44fa7188844df6df",
+    "bytes": 5599808
+  },
+  "preds/matrix_v2/harvest_p4_cuda_xgb_test.npy": {
+    "sha256_16": "09eeaef9d2ad9d8c",
+    "bytes": 2400000
+  },
+  "preds/matrix_v2/P4_L4.3_pure5f_oof.npy": {
+    "sha256_16": "9da49a165941afce",
+    "bytes": 5599808
+  },
+  "preds/matrix_v2/P4_L4.3_pure5f_test.npy": {
+    "sha256_16": "e009f1458b2fdb6e",
+    "bytes": 2400000
+  },
+  "preds/matrix_v2/P4_L4.2_pure5f_oof.npy": {
+    "sha256_16": "7198d439b61a9521",
+    "bytes": 5599808
+  },
+  "preds/matrix_v2/P4_L4.2_pure5f_test.npy": {
+    "sha256_16": "059392d152ecd334",
+    "bytes": 2400000
+  },
+  "preds/matrix_v2/P4_L4.5_pure5f_oof.npy": {
+    "sha256_16": "ffff7dbeeb6ec11d",
+    "bytes": 5599808
+  },
+  "preds/matrix_v2/P4_L4.5_pure5f_test.npy": {
+    "sha256_16": "b7d8430029fd458e",
+    "bytes": 2400000
+  },
+  "preds/paradigm_B/xgb_llr_oof.npy": {
+    "sha256_16": "a05dfa0136b4b44f",
+    "bytes": 5599808
+  },
+  "preds/paradigm_B/xgb_llr_test.npy": {
+    "sha256_16": "7cd2559b4e1274e7",
+    "bytes": 2400000
+  },
+  "submissions/sub_v5_harvest_pure.csv": {
+    "sha256_16": "c43df92be3b1d9a1",
+    "bytes": 7880432
+  },
+  "submissions/sub_v5_harvest_on_ev4.csv": {
+    "sha256_16": "953e118caff0f298",
+    "bytes": 7880432
+  },
+  "submissions/sub_v5_harvest_on_ev4_half.csv": {
+    "sha256_16": "ccb4016d70c317d5",
+    "bytes": 7880432
+  }
+}

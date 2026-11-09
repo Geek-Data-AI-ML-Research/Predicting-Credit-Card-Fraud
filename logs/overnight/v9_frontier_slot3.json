@@ -1,0 +1,73 @@
+{
+  "elapsed_s": 192.92,
+  "base_part12_oof_auc": 0.9525651344492123,
+  "v8_nested_oof_auc": 0.9525969767910991,
+  "v9_nested_oof_auc": 0.952588355873978,
+  "v9_meanw_oof_auc": 0.95269107787329,
+  "folds_won_vs_part12": 4,
+  "folds_won_vs_v8": 3,
+  "fold_deltas_vs_part12": [
+    6.391985371079212e-05,
+    3.7727400805320777e-05,
+    3.1401178762879844e-05,
+    8.688301608605897e-05,
+    -5.0177878076484994e-05
+  ],
+  "fold_deltas_vs_v8": [
+    -3.2489924183476404e-05,
+    3.124271249366206e-05,
+    2.931936699057669e-05,
+    1.9379492573134982e-05,
+    -8.105705030536647e-05
+  ],
+  "effective_mean_weights": {
+    "v4p_hc": 0.0188,
+    "B_xgb_llr": -0.038,
+    "P4_L4.3": -0.04,
+    "P4_L4.2": -0.0154,
+    "P4_L4.5": -0.0218,
+    "P4_L4.3_ext": 0.036,
+    "gpt2_bidir": -0.038,
+    "xgb_gpt2_3ep": 0.0254,
+    "gpt2_rev_2ep": 0.0162,
+    "P4_L4.2_ext": -0.008,
+    "mg_v15_full": 0.0094,
+    "sameer_gb10_bag": 0.014
+  },
+  "max_ks_resid": 1.8767063732716416e-05,
+  "ks_composite_dz9": 1.666736510641531e-06,
+  "slot3_file": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_v9_frontier_p12_mg15_aman_prop125x.csv",
+  "slot3_sha16": "f724b800a7b833e2",
+  "LB_1": 0.95247,
+  "LB_2": 0.95307,
+  "LB_3": 0.95293,
+  "candidates": [
+    {
+      "file": "sub_v9_frontier_p12_mg15_aman_prop125x.csv",
+      "oof_auc": 0.952588355873978,
+      "rho_slot2_095307": 0.9998387353444503,
+      "rho_part12_095298": 0.9990242367550648,
+      "rho_maly_095292": 0.9990058792972569,
+      "max_ks_resid": 1.8767063732716416e-05,
+      "sha16": "f724b800a7b833e2"
+    },
+    {
+      "file": "sub_v9_slot2_ascent_135x.csv",
+      "oof_auc": 0.952588355873978,
+      "rho_slot2_095307": 0.9997674263954875,
+      "rho_part12_095298": 0.9988752556663413,
+      "rho_maly_095292": 0.9989633181374646,
+      "max_ks_resid": 1.8767063732716416e-05,
+      "sha16": "25840bf73e8f3b4d"
+    },
+    {
+      "file": "sub_v9_pure_oof_cv095261.csv",
+      "oof_auc": 0.952588355873978,
+      "rho_slot2_095307": 0.9992455759263296,
+      "rho_part12_095298": 0.9990345783193816,
+      "rho_maly_095292": 0.9979904033311551,
+      "max_ks_resid": 1.8767063732716416e-05,
+      "sha16": "afe78a686063dbdf"
+    }
+  ]
+}

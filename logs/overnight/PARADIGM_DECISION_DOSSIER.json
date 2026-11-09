@@ -1,0 +1,157 @@
+{
+  "utc": "2026-11-07T15:20:26Z",
+  "baseline_oof": 0.9523071,
+  "no_submit": true,
+  "stack_eval": "test1_orthogonal_alpha_probe_vs_v4p_hc",
+  "table1_head_to_head": [
+    {
+      "paradigm": "A",
+      "cand_file": "xgb_oof.npy",
+      "cand_solo_auc": 0.9520480362856732,
+      "stack_oof_auc": 0.9523055582953639,
+      "delta_auc": -1.5761572668138157e-06,
+      "stack_mean_alpha": -0.028000000000000004,
+      "fold_win_rate": 0.4,
+      "gpu_minutes": 26.74,
+      "legacy_bogus_delta_auc": -1.5761572668138157e-06,
+      "stack_method": "test1_orthogonal_alpha_probe_vs_v4p_hc"
+    },
+    {
+      "paradigm": "B",
+      "cand_file": "xgb_llr_oof.npy",
+      "cand_solo_auc": 0.9519489439041482,
+      "stack_oof_auc": 0.9523135973748472,
+      "delta_auc": 6.462922216510236e-06,
+      "stack_mean_alpha": -0.05,
+      "fold_win_rate": 1.0,
+      "gpu_minutes": 30.07,
+      "legacy_bogus_delta_auc": 6.462922216510236e-06,
+      "stack_method": "test1_orthogonal_alpha_probe_vs_v4p_hc"
+    },
+    {
+      "paradigm": "C",
+      "cand_file": "tabm_k32_oof.npy",
+      "cand_solo_auc": 0.9428747986933598,
+      "stack_oof_auc": 0.9523042365133857,
+      "delta_auc": -2.8979392450168007e-06,
+      "stack_mean_alpha": 0.0168,
+      "fold_win_rate": 0.6,
+      "gpu_minutes": 25.24,
+      "legacy_bogus_delta_auc": -3.18917502312166e-05,
+      "stack_method": "test1_orthogonal_alpha_probe_vs_v4p_hc"
+    }
+  ],
+  "ranked": [
+    {
+      "paradigm": "B",
+      "cand_file": "xgb_llr_oof.npy",
+      "cand_solo_auc": 0.9519489439041482,
+      "stack_oof_auc": 0.9523135973748472,
+      "delta_auc": 6.462922216510236e-06,
+      "stack_mean_alpha": -0.05,
+      "fold_win_rate": 1.0,
+      "gpu_minutes": 30.07,
+      "legacy_bogus_delta_auc": 6.462922216510236e-06,
+      "stack_method": "test1_orthogonal_alpha_probe_vs_v4p_hc"
+    },
+    {
+      "paradigm": "A",
+      "cand_file": "xgb_oof.npy",
+      "cand_solo_auc": 0.9520480362856732,
+      "stack_oof_auc": 0.9523055582953639,
+      "delta_auc": -1.5761572668138157e-06,
+      "stack_mean_alpha": -0.028000000000000004,
+      "fold_win_rate": 0.4,
+      "gpu_minutes": 26.74,
+      "legacy_bogus_delta_auc": -1.5761572668138157e-06,
+      "stack_method": "test1_orthogonal_alpha_probe_vs_v4p_hc"
+    },
+    {
+      "paradigm": "C",
+      "cand_file": "tabm_k32_oof.npy",
+      "cand_solo_auc": 0.9428747986933598,
+      "stack_oof_auc": 0.9523042365133857,
+      "delta_auc": -2.8979392450168007e-06,
+      "stack_mean_alpha": 0.0168,
+      "fold_win_rate": 0.6,
+      "gpu_minutes": 25.24,
+      "legacy_bogus_delta_auc": -3.18917502312166e-05,
+      "stack_method": "test1_orthogonal_alpha_probe_vs_v4p_hc"
+    }
+  ],
+  "note": "Rebuilt by stack_delta_sidecar after live C worker (old in-memory stack) finished.",
+  "table2_orthogonality": {
+    "residual_corr": {
+      "A:A": 1.0,
+      "A:B": -0.0769614582397152,
+      "A:C": -0.4366150285832471,
+      "B:A": -0.0769614582397152,
+      "B:B": 0.9999999999999999,
+      "B:C": -0.04605507955296777,
+      "C:A": -0.43661502858324713,
+      "C:B": -0.04605507955296777,
+      "C:C": 1.0
+    }
+  },
+  "table3_combinations_shapley": {
+    "combos": [
+      {
+        "subset": "A",
+        "auc": 0.947855738868824,
+        "delta": -0.004451395583806583
+      },
+      {
+        "subset": "B",
+        "auc": 0.951965175446504,
+        "delta": -0.0003419590061265465
+      },
+      {
+        "subset": "C",
+        "auc": 0.9522752427023994,
+        "delta": -3.18917502312166e-05
+      },
+      {
+        "subset": "A+B",
+        "auc": 0.9508053220773,
+        "delta": -0.0015018123753306467
+      },
+      {
+        "subset": "A+C",
+        "auc": 0.9508883275990181,
+        "delta": -0.0014188068536125087
+      },
+      {
+        "subset": "B+C",
+        "auc": 0.9521792470121773,
+        "delta": -0.00012788744045333367
+      },
+      {
+        "subset": "A+B+C",
+        "auc": 0.9515302462188632,
+        "delta": -0.0007768882337674254
+      }
+    ],
+    "shapley": {
+      "A": -0.0021245931027623808,
+      "B": 0.0005755848926571883,
+      "C": 0.0007721208464218828
+    }
+  },
+  "table4_error_strata": [
+    {
+      "paradigm": "A",
+      "stealth_rescued_to_top5pct": 0,
+      "n_stealth": 0
+    },
+    {
+      "paradigm": "B",
+      "stealth_rescued_to_top5pct": 0,
+      "n_stealth": 0
+    },
+    {
+      "paradigm": "C",
+      "stealth_rescued_to_top5pct": 0,
+      "n_stealth": 0
+    }
+  ]
+}

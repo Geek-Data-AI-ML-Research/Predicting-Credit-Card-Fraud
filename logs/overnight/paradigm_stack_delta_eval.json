@@ -1,0 +1,172 @@
+{
+  "baseline_auc": 0.9523071344526307,
+  "baseline_expected": 0.9523071,
+  "O_v4p_scale": {
+    "min": -18.4379825592041,
+    "max": 9.645514488220215,
+    "mean": -0.43114686012268066
+  },
+  "v4p_hc_scale": {
+    "min": 1.4286530358731397e-06,
+    "max": 1.0
+  },
+  "results": {
+    "C": {
+      "status": "ok",
+      "candidates": [
+        {
+          "candidate": "C/tabm",
+          "n": 699960,
+          "test1_orthogonal_alpha_probe": {
+            "test": "orthogonal_alpha_probe",
+            "baseline_auc": 0.9523071344526307,
+            "cand_solo_auc": 0.9428747986933598,
+            "stack_oof_auc": 0.9523042365133857,
+            "delta_auc": -2.8979392450168007e-06,
+            "mean_alpha": 0.0168,
+            "alphas_per_fold": [
+              0.012999999999999998,
+              0.006999999999999996,
+              0.027,
+              0.012999999999999998,
+              0.024
+            ],
+            "fold_deltas": [
+              8.89804898351887e-06,
+              8.087994094574391e-06,
+              -2.162909215985831e-05,
+              5.619338194429169e-06,
+              -1.1749807786620714e-05
+            ],
+            "fold_win_rate": 0.6,
+            "spearman_rho_resid_v4p": 0.13790760678513436
+          },
+          "test2_scale_matched_injection": {
+            "test": "scale_matched_injection",
+            "O_v4p_min": -18.4379825592041,
+            "O_v4p_max": 9.645514488220215,
+            "O_v4p_mean": -0.43114611315168816,
+            "v4p_hc_min": 1.4286530358731397e-06,
+            "v4p_hc_max": 1.0,
+            "cand_raw_min": -254.35429398414132,
+            "cand_raw_max": 7.9597372154815815,
+            "cand_rank_min": 1.4286530658894793e-06,
+            "cand_rank_max": 1.0,
+            "weight0_reproduces_baseline": true,
+            "weight0_auc": 0.9523071344526307,
+            "baseline_auc": 0.9523071344526307,
+            "abs_err_weight0": 0.0,
+            "stack_from_test1_delta": -2.8979392450168007e-06
+          },
+          "stack_delta_auc": -2.8979392450168007e-06,
+          "stack_oof_auc": 0.9523042365133857,
+          "cand_solo_auc": 0.9428747986933598,
+          "ks_oof_test_ranks": 5.397053372269145e-06,
+          "spearman_oof_vs_v4p": 0.955639257144348
+        },
+        {
+          "candidate": "C/stealth",
+          "n": 699960,
+          "test1_orthogonal_alpha_probe": {
+            "test": "orthogonal_alpha_probe",
+            "baseline_auc": 0.9523071344526307,
+            "cand_solo_auc": 0.9424766358618722,
+            "stack_oof_auc": 0.9522987400681084,
+            "delta_auc": -8.394384522270038e-06,
+            "mean_alpha": 0.011199999999999998,
+            "alphas_per_fold": [
+              0.015999999999999997,
+              0.021999999999999995,
+              -0.010000000000000002,
+              0.003999999999999997,
+              0.024
+            ],
+            "fold_deltas": [
+              -6.917941663853178e-06,
+              -1.0005125233858436e-06,
+              -1.7157857622018824e-05,
+              1.4122141053229953e-06,
+              -5.951806641646407e-06
+            ],
+            "fold_win_rate": 0.2,
+            "spearman_rho_resid_v4p": 0.12747467824388534
+          },
+          "test2_scale_matched_injection": {
+            "test": "scale_matched_injection",
+            "O_v4p_min": -18.4379825592041,
+            "O_v4p_max": 9.645514488220215,
+            "O_v4p_mean": -0.43114611315168816,
+            "v4p_hc_min": 1.4286530358731397e-06,
+            "v4p_hc_max": 1.0,
+            "cand_raw_min": -13.382594708829911,
+            "cand_raw_max": 212.8505238380199,
+            "cand_rank_min": 1.4286530658894793e-06,
+            "cand_rank_max": 1.0,
+            "weight0_reproduces_baseline": true,
+            "weight0_auc": 0.9523071344526307,
+            "baseline_auc": 0.9523071344526307,
+            "abs_err_weight0": 0.0,
+            "stack_from_test1_delta": -8.394384522270038e-06
+          },
+          "stack_delta_auc": -8.394384522270038e-06,
+          "stack_oof_auc": 0.9522987400681084,
+          "cand_solo_auc": 0.9424766358618722,
+          "ks_oof_test_ranks": 4.286450680535516e-05,
+          "spearman_oof_vs_v4p": 0.7645614875245889
+        },
+        {
+          "candidate": "C/combo",
+          "n": 699960,
+          "test1_orthogonal_alpha_probe": {
+            "test": "orthogonal_alpha_probe",
+            "baseline_auc": 0.9523071344526307,
+            "cand_solo_auc": 0.9522752427023994,
+            "stack_oof_auc": 0.9523067071792105,
+            "delta_auc": -4.272734202004358e-07,
+            "mean_alpha": -0.0337,
+            "alphas_per_fold": [
+              -0.05,
+              -0.05,
+              -0.0485,
+              -0.05,
+              0.03
+            ],
+            "fold_deltas": [
+              -7.289406066535165e-07,
+              -6.027932594188101e-07,
+              -2.6348901237538414e-06,
+              -2.6566403954486617e-07,
+              -7.612595287476154e-08
+            ],
+            "fold_win_rate": 0.0,
+            "spearman_rho_resid_v4p": 0.09081194367185431
+          },
+          "test2_scale_matched_injection": {
+            "test": "scale_matched_injection",
+            "O_v4p_min": -18.4379825592041,
+            "O_v4p_max": 9.645514488220215,
+            "O_v4p_mean": -0.43114611315168816,
+            "v4p_hc_min": 1.4286530358731397e-06,
+            "v4p_hc_max": 1.0,
+            "cand_raw_min": -24.78641315255875,
+            "cand_raw_max": 17.52976976557173,
+            "cand_rank_min": 1.4286530658894793e-06,
+            "cand_rank_max": 1.0,
+            "weight0_reproduces_baseline": true,
+            "weight0_auc": 0.9523071344526307,
+            "baseline_auc": 0.9523071344526307,
+            "abs_err_weight0": 0.0,
+            "stack_from_test1_delta": -4.272734202004358e-07
+          },
+          "stack_delta_auc": -4.272734202004358e-07,
+          "stack_oof_auc": 0.9523067071792105,
+          "cand_solo_auc": 0.9522752427023994,
+          "ks_oof_test_ranks": 1.809666586221969e-05,
+          "spearman_oof_vs_v4p": 0.9997840030727299
+        }
+      ],
+      "best_delta": -4.272734202004358e-07,
+      "best_candidate": "C/combo"
+    }
+  }
+}

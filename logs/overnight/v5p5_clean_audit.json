@@ -1,0 +1,25 @@
+{
+  "v5_oof": 0.9523401333226741,
+  "v5p5_oof": 0.9523401333226741,
+  "delta": 0.0,
+  "weights": {},
+  "fold_deltas": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "accepted": [],
+  "rejected": [],
+  "elapsed_s": 208.35,
+  "subs": {
+    "sub_v5p5_clean_on_ev4_half.csv": "ccb4016d70c317d5",
+    "sub_v5p5_clean_on_ev4_1x.csv": "953e118caff0f298"
+  },
+  "note": "No overnight component passed strict gate (\u22654/5 folds + OOF\u2191 + KS_resid<0.003). v5p5_clean \u2261 v5_harvest.",
+  "near_miss": {
+    "P4_L4.3_ext": "+1.521e-5 nested but only 3/5 folds"
+  },
+  "identical_to": "P_super_v5_harvest"
+}

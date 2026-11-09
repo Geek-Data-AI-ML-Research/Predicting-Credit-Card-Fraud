@@ -133,3 +133,45 @@ Re-ran interaction-TE GLM + shallow LGB4 under SKF(5,rs=42) with multi-smoothing
 | `own_telgb` | 0.949012 | 0.9741 | **0** (α=0 preferred) |
 
 Same family as Stage 3/4 TE + Rung3 residual trees. Does **not** move V4p. Artifacts: `logs/overnight/own_generator_research.json`, `preds/own_te{glm,lgb}_{oof,test}.npy`.
+
+---
+
+## 8. Nov07 A40 GPU 3-Paradigm Campaign (`A, B, C`) & `matrix_v2` Dead Ends (`2026-11-07`)
+
+Evaluated on `ht590jc0rpb9kz` (NVIDIA A40 48GB) against frozen `P_super_v4p_hc` (`0.9523071` 5-Fold OOF, `0.9513936` Fold-0) using verified `score_candidate_vs_v4p_hc` (`scripts/paradigm_stack_delta_eval.py`).
+
+| ID | Paradigm / Module | Result vs `v4p_hc` (`0.9523071`) | Why Dead / Root Cause | Artifact |
+|----|-------------------|----------------------------------|-----------------------|----------|
+| G1 | **Paradigm A1/A2/A3** (`1.02M` `torch.cdist` CloneGraph + `orig20k` Splice + `TabR` Cross-Row Attention) | Solo `tabr` = `0.88577` · Solo `xgb` = `0.95205` · Combo Stack $\Delta = \mathbf{-1.58\times 10^{-6}}$ · `A/tabr` `|\Delta\rho| = 0.0545` (FAIL) | Continuous Euclidean / Mahalanobis neighbor distances in synthetic tabular space carry zero information beyond exact discrete key matches (`KMAT_108`); `TabR` solo (`0.8858`) suffers severe OOF-vs-Test rank correlation drift (`|\Delta\rho| = 0.0545 > 0.0020`). | `preds/paradigm_A/` |
+| G2 | **Paradigm B1 Solo** (`LLM_Solo` BiMasked + Causal Transformer without GBDT) | Solo OOF = `0.94695` · Test-1 $\Delta = +5.79\times 10^{-6}$ · `|\Delta\rho| = 0.0521` (FAIL) | Standalone neural sequence model over-correlates on full-refit test vs 5-fold OOF (`|\Delta\rho| = 0.0521`). Only useful when its 72 LLR features are fed into CUDA `XGBoost` (`B/xgb_llr`, which passed `|\Delta\rho| = 0.00153`). | `preds/paradigm_B/llm_solo_*` |
+| G3 | **Paradigm C1/C2/C3** (`TabM k=32` PLE + Copula QDA + SwiGLU $\text{DAE}_0/\text{DAE}_1$ + Stealth Fraud Specialist) | Solo `tabm` = `0.94287` · Solo `stealth` = `0.94248` · Stack $\Delta = \mathbf{-2.90\times 10^{-6}}$ · `KS = 0.0645` (FAIL) | Continuous copula/DAE reconstruction energy and PLE embeddings cannot resolve discrete key Lookup tables; stealth down-weighting distorted tree calibration (`KS = 0.0645`). | `preds/paradigm_C/` |
+| G4 | **Forensic Step 2 Continuous Feature Matrix** (`F_all_new` = 261 cols `[F_A(42), llr72(72), h64(64), copula_dae(57), stepgrid(26)]` fit via 5-fold CUDA IRLS / Newton-Cholesky with `init_score = z_v4p`) | Direct OOF $\Delta \le 0$ across all $L_2 \in [10^2, 10^6]$ · Best Ortho $\Delta = +6.3\times 10^{-7}$ (`0.06 bps`) | Linearly combining 261 mostly-continuous neural/manifold columns on top of `v4p_hc` adds pure estimation variance. | `scripts/forensic_audit_3min.py` |
+| G5 | **`matrix_v2` Levers `P3_L3.3, L3.4, L3.5` & `P4_L4.4`** (when evaluated with `score_candidate_vs_v4p_hc` on Fold 0) | Fold-0 Test-1 $\Delta$: `L3.3 = -1.81e-5`, `L3.4 = -1.35e-6`, `L3.5 = -5.70e-7`, `L4.4 = -1.01e-5` | Only `P4_L4.3` (`+2.74e-5`), `P4_L4.2` (`+1.85e-5`), and `P4_L4.5` (`+1.38e-5`) were genuine Fold-0 winners. Mixing the 4 negative levers into a 69-column CUDA XGBoost (`harvest_v5.py`) drowned out the 3 winners (`+3.1e-7`). | `preds/matrix_v2/*_fold0.npz` |
+
+---
+
+## 9. Grandmaster 5-Playbook Orthogonal Tournament Dead Ends (`2026-11-07`)
+
+Executed in `scripts/grandmaster_5playbook_tournament.py` (`logs/overnight/5playbook_tournament_state.json`).
+
+| ID | Playbook | Fold-0 Solo AUC | Fold-0 Test-1 $\Delta\text{AUC}$ | Why Dead / Root Cause |
+|----|----------|----------------:|---------------------------------:|-----------------------|
+| PB1 | **`PB1_KMAT450`** (8-seed inner EB TE + 96 Bulsah keys + 180 2D/3D hierarchical keys $\rightarrow$ un-anchored Stage-1 `newton-cholesky` GLM `z_Stage1_450` $\rightarrow$ CUDA XGB/LGB) | `0.945782` | `+4.76\times 10^{-6}` (Gate `+1.5e-5` MISS) | Fitting an un-anchored Stage-1 linear GLM across `1,125` sparse 2D/3D columns severely overfitted `fold_a0` (`train AUC = 0.95084` vs `val AUC = 0.94442`), poisoning the `base_margin` of downstream boosters (`0.94578` vs `0.95139`). **Rule:** Never fit an un-anchored wide Stage-1 linear model on hundreds of 2D/3D interaction TE columns to replace `z_champ`. |
+| PB2 | **`PB2_GroupbyCtx`** (`372` Unsupervised Contextual Groupby Aggregations `mean/std/Z/rank-pct` across `1.02M` rows) | `0.951395` | `-2.81\times 10^{-7}` | Unsupervised continuous group aggregations (`amount - mean(amount|cat)`) are already spanned by GBDT splits on `KMAT_108 + RAW`; resulting predictions had $\rho = 0.999995$ with `v4p_hc`. |
+| PB3 | **`PB3_ResidDist_Cat`** (Out-of-Fold `V4p` Residual Distribution `mean/max/std(r|k)` + Stealth Fraud Key Support + GPU Ordered `CatBoost`) | `0.951378` | `-3.55\times 10^{-6}` | Encoding higher moments of $r_i = y_i - V_{4p}(x_i)$ per key overfits rare keys with 1–2 fraud events; GPU CatBoost with `base_margin` degraded Fold-0 ranking on every subfold (`win_rate = 0.0`). |
+| PB4 | **`PB4_Transductive`** (Transductive Semi-Supervised Soft Pseudo-Label TE on `b0 + test` with $\gamma \in \{0.15, 0.30\}$) | `0.946726` | `-1.05\times 10^{-6}` ($\gamma=0.15$) / `-6.09\times 10^{-6}` ($\gamma=0.30$) | Soft pseudo-labels from `v4p_hc` reinforce existing `v4p_hc` biases on unseen keys rather than providing independent supervision, while Stage-1 refit drops solo AUC to `0.9467`. |
+| PB5 | **`PB5_AUC_fobj`** (Custom Overlap-Band ROC-AUC Surrogate Objective `fobj` in CUDA XGBoost/LightGBM) | `0.951399` | `+1.57\times 10^{-6}` (Gate `+1.5e-5` MISS) | Custom Gaussian overlap weighting around $p \in [0.004, 0.25]$ preserved baseline calibration ($\rho = 0.999998$), but without new discrete TE features it produced only `+0.016 bps` (`+1.57e-6`). |
+
+---
+
+## 10. Modeling & Stacking Pitfalls Caught in Audit (Never Repeat)
+
+1. **Uncalibrated Rank-Logit `base_margin` Early-Stop Collapse:**
+   - Passing uncalibrated `to_z_ranklogit(v4p_hc)` (which has mean `0.0`, i.e. $\bar{p} = 0.50$ instead of true fraud prevalence $\bar{y} = 0.0167$) into `xgb.train(objective="binary:logistic", early_stopping_rounds=50)` causes every row on round 1 to have massive negative gradient $p - y \approx +0.483$, triggering immediate early stopping at `best_iteration = 1`!
+   - **Mandatory Fix:** Always Platt-calibrate `base_margin` to true prevalence (`calibrate_logit_to_prevalence`) OR fit `Ridge(alpha=500)` / `reg:squarederror` directly on the calibrated residual $r_i = y_i - \sigma(z_{\text{cal}, i})$.
+2. **Non-Negative Weight Search Failure on Anchor-Correlated Candidates:**
+   - When a candidate `cand` is built on top of `z_champ` (`\rho \approx 0.998`), its raw score is collinear with `v4p_hc`, and its orthogonal component $r_{\text{orth}} = z_{\text{cand}} - \beta z_{\text{base}}$ has a **negative** optimal sign ($\alpha < 0$, acting as an empirical-Bayes shrinkage / denoising term). Constraining `w >= 0` on un-orthogonalized candidates yields `w = 0.0`.
+3. **The `sub_ev4` Overwrite Trap (`\alpha = 1.0` on OOF Proxy):**
+   - Tuning `(1 - a) * v4p_oof + a * v5_oof` naturally picks `a = 1.0` because `v5_oof` already contains `v4p_oof` plus the upgrade. Applying `a = 1.0` to `(1 - a) * sub_ev4 + a * v5_test` completely erases `sub_ev4` (`0.95243` LB)!
+   - **Mandatory Fix:** Always inject the **pure zero-mean difference vector** $\Delta z_{\text{test}} = z(\text{v5\_test}) - z(\text{v4p\_hc\_test})$ onto $z(\text{sub\_ev4})$ (`sub_v5_harvest_on_ev4_half.csv`, $\rho = 0.999920$).
+

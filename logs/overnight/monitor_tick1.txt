@@ -1,0 +1,40 @@
+UTC=2026-11-07T22:06:32Z
+PID5157=02:42:50
+CAMPAIGN=WAITING
+11-07 21:40:25 fold_4 ep 2/3 step 4000/5833 loss 1.0495 967 rows/s
+11-07 21:43:22 fold_4: epoch 2/3 done, 19.2 min
+11-07 21:43:55 fold 4 epoch 2/3 canary AUC=0.943174
+11-07 21:47:07 fold_4 ep 3/3 step 2000/5833 loss 1.0458 952 rows/s
+11-07 21:50:18 fold_4 ep 3/3 step 4000/5833 loss 1.0454 959 rows/s
+11-07 21:53:15 fold_4: epoch 3/3 done, 29.1 min
+11-07 21:53:48 fold 4 epoch 3/3 canary AUC=0.943615
+11-07 22:02:16 fold 4: OOF AUC=0.944264 (1-order=0.943537)
+---STATUS---
+{
+  "phase": "score_test_fold_4",
+  "completed_folds": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "fold_aucs": {
+    "0": 0.948505568399054,
+    "1": 0.9506818231843808,
+    "2": 0.9532774602811129,
+    "3": 0.9490265249292984
+  },
+  "started_epoch_ts": 1794079424.748481,
+  "updated_utc": "2026-11-07T22:02:16Z",
+  "current_fold": 4,
+  "fold_start_ts": 1794086649.4305794,
+  "last_canary_auc": 0.9436154148845167,
+  "last_fold_oof_auc": 0.9442635850615799,
+  "pooled_oof_auc": 0.9503551927439293,
+  "seen_rows": 559968
+}---CAMPAIGN_STATE---
+none
+---CAMPAIGN_LOG_TAIL---
+[2026-11-07T21:45:46Z] WAITER_START pid=6231 waiting for 5157
+---DONE---
+CAMPAIGN_DONE_PRESENT=0

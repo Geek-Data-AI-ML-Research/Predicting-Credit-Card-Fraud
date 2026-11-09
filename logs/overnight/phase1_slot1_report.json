@@ -1,0 +1,17 @@
+{
+  "phase": "phase1_slot1",
+  "oof2_sha256": "38a63fbf3392c6eb5d21450c8b5f88aa11ad33e36a52efab4f20269ef11c894a",
+  "test2_sha256": "66f0e51cc5d1a83bcdaae27afe0a0f1caafd33325dc2ada75d3b42dd2541f6d9",
+  "fold2_solo_auc": 0.9537251585635241,
+  "fold2_base_v8_auc": 0.9573744938136819,
+  "fold2_blend_auc": 0.9573800649905592,
+  "fold2_lift": 5.571176877272599e-06,
+  "best_w": 0.018500000000000003,
+  "beta": 0.962078271962521,
+  "std_r": 0.4947580085710839,
+  "ks_vs_v8_cal": 0.0010167208917808979,
+  "ks_z_vs_v8": 0.0,
+  "spearman_vs_v8": 0.999944839074451,
+  "mean_pred": 0.016699524484024748,
+  "sub_path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_phase1_v8_gpt2m_f2_orth.csv"
+}

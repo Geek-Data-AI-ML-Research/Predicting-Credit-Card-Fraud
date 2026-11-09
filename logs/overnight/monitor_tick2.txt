@@ -1,0 +1,59 @@
+UTC=2026-11-07T22:26:31Z
+PID5157=
+CAMPAIGN=RUNNING
+11-07 21:47:07 fold_4 ep 3/3 step 2000/5833 loss 1.0458 952 rows/s
+11-07 21:50:18 fold_4 ep 3/3 step 4000/5833 loss 1.0454 959 rows/s
+11-07 21:53:15 fold_4: epoch 3/3 done, 29.1 min
+11-07 21:53:48 fold 4 epoch 3/3 canary AUC=0.943615
+11-07 22:02:16 fold 4: OOF AUC=0.944264 (1-order=0.943537)
+11-07 22:14:20 fold 4 DONE: train=29.7m, score=20.5m, rho(z_t, base_test)=0.97067
+11-07 22:14:21 PROGRESSIVE 699960/699960 rows (100%): pooled OOF AUC=0.949133
+11-07 22:14:21 === ALL 5 FOLDS COMPLETE in 170.6 min! ===
+---STATUS---
+{
+  "phase": "ALL_5_FOLDS_DONE",
+  "completed_folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "fold_aucs": {
+    "0": 0.948505568399054,
+    "1": 0.9506818231843808,
+    "2": 0.9532774602811129,
+    "3": 0.9490265249292984,
+    "4": 0.9442635850615799
+  },
+  "started_epoch_ts": 1794079424.748481,
+  "updated_utc": "2026-11-07T22:14:21Z",
+  "current_fold": 4,
+  "fold_start_ts": 1794086649.4305794,
+  "last_canary_auc": 0.9436154148845167,
+  "last_fold_oof_auc": 0.9442635850615799,
+  "pooled_oof_auc": 0.9491334183993549,
+  "seen_rows": 699960,
+  "elapsed_min": 170.61
+}---CAMPAIGN_STATE---
+{
+  "phase": "stage_a",
+  "updated_utc": "2026-11-07T22:14:33Z"
+}---CAMPAIGN_LOG_TAIL---
+  n_iter_i = _check_optimize_result(
+/usr/local/lib/python3.12/dist-packages/sklearn/linear_model/_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 200 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=200).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[2026-11-07T22:21:10Z]   O_v4p gpt2-replace: AUC=0.9518213 (refit_baseO=0.9517982, Δ=+2.305e-05)
+[2026-11-07T22:21:11Z]   h16: extracting from 3 checkpoints …
+[2026-11-07T22:21:12Z]   h16 fold 2: load fold_2.pt
+[2026-11-07T22:23:16Z]   h16 fold 3: load fold_3.pt
+[2026-11-07T22:25:17Z]   h16 fold 4: load fold_4.pt
+---DONE---
+CAMPAIGN_DONE_PRESENT=0

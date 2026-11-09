@@ -1,0 +1,32 @@
+{
+  "schema": "matrix_v2",
+  "v_champ_oof_auc": 0.9523071,
+  "best_lb": 0.95243,
+  "completed_levers": [],
+  "promoted_levers": [],
+  "strikes_by_paradigm": {},
+  "current_rung": 2,
+  "current_lever": "P4_L4.3",
+  "spend_usd": 0.9992,
+  "gpu_pod_id": "ht590jc0rpb9kz",
+  "gpu_pod_name": "s6e11-0953-campaign",
+  "eta_minutes": 240.0,
+  "started_utc": "2026-11-07T10:58:54Z",
+  "last_progress_utc": "2026-11-07T12:40:30Z",
+  "rung_etas_min": {
+    "1": 45,
+    "2": 35,
+    "3": 50,
+    "4": 40,
+    "5": 35,
+    "6": 30,
+    "7": 30,
+    "8": 40,
+    "9": 20
+  },
+  "levers_done_in_rung": 0,
+  "levers_total_in_rung": 5,
+  "status_line": "ABORTED_CPU_BOTTLENECK_switch_to_3paradigm",
+  "aborted_utc": "2026-11-07T12:58:35Z",
+  "checkpoint": "preds/paradigm_A/checkpoint_P4_L4.3_fold0.npz"
+}

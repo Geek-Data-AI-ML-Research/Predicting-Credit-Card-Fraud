@@ -1,0 +1,115 @@
+UTC=2026-11-07T23:26:30Z
+PID5157=
+CAMPAIGN=RUNNING
+11-07 21:47:07 fold_4 ep 3/3 step 2000/5833 loss 1.0458 952 rows/s
+11-07 21:50:18 fold_4 ep 3/3 step 4000/5833 loss 1.0454 959 rows/s
+11-07 21:53:15 fold_4: epoch 3/3 done, 29.1 min
+11-07 21:53:48 fold 4 epoch 3/3 canary AUC=0.943615
+11-07 22:02:16 fold 4: OOF AUC=0.944264 (1-order=0.943537)
+11-07 22:14:20 fold 4 DONE: train=29.7m, score=20.5m, rho(z_t, base_test)=0.97067
+11-07 22:14:21 PROGRESSIVE 699960/699960 rows (100%): pooled OOF AUC=0.949133
+11-07 22:14:21 === ALL 5 FOLDS COMPLETE in 170.6 min! ===
+---STATUS---
+{
+  "phase": "ALL_5_FOLDS_DONE",
+  "completed_folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "fold_aucs": {
+    "0": 0.948505568399054,
+    "1": 0.9506818231843808,
+    "2": 0.9532774602811129,
+    "3": 0.9490265249292984,
+    "4": 0.9442635850615799
+  },
+  "started_epoch_ts": 1794079424.748481,
+  "updated_utc": "2026-11-07T22:14:21Z",
+  "current_fold": 4,
+  "fold_start_ts": 1794086649.4305794,
+  "last_canary_auc": 0.9436154148845167,
+  "last_fold_oof_auc": 0.9442635850615799,
+  "pooled_oof_auc": 0.9491334183993549,
+  "seen_rows": 699960,
+  "elapsed_min": 170.61
+}---CAMPAIGN_STATE---
+{
+  "phase": "stage_c",
+  "updated_utc": "2026-11-07T23:21:26Z",
+  "stage_a": {
+    "vs_v4p_hc": {
+      "delta_auc": -2.7476632988854277e-06,
+      "stack_oof_auc": 0.9523043867893318,
+      "cand_solo_auc": 0.9491505455067994,
+      "stack_mean_alpha": 0.0404,
+      "fold_win_rate": 0.4,
+      "fold_deltas": [
+        -2.2193055272512474e-05,
+        1.0471202496642462e-05,
+        -1.0042411415112085e-05,
+        -6.529742447081155e-06,
+        1.4257303458609094e-05
+      ]
+    },
+    "vs_v5": {
+      "delta_auc": 1.3531050042647763e-06,
+      "stack_oof_auc": 0.9523414864276784,
+      "cand_solo_auc": 0.9491505455067994,
+      "stack_mean_alpha": 0.0522,
+      "fold_win_rate": 0.4
+    },
+    "ks_ecdf": 8.600416781801012e-06,
+    "solo_auc": 0.9491334182750573,
+    "o_v4p_replace": {
+      "auc": 0.9518212573288138,
+      "baseO_auc": 0.9517982027115913,
+      "delta": 2.305461722251767e-05,
+      "gpt_idx": 62
+    },
+    "h16": {
+      "delta_auc": -6.490329864217159e-06,
+      "cand_solo_auc": 0.49862050534633845,
+      "shape": [
+        699960,
+        16
+      ]
+    }
+  },
+  "stage_b": {
+    "families": {
+      "xgb_gpt2_3ep_d2_d3_bag6": {
+        "delta_auc": -1.160008492762099e-05,
+        "solo": 0.9523089475835049
+      },
+      "lgb_gpt2_3ep_leaves4_bag6": {
+        "delta_auc": 6.966141544939575e-06,
+        "solo": 0.41014505565439774
+      }
+    },
+    "super": {
+      "delta_auc": 2.1528365490297574e-07,
+      "solo": 0.7484577896530402,
+      "stack": 0.952340348606329
+    }
+  }
+}---CAMPAIGN_LOG_TAIL---
+[     6s] 8 joint keys kept -> 68 target-encoded keys
+[     6s] one outer fold encoded in 0.0s
+[2026-11-07T22:28:23Z]   gboost ready GEN=False KMAT=(999944, 68) BASE=(999944, 41)
+[2026-11-07T22:29:09Z]   X_fusion shape o=(699960, 132) t=(299984, 132)
+[2026-11-07T22:29:09Z]   training xgb_gpt2_3ep_d2_d3_bag6 …
+[2026-11-07T22:30:22Z]   xgb_gpt2_3ep_d2_d3_bag6: solo=0.9523089 Δvs_v5=-1.160e-05
+[2026-11-07T22:30:22Z]   training lgb_gpt2_3ep_leaves4_bag6 …
+[2026-11-07T23:21:14Z]   lgb_gpt2_3ep_leaves4_bag6: solo=0.4101451 Δvs_v5=+6.966e-06
+[2026-11-07T23:21:14Z]   training cat_gpt2_3ep_d4_bag4 …
+[2026-11-07T23:21:16Z]   cat bag failed: catboost/private/libs/algo/preprocess.cpp:30: Baseline for test is not provided
+[2026-11-07T23:21:26Z]   gb_gpt2_3ep_super: solo=0.7484578 Δvs_v5=+2.153e-07 stack=0.9523403
+[2026-11-07T23:21:26Z] === STAGE B DONE ===
+[2026-11-07T23:21:26Z] === STAGE C: gpt2_rev_2ep (risk-first reverse twin) ===
+[2026-11-07T23:21:26Z]   reverse order (first8)=['velocity_score', 'merchant_risk_score', 'prior_disputes', 'merchant_category', 'card_type', 'auth_method', 'channel', 'device_type'] last4=['account_balance_usd', 'cvv_retry_count', 'time_of_day_hour', 'day_of_week']
+11-07 23:24:47 rev_fold_0 ep 1/2 step 2000/5833 loss 1.0674 959 rows/s
+---DONE---
+CAMPAIGN_DONE_PRESENT=0

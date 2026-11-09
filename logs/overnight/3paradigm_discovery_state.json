@@ -1,0 +1,198 @@
+{
+  "schema": "3paradigm_discovery_v1",
+  "started_utc": "2026-11-07T12:58:35Z",
+  "pod_id": "ht590jc0rpb9kz",
+  "active_paradigm": "DOSSIER",
+  "stage": "DONE_STACK_FIXED",
+  "spend_cap_usd": 20.0,
+  "cost_usd_hr": 0.59,
+  "no_submit": true,
+  "baseline_oof": 0.9523071,
+  "baseline_fold0": 0.9513936,
+  "paradigms": {
+    "A": {
+      "status": "completed",
+      "metrics": {
+        "solo_tabr_auc": 0.8857745736467278,
+        "solo_xgb_auc": 0.9520480362856731,
+        "stack_oof_auc": 0.9523055582953639,
+        "delta_auc": -1.5761572668138157e-06,
+        "fold0_delta": 0.0,
+        "boot_ci_90": [
+          -0.004766891078777463,
+          -0.0036103294017082403
+        ],
+        "spearman_rho_resid_v4p": -0.43502295440246674,
+        "ks_oof_test": 0.016893490048368154,
+        "gpu_minutes": 26.74,
+        "legacy_bogus_stack_oof_auc": 0.9523055582953639,
+        "legacy_bogus_delta_auc": -1.5761572668138157e-06,
+        "stack_method": "test1_orthogonal_alpha_probe_vs_v4p_hc",
+        "stack_mean_alpha": -0.028000000000000004,
+        "fold_win_rate": 0.4,
+        "fold_deltas": [
+          -1.123718675111185e-06,
+          -6.366615405206666e-06,
+          2.091133317616567e-06,
+          -5.3210487463983824e-06,
+          2.571192897926622e-06
+        ],
+        "weight0_reproduces_baseline": true,
+        "best_cand_stack_delta": 6.196552197801353e-06,
+        "best_cand_name": "A/tabr",
+        "root_cause": {
+          "bogus_reported_delta": -0.004451395583806583,
+          "bogus_method": "0.50*rk(z_champ)+0.30*rk(xgb)+0.20*rk(tabr) \u2014 replaces frozen v4p_hc",
+          "correct_stack_delta": -1.5761572668138157e-06,
+          "O_v4p_logits": true,
+          "v4p_hc_unit_interval": true,
+          "forgot_hc_gb_super_blend": true,
+          "tabr_poison_solo": 0.8857746
+        }
+      }
+    },
+    "B": {
+      "status": "completed",
+      "metrics": {
+        "solo_llm_auc": 0.946950838337541,
+        "solo_xgb_auc": 0.9519489439041482,
+        "stack_oof_auc": 0.9523135973748472,
+        "delta_auc": 6.462922216510236e-06,
+        "boot_ci_90": [
+          -0.000545076408207662,
+          -0.0002551508671418735
+        ],
+        "spearman_rho_resid_v4p": -0.051501621399211654,
+        "ks_oof_test": 0.9927062776681423,
+        "gpu_minutes": 30.07,
+        "legacy_bogus_stack_oof_auc": 0.9523135973748472,
+        "legacy_bogus_delta_auc": 6.462922216510236e-06,
+        "stack_method": "test1_orthogonal_alpha_probe_vs_v4p_hc",
+        "stack_mean_alpha": -0.05,
+        "fold_win_rate": 1.0,
+        "fold_deltas": [
+          1.0986953408620437e-05,
+          5.161028886369046e-06,
+          8.07867255314676e-08,
+          1.324746939002086e-05,
+          7.868937781152496e-06
+        ],
+        "weight0_reproduces_baseline": true,
+        "best_cand_stack_delta": 6.462922216510236e-06,
+        "best_cand_name": "B/xgb"
+      }
+    },
+    "C": {
+      "status": "completed",
+      "metrics": {
+        "solo_tabm_auc": 0.9428747986933599,
+        "solo_stealth_auc": 0.9424766358618722,
+        "stack_oof_auc": 0.9523042365133857,
+        "delta_auc": -2.8979392450168007e-06,
+        "boot_ci_90": [
+          -7.914258562086163e-05,
+          -8.490979510417122e-06
+        ],
+        "spearman_rho_resid_v4p": 0.9996978303673448,
+        "ks_oof_test": 0.06453034993723389,
+        "gpu_minutes": 25.24,
+        "legacy_bogus_stack_oof_auc": 0.9522752427023994,
+        "legacy_bogus_delta_auc": -3.18917502312166e-05,
+        "stack_method": "test1_orthogonal_alpha_probe_vs_v4p_hc",
+        "stack_mean_alpha": 0.011199999999999998,
+        "fold_win_rate": 0.2,
+        "fold_deltas": [
+          -6.917941663853178e-06,
+          -1.0005125233858436e-06,
+          -1.7157857622018824e-05,
+          1.4122141053229953e-06,
+          -5.951806641646407e-06
+        ],
+        "weight0_reproduces_baseline": true,
+        "best_cand_stack_delta": -4.272734202004358e-07,
+        "best_cand_name": "C/combo"
+      }
+    }
+  },
+  "watchdog_fixes": [
+    {
+      "utc": "2026-11-07T13:04:01Z",
+      "fix": "FATAL: index 299984 is out of bounds for axis 0 with size 299984"
+    },
+    {
+      "utc": "2026-11-07T13:08:24Z",
+      "fix": "FATAL: The size of tensor a (2048) must match the size of tensor b (728) at non-singleton dimension 0"
+    },
+    {
+      "utc": "2026-11-07T13:11:07Z",
+      "fix": "resume A1 from disk"
+    },
+    {
+      "utc": "2026-11-07T13:11:07Z",
+      "fix": "resume A2 from disk"
+    },
+    {
+      "utc": "2026-11-07T13:31:13Z",
+      "fix": "resume A1 from disk"
+    },
+    {
+      "utc": "2026-11-07T13:31:13Z",
+      "fix": "resume A2 from disk"
+    },
+    {
+      "utc": "2026-11-07T13:31:14Z",
+      "fix": "resume A3 TabR+F_A from disk; skip to CUDA XGB"
+    },
+    {
+      "utc": "2026-11-07T13:32:38Z",
+      "fix": "resume A1 from disk"
+    },
+    {
+      "utc": "2026-11-07T13:32:38Z",
+      "fix": "resume A2 from disk"
+    },
+    {
+      "utc": "2026-11-07T13:32:38Z",
+      "fix": "resume A3 TabR+F_A from disk; skip to CUDA XGB"
+    },
+    {
+      "utc": "2026-11-07T14:02:16Z",
+      "fix": "FATAL: Tried to step 1366 times. The specified number of total steps is 1365"
+    },
+    {
+      "utc": "2026-11-07T14:20:26Z",
+      "fix": "resume B1 OOF from disk; skip to B2 XGB"
+    }
+  ],
+  "submodule": "C3",
+  "laws": [
+    "strict_oof_feature_stack",
+    "discovery_5fold_testavg_only",
+    "oof_ref_quantile_align_zglm"
+  ],
+  "status_line": "dossier rebuilt with Test-1 stack \u0394",
+  "p4_l43_checkpoint": "preds/paradigm_A/checkpoint_P4_L4.3_fold0.npz",
+  "last_progress_utc": "2026-11-07T15:16:53Z",
+  "gpu_util": 0.0,
+  "vram_mb": 638.2,
+  "vram_total_mb": 45490.0,
+  "spend_usd": 1.3601,
+  "eta_minutes": 35,
+  "traceback": "Traceback (most recent call last):\n  File \"/workspace/s6e11/scripts/paradigm_abc_cuda_campaign.py\", line 1269, in main\n    paradigm_B(data, st)\n  File \"/workspace/s6e11/scripts/paradigm_abc_cuda_campaign.py\", line 784, in paradigm_B\n    sched.step()\n  File \"/usr/local/lib/python3.12/dist-packages/torch/optim/lr_scheduler.py\", line 207, in step\n    values = self.get_lr()\n             ^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/optim/lr_scheduler.py\", line 2131, in get_lr\n    raise ValueError(\nValueError: Tried to step 1366 times. The specified number of total steps is 1365\n",
+  "live_metrics": {
+    "solo_tabm_auc": 0.9428747986933599,
+    "solo_stealth_auc": 0.9424766358618722,
+    "stack_oof_auc": 0.9522752427023994,
+    "delta_auc": -3.18917502312166e-05,
+    "boot_ci_90": [
+      -7.914258562086163e-05,
+      -8.490979510417122e-06
+    ],
+    "spearman_rho_resid_v4p": 0.9996978303673448,
+    "ks_oof_test": 0.06453034993723389,
+    "gpu_minutes": 25.24
+  },
+  "dossier_path": "/workspace/s6e11/logs/overnight/PARADIGM_DECISION_DOSSIER.json",
+  "stack_eval_fixed_utc": "2026-11-07T15:19:28Z",
+  "sidecar_fixed_utc": "2026-11-07T15:20:26Z"
+}
