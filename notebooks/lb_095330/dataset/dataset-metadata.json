@@ -12,5 +12,5 @@
     "playground"
   ],
   "subtitle": "Frozen submission that scored Public LB 0.95330 (Strike 9)",
-  "description": "Frozen submission CSV for playground-series-s6e11 that scored Public LB 0.95330 (Kaggle ref 58151250). Used by the companion public notebook."
+  "description": "Frozen submission CSV for playground-series-s6e11 that scored Public LB 0.95330 (Kaggle ref 58151250; SHA-256 f4a7a4f8636c99fabd82945c7d81956c5559c609dcb55cde6d4e03f80b0ea105). Built on top of public work by goodpjw2008 (Part 12 / fraud-series-artifacts / oof-bank), Malyshev Danil (Fraud Signal Lab), sameershaikh27 (wide pooled stack), megayak, masayakawamata, areebbb, sadamtorres (TabPFN pairs), alexchilton, and others \u2014 see the companion notebook credits. Companion notebook: moranzavdi/s6e11-grandmaster-ladder-lb-0-95330."
 }
