@@ -1,0 +1,59 @@
+{
+  "target": "beat 0.95332 -> 0.95334+",
+  "base_7m_oof": 0.9526611592872501,
+  "fam_oof": 0.9528578489972972,
+  "fam_delta_1e5": 19.67,
+  "fam_folds_1e5": [
+    6.18,
+    8.78,
+    30.85,
+    24.71,
+    27.04
+  ],
+  "s07_delta_1e5": 15.98,
+  "submit_order": [
+    "R1",
+    "R4",
+    "R2",
+    "R5",
+    "R3"
+  ],
+  "rows": [
+    {
+      "file": "sub_retake_R1_softfamily_x080.csv",
+      "note": "RETAKE lead: St9+0.80*FAM \u0394OOF@1=+19.67e-5",
+      "dist_st9_1e4": 6.929,
+      "step_rms": 0.06348,
+      "p_mean": 0.01669999882801941
+    },
+    {
+      "file": "sub_retake_R2_softfamily_x100.csv",
+      "note": "RETAKE full: St9+1.00*FAM \u0394OOF@1=+19.67e-5",
+      "dist_st9_1e4": 10.812,
+      "step_rms": 0.07934,
+      "p_mean": 0.01669999882801941
+    },
+    {
+      "file": "sub_retake_R3_softdiff_w07_x070.csv",
+      "note": "RETAKE soft@0.07 x0.70 \u0394OOF@1=+15.98e-5",
+      "dist_st9_1e4": 4.233,
+      "step_rms": 0.04958,
+      "p_mean": 0.01669999882801941
+    },
+    {
+      "file": "sub_retake_R4_softfamily_x070_cont.csv",
+      "note": "RETAKE St9+0.70*FAM+0.40*(St9-St8)",
+      "dist_st9_1e4": 5.222,
+      "step_rms": 0.05521,
+      "p_mean": 0.01669999882801941
+    },
+    {
+      "file": "sub_retake_R5_softfamily_x090_cont.csv",
+      "note": "RETAKE St9+0.90*FAM+0.50*(St9-St8) max push",
+      "dist_st9_1e4": 8.624,
+      "step_rms": 0.07097,
+      "p_mean": 0.01669999882801941
+    }
+  ],
+  "elapsed_sec": 25.9
+}
