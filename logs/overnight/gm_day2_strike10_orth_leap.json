@@ -1,0 +1,132 @@
+{
+  "base_7m_oof": 0.9526611592872501,
+  "new_oof_full": 0.9527663203807657,
+  "new_oof_soft": 0.9527774979777354,
+  "new_oof_soft_graph": 0.9527577473182676,
+  "w3_full": [
+    0.03,
+    0.02,
+    0.0
+  ],
+  "w3_delta_1e5": 10.52,
+  "w3_pos_folds": 5,
+  "w3_fold_deltas_1e5": [
+    8.2,
+    2.85,
+    18.47,
+    12.64,
+    11.65
+  ],
+  "w_soft": 0.04,
+  "w_soft_delta_1e5": 11.63,
+  "w_soft_pos_folds": 5,
+  "w_soft_fold_deltas_1e5": [
+    5.53,
+    4.18,
+    20.26,
+    15.27,
+    15.11
+  ],
+  "w_soft_graph": [
+    0.03,
+    0.0,
+    0.012
+  ],
+  "w_soft_graph_delta_1e5": 9.66,
+  "recommended_order": [
+    "slotA",
+    "slotB",
+    "slotE",
+    "slotF",
+    "slotC",
+    "slotD",
+    "slotG",
+    "slotH"
+  ],
+  "rationale": "Softpseudo_clean_diff is the only 5/5-fold family with huge nested OOF (+11.63e-5 at w=0.040). Full injection is ~2.7e-4 from St9 \u2014 too far vs proven 0.11\u20130.51e-4 window \u2014 so lead with 0.40x (SlotA), step to 0.55x (SlotB) if A gains, then soft+cont (SlotE) for LB gradient. SlotF tests Soft+IDF mid-scale. SlotC/H are safe fallbacks; SlotD is full push.",
+  "submit_cmds": {
+    "slotA": "kaggle competitions submit -c playground-series-s6e11 -f submissions/sub_day2_slotA_softpseudo_x040.csv -m \"Day2 SlotA: St9(0.95330)+0.40*SoftPseudoDiff orth\"",
+    "slotB": "kaggle competitions submit -c playground-series-s6e11 -f submissions/sub_day2_slotB_softpseudo_x055.csv -m \"Day2 SlotB: St9+0.55*SoftPseudoDiff\"",
+    "slotC": "kaggle competitions submit -c playground-series-s6e11 -f submissions/sub_day2_slotC_softpseudo_x025.csv -m \"Day2 SlotC: St9+0.25*SoftPseudoDiff safe\"",
+    "slotD": "kaggle competitions submit -c playground-series-s6e11 -f submissions/sub_day2_slotD_softpseudo_x100.csv -m \"Day2 SlotD: St9+1.0*SoftPseudoDiff full\"",
+    "slotE": "kaggle competitions submit -c playground-series-s6e11 -f submissions/sub_day2_slotE_soft_x0p40_plus_cont.csv -m \"Day2 SlotE: St9+0.40*Soft+0.35*(St9-St8)\"",
+    "slotF": "kaggle competitions submit -c playground-series-s6e11 -f submissions/sub_day2_slotF_soft_idf_x0p40.csv -m \"Day2 SlotF: St9+0.40*(Soft+IDF)\"",
+    "slotG": "kaggle competitions submit -c playground-series-s6e11 -f submissions/sub_day2_slotG_soft_graph_x0p40.csv -m \"Day2 SlotG: St9+0.40*(Soft+Graph)\"",
+    "slotH": "kaggle competitions submit -c playground-series-s6e11 -f submissions/sub_day2_slotH_st9_cont055.csv -m \"Day2 SlotH: St9+0.55*(St9-St8) cont backup\""
+  },
+  "rows": [
+    {
+      "file": "sub_day2_slotA_softpseudo_x040.csv",
+      "note": "St9 + 0.40*soft@0.040 (OOF\u0394_soft=+11.63e-5 @1.0) | lead probe \u2014 target 1-\u03c1(St9)\u22480.4\u20130.7e-4",
+      "dist_st9_1e4": 0.453,
+      "dist_st8_1e4": 0.541,
+      "step_rms": 0.01619,
+      "p_mean": 0.01669999882801941,
+      "ks_st9": 0.001596751826764095
+    },
+    {
+      "file": "sub_day2_slotB_softpseudo_x055.csv",
+      "note": "St9 + 0.55*soft@0.040 (OOF\u0394_soft=+11.63e-5 @1.0) | step-up if A gains",
+      "dist_st9_1e4": 0.855,
+      "dist_st8_1e4": 0.928,
+      "step_rms": 0.02227,
+      "p_mean": 0.016699998828019414,
+      "ks_st9": 0.001596751826764095
+    },
+    {
+      "file": "sub_day2_slotC_softpseudo_x025.csv",
+      "note": "St9 + 0.25*soft@0.040 (OOF\u0394_soft=+11.63e-5 @1.0) | ultra-safe if A overshoots",
+      "dist_st9_1e4": 0.177,
+      "dist_st8_1e4": 0.281,
+      "step_rms": 0.01012,
+      "p_mean": 0.01669999882801941,
+      "ks_st9": 0.001596751826764095
+    },
+    {
+      "file": "sub_day2_slotD_softpseudo_x100.csv",
+      "note": "St9 + 1.00*soft@0.040 (OOF\u0394_soft=+11.63e-5 @1.0) | full soft@OOF-opt (aggressive)",
+      "dist_st9_1e4": 2.823,
+      "dist_st8_1e4": 2.848,
+      "step_rms": 0.0405,
+      "p_mean": 0.01669999882801941,
+      "ks_st9": 0.001596751826764095
+    },
+    {
+      "file": "sub_day2_slotE_soft_x0p40_plus_cont.csv",
+      "note": "St9 + 0.40*soft@0.040 + 0.35*(St9-St8)",
+      "dist_st9_1e4": 0.454,
+      "dist_st8_1e4": 0.633,
+      "step_rms": 0.01641,
+      "p_mean": 0.01669999882801941,
+      "ks_st9": 0.001596751826764095
+    },
+    {
+      "file": "sub_day2_slotF_soft_idf_x0p40.csv",
+      "note": "St9 + 0.40*trio(w=[0.03, 0.02, 0.0], \u0394=+10.52e-5 @1.0)",
+      "dist_st9_1e4": 0.428,
+      "dist_st8_1e4": 0.558,
+      "step_rms": 0.01542,
+      "p_mean": 0.01669999882801941,
+      "ks_st9": 0.001596751826764095
+    },
+    {
+      "file": "sub_day2_slotG_soft_graph_x0p40.csv",
+      "note": "St9 + 0.40*soft+graph(w=[0.03, 0.0, 0.012], \u0394=+9.66e-5 @1.0)",
+      "dist_st9_1e4": 0.323,
+      "dist_st8_1e4": 0.439,
+      "step_rms": 0.01351,
+      "p_mean": 0.01669999882801941,
+      "ks_st9": 0.001596751826764095
+    },
+    {
+      "file": "sub_day2_slotH_st9_cont055.csv",
+      "note": "St9 + 0.55*(St9-St8) continuation-only backup",
+      "dist_st9_1e4": 0.039,
+      "dist_st8_1e4": 0.313,
+      "step_rms": 0.00535,
+      "p_mean": 0.01669999882801941,
+      "ks_st9": 0.001596751826764095
+    }
+  ],
+  "elapsed_sec": 65.0
+}
