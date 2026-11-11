@@ -1,0 +1,8 @@
+{
+  "file": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_strike9p5_axis_0p70_0p10.csv",
+  "formula": "z_st9 + 0.70*(z_st9-z_st8) - 0.10*u_bad5",
+  "mean": 0.016699998834038065,
+  "ks_vs_st9": 3.333511120695576e-06,
+  "one_minus_rho_st9_1e4": 0.1117909722070376,
+  "target_1e4": 0.112
+}

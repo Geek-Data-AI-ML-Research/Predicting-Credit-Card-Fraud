@@ -1,0 +1,130 @@
+{
+  "started": "2026-11-09T12:14:24Z",
+  "machine": {
+    "ncpu_cap": 2,
+    "min_free_gb": 1.6,
+    "soft_gate_gb": 4.0
+  },
+  "phases": {
+    "leaders": {
+      "n": 4,
+      "names": [
+        "aman",
+        "tuboa",
+        "mzishran",
+        "alex"
+      ]
+    },
+    "alex_restack": {
+      "hits": [
+        {
+          "file": "oof_b890168ab4ab0fdc.npy",
+          "solo_auc": 0.948447,
+          "delta": 0.61,
+          "w": -0.015,
+          "pos": 4
+        }
+      ],
+      "accepted": [
+        {
+          "file": "oof_b890168ab4ab0fdc.npy",
+          "w": -0.015,
+          "add": 0.61
+        }
+      ],
+      "delta_vs_base": 21.98,
+      "delta_vs_fam": 0.61
+    },
+    "orig20k_prior": {
+      "status": "skip"
+    },
+    "transductive": {
+      "solo_auc": 0.952043,
+      "delta": 0.0,
+      "w": 0.0,
+      "pos": 0
+    },
+    "soft_w_real_test": {
+      "status": "skipped_low_ram",
+      "avail_gb": 2.17,
+      "need_gb": 4.0,
+      "note": "proxy test already on disk; real regen needs >=4GB free (prefer 6GB+)"
+    }
+  },
+  "gpu_ready": true,
+  "submit_candidates": [
+    {
+      "file": "sub_pass340_L1_st9_aman12_tuboa08.csv",
+      "note": "multi-leader ranklogit",
+      "dist_st9_1e4": 1.058,
+      "mean": 0.0167
+    },
+    {
+      "file": "sub_pass340_L2_st9_aman18_mz12.csv",
+      "note": "multi-leader stronger",
+      "dist_st9_1e4": 2.446,
+      "mean": 0.0167
+    },
+    {
+      "file": "sub_pass340_R1_alexrestack_x035.csv",
+      "note": "St9+0.35*alexrestack(+22.0e-5)",
+      "dist_st9_1e4": 2.358,
+      "mean": 0.0167
+    },
+    {
+      "file": "sub_pass340_R2_alexrestack_x055.csv",
+      "note": "St9+0.55*alexrestack(+22.0e-5)",
+      "dist_st9_1e4": 5.814,
+      "mean": 0.0167
+    },
+    {
+      "file": "sub_pass340_R3_alexrestack_x070.csv",
+      "note": "St9+0.7*alexrestack(+22.0e-5)",
+      "dist_st9_1e4": 9.406,
+      "mean": 0.0167
+    },
+    {
+      "file": "sub_pass340_CPU_x055.csv",
+      "note": "CPU campaign cumulative x0.55 (+22.0e-5)",
+      "dist_st9_1e4": 5.814,
+      "mean": 0.0167
+    },
+    {
+      "file": "sub_pass340_CPU_x070.csv",
+      "note": "CPU campaign cumulative x0.70 (+22.0e-5)",
+      "dist_st9_1e4": 9.406,
+      "mean": 0.0167
+    }
+  ],
+  "final": {
+    "fam21_delta": 21.37,
+    "cpu_cumulative_delta": 21.98,
+    "folds": [
+      0.74,
+      4.31,
+      35.34,
+      32.68,
+      35.77
+    ],
+    "pos": 5
+  },
+  "gpu_phase": {
+    "start_when": "CPU report done; free RAM or move to GPU box",
+    "jobs": [
+      "A1 Bulsah-style encoding rebuild (TE+GPT2 tokens+digit keys, multi-seed)",
+      "Scaled GPT-2 target-first (more orders/epochs)",
+      "Real soft_w015/025 test regen if still missing (gboost KMAT)",
+      "Optional: CatBoost/XGB large seed bags on new encodings"
+    ],
+    "do_not_start_gpu_until": "CPU campaign report written + Mac not swapping"
+  },
+  "elapsed_s": 137.1,
+  "ended": "2026-11-09T12:16:41Z",
+  "final_mem": {
+    "free_gb": 0.07,
+    "purgeable_gb": 0.07,
+    "inactive_gb": 5.26,
+    "approx_avail_gb": 1.99,
+    "proc_maxrss_gb": 1.28
+  }
+}

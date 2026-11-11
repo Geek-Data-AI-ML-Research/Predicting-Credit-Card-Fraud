@@ -1,0 +1,613 @@
+{
+  "diagnosis": {
+    "n_zanch": 140,
+    "zanch_top20_count": 14,
+    "top20_gain": [
+      {
+        "rank": 1,
+        "feat": "zanch_eb20_account_balance_usd",
+        "gain": 1384.095766544342,
+        "split": 67,
+        "is_zanch": true
+      },
+      {
+        "rank": 2,
+        "feat": "zanch_eb5_account_balance_usd",
+        "gain": 1144.0787529945374,
+        "split": 52,
+        "is_zanch": true
+      },
+      {
+        "rank": 3,
+        "feat": "zanch_eb5_distance_from_home_km",
+        "gain": 590.7011060714722,
+        "split": 54,
+        "is_zanch": true
+      },
+      {
+        "rank": 4,
+        "feat": "zanch_eb5_hours_since_last_txn",
+        "gain": 535.5775790214539,
+        "split": 48,
+        "is_zanch": true
+      },
+      {
+        "rank": 5,
+        "feat": "zanch_eb20_hours_since_last_txn",
+        "gain": 520.4207134246826,
+        "split": 43,
+        "is_zanch": true
+      },
+      {
+        "rank": 6,
+        "feat": "zanch_eb20_distance_from_home_km",
+        "gain": 437.0713424682617,
+        "split": 37,
+        "is_zanch": true
+      },
+      {
+        "rank": 7,
+        "feat": "zanch_eb5_amount_usd",
+        "gain": 433.6344676017761,
+        "split": 35,
+        "is_zanch": true
+      },
+      {
+        "rank": 8,
+        "feat": "loo_mean_velocity_score_account_balance_usd",
+        "gain": 318.82940006256104,
+        "split": 32,
+        "is_zanch": false
+      },
+      {
+        "rank": 9,
+        "feat": "loo_mean_merchant_risk_score_account_balance_usd",
+        "gain": 313.2335515022278,
+        "split": 29,
+        "is_zanch": false
+      },
+      {
+        "rank": 10,
+        "feat": "zanch_eb20_account_balance_usdxcard_type",
+        "gain": 266.0208697319031,
+        "split": 19,
+        "is_zanch": true
+      },
+      {
+        "rank": 11,
+        "feat": "zanch_eb5_account_balance_usdxcard_type",
+        "gain": 240.62113189697266,
+        "split": 15,
+        "is_zanch": true
+      },
+      {
+        "rank": 12,
+        "feat": "loo_mean_amount_usd_velocity_scorexflag_bitmask_64",
+        "gain": 226.5170407295227,
+        "split": 21,
+        "is_zanch": false
+      },
+      {
+        "rank": 13,
+        "feat": "zanch_disp20_device_type",
+        "gain": 210.433669090271,
+        "split": 18,
+        "is_zanch": true
+      },
+      {
+        "rank": 14,
+        "feat": "loo_mean_merchant_risk_score_account_balance_usdxcard_type",
+        "gain": 206.8470482826233,
+        "split": 21,
+        "is_zanch": false
+      },
+      {
+        "rank": 15,
+        "feat": "zanch_eb20_card_type",
+        "gain": 201.78668928146362,
+        "split": 18,
+        "is_zanch": true
+      },
+      {
+        "rank": 16,
+        "feat": "zanch_disp20_card_type",
+        "gain": 195.20978164672852,
+        "split": 17,
+        "is_zanch": true
+      },
+      {
+        "rank": 17,
+        "feat": "loo_mean_velocity_score_amount_usdxcard_type",
+        "gain": 193.85035943984985,
+        "split": 20,
+        "is_zanch": false
+      },
+      {
+        "rank": 18,
+        "feat": "zanch_eb5_account_balance_usdxflag_bitmask_64",
+        "gain": 191.4876914024353,
+        "split": 14,
+        "is_zanch": true
+      },
+      {
+        "rank": 19,
+        "feat": "loo_mean_amount_usd_velocity_score",
+        "gain": 184.59062910079956,
+        "split": 18,
+        "is_zanch": false
+      },
+      {
+        "rank": 20,
+        "feat": "zanch_eb20_amount_usd",
+        "gain": 180.22987031936646,
+        "split": 16,
+        "is_zanch": true
+      }
+    ],
+    "zanch_worst_std_shift": [
+      {
+        "feat": "zanch_disp5_auth_method",
+        "mean_tr": 1.712528,
+        "mean_te": 1.712171,
+        "std_tr": 0.048729,
+        "std_te": 0.048282,
+        "std_ratio": 0.9908,
+        "mean_diff": -0.000357
+      },
+      {
+        "feat": "zanch_disp20_auth_method",
+        "mean_tr": 1.712533,
+        "mean_te": 1.712177,
+        "std_tr": 0.048723,
+        "std_te": 0.048277,
+        "std_ratio": 0.9908,
+        "mean_diff": -0.000357
+      },
+      {
+        "feat": "zanch_disp5_card_typexauth_method",
+        "mean_tr": 1.712279,
+        "mean_te": 1.711936,
+        "std_tr": 0.0495,
+        "std_te": 0.049048,
+        "std_ratio": 0.9909,
+        "mean_diff": -0.000343
+      },
+      {
+        "feat": "zanch_disp20_card_typexauth_method",
+        "mean_tr": 1.712309,
+        "mean_te": 1.711966,
+        "std_tr": 0.049467,
+        "std_te": 0.049015,
+        "std_ratio": 0.9909,
+        "mean_diff": -0.000343
+      },
+      {
+        "feat": "zanch_disp5_auth_methodxdevice_type",
+        "mean_tr": 1.712269,
+        "mean_te": 1.711966,
+        "std_tr": 0.049931,
+        "std_te": 0.049477,
+        "std_ratio": 0.9909,
+        "mean_diff": -0.000303
+      },
+      {
+        "feat": "zanch_disp20_auth_methodxdevice_type",
+        "mean_tr": 1.712316,
+        "mean_te": 1.712013,
+        "std_tr": 0.049883,
+        "std_te": 0.04943,
+        "std_ratio": 0.9909,
+        "mean_diff": -0.000302
+      },
+      {
+        "feat": "zanch_disp5_velocity_scorexauth_method",
+        "mean_tr": 1.450563,
+        "mean_te": 1.450178,
+        "std_tr": 0.097682,
+        "std_te": 0.096902,
+        "std_ratio": 0.992,
+        "mean_diff": -0.000385
+      },
+      {
+        "feat": "zanch_eb5_auth_methodxdevice_type",
+        "mean_tr": 0.00402,
+        "mean_te": 0.000468,
+        "std_tr": 0.541703,
+        "std_te": 0.537453,
+        "std_ratio": 0.9922,
+        "mean_diff": -0.003551
+      },
+      {
+        "feat": "zanch_eb20_auth_methodxdevice_type",
+        "mean_tr": 0.003956,
+        "mean_te": 0.000408,
+        "std_tr": 0.54113,
+        "std_te": 0.536886,
+        "std_ratio": 0.9922,
+        "mean_diff": -0.003548
+      },
+      {
+        "feat": "zanch_eb5_auth_method",
+        "mean_tr": 0.004119,
+        "mean_te": 0.000506,
+        "std_tr": 0.541082,
+        "std_te": 0.53689,
+        "std_ratio": 0.9923,
+        "mean_diff": -0.003613
+      },
+      {
+        "feat": "zanch_eb20_auth_method",
+        "mean_tr": 0.004112,
+        "mean_te": 0.0005,
+        "std_tr": 0.541009,
+        "std_te": 0.536818,
+        "std_ratio": 0.9923,
+        "mean_diff": -0.003612
+      },
+      {
+        "feat": "zanch_eb5_card_typexauth_method",
+        "mean_tr": 0.004095,
+        "mean_te": 0.000443,
+        "std_tr": 0.54181,
+        "std_te": 0.537634,
+        "std_ratio": 0.9923,
+        "mean_diff": -0.003652
+      },
+      {
+        "feat": "zanch_eb20_card_typexauth_method",
+        "mean_tr": 0.00406,
+        "mean_te": 0.000411,
+        "std_tr": 0.541455,
+        "std_te": 0.537283,
+        "std_ratio": 0.9923,
+        "mean_diff": -0.003649
+      },
+      {
+        "feat": "zanch_disp5_velocity_scorexflag_bitmask_64",
+        "mean_tr": 1.393085,
+        "mean_te": 1.393192,
+        "std_tr": 0.092627,
+        "std_te": 0.093205,
+        "std_ratio": 1.0062,
+        "mean_diff": 0.000107
+      },
+      {
+        "feat": "zanch_disp20_velocity_scorexauth_method",
+        "mean_tr": 1.462436,
+        "mean_te": 1.46207,
+        "std_tr": 0.09338,
+        "std_te": 0.092806,
+        "std_ratio": 0.9939,
+        "mean_diff": -0.000365
+      }
+    ]
+  },
+  "pure_audit": {
+    "v10_ridge_pure_fe": {
+      "name": "v10_ridge_pure_fe",
+      "delta_1e5": 0.0,
+      "w": 0.0,
+      "pos": 0,
+      "base": 0.9526611592872503,
+      "dispersion_ratio_raw": 0.9261,
+      "ks_raw": 0.025387,
+      "spearman_dist_st9_test_1e4": 0.0,
+      "gate_pass": false
+    },
+    "v10_lgb_pure_fe": {
+      "name": "v10_lgb_pure_fe",
+      "delta_1e5": 5.41,
+      "w": -0.045,
+      "pos": 5,
+      "base": 0.9526611592872503,
+      "dispersion_ratio_raw": 0.8101,
+      "ks_raw": 0.051242,
+      "spearman_dist_st9_test_1e4": 3.837,
+      "gate_pass": false
+    }
+  },
+  "portfolio_A_weights": [
+    0.43604782314459734,
+    0.5639521768554027
+  ],
+  "lgb_pure_in_A": false,
+  "corr": {
+    "v10_ridge_orth_LM": {
+      "v10_ridge_orth_LM": 1.0,
+      "v10_cb_orth_LM": 0.5344,
+      "v10_lgb_pure_fe_orth_LM": 0.2524,
+      "soft_diff_orth_LM": 0.0504
+    },
+    "v10_cb_orth_LM": {
+      "v10_ridge_orth_LM": 0.5344,
+      "v10_cb_orth_LM": 1.0,
+      "v10_lgb_pure_fe_orth_LM": 0.1725,
+      "soft_diff_orth_LM": 0.0348
+    },
+    "v10_lgb_pure_fe_orth_LM": {
+      "v10_ridge_orth_LM": 0.2524,
+      "v10_cb_orth_LM": 0.1725,
+      "v10_lgb_pure_fe_orth_LM": 1.0,
+      "soft_diff_orth_LM": 0.0321
+    },
+    "soft_diff_orth_LM": {
+      "v10_ridge_orth_LM": 0.0504,
+      "v10_cb_orth_LM": 0.0348,
+      "v10_lgb_pure_fe_orth_LM": 0.0321,
+      "soft_diff_orth_LM": 1.0
+    }
+  },
+  "grid": [
+    {
+      "portfolio": "A_V10_PassOnly",
+      "target_1e4": 0.2,
+      "achieved_1e4": 0.2,
+      "w": 0.023452,
+      "delta_1e5": 4.46,
+      "fold_deltas_1e5": [
+        0.34,
+        1.63,
+        4.83,
+        7.88,
+        8.25
+      ],
+      "pos": 5,
+      "dispersion_ratio_raw": 0.9136,
+      "ks_raw": 0.006199,
+      "test_1m_rho_st9": 2e-05,
+      "test_ks_vs_st9_ranks": 0.0,
+      "test_1m_rho_p2": 0.00140621,
+      "test_ks_vs_p2_ranks": 0.0,
+      "stage_gate": false
+    },
+    {
+      "portfolio": "A_V10_PassOnly",
+      "target_1e4": 0.4,
+      "achieved_1e4": 0.4,
+      "w": 0.033155,
+      "delta_1e5": 4.41,
+      "fold_deltas_1e5": [
+        -0.92,
+        0.38,
+        4.06,
+        9.48,
+        10.07
+      ],
+      "pos": 4,
+      "dispersion_ratio_raw": 0.9136,
+      "ks_raw": 0.006199,
+      "test_1m_rho_st9": 4e-05,
+      "test_ks_vs_st9_ranks": 0.0,
+      "test_1m_rho_p2": 0.00141974,
+      "test_ks_vs_p2_ranks": 0.0,
+      "stage_gate": false
+    },
+    {
+      "portfolio": "A_V10_PassOnly",
+      "target_1e4": 0.6,
+      "achieved_1e4": 0.6,
+      "w": 0.040547,
+      "delta_1e5": 3.49,
+      "fold_deltas_1e5": [
+        -2.48,
+        -1.76,
+        1.94,
+        9.95,
+        10.79
+      ],
+      "pos": 3,
+      "dispersion_ratio_raw": 0.9136,
+      "ks_raw": 0.006199,
+      "test_1m_rho_st9": 6e-05,
+      "test_ks_vs_st9_ranks": 0.0,
+      "test_1m_rho_p2": 0.0014348,
+      "test_ks_vs_p2_ranks": 0.0,
+      "stage_gate": false
+    },
+    {
+      "portfolio": "A_V10_PassOnly",
+      "target_1e4": 1.0,
+      "achieved_1e4": 1.0,
+      "w": 0.052152,
+      "delta_1e5": 0.39,
+      "fold_deltas_1e5": [
+        -5.98,
+        -6.74,
+        -4.15,
+        9.44,
+        10.9
+      ],
+      "pos": 2,
+      "dispersion_ratio_raw": 0.9136,
+      "ks_raw": 0.006199,
+      "test_1m_rho_st9": 0.0001,
+      "test_ks_vs_st9_ranks": 0.0,
+      "test_1m_rho_p2": 0.0014671,
+      "test_ks_vs_p2_ranks": 0.0,
+      "stage_gate": false
+    },
+    {
+      "portfolio": "B_V10_Combo3_Clamped",
+      "target_1e4": 0.2,
+      "achieved_1e4": 0.2,
+      "w": 0.01457,
+      "delta_1e5": 7.65,
+      "fold_deltas_1e5": [
+        4.4,
+        5.82,
+        8.5,
+        10.33,
+        10.1
+      ],
+      "pos": 5,
+      "dispersion_ratio_raw": 0.6969,
+      "ks_raw": 0.089976,
+      "test_1m_rho_st9": 2e-05,
+      "test_ks_vs_st9_ranks": 0.0,
+      "test_1m_rho_p2": 0.00139848,
+      "test_ks_vs_p2_ranks": 0.0,
+      "stage_gate": false
+    },
+    {
+      "portfolio": "B_V10_Combo3_Clamped",
+      "target_1e4": 0.4,
+      "achieved_1e4": 0.4,
+      "w": 0.020613,
+      "delta_1e5": 10.21,
+      "fold_deltas_1e5": [
+        5.87,
+        7.49,
+        11.34,
+        14.21,
+        13.7
+      ],
+      "pos": 5,
+      "dispersion_ratio_raw": 0.6969,
+      "ks_raw": 0.089976,
+      "test_1m_rho_st9": 4e-05,
+      "test_ks_vs_st9_ranks": 0.0,
+      "test_1m_rho_p2": 0.0014088,
+      "test_ks_vs_p2_ranks": 0.0,
+      "stage_gate": false
+    },
+    {
+      "portfolio": "B_V10_Combo3_Clamped",
+      "target_1e4": 0.6,
+      "achieved_1e4": 0.6,
+      "w": 0.025249,
+      "delta_1e5": 11.98,
+      "fold_deltas_1e5": [
+        6.88,
+        8.6,
+        13.16,
+        16.91,
+        16.19
+      ],
+      "pos": 5,
+      "dispersion_ratio_raw": 0.6969,
+      "ks_raw": 0.089976,
+      "test_1m_rho_st9": 6e-05,
+      "test_ks_vs_st9_ranks": 0.0,
+      "test_1m_rho_p2": 0.00142134,
+      "test_ks_vs_p2_ranks": 0.0,
+      "stage_gate": false
+    },
+    {
+      "portfolio": "C_V10_PassOnly_plus_soft",
+      "target_1e4": 0.3,
+      "achieved_1e4": 0.3,
+      "w": 0.016699,
+      "delta_1e5": 6.81,
+      "fold_deltas_1e5": [
+        2.53,
+        3.31,
+        9.94,
+        9.39,
+        10.09
+      ],
+      "pos": 5,
+      "dispersion_ratio_raw": 0.958,
+      "ks_raw": 0.006251,
+      "test_1m_rho_st9": 3e-05,
+      "test_ks_vs_st9_ranks": 0.0,
+      "test_1m_rho_p2": 0.00108018,
+      "test_ks_vs_p2_ranks": 0.0,
+      "stage_gate": true
+    },
+    {
+      "portfolio": "C_V10_PassOnly_plus_soft",
+      "target_1e4": 0.5,
+      "achieved_1e4": 0.5,
+      "w": 0.021565,
+      "delta_1e5": 8.38,
+      "fold_deltas_1e5": [
+        2.97,
+        3.88,
+        12.28,
+        11.77,
+        12.54
+      ],
+      "pos": 5,
+      "dispersion_ratio_raw": 0.958,
+      "ks_raw": 0.006251,
+      "test_1m_rho_st9": 5e-05,
+      "test_ks_vs_st9_ranks": 0.0,
+      "test_1m_rho_p2": 0.00099769,
+      "test_ks_vs_p2_ranks": 0.0,
+      "stage_gate": true
+    },
+    {
+      "portfolio": "C_V10_PassOnly_plus_soft",
+      "target_1e4": 0.8,
+      "achieved_1e4": 0.8,
+      "w": 0.027287,
+      "delta_1e5": 10.0,
+      "fold_deltas_1e5": [
+        3.18,
+        4.38,
+        14.65,
+        14.19,
+        15.42
+      ],
+      "pos": 5,
+      "dispersion_ratio_raw": 0.958,
+      "ks_raw": 0.006251,
+      "test_1m_rho_st9": 8e-05,
+      "test_ks_vs_st9_ranks": 0.0,
+      "test_1m_rho_p2": 0.00090721,
+      "test_ks_vs_p2_ranks": 0.0,
+      "stage_gate": false
+    },
+    {
+      "portfolio": "D_soft_diff_orth_LM_micro",
+      "target_1e4": 0.3,
+      "achieved_1e4": 0.3,
+      "w": 0.013069,
+      "delta_1e5": 4.35,
+      "fold_deltas_1e5": [
+        2.0,
+        1.92,
+        7.24,
+        5.41,
+        5.9
+      ],
+      "pos": 5,
+      "dispersion_ratio_raw": 1.028,
+      "ks_raw": 0.006901,
+      "test_1m_rho_st9": 3e-05,
+      "test_ks_vs_st9_ranks": 0.0,
+      "test_1m_rho_p2": 0.00105338,
+      "test_ks_vs_p2_ranks": 0.0,
+      "stage_gate": false
+    }
+  ],
+  "staged": [
+    {
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_strike10A_v10_clean_micro.csv",
+      "n": 299984,
+      "mean": 0.016699998741294804,
+      "min": 6.606907168578054e-12,
+      "max": 0.9999919754530449,
+      "portfolio": "C_V10_PassOnly_plus_soft",
+      "target_1e4": 0.5,
+      "delta_1e5": 8.38,
+      "pos": 5,
+      "w": 0.021565
+    },
+    {
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_strike10B_v10_softdiff_micro.csv",
+      "n": 299984,
+      "mean": 0.01669999876073698,
+      "min": 6.496796820010178e-12,
+      "max": 0.9999912104364055,
+      "portfolio": "C_V10_PassOnly_plus_soft",
+      "target_1e4": 0.3,
+      "delta_1e5": 6.81,
+      "pos": 5,
+      "w": 0.016699
+    }
+  ],
+  "NO_SUBMIT": true,
+  "elapsed_s": 1289.2576088905334,
+  "base_auc": 0.9526611592872503
+}

@@ -33,7 +33,17 @@ def log(*a):
 
 
 def find(name):
-    hits = sorted(glob.glob(os.path.join(INPUT, "**", name), recursive=True))
+    # Prefer flat / data/ lookups — never recurse through preds symlinks onto slow volumes.
+    cands = [
+        os.path.join(INPUT, name),
+        os.path.join(INPUT, "data", name),
+        os.path.join(os.path.dirname(INPUT), name),
+        os.path.join(os.path.dirname(INPUT), "data", name),
+    ]
+    for c in cands:
+        if os.path.isfile(c):
+            return c
+    hits = sorted(glob.glob(os.path.join(INPUT, name)))
     if not hits:
         raise FileNotFoundError(name)
     return hits[0]

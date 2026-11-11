@@ -1,0 +1,13 @@
+{
+  "submitted": "submissions/sub_strike10_slot1_softdiff_pchip_0p35.csv",
+  "ref": 58198249,
+  "message": "Strike10 Slot1: pure soft_diff_orth_LM PCHIP @ 0.35e-4 (5/5 folds, +4.71e-5, disp=1.000)",
+  "LB_1": 0.95328,
+  "St9_LB": 0.9533,
+  "delta_vs_St9": -2e-05,
+  "branch": "NEGATIVE_TRANSFER",
+  "action": "Permanently close soft_diff / SoftPseudo family. Preserve remaining daily slots for non-distilled architectures (Target-First LM / Multi-Seed CatBoost / etc).",
+  "soft_diff_family_closed": true,
+  "do_not_submit_softpseudo": true,
+  "ts": "2026-11-10T11:07:13.493483+00:00"
+}

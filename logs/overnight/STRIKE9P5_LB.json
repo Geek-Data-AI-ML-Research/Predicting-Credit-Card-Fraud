@@ -1,0 +1,13 @@
+{
+  "LB_st9p5": 0.95332,
+  "ref": 58206668,
+  "branch": "POSITIVE_TRANSFER",
+  "next_file": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_strike9p6_damped_0p55_from_9p5.csv",
+  "formula": "z_st9p5 + 0.55*(z_st9p5 - z_st9)",
+  "mean": 0.016699998834038065,
+  "ks_vs_st9": 3.333511120695576e-06,
+  "1m_rho_st9_1e4": 0.2684687186760293,
+  "1m_rho_st9p5_1e4": 0.033817709140793184,
+  "submitted_next": false,
+  "note": "staged only \u2014 await confirmation before submit"
+}

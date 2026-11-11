@@ -1,0 +1,45 @@
+{
+  "slot1": {
+    "file": "sub_strike9p6_opt_step.csv",
+    "LB": 0.95333,
+    "z_base": "z_st9p6"
+  },
+  "slots": [
+    {
+      "slot": 2,
+      "file": "sub_ladder_slot2_v8_clean_0p18e4.csv",
+      "LB": 0.95333,
+      "1mrho": 2.55e-08,
+      "w": 3.0,
+      "note": "bugged tiny step; flat"
+    },
+    {
+      "slot": 3,
+      "file": "sub_ladder_slot3_zref_clean_0p35e4.csv",
+      "LB": 0.95329,
+      "1mrho": 3.499999983247459e-05,
+      "w": 0.2701504978176672
+    },
+    {
+      "slot": 4,
+      "file": "sub_ladder_slot4_adaptive_0p65e4.csv",
+      "LB": 0.95334,
+      "1mrho": 6.50000003831197e-05,
+      "w": 0.0460747025499586
+    },
+    {
+      "slot": 5,
+      "file": "sub_ladder_slot5_macro_finale_1p25e4.csv",
+      "LB": 0.95335,
+      "1mrho": 0.00012499998461856787,
+      "w": 0.1935553184011951
+    }
+  ],
+  "final_LB_base": 0.95335,
+  "slot5_ridge_coef": [
+    7.118369625623175e-06,
+    -0.0001702035034532861,
+    -6.7048452612281665e-06,
+    4.101963432284141e-06
+  ]
+}

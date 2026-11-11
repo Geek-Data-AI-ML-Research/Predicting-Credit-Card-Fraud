@@ -1,0 +1,44 @@
+{
+  "base": 0.9526611592872503,
+  "fam_default_delta": 19.67,
+  "best_fam_weights": {
+    "soft_diff": 0.06,
+    "idf_p3": 0.0175,
+    "gb_soft": 0.0425,
+    "soft_c035": 0.01
+  },
+  "best_fam_delta": 21.37,
+  "hits": [
+    {
+      "name": "soft_w015",
+      "delta": 5.09,
+      "pos": 4,
+      "w": -0.04
+    },
+    {
+      "name": "soft_w025",
+      "delta": 1.94,
+      "pos": 4,
+      "w": -0.028
+    },
+    {
+      "name": "ms_lgb_c",
+      "delta": 0.92,
+      "pos": 4,
+      "w": -0.024
+    },
+    {
+      "name": "ms_boost_j",
+      "delta": 0.91,
+      "pos": 4,
+      "w": -0.02
+    },
+    {
+      "name": "idf_p2",
+      "delta": 0.72,
+      "pos": 4,
+      "w": -0.012
+    }
+  ],
+  "elapsed": 352.7
+}

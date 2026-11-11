@@ -1,0 +1,262 @@
+{
+  "zanch_audit": {
+    "bad_std": 0,
+    "bad_ks": 0,
+    "n": 140,
+    "eb20_pchip_clean": 35
+  },
+  "zanch_rows_sample": [
+    {
+      "feat": "zanch_disp5_auth_methodxflag_bitmask_64",
+      "std_ratio": 0.9996,
+      "ks": 0.003672
+    },
+    {
+      "feat": "zanch_disp20_auth_methodxflag_bitmask_64",
+      "std_ratio": 0.9998,
+      "ks": 0.003657
+    },
+    {
+      "feat": "zanch_eb5_auth_method",
+      "std_ratio": 0.9923,
+      "ks": 0.00358
+    },
+    {
+      "feat": "zanch_eb20_auth_method",
+      "std_ratio": 0.9923,
+      "ks": 0.003579
+    },
+    {
+      "feat": "zanch_disp5_card_typexauth_method",
+      "std_ratio": 0.9909,
+      "ks": 0.003575
+    },
+    {
+      "feat": "zanch_disp20_card_typexauth_method",
+      "std_ratio": 0.9909,
+      "ks": 0.003554
+    },
+    {
+      "feat": "zanch_eb5_auth_methodxflag_bitmask_64",
+      "std_ratio": 0.9976,
+      "ks": 0.003498
+    },
+    {
+      "feat": "zanch_eb20_auth_methodxflag_bitmask_64",
+      "std_ratio": 0.9978,
+      "ks": 0.003493
+    },
+    {
+      "feat": "zanch_eb5_distance_from_home_km",
+      "std_ratio": 1.0017,
+      "ks": 0.003469
+    },
+    {
+      "feat": "zanch_eb20_distance_from_home_km",
+      "std_ratio": 1.0026,
+      "ks": 0.003419
+    },
+    {
+      "feat": "zanch_disp5_auth_method",
+      "std_ratio": 0.9908,
+      "ks": 0.003371
+    },
+    {
+      "feat": "zanch_disp20_auth_method",
+      "std_ratio": 0.9908,
+      "ks": 0.003357
+    },
+    {
+      "feat": "zanch_disp20_merchant_categoryxauth_method",
+      "std_ratio": 0.9944,
+      "ks": 0.003262
+    },
+    {
+      "feat": "zanch_disp5_merchant_categoryxauth_method",
+      "std_ratio": 0.9945,
+      "ks": 0.003257
+    },
+    {
+      "feat": "zanch_eb5_card_typexauth_method",
+      "std_ratio": 0.9923,
+      "ks": 0.003071
+    },
+    {
+      "feat": "zanch_eb20_card_typexauth_method",
+      "std_ratio": 0.9923,
+      "ks": 0.003069
+    },
+    {
+      "feat": "zanch_disp5_velocity_scorexmerchant_risk_score",
+      "std_ratio": 1.0011,
+      "ks": 0.002876
+    },
+    {
+      "feat": "zanch_disp20_distance_from_home_kmxmerchant_category",
+      "std_ratio": 1.0035,
+      "ks": 0.002859
+    },
+    {
+      "feat": "zanch_eb5_merchant_categoryxauth_method",
+      "std_ratio": 0.9953,
+      "ks": 0.002839
+    },
+    {
+      "feat": "zanch_eb20_merchant_categoryxauth_method",
+      "std_ratio": 0.9953,
+      "ks": 0.002839
+    }
+  ],
+  "bulsah": {
+    "name": "v10_ridge_bulsah_only",
+    "delta_1e5": 0.03,
+    "w": -0.005,
+    "pos": 3,
+    "base": 0.9526611592872503,
+    "fold_deltas_1e5": [
+      0.64,
+      -1.07,
+      0.16,
+      1.18,
+      -0.82
+    ],
+    "pos_at_w": 3,
+    "dispersion_ratio_raw": 0.8674,
+    "ks_raw": 0.019389,
+    "gate_passonly": false
+  },
+  "lr_bulsah": {
+    "name": "v10_lr_bulsah_only",
+    "delta_1e5": 0.15,
+    "w": 0.005,
+    "pos": 3,
+    "base": 0.9526611592872503,
+    "fold_deltas_1e5": [
+      -0.54,
+      0.13,
+      0.49,
+      -0.43,
+      1.01
+    ],
+    "pos_at_w": 3,
+    "dispersion_ratio_raw": 1.1319,
+    "ks_raw": 0.065604,
+    "gate_passonly": false
+  },
+  "eb20_blend": {
+    "name": "v10_bulsah_plus_pchip_eb20",
+    "delta_1e5": 0.87,
+    "w": 0.01,
+    "pos": 3,
+    "base": 0.9526611592872503,
+    "fold_deltas_1e5": [
+      -0.75,
+      2.52,
+      0.38,
+      -0.97,
+      3.23
+    ],
+    "pos_at_w": 3,
+    "dispersion_ratio_raw": 0.8778,
+    "ks_raw": 0.016997,
+    "gate_passonly": false
+  },
+  "soft_steps": [
+    {
+      "target_1e4": 0.2,
+      "achieved_1e4": 0.2,
+      "w": 0.010728,
+      "delta_1e5": 3.65,
+      "pos": 5,
+      "base": 0.9526611592872503,
+      "fold_deltas_1e5": [
+        1.68,
+        1.67,
+        6.07,
+        4.54,
+        4.87
+      ],
+      "disp": 1.0,
+      "ks": 0.001435
+    },
+    {
+      "target_1e4": 0.3,
+      "achieved_1e4": 0.3,
+      "w": 0.013141,
+      "delta_1e5": 4.38,
+      "pos": 5,
+      "base": 0.9526611592872503,
+      "fold_deltas_1e5": [
+        2.02,
+        1.93,
+        7.29,
+        5.44,
+        5.93
+      ],
+      "disp": 1.0,
+      "ks": 0.001435
+    },
+    {
+      "target_1e4": 0.35,
+      "achieved_1e4": 0.35,
+      "w": 0.014194,
+      "delta_1e5": 4.71,
+      "pos": 5,
+      "base": 0.9526611592872503,
+      "fold_deltas_1e5": [
+        2.18,
+        2.11,
+        7.86,
+        5.77,
+        6.43
+      ],
+      "disp": 1.0,
+      "ks": 0.001435
+    },
+    {
+      "target_1e4": 0.5,
+      "achieved_1e4": 0.5,
+      "w": 0.016969,
+      "delta_1e5": 5.52,
+      "pos": 5,
+      "base": 0.9526611592872503,
+      "fold_deltas_1e5": [
+        2.58,
+        2.32,
+        9.27,
+        6.77,
+        7.65
+      ],
+      "disp": 1.0,
+      "ks": 0.001435
+    }
+  ],
+  "soft_pchip": {
+    "disp": 0.9999999999980289,
+    "ks": 0.0014350700033601838
+  },
+  "staged": [
+    {
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_strike10_slot1_softdiff_pchip_0p35.csv",
+      "mean": 0.016699998783429974,
+      "n": 299984,
+      "portfolio": "soft_diff_pchip",
+      "target_1e4": 0.35,
+      "w": 0.014194379094988108,
+      "delta_1e5": 4.71,
+      "pos": 5,
+      "folds": [
+        2.18,
+        2.11,
+        7.86,
+        5.77,
+        6.43
+      ],
+      "disp": 0.9999999999980289,
+      "ks": 0.0014350700033601838
+    }
+  ],
+  "slot2_written": false,
+  "NO_SUBMIT": true,
+  "elapsed_s": 438.80866622924805
+}

@@ -1,0 +1,39 @@
+{
+  "reason": "bulsah_passonly_failed",
+  "bulsah": {
+    "name": "v10_ridge_bulsah_only",
+    "delta_1e5": 0.03,
+    "w": -0.005,
+    "pos": 3,
+    "base": 0.9526611592872503,
+    "fold_deltas_1e5": [
+      0.64,
+      -1.07,
+      0.16,
+      1.18,
+      -0.82
+    ],
+    "pos_at_w": 3,
+    "dispersion_ratio_raw": 0.8674,
+    "ks_raw": 0.019389,
+    "gate_passonly": false
+  },
+  "eb20_blend": {
+    "name": "v10_bulsah_plus_pchip_eb20",
+    "delta_1e5": 0.87,
+    "w": 0.01,
+    "pos": 3,
+    "base": 0.9526611592872503,
+    "fold_deltas_1e5": [
+      -0.75,
+      2.52,
+      0.38,
+      -0.97,
+      3.23
+    ],
+    "pos_at_w": 3,
+    "dispersion_ratio_raw": 0.8778,
+    "ks_raw": 0.016997,
+    "gate_passonly": false
+  }
+}

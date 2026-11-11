@@ -1,0 +1,378 @@
+{
+  "NO_SUBMIT": true,
+  "quarantined": [
+    "sub_strike10_nullspace_v3_0p15e4.csv",
+    "sub_strike10_nullspace_v3_0p30e4.csv"
+  ],
+  "v8": {
+    "auc": 0.952596976791099,
+    "folds": [
+      0.9518700131972444,
+      0.9525372985165085,
+      0.9573744938136819,
+      0.952764374465961,
+      0.9484825195485543
+    ],
+    "formula": {
+      "script": "scripts/build_v8_part12_rect_slot2.py",
+      "artifact": "preds/P_super_v8_part12_rect_{oof,test}.npy",
+      "submission": "submissions/sub_v8_part12_fsl_prop_rect.csv (LB 0.95307)",
+      "backbone": "z_w12 = zrk(external/nov08_part12/wide_lm_stack_nested.npy)  # Part12 201-member LM stack",
+      "components_KS_rect_orth_vs_w12": [
+        "P_super_v4p_hc",
+        "paradigm_B/xgb_llr",
+        "matrix_v2/P4_L4.3_pure5f",
+        "matrix_v2/P4_L4.2_pure5f",
+        "matrix_v2/P4_L4.5_pure5f",
+        "matrix_v2/P4_L4.3_ext",
+        "gpt2_3ep/gpt2_bidir",
+        "gpt2_3ep/xgb_gpt2_3ep_d2_d3_bag6"
+      ],
+      "formula_oof": "z_v8_oof = z_w12 + R @ w_fold   (nested 5F coord ascent; R = KS-rect orth residuals)",
+      "formula_test_slot2": "rk( zrk(0.68*zrk(w12_t)+0.32*zrk(part9_t)) + 1.0 * dz_orth_fsl )",
+      "note": "xgb_gpt2_3ep is INSIDE v8 residual basis \u2014 F0/F1 gpt2_3ep corruption therefore contaminates v8."
+    }
+  },
+  "z_ref": {
+    "auc": 0.9526611592872503,
+    "folds": [
+      0.9519568892402103,
+      0.9525950268462366,
+      0.957368012232552,
+      0.9528724142825811,
+      0.9485100709291292
+    ],
+    "formula": {
+      "script": "scripts/recon_and_forensic_audit.py::build_z_ref",
+      "formula": "z_ref_o = z_v8_o + 0.025*(r_xgb_fast - r_tabm) + 0.85*(U5 @ [0.0135, 0.0115, -0.0085, -0.0085, -0.0105]) + 0.85*(U2 @ [0.0150, 0.0125])",
+      "U5_orth_vs_[z_v8,z_w12,r_xgb-r_tabm]": [
+        "part11/lab4_tabular_nade",
+        "sameershaikh27 nested_winner",
+        "orig20k_knn",
+        "harvest_p4_cuda_xgb",
+        "lab1_zjoint_graph_lgb4"
+      ],
+      "U2_orth_vs_X7": [
+        "ladder/glm_quad",
+        "part11/lab1_glm_plus_graph"
+      ],
+      "oof_auc": 0.9526611592872503
+    }
+  },
+  "bank": {
+    "lm12_wide": {
+      "auc": 0.9525651344492125,
+      "folds": [
+        0.9517736034193499,
+        0.9525308138281967,
+        0.9573724120019098,
+        0.9526968709424479,
+        0.9484516403763252
+      ],
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/external/nov08_part12/wide_lm_stack_nested.npy"
+    },
+    "lm12_raw": {
+      "auc": 0.9504282674228537,
+      "folds": [
+        0.948505568399054,
+        0.9506818231843808,
+        0.9560849667798148,
+        0.9506042586063622,
+        0.946380901046167
+      ],
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/external/nov08_part12/lm_oof.npy"
+    },
+    "masaya_gpt2": {
+      "auc": 0.9500272037932737,
+      "folds": [
+        0.9488823016904258,
+        0.9503172171563214,
+        0.9553119838543875,
+        0.949874220039898,
+        0.9458539587540016
+      ],
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/external/banks/masayakawamata_s6e11-gpt2-target-first-oof/oof.npy"
+    },
+    "gpt2_rev": {
+      "auc": 0.9481826070749406,
+      "folds": [
+        0.9462519187340954,
+        0.9490108880371427,
+        0.953319377716508,
+        0.9485381878167827,
+        0.9438954881148247
+      ],
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/preds/gpt2_3ep/gpt2_rev_2ep_fixed_oof.npy"
+    },
+    "gpt2_3ep": {
+      "auc": 0.9491505455067994,
+      "folds": [
+        0.948505568399054,
+        0.9506818231843808,
+        0.9532774571739313,
+        0.9490265249292982,
+        0.9442635850615799
+      ],
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/preds/gpt2_3ep/gpt2_3ep_oof.npy"
+    },
+    "lm_gpt2_3ep": {
+      "auc": 0.9491334182750574,
+      "folds": [
+        0.948505568399054,
+        0.9506818231843808,
+        0.9532774571739313,
+        0.9490265249292982,
+        0.9442635850615799
+      ],
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/preds/lm_gpt2_3ep/lm_oof_5f.npy"
+    },
+    "megayak": {
+      "auc": 0.9504282674228537,
+      "folds": [
+        0.948505568399054,
+        0.9506818231843808,
+        0.9560849667798148,
+        0.9506042586063622,
+        0.946380901046167
+      ],
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/external/banks/megayak_s6e11-target-first-lm/lm_oof.npy"
+    },
+    "xgb_gpt2_3ep": {
+      "auc": 0.9523089475835048,
+      "folds": [
+        0.9515037741638178,
+        0.9526135627389648,
+        0.956948325193615,
+        0.9527394641898734,
+        0.9479814616339551
+      ],
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/preds/gpt2_3ep/xgb_gpt2_3ep_d2_d3_bag6_oof.npy"
+    },
+    "lgb_gpt2_3ep_fixed": {
+      "auc": 0.9523253924829009,
+      "folds": [
+        0.9515161677083754,
+        0.9525525081711733,
+        0.9569832499164821,
+        0.9527818896494843,
+        0.9480161346751006
+      ],
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/preds/gpt2_3ep/lgb_gpt2_3ep_fixed_oof.npy"
+    },
+    "gb_gpt2_bag5": {
+      "auc": 0.9516766134367235,
+      "folds": [
+        0.9507387642081832,
+        0.951733675671847,
+        0.9566607415403591,
+        0.9522136000897752,
+        0.9473523396699499
+      ],
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/preds/gb_gpt2_bag5_oof.npy"
+    },
+    "xgb_fast_harvest": {
+      "auc": 0.9511435460611714,
+      "folds": [
+        0.9495162437730948,
+        0.9516343048923086,
+        0.9561820724238577,
+        0.9514801731416129,
+        0.9469114538835255
+      ],
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/preds/fast_gpu_harvest/oof_xgb_fast_harvest.npy"
+    },
+    "xgb_clean_decorrupt": {
+      "auc": 0.9510710942861553,
+      "folds": [
+        0.9494986155335191,
+        0.9515223857592741,
+        0.9563119029060887,
+        0.9513127022596656,
+        0.9467115098451115
+      ],
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/preds/fast_gpu_harvest/oof_xgb_clean.npy"
+    },
+    "gpt2_med_4ep_5f": {
+      "auc": 0.9482383414278047,
+      "folds": [
+        0.9458300284269741,
+        0.9487682093745339,
+        0.9537358348400161,
+        0.9486670706085799,
+        0.9442065061328372
+      ],
+      "path": "preds/gpt2_med_4ep/oof_{0..4}.npy (8-order mean LLR)"
+    }
+  },
+  "corruption": {
+    "vs": "lm12_raw/megayak",
+    "F0_F1_pearson_lm12_raw": [
+      0.999911,
+      0.999987
+    ],
+    "F0_F1_auc_identity": [
+      0.9485056,
+      0.9506818
+    ]
+  },
+  "lm_super": {
+    "beta_gpt2m_vs_lm12": 0.9635506751948605,
+    "fixed_w": 0.07,
+    "fixed_auc": 0.9524441359614183,
+    "fixed_folds": [
+      0.9514622229949926,
+      0.9525090449128581,
+      0.9572949965686149,
+      0.9525970558359192,
+      0.9483491686294009
+    ],
+    "fixed_delta_1e5_vs_lm12": [
+      -31.13804243572993,
+      -2.176891533856029,
+      -7.741543329486955,
+      -9.981510652867787,
+      -10.247174692434857
+    ],
+    "nested_ws": [
+      -3.469446951953614e-18,
+      -0.0175,
+      -0.0025000000000000022,
+      -0.007500000000000003,
+      -0.005000000000000003
+    ],
+    "nested_auc": 0.9525612812198232,
+    "nested_folds": [
+      0.9517736034193499,
+      0.9525114778361683,
+      0.957371660063926,
+      0.9526971940893499,
+      0.9484529920003865
+    ],
+    "nested_delta_1e5_vs_lm12": [
+      0.0,
+      -1.9335992028413074,
+      -0.07519379837672702,
+      0.03231469020148481,
+      0.13516240612299057
+    ]
+  },
+  "multi_lm": {
+    "members": [
+      "lm12_wide",
+      "masaya_gpt2",
+      "gpt2_rev",
+      "lm_gpt2_3ep"
+    ],
+    "consensus_auc": 0.9512018201272452,
+    "consensus_folds": [
+      0.9501141864478067,
+      0.9518992232082912,
+      0.9559554749803946,
+      0.9512043144386896,
+      0.946875578363043
+    ],
+    "super_w0p07_auc": 0.9510046529896468,
+    "super_folds": [
+      0.9497161195982955,
+      0.9517111423897978,
+      0.9558686043930356,
+      0.9510622913752725,
+      0.9467089246698956
+    ],
+    "super_delta_1e5_vs_cons": [
+      -39.806684951115834,
+      -18.808081849341907,
+      -8.687058735901143,
+      -14.202306341704052,
+      -16.665369314738943
+    ]
+  },
+  "xgb_recipe": {
+    "script": "scripts/post_gpt2_3ep_campaign.py::stage_b",
+    "artifact": "preds/gpt2_3ep/xgb_gpt2_3ep_d2_d3_bag6_{oof,test}.npy",
+    "feature_matrix": "X = [KMAT_TE(108 keys from gboost.KMAT), z_gpt2_3ep, z_gpt2_3ep-z_v4p, z_gpt2*r_rare, z_gpt2*r_disp, zrk(P4_L4.3/L4.2/L4.5_pure5f), optional h16, gboost.BASE]",
+    "shapes_runtime": "X_o ~ (699960, 108 + 7[+16] + BASE_dim); built via import gboost",
+    "base_margin": "Platt-calibrated zrk(P_super_v5_harvest) via calibrate_logit_to_prevalence",
+    "hyperparams_xgb": {
+      "bag": "3 seeds \u00d7 depth=2 + 3 seeds \u00d7 depth=3 (=6)",
+      "eta": 0.025,
+      "subsample": 0.8,
+      "colsample_bynode": 0.35,
+      "reg_lambda": 30.0,
+      "min_child_weight": 200,
+      "num_boost_round": 400,
+      "early_stopping_rounds": 40,
+      "tree_method": "hist",
+      "device": "cuda",
+      "objective": "binary:logistic"
+    },
+    "corruption": "gpt2_3ep F0/F1 == lm12 \u2192 z_gpt feature in X is poisoned on F0/F1",
+    "gboost_stage2_ref": "scripts/gboost.py LGB/XGB shallow (max_depth=2, leaves=4) on KMAT+BASE; GEN flag for LM tokens"
+  },
+  "clean_candidates": {
+    "xgb_clean_decorrupt": {
+      "exists": true,
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/preds/fast_gpu_harvest/oof_xgb_clean.npy",
+      "note": "de_corrupt_and_boost_5f.py Step1: LGB depth4 on clean LM block (lm12/masa/gpt2_rev) + TabM + knn24 + KMAT top30 TE \u2014 NO gpt2_3ep, NO gpt2-medium, NO P4 pure5f as explicit cols",
+      "solo_auc": 0.9510710942861553,
+      "folds": [
+        0.9494986155335191,
+        0.9515223857592741,
+        0.9563119029060887,
+        0.9513127022596656,
+        0.9467115098451115
+      ]
+    },
+    "xgb_gpt2_3ep_d2_d3_bag6": {
+      "exists": true,
+      "path": "preds/gpt2_3ep/xgb_gpt2_3ep_d2_d3_bag6_oof.npy",
+      "note": "ORIGINAL corrupted-input booster (uses gpt2_3ep feature)",
+      "solo_auc": 0.9523089475835048,
+      "folds": [
+        0.9515037741638178,
+        0.9526135627389648,
+        0.956948325193615,
+        0.9527394641898734,
+        0.9479814616339551
+      ]
+    },
+    "xgb_lm_super_clean_5f": {
+      "exists": false,
+      "note": "NOT on disk \u2014 proposed homogeneous replacement with gpt2_med_5f + P4_L4.2/3 + TabM_5f, fixing F0/F1"
+    }
+  },
+  "elapsed_s": 113.9,
+  "lm_super_slot34_bayes": {
+    "protocol": "bayes_fold + unitize(z_m - beta*z_lm) within fold",
+    "vs_lm12_raw_w0p07_delta_1e5": [
+      9.14,
+      23.55,
+      9.1,
+      16.16,
+      12.53
+    ],
+    "vs_lm12_wide_w0p07_delta_1e5": [
+      -30.89,
+      -2.39,
+      -7.57,
+      -10.92,
+      -11.63
+    ],
+    "note": "Historical +9.27/+25.07/+9.26 was vs lm12_raw not lm12_wide"
+  },
+  "xgb_gpt2_3ep_shapes": {
+    "KMAT": [
+      999944,
+      68
+    ],
+    "BASE": [
+      999944,
+      41
+    ],
+    "X_fusion": [
+      699960,
+      132
+    ],
+    "decomp": "68 TE + 7 extras + 16 h16 + 41 BASE"
+  }
+}

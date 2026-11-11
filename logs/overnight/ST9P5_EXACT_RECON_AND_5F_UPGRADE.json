@@ -1,0 +1,83 @@
+{
+  "NO_SUBMIT": true,
+  "formulas": {
+    "Strike4A": "z_st3 + 0.70*(z_st3-z_st2) + 0.15*(z_st2-z_a3)",
+    "Strike6": "z_st4 + 0.30*(z_st4-z_st3) - 0.35*v_bad_new5; v_bad=(z_st5-z_st4)-0.45*(z_st4-z_st3)",
+    "Strike7": "z_st6 + 0.85*(z_st6-z_st4) + 0.15*(z_st4-z_st3)",
+    "Strike8": "z_st7 + 0.90*(z_st7-z_st6)",
+    "Strike9": "z_st8 + 0.78*(z_st8-z_st7) - 0.14*u_bad5",
+    "Strike9.5": "z_st9 + 0.70*(z_st9-z_st8) - 0.10*u_bad5",
+    "u_bad5": "u_bad5 = (z_st5-z_st4) - 0.45*(z_st4-z_st3)"
+  },
+  "corr_st9": 1.0,
+  "corr_st9p5": 1.0,
+  "response_surface": {
+    "k": 6,
+    "rmse": 1.3924405372600063e-06,
+    "grad_ladder": -1.1851582478445418e-06,
+    "grad_anti_leader": -1.1422908340852476e-06,
+    "grad_anti_soft": -1.3235948702380545e-06
+  },
+  "slot3_2f": {
+    "oof_auc": 0.9526268651727923,
+    "spearman_vs_sub": 1.0,
+    "w_h1": {
+      "fit0": -0.023999999999999997,
+      "fit2": -0.011499999999999996,
+      "test": -0.017749999999999995
+    },
+    "w_h2": {
+      "fit0": -0.003999999999999997,
+      "fit2": -0.0049999999999999975,
+      "test": -0.004499999999999997
+    }
+  },
+  "slot3_5f": {
+    "oof_auc": 0.9526175526631447,
+    "ks_m": 9.048085284701912e-05
+  },
+  "delta_2f_to_5f": {
+    "auc": 0.9526175526631447,
+    "delta_1e5": -0.93,
+    "pos": 0,
+    "folds_1e5": [
+      0.0,
+      -2.13,
+      0.0,
+      -1.87,
+      -1.01
+    ],
+    "disp": 1.0431,
+    "ks": 0.000143
+  },
+  "st9p5_full5f": {
+    "1m_rho_1e4": 0.034468855252267616,
+    "cos_ladder": 1.5393008219741165e-07
+  },
+  "staged": [
+    {
+      "file": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_strike9p6_opt_step.csv",
+      "formula": "z_st9p5 + 0.846089*(z_st9p5-z_st9)",
+      "1m_rho_st9p5_1e4": 0.08,
+      "target_1e4": 0.08,
+      "w": 0.8460887316614389,
+      "mean": 0.016699998834038065,
+      "ks_vs_st9p5": 0.0,
+      "pred_dLB": 1.3253487258562146e-05,
+      "pred_LB": 0.9533332534872585
+    },
+    {
+      "file": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_strike10_5f_gpt2m_plus_ladder.csv",
+      "formula": "z_st9p5 + w*(0.35*r_5f_orth + ladder_9p6 + 0.15*(-d_bad_leader)\u22a5)",
+      "1m_rho_st9p5_1e4": 0.12,
+      "1m_rho_vs_9p6_1e4": 0.2013,
+      "w": 0.02596847480162978,
+      "mean": 0.016699998834038065,
+      "ks_vs_st9p5": 3.333511120695576e-06,
+      "pred_dLB": -1.9403028160356693e-06,
+      "pred_LB": 0.9533180596971839,
+      "cos_ladder": 0.021581967709301562
+    }
+  ],
+  "elapsed_s": 162.6
+}

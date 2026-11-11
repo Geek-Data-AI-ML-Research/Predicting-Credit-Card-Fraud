@@ -1,0 +1,190 @@
+{
+  "families": [
+    {
+      "delta_1e5": 0.66,
+      "w": -0.015,
+      "pos": 2,
+      "base": 0.9526611592872503,
+      "name": "xgb",
+      "fold_deltas_1e5": [
+        1.96,
+        -0.46,
+        -3.44,
+        2.08,
+        -1.13
+      ],
+      "disp": 0.9539,
+      "ks": 0.030371
+    },
+    {
+      "delta_1e5": 0.3,
+      "w": -0.01,
+      "pos": 2,
+      "base": 0.9526611592872503,
+      "name": "lgb",
+      "fold_deltas_1e5": [
+        0.67,
+        -0.52,
+        -2.47,
+        1.19,
+        -0.53
+      ],
+      "disp": 0.9392,
+      "ks": 0.041399
+    },
+    {
+      "delta_1e5": 1.05,
+      "w": -0.02,
+      "pos": 1,
+      "base": 0.9526611592872503,
+      "name": "cat",
+      "fold_deltas_1e5": [
+        1.39,
+        -0.98,
+        -2.45,
+        -0.34,
+        -0.64
+      ],
+      "disp": 0.9138,
+      "ks": 0.150928
+    },
+    {
+      "delta_1e5": 0.75,
+      "w": -0.02,
+      "pos": 2,
+      "base": 0.9526611592872503,
+      "name": "l4",
+      "fold_deltas_1e5": [
+        -1.48,
+        -0.92,
+        0.51,
+        -0.35,
+        1.47
+      ],
+      "disp": 0.9551,
+      "ks": 0.018962
+    }
+  ],
+  "macro": {
+    "delta_1e5": 1.2,
+    "w": -0.025,
+    "pos": 2,
+    "base": 0.9526611592872503,
+    "name": "macro_combo",
+    "fold_deltas_1e5": [
+      -0.3,
+      -1.57,
+      -1.01,
+      0.4,
+      1.03
+    ],
+    "disp": 1.0,
+    "ks": 0.018863,
+    "weights": {
+      "xgb": 0.0,
+      "lgb": 0.1202,
+      "cat": 0.1904,
+      "l4": 0.6894
+    }
+  },
+  "steps": [
+    {
+      "target_1e4": 0.5,
+      "achieved_1e4": 0.5,
+      "w": 0.026492,
+      "delta_1e5": 1.18,
+      "pos": 1,
+      "fold_deltas_1e5": [
+        -2.47,
+        0.27,
+        -1.33,
+        -2.23,
+        -5.48
+      ],
+      "disp": 1.0,
+      "ks": 0.018863
+    },
+    {
+      "target_1e4": 1.0,
+      "achieved_1e4": 1.0,
+      "w": 0.0375,
+      "delta_1e5": 0.63,
+      "pos": 0,
+      "fold_deltas_1e5": [
+        -4.23,
+        -0.01,
+        -2.26,
+        -3.66,
+        -9.12
+      ],
+      "disp": 1.0,
+      "ks": 0.018863
+    },
+    {
+      "target_1e4": 2.0,
+      "achieved_1e4": 2.0,
+      "w": 0.053081,
+      "delta_1e5": 0.0,
+      "pos": 0,
+      "fold_deltas_1e5": [
+        -7.25,
+        -0.99,
+        -4.55,
+        -6.14,
+        -15.29
+      ],
+      "disp": 1.0,
+      "ks": 0.018863
+    },
+    {
+      "target_1e4": 2.5,
+      "achieved_1e4": 2.5,
+      "w": 0.059365,
+      "delta_1e5": 0.0,
+      "pos": 0,
+      "fold_deltas_1e5": [
+        -8.73,
+        -1.45,
+        -5.64,
+        -7.33,
+        -18.14
+      ],
+      "disp": 1.0,
+      "ks": 0.018863
+    },
+    {
+      "target_1e4": 3.5,
+      "achieved_1e4": 3.5,
+      "w": 0.070266,
+      "delta_1e5": 0.0,
+      "pos": 0,
+      "fold_deltas_1e5": [
+        -11.59,
+        -2.64,
+        -7.65,
+        -9.56,
+        -23.66
+      ],
+      "disp": 1.0,
+      "ks": 0.018863
+    }
+  ],
+  "staged": [
+    {
+      "file": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/preds/macro_v11/research_macro_v11_slotA_1p0e4.csv",
+      "research_only": true,
+      "w": 0.03750013234093785,
+      "target_1e4": 1.0
+    },
+    {
+      "file": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/preds/macro_v11/research_macro_v11_slotB_2p5e4.csv",
+      "research_only": true,
+      "w": 0.05936457635834813,
+      "target_1e4": 2.5
+    }
+  ],
+  "gate_ok": false,
+  "n_features": 113,
+  "NO_SUBMIT": true,
+  "elapsed_s": 802.3306620121002
+}

@@ -1,0 +1,226 @@
+{
+  "lb_gap": "0.95334 leader; need 0.95340+ (= +0.00010 from St9 0.95330)",
+  "fam21": 21.37,
+  "hits": [
+    {
+      "name": "soft_w015",
+      "delta": 5.09,
+      "pos": 4,
+      "w": -0.04,
+      "has_test": false
+    },
+    {
+      "name": "sc_own_p24_keyres_delta",
+      "delta": 4.04,
+      "pos": 4,
+      "w": 0.035,
+      "has_test": true
+    },
+    {
+      "name": "sc_gb_gpt2_joint",
+      "delta": 2.3,
+      "pos": 4,
+      "w": -0.035,
+      "has_test": true
+    },
+    {
+      "name": "soft_w025",
+      "delta": 1.93,
+      "pos": 4,
+      "w": -0.03,
+      "has_test": false
+    },
+    {
+      "name": "sc_p7_super_newton",
+      "delta": 1.18,
+      "pos": 4,
+      "w": -0.025,
+      "has_test": true
+    },
+    {
+      "name": "sc_lab1_glm_plus_graph",
+      "delta": 1.17,
+      "pos": 5,
+      "w": -0.01,
+      "has_test": true
+    },
+    {
+      "name": "sc_day2_dz_soft",
+      "delta": 0.99,
+      "pos": 4,
+      "w": -0.03,
+      "has_test": true
+    },
+    {
+      "name": "ms_lgb_c",
+      "delta": 0.93,
+      "pos": 4,
+      "w": -0.025,
+      "has_test": true
+    },
+    {
+      "name": "ms_boost_j",
+      "delta": 0.91,
+      "pos": 4,
+      "w": -0.02,
+      "has_test": true
+    },
+    {
+      "name": "idf_p2",
+      "delta": 0.72,
+      "pos": 4,
+      "w": -0.015,
+      "has_test": true
+    },
+    {
+      "name": "sc_lab1_idf_bayes_p2_m5",
+      "delta": 0.72,
+      "pos": 4,
+      "w": -0.015,
+      "has_test": true
+    },
+    {
+      "name": "sc_P_champ",
+      "delta": 0.71,
+      "pos": 4,
+      "w": -0.02,
+      "has_test": true
+    }
+  ],
+  "joint_ws": [
+    {
+      "name": "sc_own_p24_keyres_delta",
+      "w": 0.035,
+      "add": 4.04,
+      "pos": 4
+    },
+    {
+      "name": "sc_gb_gpt2_joint",
+      "w": -0.035,
+      "add": 2.69,
+      "pos": 4
+    },
+    {
+      "name": "sc_lab1_glm_plus_graph",
+      "w": -0.01,
+      "add": 0.9,
+      "pos": 4
+    },
+    {
+      "name": "sc_day2_dz_soft",
+      "w": -0.045,
+      "add": 2.7,
+      "pos": 5
+    },
+    {
+      "name": "ms_lgb_c",
+      "w": -0.02,
+      "add": 0.85,
+      "pos": 4
+    }
+  ],
+  "best_combo_oof_softneg": {
+    "sf": 1.35,
+    "wms": [
+      -0.02,
+      -0.02,
+      0,
+      0
+    ],
+    "wsoft": [
+      -0.04,
+      0
+    ],
+    "delta": 23.8,
+    "folds": [
+      4.39,
+      -2.23,
+      41.76,
+      36.42,
+      48.99
+    ]
+  },
+  "final": {
+    "tag": "JOINT_greedy",
+    "delta": 32.55,
+    "folds": [
+      1.4,
+      10.1,
+      43.14,
+      47.01,
+      63.29
+    ]
+  },
+  "rows": [
+    {
+      "file": "sub_pass340_J1_joint_x070.csv",
+      "note": "St9+0.70*JOINT_greedy(+32.55e-5)",
+      "dist": 16.671,
+      "rms": 0.10614
+    },
+    {
+      "file": "sub_pass340_J2_joint_x085.csv",
+      "note": "St9+0.85*JOINT_greedy(+32.55e-5)",
+      "dist": 24.511,
+      "rms": 0.12878
+    },
+    {
+      "file": "sub_pass340_J3_joint_x100.csv",
+      "note": "St9+1.00*JOINT_greedy(+32.55e-5)",
+      "dist": 33.804,
+      "rms": 0.15142
+    },
+    {
+      "file": "sub_pass340_J4_joint_x114.csv",
+      "note": "St9+1.15*JOINT_greedy(+32.55e-5)",
+      "dist": 44.517,
+      "rms": 0.1742
+    },
+    {
+      "file": "sub_pass340_J5_joint_x085_cont.csv",
+      "note": "St9+0.85*JOINT_greedy+cont",
+      "dist": 24.373,
+      "rms": 0.12878
+    },
+    {
+      "file": "sub_pass340_J6_joint_x080_aman008.csv",
+      "note": "St9+0.80*JOINT_greedy+aman",
+      "dist": 34.299,
+      "rms": 0.14902
+    },
+    {
+      "file": "sub_pass340_J0_fam21_x125.csv",
+      "note": "St9+1.25*FAM21",
+      "dist": 30.183,
+      "rms": 0.1333
+    },
+    {
+      "file": "sub_pass340_A1_st9_aman_w12.csv",
+      "note": "ranklogit St9\u2295Aman w=0.12 (speculative)",
+      "dist": 0.442,
+      "rms": 0.01696
+    },
+    {
+      "file": "sub_pass340_A2_st9_aman_w20.csv",
+      "note": "ranklogit St9\u2295Aman w=0.2 (speculative)",
+      "dist": 1.229,
+      "rms": 0.02829
+    },
+    {
+      "file": "sub_pass340_A3_st9_aman_w28.csv",
+      "note": "ranklogit St9\u2295Aman w=0.28 (speculative)",
+      "dist": 2.41,
+      "rms": 0.0396
+    }
+  ],
+  "submit_order": [
+    "P2_fam21_x085",
+    "J2_joint_x085",
+    "J5_joint_cont",
+    "P5_fam_cont",
+    "J3_joint_x100",
+    "A1_aman012",
+    "P1_fam_x070"
+  ],
+  "elapsed": 353.8
+}

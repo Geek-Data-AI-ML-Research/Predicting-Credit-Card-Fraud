@@ -1,0 +1,77 @@
+{
+  "goal": 0.9534,
+  "base_st9": 0.9533,
+  "gap": 0.0001,
+  "slot1": "sub_pass340_S_fam21_x035.csv",
+  "rows_new": [
+    {
+      "file": "sub_pass340_S_fam21_x025.csv",
+      "note": "SAFE St9+0.25*FAM21",
+      "dist_st9_1e4": 1.219,
+      "mean": 0.0167
+    },
+    {
+      "file": "sub_pass340_S_fam21_x035.csv",
+      "note": "SAFE St9+0.35*FAM21",
+      "dist_st9_1e4": 2.386,
+      "mean": 0.0167
+    },
+    {
+      "file": "sub_pass340_S_fam21_x045.csv",
+      "note": "SAFE St9+0.45*FAM21",
+      "dist_st9_1e4": 3.942,
+      "mean": 0.0167
+    },
+    {
+      "file": "sub_pass340_S_fam21_x055.csv",
+      "note": "SAFE St9+0.55*FAM21",
+      "dist_st9_1e4": 5.885,
+      "mean": 0.0167
+    },
+    {
+      "file": "sub_pass340_S_famp24_x030.csv",
+      "note": "SAFE St9+0.30*FAM+p24",
+      "dist_st9_1e4": 1.993,
+      "mean": 0.0167
+    },
+    {
+      "file": "sub_pass340_S_famp24_x045.csv",
+      "note": "SAFE St9+0.45*FAM+p24",
+      "dist_st9_1e4": 4.479,
+      "mean": 0.0167
+    },
+    {
+      "file": "sub_pass340_S_famp24_x055.csv",
+      "note": "SAFE St9+0.55*FAM+p24",
+      "dist_st9_1e4": 6.686,
+      "mean": 0.0167
+    },
+    {
+      "file": "sub_pass340_S_fam21_x040_cont025.csv",
+      "note": "SAFE fam0.40+cont0.25",
+      "dist_st9_1e4": 3.058,
+      "mean": 0.0167
+    },
+    {
+      "file": "sub_pass340_S_fam21_x045_aman006.csv",
+      "note": "SAFE fam0.45+0.06*(Aman-St9)",
+      "dist_st9_1e4": 4.133,
+      "mean": 0.0167
+    },
+    {
+      "file": "sub_pass340_A0_st9_aman_w06.csv",
+      "note": "micro St9\u2295Aman w=0.06",
+      "dist_st9_1e4": 0.111,
+      "mean": 0.0167
+    },
+    {
+      "file": "sub_pass340_A3_st9_aman_w28.csv",
+      "note": "St9\u2295Aman w=0.28",
+      "dist_st9_1e4": 2.41,
+      "mean": 0.0167
+    }
+  ],
+  "decision_tree": "logs/overnight/PASS340_PLAN.md",
+  "helper": "scripts/pass340_tomorrow.sh",
+  "elapsed": 21.6
+}

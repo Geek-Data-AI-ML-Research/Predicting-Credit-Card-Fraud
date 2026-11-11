@@ -1,0 +1,102 @@
+{
+  "clean_delta": 34.08,
+  "folds": [
+    7.46,
+    18.84,
+    59.19,
+    38.2,
+    70.57
+  ],
+  "joint_ws": [
+    {
+      "name": "own_p24",
+      "w": 0.035,
+      "add": 4.04,
+      "pos": 4
+    },
+    {
+      "name": "gb_gpt2_j",
+      "w": -0.035,
+      "add": 2.65,
+      "pos": 4
+    },
+    {
+      "name": "ms_lgb_c",
+      "w": -0.015,
+      "add": 0.61,
+      "pos": 4
+    },
+    {
+      "name": "soft_w015_proxy",
+      "w": -0.04,
+      "add": 4.6,
+      "pos": 4
+    },
+    {
+      "name": "gb_soft_joint",
+      "w": 0.01,
+      "add": 0.8,
+      "pos": 4
+    }
+  ],
+  "skipped": [],
+  "proxy_r2_note": "see stdout",
+  "rows": [
+    {
+      "file": "sub_pass340_C1_cleanjoint_x055.csv",
+      "note": "St9+0.55*CLEAN(+34.1e-5)",
+      "dist": 15.793,
+      "rms": 0.09726
+    },
+    {
+      "file": "sub_pass340_C2_cleanjoint_x070.csv",
+      "note": "St9+0.70*CLEAN(+34.1e-5)",
+      "dist": 25.543,
+      "rms": 0.12381
+    },
+    {
+      "file": "sub_pass340_C3_cleanjoint_x085.csv",
+      "note": "St9+0.85*CLEAN(+34.1e-5)",
+      "dist": 37.592,
+      "rms": 0.15034
+    },
+    {
+      "file": "sub_pass340_C4_cleanjoint_x100.csv",
+      "note": "St9+1.00*CLEAN(+34.1e-5)",
+      "dist": 51.912,
+      "rms": 0.17681
+    },
+    {
+      "file": "sub_pass340_C5_clean_x070_cont.csv",
+      "note": "St9+0.70*CLEAN+0.40*cont",
+      "dist": 25.345,
+      "rms": 0.12362
+    },
+    {
+      "file": "sub_pass340_C6_clean_x070_aman010.csv",
+      "note": "St9+0.70*CLEAN+0.10*(Aman-St9)",
+      "dist": 26.232,
+      "rms": 0.12551
+    },
+    {
+      "file": "sub_pass340_A1_st9_aman_w12.csv",
+      "note": "St9\u2295Aman w=0.12",
+      "dist": 0.442,
+      "rms": 0.01696
+    },
+    {
+      "file": "sub_pass340_P2_fam21_x085.csv",
+      "note": "St9+0.85*FAM21 (refresh)",
+      "dist": 14.018,
+      "rms": 0.09064
+    }
+  ],
+  "submit_order": [
+    "C2_clean_x070 \u2014 primary (honest CLEAN ~P2 scale)",
+    "C3_clean_x085 \u2014 stronger",
+    "C5_clean_cont",
+    "P2_fam21_x085 \u2014 fam-only control",
+    "A1_aman_w12 \u2014 speculative tiny blend if flat"
+  ],
+  "elapsed": 100.4
+}

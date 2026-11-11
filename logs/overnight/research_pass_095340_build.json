@@ -1,0 +1,90 @@
+{
+  "target": "0.95340+",
+  "improved_fam_weights": {
+    "soft_diff": 0.06,
+    "idf_p3": 0.0175,
+    "gb_soft": 0.0425,
+    "soft_c035": 0.01
+  },
+  "fam_delta_1e5": 21.37,
+  "fam_folds": [
+    0.03,
+    9.92,
+    35.0,
+    29.06,
+    32.89
+  ],
+  "public_rho_st9": {
+    "aman": 0.996914,
+    "tuboa": 0.997534,
+    "mzishran": 0.997291,
+    "alex": 0.994647,
+    "saamhm": 0.993949
+  },
+  "rows": [
+    {
+      "file": "sub_pass340_P1_fam21_x070.csv",
+      "note": "St9+0.70*FAM21(+21.37e-5 OOF) target 0.95340+",
+      "dist_st9_1e4": 9.52,
+      "step_rms": 0.07463
+    },
+    {
+      "file": "sub_pass340_P2_fam21_x085.csv",
+      "note": "St9+0.85*FAM21(+21.37e-5 OOF) target 0.95340+",
+      "dist_st9_1e4": 14.018,
+      "step_rms": 0.09064
+    },
+    {
+      "file": "sub_pass340_P3_fam21_x100.csv",
+      "note": "St9+1.00*FAM21(+21.37e-5 OOF) target 0.95340+",
+      "dist_st9_1e4": 19.372,
+      "step_rms": 0.10661
+    },
+    {
+      "file": "sub_pass340_P4_fam21_x114.csv",
+      "note": "St9+1.15*FAM21(+21.37e-5 OOF) target 0.95340+",
+      "dist_st9_1e4": 25.576,
+      "step_rms": 0.12264
+    },
+    {
+      "file": "sub_pass340_P5_fam21_x085_cont.csv",
+      "note": "St9+0.85*FAM21+0.45*(St9-St8)",
+      "dist_st9_1e4": 13.792,
+      "step_rms": 0.09002
+    },
+    {
+      "file": "sub_pass340_P6_fam21_x080_aman_x008.csv",
+      "note": "St9+0.80*FAM21+0.08*aman_orth (speculative)",
+      "dist_st9_1e4": 23.539,
+      "step_rms": 0.12112
+    },
+    {
+      "file": "sub_pass340_P6_fam21_x080_aman_x015.csv",
+      "note": "St9+0.80*FAM21+0.15*aman_orth (speculative)",
+      "dist_st9_1e4": 49.3,
+      "step_rms": 0.17743
+    },
+    {
+      "file": "sub_pass340_P6_fam21_x080_aman_x022.csv",
+      "note": "St9+0.80*FAM21+0.22*aman_orth (speculative)",
+      "dist_st9_1e4": 89.932,
+      "step_rms": 0.24016
+    },
+    {
+      "file": "sub_pass340_P7_soft09_x080.csv",
+      "note": "St9+0.80*(soft@0.09) OOF\u0394@1=+16.85e-5",
+      "dist_st9_1e4": 9.12,
+      "step_rms": 0.07282
+    }
+  ],
+  "submit_order": [
+    "P1",
+    "P2",
+    "P5",
+    "P3",
+    "P6_aman015",
+    "P4",
+    "P7"
+  ],
+  "elapsed": 51.1
+}
