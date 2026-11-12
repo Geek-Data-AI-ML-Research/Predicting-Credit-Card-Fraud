@@ -1,0 +1,532 @@
+{
+  "NO_SUBMIT": true,
+  "utc": "2026-11-12T20:03:20.741334+00:00",
+  "elapsed_s": 145.48,
+  "step1_pods": {
+    "pod_ops": "NONE \u2014 user forbid all pod touches this turn",
+    "vjez42fl07jtrl": "already absent (404) at prior check; not touched",
+    "w102kdrd4pmsz8": "observed as current P730 successor; NOT inspected/terminated this turn",
+    "lheroidmuab1j4": "never touch"
+  },
+  "q17_keys": [
+    "y_train",
+    "folds",
+    "oof_anchor_095370",
+    "test_anchor_095370",
+    "test_anchor_prob",
+    "stream_names",
+    "oof_megayak_5f_lm",
+    "test_megayak_5f_lm",
+    "oof_masaya_gpt2",
+    "test_masaya_gpt2",
+    "oof_lm7_5fold",
+    "test_lm7_5fold",
+    "oof_gpt2_seed2026",
+    "test_gpt2_seed2026",
+    "oof_tabpfn_slimypunk_tp1",
+    "test_tabpfn_slimypunk_tp1",
+    "oof_sadam_tabpfn_100k_tp3",
+    "test_sadam_tabpfn_100k_tp3",
+    "oof_yekenot_realmlp",
+    "test_yekenot_realmlp",
+    "oof_alex_glm_gen",
+    "test_alex_glm_gen",
+    "oof_daoviet_gpdvae",
+    "test_daoviet_gpdvae",
+    "oof_gbn_bag5_w512",
+    "test_gbn_bag5_w512",
+    "oof_sameer_glm10f",
+    "test_sameer_glm10f",
+    "oof_sadam_v6_gb_xgb",
+    "test_sadam_v6_gb_xgb",
+    "oof_sadam_v6_gb_lgb",
+    "test_sadam_v6_gb_lgb",
+    "oof_sadam_v4_cat",
+    "test_sadam_v4_cat",
+    "oof_gb_bag5",
+    "test_gb_bag5",
+    "oof_megayak_shallow_tree",
+    "test_megayak_shallow_tree"
+  ],
+  "solo": {
+    "anchor_095370": {
+      "solo_auc": 0.9525514073195129,
+      "fold_aucs": [
+        0.9517748872251947,
+        0.9525318423053558,
+        0.9572653058934052,
+        0.9528036958510038,
+        0.9483809799561548
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "megayak_5f_lm": {
+      "solo_auc": 0.9504516682713816,
+      "fold_aucs": [
+        0.948505568399054,
+        0.9506818231843808,
+        0.9560849667798148,
+        0.9506042586063622,
+        0.946380901046167
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "masaya_gpt2": {
+      "solo_auc": 0.9500480360293713,
+      "fold_aucs": [
+        0.9488823063531588,
+        0.9503172202635032,
+        0.9553119854079785,
+        0.9498742215934888,
+        0.9458539587540018
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "lm7_5fold": {
+      "solo_auc": 0.9494439714107487,
+      "fold_aucs": [
+        0.9475445293730193,
+        0.9497671496639838,
+        0.9551661607076907,
+        0.9490652062349009,
+        0.9456760135623762
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "gpt2_seed2026": {
+      "solo_auc": 0.9501730797865355,
+      "fold_aucs": [
+        0.9491910585502968,
+        0.9503700982825202,
+        0.9552357242927039,
+        0.9502096527385091,
+        0.9458584532924026
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "tabpfn_slimypunk_tp1": {
+      "solo_auc": 0.9493429437758374,
+      "fold_aucs": [
+        0.9481552261769813,
+        0.9503328913346578,
+        0.9547382023509361,
+        0.9491845189069087,
+        0.9443033802918397
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "sadam_tabpfn_100k_tp3": {
+      "solo_auc": 0.94888961662084,
+      "fold_aucs": [
+        0.9475724436017954,
+        0.9508788247216776,
+        0.9529789346873256,
+        0.9490339013787722,
+        0.9439834291262966
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "yekenot_realmlp": {
+      "solo_auc": 0.9501145276043084,
+      "fold_aucs": [
+        0.9500495625213992,
+        0.9510403531185285,
+        0.9549457341271826,
+        0.9503983845115789,
+        0.9441385784790154
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "alex_glm_gen": {
+      "solo_auc": 0.9505035055177602,
+      "fold_aucs": [
+        0.9494180652651144,
+        0.9506593023310587,
+        0.9555146156050149,
+        0.9514767490273247,
+        0.9454483379268459
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "daoviet_gpdvae": {
+      "solo_auc": 0.9465293579991485,
+      "fold_aucs": [
+        0.9447320822318986,
+        0.9476896459991562,
+        0.9514630214983544,
+        0.9466614780045773,
+        0.9420998058346982
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "gbn_bag5_w512": {
+      "solo_auc": 0.9512429486276622,
+      "fold_aucs": [
+        0.949915686128868,
+        0.9516058120356635,
+        0.9560761221869644,
+        0.9518553358196671,
+        0.94676122941388
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "sameer_glm10f": {
+      "solo_auc": 0.9516046167778174,
+      "fold_aucs": [
+        0.9508096439681555,
+        0.9520959015986861,
+        0.9563717705304517,
+        0.9520656190053531,
+        0.9466798290199913
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "sadam_v6_gb_xgb": {
+      "solo_auc": 0.9507702706789694,
+      "fold_aucs": [
+        0.9506578378126423,
+        0.9504680133474087,
+        0.9558513129265982,
+        0.9510172574365826,
+        0.945856884165619
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "sadam_v6_gb_lgb": {
+      "solo_auc": 0.9509402481248707,
+      "fold_aucs": [
+        0.9506460659658299,
+        0.9506616000919627,
+        0.9560987471308751,
+        0.9513072507092859,
+        0.9459874557106975
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "sadam_v4_cat": {
+      "solo_auc": 0.9501134781586396,
+      "fold_aucs": [
+        0.9491888064502135,
+        0.9505731199844574,
+        0.9550722508000776,
+        0.9510023414105931,
+        0.9447304826200225
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "gb_bag5": {
+      "solo_auc": 0.9515368996273391,
+      "fold_aucs": [
+        0.9504322470144403,
+        0.9515890425757603,
+        0.956273509014798,
+        0.9523947612145118,
+        0.9469944871014236
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "megayak_shallow_tree": {
+      "solo_auc": 0.9515042549436553,
+      "fold_aucs": [
+        0.9503825329542158,
+        0.9518020927067944,
+        0.9562092897823945,
+        0.9525071169065823,
+        0.9466197718575416
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    }
+  },
+  "leak": {
+    "stream_names": [
+      "megayak_5f_lm",
+      "masaya_gpt2",
+      "lm7_5fold",
+      "gpt2_seed2026",
+      "tabpfn_slimypunk_tp1",
+      "sadam_tabpfn_100k_tp3",
+      "yekenot_realmlp",
+      "alex_glm_gen",
+      "daoviet_gpdvae",
+      "gbn_bag5_w512",
+      "sameer_glm10f",
+      "sadam_v6_gb_xgb",
+      "sadam_v6_gb_lgb",
+      "sadam_v4_cat",
+      "gb_bag5",
+      "megayak_shallow_tree"
+    ],
+    "r2_oof_ridge": 0.9940342760538956,
+    "r2_test_ridge": 0.9826628053067283,
+    "max_abs_w_oof_minus_w_test_ridge": 0.9116271719771804,
+    "max_abs_w_oof_minus_w_test_ols": 0.9141871664269164,
+    "identical_1e4": false,
+    "corr_test_vs_oof_weights_applied": 0.9892631156734026,
+    "w_oof_ridge": {
+      "megayak_5f_lm": 0.4062968935225915,
+      "masaya_gpt2": 0.44265742491092963,
+      "lm7_5fold": -0.0979966925284897,
+      "gpt2_seed2026": 0.017479568218043022,
+      "tabpfn_slimypunk_tp1": -0.005269689219292111,
+      "sadam_tabpfn_100k_tp3": 0.1387264555843875,
+      "yekenot_realmlp": 0.038513665764289245,
+      "alex_glm_gen": -0.5234469990664317,
+      "daoviet_gpdvae": -0.10712971756649199,
+      "gbn_bag5_w512": 0.12822001073084965,
+      "sameer_glm10f": 0.365785559338017,
+      "sadam_v6_gb_xgb": 0.5859136057868506,
+      "sadam_v6_gb_lgb": -0.13369850261890234,
+      "sadam_v4_cat": -0.34921351053596067,
+      "gb_bag5": 0.3435421238512235,
+      "megayak_shallow_tree": 0.5745195328368037
+    },
+    "w_test_ridge": {
+      "megayak_5f_lm": 0.8609408903417887,
+      "masaya_gpt2": 0.10263817178400518,
+      "lm7_5fold": -0.005355289466430202,
+      "gpt2_seed2026": -0.03084784502610079,
+      "tabpfn_slimypunk_tp1": 0.21029411248105007,
+      "sadam_tabpfn_100k_tp3": 0.2497274404928334,
+      "yekenot_realmlp": 0.10108054458073425,
+      "alex_glm_gen": -0.5579733831620654,
+      "daoviet_gpdvae": -0.11928620781072065,
+      "gbn_bag5_w512": 0.16329540678423116,
+      "sameer_glm10f": -0.06568487984028629,
+      "sadam_v6_gb_xgb": 1.2159653030577162,
+      "sadam_v6_gb_lgb": -0.5404686225727059,
+      "sadam_v4_cat": -0.5544753791132327,
+      "gb_bag5": 1.1049725976430953,
+      "megayak_shallow_tree": -0.33710763914037667
+    },
+    "top_abs_delta": [
+      {
+        "stream": "megayak_shallow_tree",
+        "w_oof": 0.5745195328368037,
+        "w_test": -0.33710763914037667,
+        "abs_delta": 0.9116271719771804
+      },
+      {
+        "stream": "gb_bag5",
+        "w_oof": 0.3435421238512235,
+        "w_test": 1.1049725976430953,
+        "abs_delta": 0.7614304737918718
+      },
+      {
+        "stream": "sadam_v6_gb_xgb",
+        "w_oof": 0.5859136057868506,
+        "w_test": 1.2159653030577162,
+        "abs_delta": 0.6300516972708656
+      },
+      {
+        "stream": "megayak_5f_lm",
+        "w_oof": 0.4062968935225915,
+        "w_test": 0.8609408903417887,
+        "abs_delta": 0.45464399681919715
+      },
+      {
+        "stream": "sameer_glm10f",
+        "w_oof": 0.365785559338017,
+        "w_test": -0.06568487984028629,
+        "abs_delta": 0.4314704391783033
+      },
+      {
+        "stream": "sadam_v6_gb_lgb",
+        "w_oof": -0.13369850261890234,
+        "w_test": -0.5404686225727059,
+        "abs_delta": 0.4067701199538035
+      },
+      {
+        "stream": "masaya_gpt2",
+        "w_oof": 0.44265742491092963,
+        "w_test": 0.10263817178400518,
+        "abs_delta": 0.34001925312692444
+      },
+      {
+        "stream": "tabpfn_slimypunk_tp1",
+        "w_oof": -0.005269689219292111,
+        "w_test": 0.21029411248105007,
+        "abs_delta": 0.21556380170034217
+      }
+    ],
+    "verdict": "Possibility B: OOF/test constructed differently (weights diverge)"
+  },
+  "spearman_anchor": {
+    "A_095340": 0.00165884,
+    "F_095330": 0.00179762,
+    "z_S7_ours": 0.00104637,
+    "cand2": 0.0009896,
+    "areeb_095347": 0.00115785,
+    "s354": 0.0010722
+  },
+  "knightfork": {
+    "formula": "L(preserved_095354_ladder) + 0.25 * (L(sovereign) - L(wide))",
+    "public": "0.95354 \u2192 0.95357 (+0.00003)",
+    "WEIGHT": 0.25,
+    "proxy_oof_delta": 1.7580980577e-05,
+    "proxy_folds_improved": 4,
+    "inputs": "goodpjw LM Ladder 0.95354 reference + Amanatar Sovereign vault + wide stack",
+    "notebook": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/external/nov12_late_kernels/knightfork_095357/s6e11-top-15-cpu-blend-eda-lb-0-95357.ipynb"
+  },
+  "asterios": {
+    "thesis": "Public top is a dense noisy band; nested CV on wide-stack OOF separates probes that survive private 80%.",
+    "method": "Simulate public(~60k)/private(~240k) splits from goodpjw nested wide OOF; replay published ladder moves.",
+    "takeaway": "Many tiny public gains are winner's-curse; prefer nested-CV positive moves (e.g. G26\u2212MS) over probes that lose OOF."
+  },
+  "markbarney": {
+    "thesis": "Plain-language postmortem of ~85 own models / dead ends over 12 days; invites collaboration.",
+    "compute": "Home lab + RTX 5070/4090 + DGX Sparks + ~$39 Vast.ai",
+    "takeaway": "Publishes failures intentionally; lists ideas not yet tested (other LMs, BERT-style)."
+  },
+  "modansaif": {
+    "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/external/nov12_late_kernels/modansaif",
+    "note": "Fraud-fusion reproduction / credited \u2014 pulled for completeness."
+  },
+  "moves_subfold": {
+    "MoveA_fixed_w0.036": {
+      "pos5": 4,
+      "mean_d_e5": 0.026411546791837996,
+      "fold_d_e5": [
+        -0.031,
+        0.1087,
+        0.0156,
+        0.0078,
+        0.0311
+      ],
+      "w": 0.036
+    },
+    "MoveB_fixed_w0.036": {
+      "pos5": 4,
+      "mean_d_e5": 0.054431851270742015,
+      "fold_d_e5": [
+        -0.0078,
+        0.0388,
+        0.07,
+        0.0311,
+        0.14
+      ],
+      "w": 0.036
+    },
+    "MoveC_fixed_B_plus_0.025_LMtrim": {
+      "pos5": 5,
+      "mean_d_e5": 0.08545361897427384,
+      "fold_d_e5": [
+        0.0854,
+        0.1552,
+        0.0622,
+        0.0311,
+        0.0933
+      ],
+      "wB": 0.036,
+      "wL": 0.025
+    },
+    "MoveD_q17_orth_anchor_w0.036": {
+      "pos5": 3,
+      "mean_d_e5": 0.035754972165236154,
+      "fold_d_e5": [
+        -0.031,
+        0.0854,
+        -0.0467,
+        0.1167,
+        0.0544
+      ],
+      "w": 0.036
+    }
+  },
+  "moveD_full5": {
+    "pos5": 5,
+    "mean_d_e5": 0.01541261477777667,
+    "fold_d_e5": [
+      0.0118,
+      0.0124,
+      0.0162,
+      0.0357,
+      0.0009
+    ],
+    "w": 0.036
+  }
+}

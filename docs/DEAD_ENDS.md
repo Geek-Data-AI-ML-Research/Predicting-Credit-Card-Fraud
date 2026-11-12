@@ -120,6 +120,7 @@ Amanatar 0.95237 formula (for fusion design, not to re-derive blindly):
 ---
 
 *Last updated: 2026-11-05 · Authors: paradigm ladder + Part10 P_super upgrade session.*
+(Superseded chronology: see §11 for 2026-11-12.)
 
 ---
 
@@ -175,3 +176,69 @@ Executed in `scripts/grandmaster_5playbook_tournament.py` (`logs/overnight/5play
    - Tuning `(1 - a) * v4p_oof + a * v5_oof` naturally picks `a = 1.0` because `v5_oof` already contains `v4p_oof` plus the upgrade. Applying `a = 1.0` to `(1 - a) * sub_ev4 + a * v5_test` completely erases `sub_ev4` (`0.95243` LB)!
    - **Mandatory Fix:** Always inject the **pure zero-mean difference vector** $\Delta z_{\text{test}} = z(\text{v5\_test}) - z(\text{v4p\_hc\_test})$ onto $z(\text{sub\_ev4})$ (`sub_v5_harvest_on_ev4_half.csv`, $\rho = 0.999920$).
 
+---
+
+## 11. Nov 12 ATH plateau — v10/v11 stack probes & HiRes Compact-LM (`STRICT NO_SUBMIT`)
+
+Locked public ATH: **cand2 = L(S7) + 0.03613·(G26−MS) → LB 0.95355**.  
+Promotion law: inject only after **strict LOFO 5/5** on `eval_S7matched_355` (double-orth to `[L(S7), G26−MS]` + PCHIP). Sources: `logs/overnight/GM_V11_*.md`, `HIRES_LM_FOLD0_CANARY_FAIL.md`, `GM_MATAPANINO_AND_SEED2026_AUDIT.md`.
+
+| ID | Approach | Result | Why dead | Artifact |
+|----|----------|--------|----------|----------|
+| N1 | **Bank / member swaps** on top of cand2 after removing `(G26−MS)` axis | 189→155 clean pairs → **0** strict 5/5 | Two-seed GPT-2 plateau saturated; residual bank swaps collinear with private Stage-B | `GM_V11_MACRO_LEAP_REPORT.md` |
+| N2 | **α∈{0.036, 0.060}** retunes of `(G26−MS)` on cand2 | Both LB **0.95355** | No public lift; do not burn submits on α-grid | same |
+| N3 | **v11.1 `orth(LM_trim)`** as live submit | LOFO **4/5** (meanΔ=+0.007e−5), simple **3/5** | Near-miss ≠ promote; **do not submit** `sub_v11p1_slot3_*_NOSUBMIT.csv` | `GM_V11_1_NONLINEAR_STAGEB_REPORT.md` |
+| N4 | **v11.1 `G26_denoise` (James–Stein)** | LOFO **0/5** | Denoise ≈ null after double-orth | same |
+| N5 | **v11.1 Wilcoxon / Stage-B_v11 nonlinear** | Wilcoxon **1/5**; StageB **3/5** | Fail 5/5 gate | same |
+| N6 | **Teamlead modular dual** (all 4 modules) | **0/4** clear independent 5/5 | Same orth wipe after `[S7, G26−MS]` | `GM_V11_TEAMLEAD_MACRO_REPORT.md` |
+| N7 | **cand2b** follow-up live probe | Flat vs cand2 | No second ATH | `GM_V10_2` / live probe logs |
+| N8 | **HiRes-Compact-LM** (`V≈3232`, `T=72`, δ_cont@odd, value-token CE, no LLR BCE, 30 antithetic, Fold-0 canary) | Fold-0 OOF AUC **0.89416** ≪ L7_f0 **0.94761**; orth **−3.84e−5** | Short CE recipe (12rep/3ep) missed L7 discriminative floor; pod killed (~$0.44) | `preds/hires_lm_5f/`, `HIRES_LM_FOLD0_CANARY_FAIL.md` |
+| N9 | **Expect Masaya/goodpjw kernel outputs to ship GPT-2 `.pt` / per-order `.npy`** | Kernel outs = aggregated OOF/test + HTML only | Weights not public; cannot finish G26 test from kernel artifacts | `external/masaya_kernel_out/`, Matapanino audit |
+| N10 | **Budget <$3 full natural GPT-2 seed2026 F1–4** (`T≈224`, even pre-tokenized+bf16) | Est. **tens of GPU-h** / multi-$ | Outside hard budget; wait for G26 test upload or Compact-LM canary | `GM_MATAPANINO_AND_SEED2026_AUDIT.md` |
+| N11 | **L7 5F rot10 on `smugcqcy2oqzeg` without save fix** | Crash: assert `oof.shape==(139992,10,2)` got `(699960,10,2)` | Save shape bug (full train vs `val_idx`), not training; do not re-run identical saver | `train_compact_lm_5f.py` / L7 status ticks |
+
+### Still open (not dead — blocked on data / gated GPU)
+
+1. **G26 `test_5fold` / `test_f1..f4`** — live dataset still only `oof_5fold` + `test_f0` (stamp 2026-11-12 09:14 UTC). Highest leverage if/when uploaded.
+2. **Compact-LM `seed=2026` Fold-0 canary** (`V=1372`, `T=72`, 60rep+8FT, **fixed** `oof[val_idx]` save) ≤~$0.45 — only if F0 ≥ 0.94761.
+3. **LM_trim** remains best *near-miss* (4/5); retry only with a new orth story that flips the failing fold — **not** as a blind submit.
+
+### Quick “do not retry” (Nov 12 addendum)
+
+- [ ] Submit any `*_NOSUBMIT.csv` / LM_trim 4/5 / G26_denoise 0/5 candidate
+- [ ] Re-run HiRes-Compact-LM with same short CE recipe expecting ≥0.9476 Fold-0
+- [ ] Full Matapanino natural GPT-2 5-fold under <$3 wall-clock budget
+- [ ] L7 save path that writes full-train `(699960, K, 2)` then asserts val shape
+- [ ] Treat Masaya presentation kernel as a source of checkpoints
+
+---
+
+## 12. Nov 12 late — V12.3/V12.4 on Q17+L2 base (`POD TOUCHES: 0`)
+
+Locked public ATH: **L2 = L(Q17 `test_anchor_prob`) + 0.03·unitize(d1_v4) → LB 0.95371**.  
+Sources: `logs/overnight/GM_V12_3_LADDER_LIVE_REPORT.md`, `GM_V12_4_FURTHER_LIFT_REPORT.md`, `GM_V12_DAY_SUMMARY_2026-11-12.md`.
+
+| ID | Approach | Result | Why dead | Artifact |
+|----|----------|--------|----------|----------|
+| V1 | **L3** `P_super_v5` + `stageB_4fam` on L2 (OOF LOFO 5/5) | Public **0.95366** (−5e-5) | OOF lied; axes poison Q17/L2 base | L3 ref `58284886` |
+| V2 | **L4** retune `d1=0.028, sov=0.012, G26=0.018` (OOF 5/5 mean+2.62e-5) | Public **0.95370** (−1e-5) | Complementary-fold OOF did not transfer | L4 ref `58285309` |
+| V3 | Sameer apex+LM logit mix on L2 | F0 −7…−18e-5 OOF | Kills Fold-0 on this base | `GM_V12_4_*` |
+| V4 | Further single-axis injects on SAFE=L2+sov+G26 | 0 singles / 0 pairs clear 5/5 beyond SAFE | Bank saturated for public lift | same |
+| V5 | Bare cand2 α / micro-nudges (pre-Q17) | Plateau **0.95355** | Superseded by Q17+d1 | §11 N2/N7 |
+
+### Still open (not dead)
+
+1. Complete **L7 Compact-LM seed=2026 K=10** folds 1–4 (fold0 only local today).
+2. Any **new private residual** with d1-like public-transfer DNA — not P_super/sov/G26 retunes.
+3. External **0.95385** recipe if/when a public kernel/dataset appears.
+
+### Quick “do not retry” (V12 addendum)
+
+- [ ] Re-submit P_super_v5 / stageB_4fam on Q17 or L2
+- [ ] Re-submit sov−wide + G26−MS weight grids on L2 expecting public > 0.95371
+- [ ] Sameer LM logit mix on L2
+- [ ] More bank blends of existing members without a new private signal
+
+---
+
+*Last updated: 2026-11-12 · ATH L2 0.95371 · V12 ladder + L4 no-transfer.*

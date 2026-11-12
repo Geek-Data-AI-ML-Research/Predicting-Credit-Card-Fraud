@@ -1,0 +1,128 @@
+{
+  "NO_SUBMIT": true,
+  "utc": "2026-11-12T19:39:30.393286+00:00",
+  "elapsed_s": 61.87,
+  "step1": {
+    "local_oof_0": [
+      139992,
+      10,
+      2
+    ],
+    "local_test_0": [
+      299984,
+      10,
+      2
+    ],
+    "replica_pt_mb": 344.8,
+    "fold_0_pt_mb": 1034.4,
+    "pod_id_terminated": "nnts6ddqh5mprf",
+    "never_touch": "lheroidmuab1j4"
+  },
+  "solo": {
+    "L7_s7_K4": 0.9473313585415295,
+    "L7_s7_K10": 0.9475445293730193,
+    "L7_s2026_best_red": 0.9475174388937558,
+    "L7_s2026_best_red_name": "R3_ranklogit_mean",
+    "L7_s2026_bayes": 0.9474933760825137,
+    "reductions": {
+      "R1_mean_llr": {
+        "auc": 0.9475150811050559
+      },
+      "R2_bayes_tau0.5": {
+        "auc": 0.9474432050744462
+      },
+      "R2_bayes_tau1.0": {
+        "auc": 0.9474933760825137
+      },
+      "R2_bayes_tau1.5": {
+        "auc": 0.9475044423023848
+      },
+      "R2_bayes_tau2.0": {
+        "auc": 0.9475096334785602
+      },
+      "R3_ranklogit_mean": {
+        "auc": 0.9475174388937558
+      },
+      "R2_bayes_default": {
+        "auc": 0.9474933760825137
+      }
+    },
+    "two_seed_K10_K10": 0.9480483470090517,
+    "two_seed_K4_plus_s2026": 0.9479780361025164,
+    "corr_s2026_vs_s7_K10": 0.9867280870341201,
+    "corr_s2026_vs_s7_K4": 0.9858600697622557,
+    "hybrid_L7F_plus_s2026": {
+      "0.15": 0.9478055989073165,
+      "0.25": 0.9479260341945884,
+      "0.35": 0.9480059876331574,
+      "0.45": 0.9480456395153698,
+      "0.55": 0.9480401810091637
+    },
+    "hybrid_best_gamma": 0.45,
+    "hybrid_best_auc": 0.9480456395153698
+  },
+  "moves": {
+    "MoveA_s2026_minus_s7_K4": {
+      "base_auc": 0.9516699819476071,
+      "best_auc": 0.9516701156126224,
+      "best_w": 0.12,
+      "delta": 1.3366501527833918e-07,
+      "delta_e5": 0.013366501527833918
+    },
+    "MoveB_hybrid65_35_minus_s7_K4": {
+      "base_auc": 0.9516699819476071,
+      "best_auc": 0.9516704202445178,
+      "best_w": 0.15,
+      "delta": 4.382969106542234e-07,
+      "delta_e5": 0.04382969106542234
+    },
+    "MoveC_B_plus_LMtrim": {
+      "delta": 2.1759421096056997e-06,
+      "delta_e5": 0.21759421096056997,
+      "best_auc": 0.9516721578897167,
+      "wB": 0.12,
+      "wL": 0.08,
+      "base_auc": 0.9516699819476071
+    },
+    "OLD_gate3_s2026_minus_s7_K10": {
+      "base_auc": 0.9516699819476071,
+      "best_auc": 0.9516700130324942,
+      "best_w": 0.04,
+      "delta": 3.108488710878987e-08,
+      "delta_e5": 0.003108488710878987
+    },
+    "base_eval_S7matched_f0_auc": 0.9516699819476071
+  },
+  "staged": [
+    {
+      "tag": "v12_cand1_MoveA_twoseed_K10_minus_K4",
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_v12_cand1_MoveA_twoseed_K10_minus_K4_0.10e4_NOSUBMIT.csv",
+      "w": 0.02487179487179487,
+      "dist_e4": 0.10436184003204119,
+      "in_band": true,
+      "NO_SUBMIT": true
+    },
+    {
+      "tag": "v12_cand2_MoveB_hybrid_minus_K4",
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_v12_cand2_MoveB_hybrid_minus_K4_0.10e4_NOSUBMIT.csv",
+      "w": 0.03994871794871795,
+      "dist_e4": 0.10258019257136652,
+      "in_band": true,
+      "NO_SUBMIT": true
+    }
+  ],
+  "upstream": {
+    "g26_test5fold": false,
+    "g26_files_head": "name                         size  creationDate                \n------------------------  -------  --------------------------  \nREADME.md                    1343  2026-11-12 09:14:45.794000  \ngpt2_s2026_oof_5fold.npy  5599808  2026-11-12 09:14:46.075000  \ngpt2_s2026_test_f0.npy    2400000  2026-11-12 09:14:45.915000  \n",
+    "q17_files_head": "name                       size  creationDate                \n---------------------  --------  --------------------------  \nrank1_q17_streams.npz  64574677  2026-11-12 14:04:47.476000  \n",
+    "detective_w_head": "name              size  creationDate                \n-----------  ---------  --------------------------  \nconfig.json        961  2026-11-10 23:11:40.103000  \nmodel.pt     497805283  2026-11-10 23:11:51.122000  \n",
+    "recent_kernels_head": "ref,title,author,lastRunTime,totalVotes\nmarkbarney/s6e11-what-we-tried-and-what-did-not-work,S6E11 | What We Tried and What Did Not Work,Mark Barney,2026-11-12 19:26:19.613000,0\nmodansaif/s6e11-fraud-fusion-reproduction-credited,S6E11 Fraud Fusion Reproduction (credited),SAIF MODAN,2026-11-12 18:36:26.740000,0\nbawanthabeliwaththa/the-honest-stack-cv-lb-and-the-0-9533-trap,\"The Honest Stack: CV, LB, and the 0.9533 Trap\",Bawantha Beliwaththa,2026-11-12 17:38:52.200000,0\nknightfork/s6e11-top-15-cpu-blend-eda-lb-0-95357,S6E11 | Top 15 CPU Blend + EDA | LB 0.95357,Knight Fork,2026-11-12 13:52:53.687000,0\nasteriospanoras/s6e11-how-much-of-the-public-top-is-real,S6E11 | How Much of the Public Top Is Real?,Asterios Panoras,2026-11-12 14:46:56.213000,1\ndeepakkumbhar16/beginners-friendly-blending-gb"
+  },
+  "verdict": {
+    "gate3_flaw": "Prior Gate3 compared s2026_K10 vs s7_K10; cand2 test uses lm7_test_f0 = s7_K4 only.",
+    "best_move": [
+      "C",
+      0.21759421096056997
+    ]
+  }
+}

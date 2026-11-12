@@ -1,0 +1,37 @@
+{
+  "NO_SUBMIT": true,
+  "recommended": true,
+  "formula": "L(Q17_anchor)+0.03*unitize(d1_v4) + 0.01*orth(L(sovereign)-L(wide)) + 0.015*orth(L(G26)-L(MS))",
+  "vs_L2_OOF": {
+    "pos5": 5,
+    "mean_d_e5": 2.3610170239418693,
+    "folds_e5": [
+      0.666,
+      2.612,
+      0.39,
+      6.288,
+      1.849
+    ]
+  },
+  "subfold_f0": {
+    "pos5": 3,
+    "mean_d_e5": 1.193096587521758,
+    "folds": [
+      -3.081,
+      -4.113,
+      3.197,
+      7.63,
+      2.333
+    ]
+  },
+  "1rho_vs_L2": 5.602541824634155e-05,
+  "expected_if_55pct_transfer": 0.953723,
+  "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_v12p3_slot4_L2_sov0.01_G260.015_5of5_SAFE_NOSUBMIT.csv",
+  "sha16": "89b94c7fea400801",
+  "aggressive_alt": "sub_v12p3_slot4_L2_sov0.017_G260.022_5of5_NOSUBMIT.csv (higher OOF mean but F0\u22480)",
+  "risks": [
+    "adaptive LOFO on aggressive grid was only 3/5",
+    "F0 subfold not 5/5",
+    "public may transfer <55%"
+  ]
+}

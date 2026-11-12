@@ -129,3 +129,13 @@ Only **discrete generator-forensic log-odds & token LLR signals** provided true 
   - `submissions/sub_v5_harvest_on_ev4.csv` ($\eta = 1.0$): $\rho(\text{on\_ev4\_1.0x}, \text{sub\_ev4}) = \mathbf{0.999679}$, `KS = 0.00000`, SHA-256 `953e118caff0f298`
   - `submissions/sub_v5_harvest_pure.csv` (Pure OOF-optimal `P_super_v5_harvest_test`): $\rho(\text{pure}, \text{sub\_ev4}) = \mathbf{0.999123}$, SHA-256 `c43df92be3b1d9a1`
 
+
+---
+
+## Pointer (2026-11-12) — ATH moved past this campaign log
+
+This file is the Nov 6–7 `STRICT NO_SUBMIT` / v4p→v5 harvest campaign log (OOF era ~0.9523). **Current public ATH is 0.95371** (Q17 anchor + 0.03·d1_v4). See:
+
+- `docs/THINGS_THAT_WORKED.md` / `docs/DEAD_ENDS.md`
+- `logs/overnight/GM_V12_DAY_SUMMARY_2026-11-12.md`
+- `logs/overnight/GM_V12_3_LADDER_LIVE_REPORT.md`

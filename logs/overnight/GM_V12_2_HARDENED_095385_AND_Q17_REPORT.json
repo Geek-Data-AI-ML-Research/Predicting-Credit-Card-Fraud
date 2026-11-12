@@ -1,0 +1,757 @@
+{
+  "NO_SUBMIT": true,
+  "POD_TOUCHES": 0,
+  "utc": "2026-11-12T20:11:29.583941+00:00",
+  "elapsed_s": 180.54,
+  "recon_heads": {
+    "kernels_dateRun": "ref                                                               title                                               author                        lastRunTime                 totalVotes  \n----------------------------------------------------------------  --------------------------------------------------  ----------------------------  --------------------------  ----------  \nmarkbarney/s6e11-what-we-tried-and-what-did-not-work              S6E11 | What We Tried and What Did Not Work         Mark Barney                   2026-11-12 19:26:19.613000           0  \nmodansaif/s6e11-fraud-fusion-reproduction-credited                S6E11 Fraud Fusion Reproduction (credited)          SAIF MODAN                    2026-11-12 18:36:26.740000           0  \nluthfimuthathohirin/credit-card-fraud-ensemble-forensics          Credit Card Fraud Ensemble Forensics                Luthfi Muthathohirin          2026-11-12 18:09:43.623000           1  \nevgendvorkin/s6e11-deep-eda-artifacts-xgb-oof-0-950285            S6E11 | Deep EDA & Artifacts | XGB OOF 0.950285     \u0414\u0432\u043e\u0440\u043a\u0438\u043d \u0415\u0432\u0433\u0435\u043d\u0438\u0439 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447  2026-11-12 17:55:03.580000          60  \nbawanthabeliwaththa/the-honest-stack-cv-lb-and-the-0-9533-trap    ",
+    "kernels_scoreDesc": "ref                                                             title                                               author                            lastRunTime                 totalVotes  \n--------------------------------------------------------------  --------------------------------------------------  --------------------------------  --------------------------  ----------  \nareebbb/s6e11-three-ladders-two-seeds-lb-0-95354                S6E11 | Three Ladders, Two Seeds | LB 0.95354       Areeb Ali                         2026-11-12 10:11:25.853000          47  \nmalyshevdanil/fraud-signal-lab-gpt-2-and-glm-fusion             Fraud Signal Lab | GPT-2 and GLM Fusion             Malyshev Danil                    2026-11-12 13:09:05.370000          30  \ngoodpjw2008/s6e11-lm-ladder-two-gpt-2-seeds-lb-0-95354          S6E11 LM Ladder | Two GPT-2 Seeds | LB 0.95354      goodpjw2008                       2026-11-12 09:17:28.553000          19  \nasteriospanoras/s6e11-how-much-of-the-public-top-is-real        S6E11 | How Much of the Public Top Is Real?         Asterios Panoras                  2026-11-12 14:46:56.213000           0  \nmodansaif/s6e11-fraud-fusion-reproduction-credited    ",
+    "search_9538": "ref                                                            title                                               author                        lastRunTime                 totalVotes  \n-------------------------------------------------------------  --------------------------------------------------  ----------------------------  --------------------------  ----------  \nd1ffic00lt/0-95387-catboost-xgboost-lgbm                       0.95387 | CatBoost & XGBoost & LGBM                 Filinov Dmitry                2026-02-28 21:34:14.847000          61  \ndatasciencegrad/s6e2-catb-only-k-fold-cv-0-9555                S6E2 | CatB Only | K-fold | CV - 0.9555+            Sagar Nagpure                 2026-02-06 07:45:15.827000          68  \nomidbaghchehsaraei/tabnet-predicting-heart-disease-lb-0-95389  TabNet | Predicting Heart Disease | LB: 0.95389     OMID BAGHCHEH SARAEI          2026-02-16 09:56:43.950000          24  \njeetkhamar/ultimate-classification-notebook-98                 Ultimate Classification Notebook (98%)              Jeet Khamar                   2024-03-01 08:06:34.043000          28  \nomidbaghchehsaraei/resnet-predicting-heart-disease-lb-0-95385  ResNet | Predicting H",
+    "search_9537": "ref                                                                 title                                               author                  lastRunTime                 totalVotes  \n------------------------------------------------------------------  --------------------------------------------------  ----------------------  --------------------------  ----------  \nabdelrahmantarek22/used-cars-price-prediction-r2-score-0-9537       Used Cars Price Prediction [R2 score: 0.9537]       AbdelrahmanTarek22      2021-11-22 18:15:51.680000           4  \nbelbino/heart-disease-xgb-lgb-cat-ridge-pipe-0-95377                Heart Disease| XGB-LGB-Cat-Ridge Pipe|0.95377       BELBIN BENO R M         2026-02-28 19:43:36.963000          28  \nyashanathaniel/catboost-oof-encoding-heartdisease-0-95379           \ud83e\udec0 CatBoost + OOF Encoding: HeartDisease|0.95379     Yaserntx'               2026-02-20 20:52:28.670000          33  \npalpawan12/heart-disease-with-logistic-regression-0-9537            Heart Disease with Logistic Regression 0.9537       palpawan12              2026-02-26 13:49:49.130000          14  \nyousefsaadtk/resparitory-diseases-detection                         Resparitory diseases d",
+    "search_9536": "ref                                                              title                                             author               lastRunTime                 totalVotes  \n---------------------------------------------------------------  ------------------------------------------------  -------------------  --------------------------  ----------  \nsudhanshuraheja/petals-tpu-tta-external-data-0-95360-lb          Petals - TPU + TTA + External Data 0.95360 LB     Sudhanshu Raheja     2020-08-30 11:12:50.210000           4  \nmirasaif/machine-learning-project                                Machine Learning Project                          Amira Essam          2024-12-17 07:26:31.917000           7  \nxjoannax88/baseline-starter-prediction-catboost-0-95367          \u2764\ufe0f\ud83e\udec0Baseline|Starter|Prediction|Catboost|0.95367   J.                   2026-02-09 20:01:52.370000          19  \naqqqqa/brain-tumor-mri-analysis-with-cnn-gnn-pipeline            Brain Tumor MRI Analysis with CNN-GNN Pipeline    aqqqqa               2026-04-11 10:11:08.710000          14  \naarishasifkhan/arc-2024-complex-nn                               ARC 2024 - Complex NN                             Aarish Asif Khan     20",
+    "search_s6e11_9538": "Not found\n",
+    "search_s6e11_9537": "ref                                                             title                                              author         lastRunTime                 totalVotes  \n--------------------------------------------------------------  -------------------------------------------------  -------------  --------------------------  ----------  \nsameershaikh27/s6e11-fraud-the-playbook-10-notebooks-in-1-page  S6E11 Fraud: The Playbook, 10 Notebooks in 1 Page  Sameer Shaikh  2026-11-11 18:21:35.763000           5  \nsameershaikh27/s6e11-fraud-public-submission-fusion-no-oof      S6E11 Fraud: Public Submission Fusion (No OOF)     Sameer Shaikh  2026-11-12 13:01:40.447000           2  \n",
+    "datasets_s6e11": "ref                                                     title                                                  size  lastUpdated                 downloadCount  voteCount  usabilityRating  \n------------------------------------------------------  -----------------------------------------------  ----------  --------------------------  -------------  ---------  ---------------  \namanatar/s6e11-rank1-q17-meta-bundle                    S6E11 Rank #1 Q17 Meta Bundle                      64592945  2026-11-12 14:04:45.277000             16          1  0.125            \ndaoviet/s6e11-gp-dvae-orthogonal-apex                   S6E11 GP and DVAE Orthogonal Apex                  11617844  2026-11-12 12:40:02.780000             62          0  0.29411766       \ngoodpjw2008/s6e11-target-first-gpt2-seed-2026           S6E11 Target-First GPT-2 Seed 2026                  7465705  2026-11-12 09:14:44.553000             63          1  0.375            \nalexchilton/s6e11-oof-predictions                       S6E11 OOF + test predictions (15 models)          229776751  2026-11-12 08:22:15.010000           1209          0  0.5              \ngoodpjw2008/s6e11-compact-lm-seed7                      S6E11 Comp",
+    "g26_files": "name                         size  creationDate                \n------------------------  -------  --------------------------  \nREADME.md                    1343  2026-11-12 09:14:45.794000  \ngpt2_s2026_oof_5fold.npy  5599808  2026-11-12 09:14:46.075000  \ngpt2_s2026_test_f0.npy    2400000  2026-11-12 09:14:45.915000  \n",
+    "q17_files": "name                       size  creationDate                \n---------------------  --------  --------------------------  \nrank1_q17_streams.npz  64574677  2026-11-12 14:04:47.476000  \n"
+  },
+  "pulls": {
+    "knightfork/s6e11-top-15-cpu-blend-eda-lb-0-95357": "already present: /Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/external/nov12_late_kernels/knightfork_095357",
+    "modansaif/s6e11-fraud-fusion-reproduction-credited": "already present: /Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/external/nov12_late_kernels/modansaif",
+    "asteriospanoras/s6e11-how-much-of-the-public-top-is-real": "already present: /Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/external/nov12_late_kernels/asterios",
+    "bawanthabeliwaththa/the-honest-stack-cv-lb-and-the-0-9533-trap": "already present: /Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/external/nov12_late_kernels/bawanthabeliwaththa",
+    "markbarney/s6e11-what-we-tried-and-what-did-not-work": "already present: /Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/external/nov12_late_kernels/markbarney",
+    "luthfimuthathohirin/credit-card-fraud-ensemble-forensics": "already present: /Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/external/nov12_late_kernels/luthfi_forensics"
+  },
+  "knightfork": {
+    "formula": "L(preserved_095354_ladder) + 0.25 * (L(sovereign) - L(wide))",
+    "WEIGHT": 0.25,
+    "public_auc": 0.95357,
+    "inputs": [
+      "goodpjw2008 LM Ladder 0.95354 reference CSV",
+      "amanatar Sovereign OOF+Test vault (sovereign vs wide difference)"
+    ],
+    "proxy_oof_delta": 1.7580980577e-05,
+    "proxy_folds_up": 4,
+    "sha256_submission": "b8f9bda48da5efb8189ea22d3f54373d83c1768f311e6b5818ba3b4de323dc07"
+  },
+  "modansaif": {
+    "note": "Fraud-fusion reproduction credited \u2014 rebuilds public Three-Ladders / LM-ladder recipe (A/F/LM/L7F/GPD/MS/G26 style members).",
+    "formula_proxy": "public ladder reconstruction (Areeb/goodpjw lineage), not a new 0.9538x formula"
+  },
+  "bawantha": {
+    "title": "The Honest Stack: CV, LB, and the 0.9533 Trap",
+    "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/external/nov12_late_kernels/bawanthabeliwaththa",
+    "thesis": "Public 0.9533 band can be CV-fragile / winner's-curse; honesty about CV vs LB gap."
+  },
+  "q17_keys": [
+    "y_train",
+    "folds",
+    "oof_anchor_095370",
+    "test_anchor_095370",
+    "test_anchor_prob",
+    "stream_names",
+    "oof_megayak_5f_lm",
+    "test_megayak_5f_lm",
+    "oof_masaya_gpt2",
+    "test_masaya_gpt2",
+    "oof_lm7_5fold",
+    "test_lm7_5fold",
+    "oof_gpt2_seed2026",
+    "test_gpt2_seed2026",
+    "oof_tabpfn_slimypunk_tp1",
+    "test_tabpfn_slimypunk_tp1",
+    "oof_sadam_tabpfn_100k_tp3",
+    "test_sadam_tabpfn_100k_tp3",
+    "oof_yekenot_realmlp",
+    "test_yekenot_realmlp",
+    "oof_alex_glm_gen",
+    "test_alex_glm_gen",
+    "oof_daoviet_gpdvae",
+    "test_daoviet_gpdvae",
+    "oof_gbn_bag5_w512",
+    "test_gbn_bag5_w512",
+    "oof_sameer_glm10f",
+    "test_sameer_glm10f",
+    "oof_sadam_v6_gb_xgb",
+    "test_sadam_v6_gb_xgb",
+    "oof_sadam_v6_gb_lgb",
+    "test_sadam_v6_gb_lgb",
+    "oof_sadam_v4_cat",
+    "test_sadam_v4_cat",
+    "oof_gb_bag5",
+    "test_gb_bag5",
+    "oof_megayak_shallow_tree",
+    "test_megayak_shallow_tree"
+  ],
+  "stream_names": [
+    "megayak_5f_lm",
+    "masaya_gpt2",
+    "lm7_5fold",
+    "gpt2_seed2026",
+    "tabpfn_slimypunk_tp1",
+    "sadam_tabpfn_100k_tp3",
+    "yekenot_realmlp",
+    "alex_glm_gen",
+    "daoviet_gpdvae",
+    "gbn_bag5_w512",
+    "sameer_glm10f",
+    "sadam_v6_gb_xgb",
+    "sadam_v6_gb_lgb",
+    "sadam_v4_cat",
+    "gb_bag5",
+    "megayak_shallow_tree"
+  ],
+  "solo": {
+    "anchor_095370": {
+      "solo_auc": 0.9525514073195129,
+      "fold_aucs": [
+        0.9517748872251947,
+        0.9525318423053558,
+        0.9572653058934052,
+        0.9528036958510038,
+        0.9483809799561548
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "megayak_5f_lm": {
+      "solo_auc": 0.9504516682713816,
+      "fold_aucs": [
+        0.948505568399054,
+        0.9506818231843808,
+        0.9560849667798148,
+        0.9506042586063622,
+        0.946380901046167
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "masaya_gpt2": {
+      "solo_auc": 0.9500480360293713,
+      "fold_aucs": [
+        0.9488823063531588,
+        0.9503172202635032,
+        0.9553119854079785,
+        0.9498742215934888,
+        0.9458539587540018
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "lm7_5fold": {
+      "solo_auc": 0.9494439714107487,
+      "fold_aucs": [
+        0.9475445293730193,
+        0.9497671496639838,
+        0.9551661607076907,
+        0.9490652062349009,
+        0.9456760135623762
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "gpt2_seed2026": {
+      "solo_auc": 0.9501730797865355,
+      "fold_aucs": [
+        0.9491910585502968,
+        0.9503700982825202,
+        0.9552357242927039,
+        0.9502096527385091,
+        0.9458584532924026
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "tabpfn_slimypunk_tp1": {
+      "solo_auc": 0.9493429437758374,
+      "fold_aucs": [
+        0.9481552261769813,
+        0.9503328913346578,
+        0.9547382023509361,
+        0.9491845189069087,
+        0.9443033802918397
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "sadam_tabpfn_100k_tp3": {
+      "solo_auc": 0.94888961662084,
+      "fold_aucs": [
+        0.9475724436017954,
+        0.9508788247216776,
+        0.9529789346873256,
+        0.9490339013787722,
+        0.9439834291262966
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "yekenot_realmlp": {
+      "solo_auc": 0.9501145276043084,
+      "fold_aucs": [
+        0.9500495625213992,
+        0.9510403531185285,
+        0.9549457341271826,
+        0.9503983845115789,
+        0.9441385784790154
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "alex_glm_gen": {
+      "solo_auc": 0.9505035055177602,
+      "fold_aucs": [
+        0.9494180652651144,
+        0.9506593023310587,
+        0.9555146156050149,
+        0.9514767490273247,
+        0.9454483379268459
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "daoviet_gpdvae": {
+      "solo_auc": 0.9465293579991485,
+      "fold_aucs": [
+        0.9447320822318986,
+        0.9476896459991562,
+        0.9514630214983544,
+        0.9466614780045773,
+        0.9420998058346982
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "gbn_bag5_w512": {
+      "solo_auc": 0.9512429486276622,
+      "fold_aucs": [
+        0.949915686128868,
+        0.9516058120356635,
+        0.9560761221869644,
+        0.9518553358196671,
+        0.94676122941388
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "sameer_glm10f": {
+      "solo_auc": 0.9516046167778174,
+      "fold_aucs": [
+        0.9508096439681555,
+        0.9520959015986861,
+        0.9563717705304517,
+        0.9520656190053531,
+        0.9466798290199913
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "sadam_v6_gb_xgb": {
+      "solo_auc": 0.9507702706789694,
+      "fold_aucs": [
+        0.9506578378126423,
+        0.9504680133474087,
+        0.9558513129265982,
+        0.9510172574365826,
+        0.945856884165619
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "sadam_v6_gb_lgb": {
+      "solo_auc": 0.9509402481248707,
+      "fold_aucs": [
+        0.9506460659658299,
+        0.9506616000919627,
+        0.9560987471308751,
+        0.9513072507092859,
+        0.9459874557106975
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "sadam_v4_cat": {
+      "solo_auc": 0.9501134781586396,
+      "fold_aucs": [
+        0.9491888064502135,
+        0.9505731199844574,
+        0.9550722508000776,
+        0.9510023414105931,
+        0.9447304826200225
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "gb_bag5": {
+      "solo_auc": 0.9515368996273391,
+      "fold_aucs": [
+        0.9504322470144403,
+        0.9515890425757603,
+        0.956273509014798,
+        0.9523947612145118,
+        0.9469944871014236
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    },
+    "megayak_shallow_tree": {
+      "solo_auc": 0.9515042549436553,
+      "fold_aucs": [
+        0.9503825329542158,
+        0.9518020927067944,
+        0.9562092897823945,
+        0.9525071169065823,
+        0.9466197718575416
+      ],
+      "oof_shape": [
+        699960
+      ],
+      "test_shape": [
+        299984
+      ]
+    }
+  },
+  "leak": {
+    "n_member_streams": 16,
+    "r2_oof_ridge_raw": 0.9940342760538956,
+    "r2_test_ridge_raw": 0.9826628053067283,
+    "max_abs_w_oof_minus_w_test_ridge": 0.9116271719771804,
+    "max_abs_w_oof_minus_w_test_ols": 0.9141871664269164,
+    "max_abs_wL_oof_minus_wL_test": 0.8567963330678887,
+    "identical_1e4": false,
+    "corr_test_vs_oof_weights": 0.9892631156734026,
+    "w_oof_ridge": {
+      "megayak_5f_lm": 0.4062968935225915,
+      "masaya_gpt2": 0.44265742491092963,
+      "lm7_5fold": -0.0979966925284897,
+      "gpt2_seed2026": 0.017479568218043022,
+      "tabpfn_slimypunk_tp1": -0.005269689219292111,
+      "sadam_tabpfn_100k_tp3": 0.1387264555843875,
+      "yekenot_realmlp": 0.038513665764289245,
+      "alex_glm_gen": -0.5234469990664317,
+      "daoviet_gpdvae": -0.10712971756649199,
+      "gbn_bag5_w512": 0.12822001073084965,
+      "sameer_glm10f": 0.365785559338017,
+      "sadam_v6_gb_xgb": 0.5859136057868506,
+      "sadam_v6_gb_lgb": -0.13369850261890234,
+      "sadam_v4_cat": -0.34921351053596067,
+      "gb_bag5": 0.3435421238512235,
+      "megayak_shallow_tree": 0.5745195328368037
+    },
+    "w_test_ridge": {
+      "megayak_5f_lm": 0.8609408903417887,
+      "masaya_gpt2": 0.10263817178400518,
+      "lm7_5fold": -0.005355289466430202,
+      "gpt2_seed2026": -0.03084784502610079,
+      "tabpfn_slimypunk_tp1": 0.21029411248105007,
+      "sadam_tabpfn_100k_tp3": 0.2497274404928334,
+      "yekenot_realmlp": 0.10108054458073425,
+      "alex_glm_gen": -0.5579733831620654,
+      "daoviet_gpdvae": -0.11928620781072065,
+      "gbn_bag5_w512": 0.16329540678423116,
+      "sameer_glm10f": -0.06568487984028629,
+      "sadam_v6_gb_xgb": 1.2159653030577162,
+      "sadam_v6_gb_lgb": -0.5404686225727059,
+      "sadam_v4_cat": -0.5544753791132327,
+      "gb_bag5": 1.1049725976430953,
+      "megayak_shallow_tree": -0.33710763914037667
+    },
+    "top_abs_delta": [
+      {
+        "stream": "megayak_shallow_tree",
+        "w_oof": 0.5745195328368037,
+        "w_test": -0.33710763914037667,
+        "abs_delta": 0.9116271719771804
+      },
+      {
+        "stream": "gb_bag5",
+        "w_oof": 0.3435421238512235,
+        "w_test": 1.1049725976430953,
+        "abs_delta": 0.7614304737918718
+      },
+      {
+        "stream": "sadam_v6_gb_xgb",
+        "w_oof": 0.5859136057868506,
+        "w_test": 1.2159653030577162,
+        "abs_delta": 0.6300516972708656
+      },
+      {
+        "stream": "megayak_5f_lm",
+        "w_oof": 0.4062968935225915,
+        "w_test": 0.8609408903417887,
+        "abs_delta": 0.45464399681919715
+      },
+      {
+        "stream": "sameer_glm10f",
+        "w_oof": 0.365785559338017,
+        "w_test": -0.06568487984028629,
+        "abs_delta": 0.4314704391783033
+      },
+      {
+        "stream": "sadam_v6_gb_lgb",
+        "w_oof": -0.13369850261890234,
+        "w_test": -0.5404686225727059,
+        "abs_delta": 0.4067701199538035
+      },
+      {
+        "stream": "masaya_gpt2",
+        "w_oof": 0.44265742491092963,
+        "w_test": 0.10263817178400518,
+        "abs_delta": 0.34001925312692444
+      },
+      {
+        "stream": "tabpfn_slimypunk_tp1",
+        "w_oof": -0.005269689219292111,
+        "w_test": 0.21029411248105007,
+        "abs_delta": 0.21556380170034217
+      },
+      {
+        "stream": "sadam_v4_cat",
+        "w_oof": -0.34921351053596067,
+        "w_test": -0.5544753791132327,
+        "abs_delta": 0.20526186857727208
+      },
+      {
+        "stream": "sadam_tabpfn_100k_tp3",
+        "w_oof": 0.1387264555843875,
+        "w_test": 0.2497274404928334,
+        "abs_delta": 0.1110009849084459
+      }
+    ],
+    "verdict": "Possibility B: OOF/test constructed differently (weights diverge)",
+    "ladder_reg_L_r2": 0.9941044563255391,
+    "ladder_reg_L_w": {
+      "A": 1.49879247534689,
+      "F": 0.39170567752712165,
+      "LM": 0.2524554521680336,
+      "L7F": 0.2504189250834008,
+      "GPD": 0.051518029680992936,
+      "G26": 0.119305605276054,
+      "MS": -0.3426428473607041,
+      "MLP": -0.08422776004904856,
+      "GB": -0.30818136920299405,
+      "L7_f0_K4": -0.031077092777994492
+    },
+    "ladder_reg_raw_r2": 0.9941044562664647,
+    "ladder_reg_raw_w": {
+      "A": 1.4987924763623655,
+      "F": 0.3917056730358128,
+      "LM": 0.2524554519665367,
+      "L7F": 0.2504189240256053,
+      "GPD": 0.05151803029546354,
+      "G26": 0.11930560388262196,
+      "MS": -0.34264284545216034,
+      "MLP": -0.08422776075115478,
+      "GB": -0.3081813675500061,
+      "L7_f0_K4": -0.03107709131736186
+    },
+    "prop_loadings": {
+      "d1_v4": {
+        "corr_with_L_anchor": 0.000882380722225704,
+        "corr_with_resid_after_ladder": 0.15012630494540774,
+        "abs_mean": 0.6767646430305513
+      },
+      "G26_minus_MS": {
+        "corr_with_L_anchor": -0.005615554259248352,
+        "corr_with_resid_after_ladder": 1.6505027624081147e-15,
+        "abs_mean": 0.7637753406375324
+      },
+      "Strike9p5": {
+        "corr_with_L_anchor": 0.9955960735744107,
+        "corr_with_resid_after_ladder": 0.0005369867243528848,
+        "abs_mean": 0.7643108075573706
+      },
+      "L7_s2026_K10_minus_L7_K4": {
+        "corr_with_L_anchor": -0.014469052606534418,
+        "corr_with_resid_after_ladder": -0.04282737816734513,
+        "abs_mean": 0.7589378433461764
+      }
+    }
+  },
+  "spearman_anchor": {
+    "A_095340": 0.00165884,
+    "F_095330": 0.00179762,
+    "z_S7_ours": 0.00104637,
+    "cand2": 0.0009896,
+    "areeb_095347": 0.00115785,
+    "s354": 0.0010722,
+    "knightfork_095357": null
+  },
+  "pure_subfold": {
+    "pos5": 4,
+    "mean_d_e5": 0.026411546791837996,
+    "fold_d_e5": [
+      -0.031,
+      0.1087,
+      0.0156,
+      0.0078,
+      0.0311
+    ],
+    "w": 0.036
+  },
+  "prop_in_anchor": {
+    "w_d1": -0.05097036519860978,
+    "w_g26ms": -0.001283033692295512,
+    "w_l7_s2026_f0only": -0.028033085131395057,
+    "r2": 0.0033891585190568563
+  },
+  "inv_moves": {
+    "plus_d1_v4_w0.036": {
+      "pos5": 4,
+      "mean_d_e5": 0.003076711143634725,
+      "fold_d_e5": [
+        0.0071,
+        0.0053,
+        0.0026,
+        0.0006,
+        -0.0003
+      ],
+      "w": 0.036
+    },
+    "plus_d1_v4_w0.036_adaptive": {
+      "fold_d_e5": [
+        0.003,
+        0.019,
+        0.007,
+        -0.0,
+        0.015
+      ],
+      "pos5": 4,
+      "mean_d_e5": 0.009,
+      "d0_e5": 0.003,
+      "betas": [
+        0.08,
+        0.08,
+        0.08,
+        0.08,
+        0.08
+      ],
+      "pass": false
+    },
+    "plus_G26_minus_MS_w0.036": {
+      "pos5": 2,
+      "mean_d_e5": -0.0008392527517386837,
+      "fold_d_e5": [
+        -0.0037,
+        0.0003,
+        -0.0101,
+        0.0099,
+        -0.0006
+      ],
+      "w": 0.036
+    },
+    "plus_G26_minus_MS_w0.036_adaptive": {
+      "fold_d_e5": [
+        0.009,
+        0.012,
+        -0.013,
+        0.03,
+        0.01
+      ],
+      "pos5": 4,
+      "mean_d_e5": 0.01,
+      "d0_e5": 0.009,
+      "betas": [
+        0.08,
+        0.08,
+        0.08,
+        0.08,
+        0.08
+      ],
+      "pass": false
+    },
+    "plus_L7_s2026_K10_f0_w0.036": {
+      "pos5": 1,
+      "mean_d_e5": 0.00012433954976742712,
+      "fold_d_e5": [
+        0.0006,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "w": 0.036
+    },
+    "plus_L7_s2026_K10_f0_w0.036_adaptive": {
+      "fold_d_e5": [
+        -0.003,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pos5": 0,
+      "mean_d_e5": -0.001,
+      "d0_e5": -0.003,
+      "betas": [
+        0.01,
+        0.02,
+        0.02,
+        0.02,
+        0.02
+      ],
+      "pass": false
+    },
+    "plus_d1_and_L7_w0.036": {
+      "pos5": 4,
+      "mean_d_e5": 0.001957629056636989,
+      "fold_d_e5": [
+        0.0012,
+        0.005,
+        0.0017,
+        -0.0006,
+        0.0025
+      ],
+      "w": 0.036
+    },
+    "plus_d1_and_L7_w0.036_adaptive": {
+      "fold_d_e5": [
+        0.027,
+        0.011,
+        -0.001,
+        -0.001,
+        0.013
+      ],
+      "pos5": 3,
+      "mean_d_e5": 0.01,
+      "d0_e5": 0.027,
+      "betas": [
+        0.08,
+        0.08,
+        0.08,
+        0.08,
+        0.08
+      ],
+      "pass": false
+    },
+    "plus_d1_G26MS_L7_w0.036": {
+      "pos5": 3,
+      "mean_d_e5": 0.0031383581333699335,
+      "fold_d_e5": [
+        0.0012,
+        0.0065,
+        -0.0008,
+        0.0096,
+        -0.0009
+      ],
+      "w": 0.036
+    },
+    "plus_d1_G26MS_L7_w0.036_adaptive": {
+      "fold_d_e5": [
+        0.011,
+        0.011,
+        -0.003,
+        0.022,
+        0.006
+      ],
+      "pos5": 4,
+      "mean_d_e5": 0.009,
+      "d0_e5": 0.011,
+      "betas": [
+        0.08,
+        0.08,
+        0.08,
+        0.08,
+        0.08
+      ],
+      "pass": false
+    }
+  },
+  "staged": [
+    {
+      "slot": 1,
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_v12p2_slot1_cand2_plus_s2026K10_splitcancel_0p10e4_NOSUBMIT.csv",
+      "w": 2.3592915758490562,
+      "dist_e4": 0.1049999983948613,
+      "ref": "cand2"
+    },
+    {
+      "slot": 2,
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_v12p2_slot2_cand2_plus_s2026K10_plus_Q17orth_0p20e4_NOSUBMIT.csv",
+      "w": 4.128386154770851,
+      "dist_e4": 0.19999999761877163,
+      "ref": "cand2"
+    },
+    {
+      "slot": 3,
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_v12p2_slot3_anchor095370_plus_our_StageB_and_s2026_0p11e4_NOSUBMIT.csv",
+      "w": 2.5797586143016815,
+      "dist_e4": 0.11199999958022566,
+      "ref": "anchor_095370"
+    },
+    {
+      "slot": 4,
+      "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_v12p2_slot4_midpoint_cand2_s2026_x_anchor095370_NOSUBMIT.csv",
+      "alpha_anchor_family": 0.6499999999999999,
+      "dist_cand2_e4": 4.217739657551567,
+      "dist_anchor_e4": 1.342809029106773,
+      "oof_mean_auc": 0.9525883399463781,
+      "ref": "midpoint"
+    }
+  ]
+}

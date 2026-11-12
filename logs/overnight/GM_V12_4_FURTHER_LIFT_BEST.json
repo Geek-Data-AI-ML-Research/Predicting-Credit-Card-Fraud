@@ -1,0 +1,39 @@
+{
+  "NO_SUBMIT": true,
+  "ATH": 0.95371,
+  "formula": "L(anchor)+0.028*unitize(d1) + 0.012*orth(sov-wide) + 0.018*orth(G26-MS)  [orth to base]",
+  "vs_anchor_OOF": {
+    "pos5": 5,
+    "mean_e5": 4.436562932517152,
+    "min_e5": 0.5084902933716329,
+    "folds": [
+      3.38,
+      6.823,
+      0.508,
+      9.202,
+      2.269
+    ]
+  },
+  "vs_L2_OOF": {
+    "pos5": 5,
+    "mean_e5": 2.616292150172672,
+    "min_e5": 0.4235088725157432,
+    "folds": [
+      0.537,
+      2.691,
+      0.424,
+      7.367,
+      2.063
+    ]
+  },
+  "prior_SAFE": {
+    "mean_vs_anchor": 4.181287806286349,
+    "min": 0.47462201229198087
+  },
+  "1rho_vs_L2_live": 7.547344167180281e-05,
+  "expected_if_55pct_from_L2": 0.9537244,
+  "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/submissions/sub_v12p4_L2plus_d10.028_sov0.012_G260.018_robust_NOSUBMIT.csv",
+  "sha16": "394d7ebce6177431",
+  "sameer_lm_mix_best": null,
+  "note": "No third axis cleared 5/5 on SAFE; improvement is robust retune of (d1,sov,G26) only"
+}

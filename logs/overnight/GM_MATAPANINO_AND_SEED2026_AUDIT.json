@@ -1,0 +1,19 @@
+{
+  "NO_SUBMIT": true,
+  "hold_lm_trim": true,
+  "g26_test_5fold": false,
+  "masaya_checkpoints": [],
+  "matapanino_pretokenized": true,
+  "T_natural_approx": 224,
+  "T_compact": 72,
+  "report": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/logs/overnight/GM_MATAPANINO_AND_SEED2026_AUDIT.md",
+  "kaggle_rc": {
+    "files": 0,
+    "status": 1,
+    "user_ds": 0,
+    "user_k": 0,
+    "recent_k": 0,
+    "ds_search": 0
+  },
+  "ds_status_snip": "\n404 Client Error: Not Found for url: https://api.kaggle.com/v1/datasets.DatasetApiService/GetDatasetStatus\n\nThe resource was not found. Check the spelling of the reference you passed.\nReferences are usually '<owner>/<slug>', which you can find in the resource's URL.\nTo search for one, try 'kaggle s"
+}

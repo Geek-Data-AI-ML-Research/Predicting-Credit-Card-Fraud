@@ -69,6 +69,18 @@ docs/                    # research notes / audits
 external/                # pulled public kernels & OOF banks
 ```
 
+## Current local ATH (2026-11-12)
+
+| | |
+|---|---|
+| **Public ATH** | **0.95371** |
+| **Recipe** | `L(Q17 test_anchor_prob) + 0.03 · unitize(d1_v4)` |
+| **CSV** | `submissions/sub_v12p3_slot2_anchor095370_plus_d1v4_5of5_LIVE.csv` |
+| **Day log** | `logs/overnight/GM_V12_DAY_SUMMARY_2026-11-12.md` |
+| **Living docs** | `docs/THINGS_THAT_WORKED.md` · `docs/DEAD_ENDS.md` |
+
+Ladder L1–L4 that day: Q17 pure **0.95370** → L2 **0.95371** → L3/L4 failed to transfer (OOF 5/5 ≠ public). Next lift needs new private signal (full 5F Compact-LM seed2026), not more blends of the current bank.
+
 ## Local next steps (beyond 0.95330)
 
 After `0.95330` was passed on the LB (`0.95332`), SoftPseudo-family retake CSVs were staged for the next quota reset:

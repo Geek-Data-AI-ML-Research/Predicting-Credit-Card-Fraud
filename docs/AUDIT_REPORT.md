@@ -83,6 +83,9 @@ Tied band around 0.95163 with several teams (~ranks 23–26). Private LB unknown
 
 ## What worked
 
+> Living catalogue (Nov 12+): **`docs/THINGS_THAT_WORKED.md`**. Dead ends: **`docs/DEAD_ENDS.md`**.
+
+
 | Item | Detail |
 |------|--------|
 | Public OOF bank + rank/logit hillclimb | CV 0.95111 → public **0.95163** (best). Public−CV ≈ +0.00052 |
