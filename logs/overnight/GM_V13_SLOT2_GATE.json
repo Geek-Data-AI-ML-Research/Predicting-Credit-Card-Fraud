@@ -1,0 +1,9 @@
+{
+  "slot1_public": 0.95386,
+  "ids_ok": true,
+  "finite": true,
+  "1rho_vs_bold": 0.00013086074035051354,
+  "tiny_step": true,
+  "PASS_SLOT2": true,
+  "rationale": "d1_v4 transferred +1e-5 on Q17\u2192L2; same w=0.03 unitize inject on confirmed bold 0.95386"
+}

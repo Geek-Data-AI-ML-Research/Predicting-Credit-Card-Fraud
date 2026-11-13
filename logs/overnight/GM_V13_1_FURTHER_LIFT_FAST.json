@@ -1,0 +1,18 @@
+{
+  "ATH": 0.95388,
+  "formula": "L(bold)+0.03*unitize(d1_v4)",
+  "1rho_ath_vs_bold": 0.00013086074035051354,
+  "1rho_bal_vs_ath": 0.0002757485315694197,
+  "1rho_careful_vs_ath": 0.0004183646479686276,
+  "public_known": {
+    "bold": 0.95386,
+    "balanced": 0.9538,
+    "careful": 0.95376,
+    "top1": 0.95465,
+    "top2": 0.95399,
+    "top3": 0.95395
+  },
+  "gap_to_1": 0.00077,
+  "gap_to_2": 0.00011,
+  "verdict_public_files": "balanced/careful < ATH; only new private residual or undisclosed 0.9539x+ recipe can lift"
+}

@@ -48,3 +48,10 @@ submissions/sub_2*.csv
 
 # Ad-hoc poll / scratch text
 logs/overnight/*_lb_poll.txt
+
+# Local runtime staging (sync banks, audit copies)
+tmp/
+backups/
+external/
+cache_compact.npz
+catboost_info/

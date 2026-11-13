@@ -1,0 +1,74 @@
+{
+  "NO_SUBMIT": true,
+  "POD_TOUCHES": 0,
+  "ATH": 0.95371,
+  "lb_live_top": [
+    {
+      "rank": 1,
+      "team": "Smart Manoj",
+      "score": 0.95465,
+      "public_recipe": false
+    },
+    {
+      "rank": 2,
+      "team": "tine.sh agent",
+      "score": 0.95399,
+      "public_recipe": false
+    },
+    {
+      "rank": 3,
+      "team": "Md. Hamid Hosen",
+      "score": 0.95395,
+      "public_recipe": false
+    },
+    {
+      "rank": "~4-7",
+      "team": "goodpjw2008 / kloaken / ayyaz / Knight Fork",
+      "score": 0.95386,
+      "public_recipe": "goodpjw2008/s6e11-lm-ladder-public-and-cv-up-lb-0-95386"
+    },
+    {
+      "rank": "us",
+      "team": "Moran Zavdi",
+      "score": 0.95371,
+      "note": "L2 Q17+0.03 d1"
+    }
+  ],
+  "reproducible_lift": {
+    "file": "submissions/sub_v13_PURE_goodpjw_bold095386_NOSUBMIT.csv",
+    "sha256": "043d28ce8411290748b40bcf082c3946898679bb7381849e8ca5c9135ac63be8",
+    "public_lb": 0.95386,
+    "delta_vs_ATH_e5": 15,
+    "method": "CV+public-forecast joint mix of 87 members on Q17 0.95370 anchor (bold recipe)",
+    "notebook": "goodpjw2008/s6e11-lm-ladder-public-and-cv-up-lb-0-95386"
+  },
+  "bold_recipe_top_weights": {
+    "s:megayak_shallow_tree": 0.2813,
+    "s:daoviet_gpdvae": 0.1359,
+    "s:megayak_5f_lm": -0.1221,
+    "s:sadam_v6_gb_xgb": -0.1023,
+    "s:masaya_gpt2": -0.07
+  },
+  "also_scored_mixes": {
+    "balanced": 0.9538,
+    "careful": 0.95376
+  },
+  "jamal_blend": "0.85*bold + 0.15*areeb \u2192 0.95384 (worse than pure bold)",
+  "local_bank_status": {
+    "L2_remix_saturated": true,
+    "banned_on_L2": [
+      "P_super_v5",
+      "stageB_4fam",
+      "sov+G26 retune",
+      "Sameer LM mix"
+    ],
+    "L7_s2026_f0_canary": "FAIL gate3 (0.94749 < s7 0.94754)",
+    "d1_on_bold": "staged conceptually after pure bold; LOFO deferred (local sklearn import hang)"
+  },
+  "verdict": {
+    "can_gain_more": true,
+    "best_immediate": "Submit pure goodpjw bold CSV \u2192 expected public 0.95386 (+15e-5 vs ATH)",
+    "not_reachable_now": "0.95465 / 0.95399 have no public artifacts",
+    "after_bold": "Optionally probe bold+d1_v4 (same private residual that transferred on Q17); do not re-try banned L2 axes"
+  }
+}

@@ -1,0 +1,1072 @@
+{
+  "NO_SUBMIT": true,
+  "POD_TOUCHES": 0,
+  "elapsed_s": 318.8,
+  "upstream": {
+    "NO_SUBMIT": true,
+    "POD_TOUCHES": 0,
+    "g26_dataset": "goodpjw2008/s6e11-target-first-gpt2-seed-2026",
+    "g26_has_test_5fold": false,
+    "g26_has_test_f1_f4": false,
+    "new_datasets": [
+      "alexchilton/s6e11-oof-predictions                       S6E11 OOF + test predictions (15 models)          229772644  2026-11-13 08:51:15.683000           1251          0  0.5",
+      "daoviet/s6e11-gp-dvae-orthogonal-apex                   S6E11 GP and DVAE Orthogonal Apex                  14893321  2026-11-13 05:29:58.340000            117          0  0.29411766"
+    ],
+    "top_kernels_by_date": [
+      "----------------------------------------------------------------  --------------------------------------------------  ----------------------------  --------------------------  ----------",
+      "saamhm/eda-blend-lb-0-95239-credit-card-fraud                     EDA | blend | LB-0.95239 | Credit Card Fraud        samsul hoque mondal           2026-11-13 09:57:25.307000          54",
+      "areebbb/s6e11-bold-then-bolder-lb-0-95388                         S6E11 | Bold, Then Bolder | LB 0.95388              Areeb Ali                     2026-11-13 09:49:48.723000          50",
+      "jamaluddin99/s6e11-rank-blend-of-top-public-lb-0-95384            S6E11 | Rank Blend of Top Public | LB 0.95384       jamaluddin99                  2026-11-13 08:13:35.020000           0",
+      "alexchilton/credit-card-fraud-lb-0-9530-shallow-tree-stack        Credit Card Fraud | LB 0.9530 | Shallow-Tree Stack  alex chilton                  2026-11-13 07:48:07.253000          53",
+      "davutkursun/s6e11-tuned-xgb-hill-climbing-lb-0-9475               S6E11 | Tuned XGB + Hill Climbing | LB 0.9475       DavutKursun                   2026-11-13 07:42:57.597000           0",
+      "davidlangatkirui/predicting-credit-card-fraud                     predicting_credit_card_fraud                        David C. Langat               2026-11-13 07:40:41.147000           3",
+      "goodpjw2008/s6e11-lm-ladder-public-and-cv-up-lb-0-95386           S6E11 LM Ladder | Public and CV Up | LB 0.95386     goodpjw2008                   2026-11-13 07:22:02.543000          26",
+      "saqibishtiaq699/complete-code-lightgbm-with-smote                 Complete Code | LightGBM with SMOTE                 Saqib Ishtiaq                 2026-11-13 06:53:23.843000           7",
+      "daoviet/s6e11-on-the-journey-to-your-first-top-100                S6E11 | On the journey to your first top 100 \ud83d\ude80      daoviet                       2026-11-13 05:29:15.693000           9"
+    ],
+    "top_kernels_by_score": [
+      "--------------------------------------------------------------  --------------------------------------------------  --------------------------------  --------------------------  ----------",
+      "areebbb/s6e11-bold-then-bolder-lb-0-95388                       S6E11 | Bold, Then Bolder | LB 0.95388              Areeb Ali                         2026-11-13 09:49:48.723000          50",
+      "saamhm/eda-blend-lb-0-95239-credit-card-fraud                   EDA | blend | LB-0.95239 | Credit Card Fraud        samsul hoque mondal               2026-11-13 09:57:25.307000          54",
+      "malyshevdanil/fraud-signal-lab-gpt-2-and-glm-fusion             Fraud Signal Lab | GPT-2 and GLM Fusion             Malyshev Danil                    2026-11-13 02:36:26.543000          34",
+      "goodpjw2008/s6e11-lm-ladder-public-and-cv-up-lb-0-95386         S6E11 LM Ladder | Public and CV Up | LB 0.95386     goodpjw2008                       2026-11-13 07:22:02.543000          26",
+      "daoviet/s6e11-on-the-journey-to-your-first-top-100              S6E11 | On the journey to your first top 100 \ud83d\ude80      daoviet                           2026-11-13 05:29:15.693000           9",
+      "alexchilton/credit-card-fraud-lb-0-9530-shallow-tree-stack      Credit Card Fraud | LB 0.9530 | Shallow-Tree Stack  alex chilton                      2026-11-13 07:48:07.253000          53",
+      "asteriospanoras/s6e11-how-much-of-the-public-top-is-real        S6E11 | How Much of the Public Top Is Real?         Asterios Panoras                  2026-11-12 14:46:56.213000           3",
+      "modansaif/s6e11-fraud-fusion-reproduction-credited              S6E11 Fraud Fusion Reproduction (credited)          SAIF MODAN                        2026-11-12 18:36:26.740000           0",
+      "amanatar/s6e11-podium-apex-public-lb-0-95340                    S6E11 | Podium Apex | Public LB 0.95340             Aman Atar                         2026-11-10 13:58:10.947000           3"
+    ],
+    "downloaded": [
+      {
+        "ref": "alexchilton/s6e11-oof-predictions",
+        "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/external/nov13_recon/alexchilton_oof_predictions",
+        "n_files": 154
+      },
+      {
+        "ref": "daoviet/s6e11-gp-dvae-orthogonal-apex",
+        "path": "/Volumes/pics/kaggle/cc/Predicting-Credit-Card-Fraud/external/nov13_recon/daoviet_gp_dvae_apex_nov13",
+        "n_files": 12
+      }
+    ],
+    "notes": [
+      "G26 still ABSENT test_5fold / f1..f4 \u2014 only oof_5fold + test_f0 (stamp ~2026-11-12 09:14 UTC)."
+    ],
+    "datasets_s6e11_head": "Warning: Looks like you're using an outdated `kaggle` version (installed: 2.2.4), please consider upgrading to the latest version (2.2.5)\nref                                                     title                                                  size  lastUpdated                 downloadCount  voteCount  usabilityRating  \n------------------------------------------------------  -----------------------------------------------  ----------  --------------------------  -------------  ---------  ---------------  \nalexchilton/s6e11-oof-predictions                       S6E11 OOF + test predictions (15 models)          229772644  2026-11-13 08:51:15.683000           1251          0  0.5              \ndaoviet/s6e11-gp-dvae-orthogonal-apex                   S6E11 GP and DVAE Orthogonal Apex                  14893321  2026-11-13 05:29:58.340000            117          0  0.29411766       \namanatar/s6e11-rank1-q17-meta-bundle                    S6E11 Rank #1 Q17 Meta Bundle                      64592945  2026-11-12 14:04:45.277000             66          1  0.1875           \ngoodpjw2008/s6e11-target-first-gpt2-seed-2026           S6E11 Target-First GPT-2 Seed 2026                  7465705  2026-11-12 09:14:44.553000            114          1  0.375            \ngoodpjw2008/s6e11-compact-lm-seed7                      S6E11 Compact Target-First LM Seed 7               29140672  2026-11-12 08:04:21.997000            297          0  0.375            \namanatar/s6e11-sovereign-oof-test-and-orthogonal-vault  S6E11 Sovereign OOF+Test & Orthogonal Vault        65342999  2026-11-11 02:54:55.807000            298          0  0.64705884       \naphoristicartist/s6e11-detective-weights                s6e11-detective-weights                           462714314  2026-11-10 23:11:38.847000             47          0  0.375            \nkeshigami/model-vs-one-line-rule-six-kaggle-starters    Model vs one-line rule: 6 Kaggle starters              1675  2026-11-10 15:56:19.047000             13          0  1                \naphoristicartist/s6e11-detective-data                   s6e11-detective-data                                 665173  2026-11-10 15:55:57.537000             31          0  0.23529412       \ndariushafshar/s6e11-golem-oof-library                   S6E11 OOF library - 9 models, frozen folds         76962207  2026-11-10 15:38:57.440000            180          0  0.9411765        \namanatar/s6e11-strike10-podium-apex-095340              S6E11 Strike 10 Podium Apex LB 0.95340              9104774  2026-11-10 13:22:20.547000            118          0  0.3529412        \nrajibbahar/ps-s6e11-experiment-results                  PS S6E11 Fraud Experiment Results                      1814  2026-11-09 21:37:53.863000             29          0  0.8235294        \nsometimessubodh/ps6e11-dataset                          PS6E11 38 Features and Leak-Safe OOF/Test Preds   131372929  2026-11-09 11:51:13.290000            361          4  1                \nsk20220623/s6e11-oof-predictions                        S6E11 OOF Predictions Library                     173095936  2026-11-09 11:43:36.793000            115          1  0.1875           \nmoranzavdi/s6e11-strike9-lb-095330                      S6E11 Strike9 LB 0.95330 Frozen Submission          3619611  2026-11-09 09:08:05.577000            146          0  0.64705884       \nxiao789/s6e11-w8-blend-archive                          S6E11 W8 Blend Archive                             33864489  2026-11-08 07:20:01.207000             64          0  0.4375           \nmegayak/s6e11-target-first-lm                           S6E11 target-first LM predictions                   3550536  2026-11-08 00:26:15.647000            611          1  0.3125           \ngoodpjw2008/s6e11-fraud-series-artifacts                S6E11 Fraud Series Artifacts                      135687080  2026-11-07 23:52:13.130000           1565          6  0.4375           \nmathsonchain/s6e11-fraud-oof-test-17-single-models      S6E11 Fraud: OOF + Test, 17 Single Models         120568923  2026-11-07 21:47:57.393000            220          0  0.75             \nlucifer19/golden-signal-v5-scored-predictions           Golden Signal V5 Scored Predictions                11184300  2026-11-07 12:17:18.480000             61          0  0.5882353        ",
+    "datasets_gpt2_head": "Warning: Looks like you're using an outdated `kaggle` version (installed: 2.2.4), please consider upgrading to the latest version (2.2.5)\nref                                                   title                                                     size  lastUpdated                 downloadCount  voteCount  usabilityRating  \n----------------------------------------------------  -------------------------------------------------  -----------  --------------------------  -------------  ---------  ---------------  \ngoodpjw2008/s6e11-target-first-gpt2-seed-2026         S6E11 Target-First GPT-2 Seed 2026                     7465705  2026-11-12 09:14:44.553000            114          1  0.375            \nadriansilvescu/tinystoriesbin                         tinystoriesbin                                       585520411  2026-11-12 05:36:03.170000              8          0  0.125            \nshubhamkrsahu/dumgpt2-scripts                         dumgpt2-scripts                                          14722  2026-11-10 16:40:54.683000              2          0  0.25             \ngoodpjw2008/s6e11-fraud-series-artifacts              S6E11 Fraud Series Artifacts                         135687080  2026-11-07 23:52:13.130000           1565          6  0.4375           \nqueyrusi/fraud-shared-digit-cnn-weights               Fraud shared digit CNN: weights and training          20529065  2026-11-05 04:27:46.523000            461          0  0.5              \ndhananjayk2609/gpt2-tokenizer-json                    GPT-2 tokenizer (tokenizer.json)                        657810  2026-11-03 14:22:34.307000              7          1  0.1875           \nmasayakawamata/s6e11-gpt2-target-first-oof            S6E11 GPT-2 Target-First OOF and Test Predictions      7731555  2026-11-03 13:21:09.043000            441          1  0.5              \ndosomethingbetter/s6e11-gpt2-replica-best             s6e11-gpt2-replica-best                              463325619  2026-11-03 09:30:25.040000             96          1  0.25             \nmalyshevdanil/s6e11-digit-token-full-refit-artifacts  S6E11 Digit Token Full Refit Artifacts                 8588007  2026-11-02 08:22:01.453000            190          3  0.3125           \nwinteryana/fineweb-edu-min2048-1b-gpt2                FineWeb-Edu Long Documents: 1B GPT-2 Tokens         1850806612  2026-10-18 21:05:23.867000            109          0  0.625            \nvbandaru/ntl-gpt2                                     NTL GPT-2                                            463990373  2026-10-18 07:40:14.323000             43          0  0.3125           \nmangzhang/hfgpt2traindata                             hfgpt2traindata                                     5041633155  2026-10-18 02:48:47.427000             24          0  0.375            "
+  },
+  "g26_files_remote": "Warning: Looks like you're using an outdated `kaggle` version (installed: 2.2.4), please consider upgrading to the latest version (2.2.5)\nname                         size  creationDate                \n------------------------  -------  --------------------------  \nREADME.md                    1343  2026-11-12 09:14:45.794000  \ngpt2_s2026_oof_5fold.npy  5599808  2026-11-12 09:14:46.075000  \ngpt2_s2026_test_f0.npy    2400000  2026-11-12 09:14:45.915000  \n",
+  "ath_auc_oof": 0.9524301242520837,
+  "X_v14_cols": 41,
+  "feat_names": [
+    "MS-LM",
+    "L7F-LM",
+    "GPD-MLP",
+    "Gmed-MS",
+    "std(MS,LM,L7F,GPD)",
+    "abs(LM_mean-Tree_mean)",
+    "P4_L4.2_pure5f",
+    "P4_L4.3_pure5f",
+    "P4_L4.5_pure5f",
+    "KMAT_6",
+    "KMAT_39",
+    "KMAT_0",
+    "KMAT_60",
+    "KMAT_3",
+    "KMAT_37",
+    "KMAT_1",
+    "KMAT_27",
+    "KMAT_47",
+    "KMAT_11",
+    "KMAT_38",
+    "KMAT_64",
+    "KMAT_25",
+    "KMAT_67",
+    "KMAT_43",
+    "KMAT_2",
+    "KMAT_4",
+    "KMAT_5",
+    "KMAT_7",
+    "KMAT_8",
+    "KMAT_9",
+    "KMAT_10",
+    "KMAT_12",
+    "KMAT_13",
+    "KMAT_14",
+    "KMAT_15",
+    "KMAT_16",
+    "KMAT_17",
+    "KMAT_18",
+    "KMAT_19",
+    "denoise(G26-MS)",
+    "denoise(L7_s2026_K10-L7F)"
+  ],
+  "disp_g26": 0.9999999999990061,
+  "disp_l7": 0.9999999999987897,
+  "rows": [
+    {
+      "tag": "ATH+d1_v14_w0.02",
+      "pos5": 3,
+      "mean_e5": 0.05623151054345854,
+      "min_e5": -1.1266641024687551,
+      "folds": [
+        0.638,
+        -0.929,
+        0.794,
+        -1.127,
+        0.905
+      ],
+      "boot_mean_90ci": [
+        -0.663,
+        0.754
+      ],
+      "pass_main_5of5": false,
+      "nested_SF": 0,
+      "pass_nested": false,
+      "pass_dual": false
+    },
+    {
+      "tag": "ATH+blend_v4v14_w0.02",
+      "pos5": 5,
+      "mean_e5": 1.2161997358584031,
+      "min_e5": 0.3666474464814051,
+      "folds": [
+        2.797,
+        0.367,
+        0.984,
+        1.309,
+        0.624
+      ],
+      "boot_mean_90ci": [
+        0.658,
+        1.904
+      ],
+      "pass_main_5of5": true,
+      "nested_SF": 0,
+      "pass_nested": false,
+      "pass_dual": false
+    },
+    {
+      "tag": "ATH+d1_v14_w0.03",
+      "pos5": 3,
+      "mean_e5": -0.003723452370874014,
+      "min_e5": -1.6651386997024176,
+      "folds": [
+        0.8,
+        -1.548,
+        1.036,
+        -1.665,
+        1.358
+      ],
+      "boot_mean_90ci": [
+        -1.078,
+        1.006
+      ],
+      "pass_main_5of5": false,
+      "nested_SF": 0,
+      "pass_nested": false,
+      "pass_dual": false
+    },
+    {
+      "tag": "ATH+blend_v4v14_w0.03",
+      "pos5": 4,
+      "mean_e5": 1.4994809975577006,
+      "min_e5": -0.12646229720081337,
+      "folds": [
+        3.9,
+        -0.126,
+        1.462,
+        1.72,
+        0.542
+      ],
+      "boot_mean_90ci": [
+        0.561,
+        2.557
+      ],
+      "pass_main_5of5": false,
+      "nested_SF": 0,
+      "pass_nested": false,
+      "pass_dual": false
+    },
+    {
+      "tag": "ATH+d1_v14_w0.035",
+      "pos5": 3,
+      "mean_e5": -0.026833225696965002,
+      "min_e5": -1.9497565479587031,
+      "folds": [
+        0.892,
+        -1.901,
+        1.222,
+        -1.95,
+        1.603
+      ],
+      "boot_mean_90ci": [
+        -1.296,
+        1.166
+      ],
+      "pass_main_5of5": false,
+      "nested_SF": 0,
+      "pass_nested": false,
+      "pass_dual": false
+    },
+    {
+      "tag": "ATH+blend_v4v14_w0.035",
+      "pos5": 4,
+      "mean_e5": 1.5374290527980783,
+      "min_e5": -0.5185886340131063,
+      "folds": [
+        4.381,
+        -0.519,
+        1.681,
+        1.786,
+        0.358
+      ],
+      "boot_mean_90ci": [
+        0.382,
+        2.803
+      ],
+      "pass_main_5of5": false,
+      "nested_SF": 0,
+      "pass_nested": false,
+      "pass_dual": false
+    },
+    {
+      "tag": "ATH+d1_v14_w0.04",
+      "pos5": 3,
+      "mean_e5": -0.09214004327962044,
+      "min_e5": -2.292478694965183,
+      "folds": [
+        0.965,
+        -2.266,
+        1.292,
+        -2.292,
+        1.842
+      ],
+      "boot_mean_90ci": [
+        -1.565,
+        1.271
+      ],
+      "pass_main_5of5": false,
+      "nested_SF": 0,
+      "pass_nested": false,
+      "pass_dual": false
+    },
+    {
+      "tag": "ATH+blend_v4v14_w0.04",
+      "pos5": 4,
+      "mean_e5": 1.58960674576214,
+      "min_e5": -0.8147030547855927,
+      "folds": [
+        4.847,
+        -0.815,
+        1.809,
+        1.909,
+        0.198
+      ],
+      "boot_mean_90ci": [
+        0.255,
+        3.064
+      ],
+      "pass_main_5of5": false,
+      "nested_SF": 0,
+      "pass_nested": false,
+      "pass_dual": false
+    },
+    {
+      "tag": "ATH+d1_v4_w0.035",
+      "pos5": 4,
+      "mean_e5": 1.590473201666942,
+      "min_e5": -1.6595457725698814,
+      "folds": [
+        4.804,
+        0.538,
+        0.783,
+        3.486,
+        -1.66
+      ],
+      "boot_mean_90ci": [
+        -0.142,
+        3.248
+      ],
+      "pass_main_5of5": false,
+      "nested_SF": 0,
+      "pass_nested": false,
+      "pass_dual": false
+    },
+    {
+      "tag": "ATH+d1_v4_w0.03",
+      "pos5": 4,
+      "mean_e5": 1.5983134778729813,
+      "min_e5": -1.1509001201281954,
+      "folds": [
+        4.187,
+        0.876,
+        0.767,
+        3.313,
+        -1.151
+      ],
+      "boot_mean_90ci": [
+        0.147,
+        3.0
+      ],
+      "pass_main_5of5": false,
+      "nested_SF": 0,
+      "pass_nested": false,
+      "pass_dual": false
+    }
+  ],
+  "staged": null,
+  "alexchilton_top": [
+    {
+      "file": "oof_4188470eded4cdec.npy",
+      "auc": 0.9506558539420146
+    },
+    {
+      "file": "oof_82e9a79659bdf9d8.npy",
+      "auc": 0.9505417723738675
+    },
+    {
+      "file": "oof_21b4d1316c55b429.npy",
+      "auc": 0.9505162970585043
+    },
+    {
+      "file": "oof_00107284da228571.npy",
+      "auc": 0.9504198734112246
+    },
+    {
+      "file": "oof_55b2e2d2f9b615b9.npy",
+      "auc": 0.9503574581179394
+    },
+    {
+      "file": "oof_29b8383a5886512b.npy",
+      "auc": 0.9501055687838297
+    },
+    {
+      "file": "oof_9d26cfb564230caa.npy",
+      "auc": 0.9495113018710134
+    },
+    {
+      "file": "oof_37984c74f5880f09.npy",
+      "auc": 0.949510179213986
+    },
+    {
+      "file": "oof_59abebeed6b8fa2d.npy",
+      "auc": 0.9495100936971531
+    },
+    {
+      "file": "oof_47ec80c2946cc751.npy",
+      "auc": 0.9493604793877461
+    }
+  ],
+  "nested_detail": {
+    "ATH+d1_v14_w0.02": {
+      "n_mainfolds_subfold_5of5": 0,
+      "per_main_fold": [
+        {
+          "main_fold": 0,
+          "pos5": 3,
+          "mean_e5": 0.4696143201310399,
+          "min_e5": -0.2722257339327072,
+          "folds": [
+            0.621,
+            -0.225,
+            1.47,
+            0.754,
+            -0.272
+          ]
+        },
+        {
+          "main_fold": 1,
+          "pos5": 2,
+          "mean_e5": -0.6716691313002343,
+          "min_e5": -3.5389345411585005,
+          "folds": [
+            -1.149,
+            1.187,
+            0.988,
+            -3.539,
+            -0.846
+          ]
+        },
+        {
+          "main_fold": 2,
+          "pos5": 2,
+          "mean_e5": 0.4390690484923354,
+          "min_e5": -2.1233607246706754,
+          "folds": [
+            -0.753,
+            3.749,
+            -2.123,
+            1.618,
+            -0.295
+          ]
+        },
+        {
+          "main_fold": 3,
+          "pos5": 1,
+          "mean_e5": -1.375507958349953,
+          "min_e5": -3.0800397324948214,
+          "folds": [
+            0.163,
+            -0.186,
+            -1.003,
+            -3.08,
+            -2.771
+          ]
+        },
+        {
+          "main_fold": 4,
+          "pos5": 3,
+          "mean_e5": 0.6641601602330738,
+          "min_e5": -1.9946434896667142,
+          "folds": [
+            -1.995,
+            3.205,
+            -1.174,
+            0.653,
+            2.631
+          ]
+        }
+      ],
+      "pass_nested": false
+    },
+    "ATH+blend_v4v14_w0.02": {
+      "n_mainfolds_subfold_5of5": 0,
+      "per_main_fold": [
+        {
+          "main_fold": 0,
+          "pos5": 2,
+          "mean_e5": 2.7196913043447957,
+          "min_e5": -0.9333453734994279,
+          "folds": [
+            6.271,
+            -0.279,
+            8.665,
+            -0.933,
+            -0.124
+          ]
+        },
+        {
+          "main_fold": 1,
+          "pos5": 4,
+          "mean_e5": 0.30378107303663526,
+          "min_e5": -8.166772018025625,
+          "folds": [
+            2.375,
+            3.167,
+            3.446,
+            -8.167,
+            0.699
+          ]
+        },
+        {
+          "main_fold": 2,
+          "pos5": 2,
+          "mean_e5": 0.4274832282202823,
+          "min_e5": -2.8717700348734887,
+          "folds": [
+            -1.211,
+            4.734,
+            1.61,
+            -0.124,
+            -2.872
+          ]
+        },
+        {
+          "main_fold": 3,
+          "pos5": 2,
+          "mean_e5": 0.9827880140877987,
+          "min_e5": -2.271140408849348,
+          "folds": [
+            -0.334,
+            2.926,
+            -2.271,
+            6.432,
+            -1.839
+          ]
+        },
+        {
+          "main_fold": 4,
+          "pos5": 3,
+          "mean_e5": 0.6307295808904989,
+          "min_e5": -2.266287544705481,
+          "folds": [
+            -2.266,
+            3.741,
+            2.396,
+            -1.198,
+            0.481
+          ]
+        }
+      ],
+      "pass_nested": false
+    },
+    "ATH+d1_v14_w0.03": {
+      "n_mainfolds_subfold_5of5": 0,
+      "per_main_fold": [
+        {
+          "main_fold": 0,
+          "pos5": 3,
+          "mean_e5": 0.5830683003060777,
+          "min_e5": -1.1277923262942302,
+          "folds": [
+            0.939,
+            -0.303,
+            2.574,
+            0.832,
+            -1.128
+          ]
+        },
+        {
+          "main_fold": 1,
+          "pos5": 2,
+          "mean_e5": -1.5838400472656389,
+          "min_e5": -5.436736800579212,
+          "folds": [
+            -2.266,
+            1.25,
+            0.568,
+            -5.437,
+            -2.034
+          ]
+        },
+        {
+          "main_fold": 2,
+          "pos5": 2,
+          "mean_e5": 0.586497918206863,
+          "min_e5": -3.0333724638231807,
+          "folds": [
+            -0.768,
+            5.278,
+            -3.033,
+            2.458,
+            -1.001
+          ]
+        },
+        {
+          "main_fold": 3,
+          "pos5": 1,
+          "mean_e5": -1.89011488127111,
+          "min_e5": -4.37894537728134,
+          "folds": [
+            0.341,
+            -0.062,
+            -1.587,
+            -4.379,
+            -3.764
+          ]
+        },
+        {
+          "main_fold": 4,
+          "pos5": 3,
+          "mean_e5": 1.2401115381033279,
+          "min_e5": -2.74748558500848,
+          "folds": [
+            -2.747,
+            4.952,
+            -1.602,
+            1.206,
+            4.393
+          ]
+        }
+      ],
+      "pass_nested": false
+    },
+    "ATH+blend_v4v14_w0.03": {
+      "n_mainfolds_subfold_5of5": 0,
+      "per_main_fold": [
+        {
+          "main_fold": 0,
+          "pos5": 3,
+          "mean_e5": 3.8882676325324717,
+          "min_e5": -1.1433480825440157,
+          "folds": [
+            8.933,
+            -0.101,
+            11.612,
+            -1.143,
+            0.14
+          ]
+        },
+        {
+          "main_fold": 1,
+          "pos5": 3,
+          "mean_e5": -0.3388996082409612,
+          "min_e5": -12.27349166138536,
+          "folds": [
+            3.446,
+            4.238,
+            3.834,
+            -12.273,
+            -0.939
+          ]
+        },
+        {
+          "main_fold": 2,
+          "pos5": 2,
+          "mean_e5": 0.9416521181404569,
+          "min_e5": -4.067047292632964,
+          "folds": [
+            -0.264,
+            6.659,
+            2.411,
+            -0.031,
+            -4.067
+          ]
+        },
+        {
+          "main_fold": 3,
+          "pos5": 3,
+          "mean_e5": 1.4818543822414654,
+          "min_e5": -3.6867142252927643,
+          "folds": [
+            0.21,
+            3.586,
+            -3.687,
+            9.715,
+            -2.414
+          ]
+        },
+        {
+          "main_fold": 4,
+          "pos5": 3,
+          "mean_e5": 0.5299305094719209,
+          "min_e5": -4.152273412372232,
+          "folds": [
+            -4.152,
+            5.223,
+            3.057,
+            -1.626,
+            0.147
+          ]
+        }
+      ],
+      "pass_nested": false
+    },
+    "ATH+d1_v14_w0.035": {
+      "n_mainfolds_subfold_5of5": 0,
+      "per_main_fold": [
+        {
+          "main_fold": 0,
+          "pos5": 3,
+          "mean_e5": 0.6747309262467027,
+          "min_e5": -1.2522383760926736,
+          "folds": [
+            1.149,
+            -0.241,
+            2.504,
+            1.213,
+            -1.252
+          ]
+        },
+        {
+          "main_fold": 1,
+          "pos5": 2,
+          "mean_e5": -1.9584992456000982,
+          "min_e5": -6.517861858212903,
+          "folds": [
+            -2.251,
+            1.335,
+            0.334,
+            -6.518,
+            -2.693
+          ]
+        },
+        {
+          "main_fold": 2,
+          "pos5": 2,
+          "mean_e5": 0.7510341248417873,
+          "min_e5": -3.274486685311828,
+          "folds": [
+            -0.776,
+            5.999,
+            -3.274,
+            2.691,
+            -0.885
+          ]
+        },
+        {
+          "main_fold": 3,
+          "pos5": 2,
+          "mean_e5": -2.098412104571956,
+          "min_e5": -4.76006140478491,
+          "folds": [
+            0.217,
+            0.116,
+            -1.89,
+            -4.76,
+            -4.176
+          ]
+        },
+        {
+          "main_fold": 4,
+          "pos5": 3,
+          "mean_e5": 1.4697965193977147,
+          "min_e5": -2.925994535452059,
+          "folds": [
+            -2.926,
+            5.728,
+            -1.836,
+            1.314,
+            5.068
+          ]
+        }
+      ],
+      "pass_nested": false
+    },
+    "ATH+blend_v4v14_w0.035": {
+      "n_mainfolds_subfold_5of5": 0,
+      "per_main_fold": [
+        {
+          "main_fold": 0,
+          "pos5": 2,
+          "mean_e5": 4.381002858715455,
+          "min_e5": -1.2444604979955365,
+          "folds": [
+            9.989,
+            -0.264,
+            13.464,
+            -1.244,
+            -0.039
+          ]
+        },
+        {
+          "main_fold": 1,
+          "pos5": 3,
+          "mean_e5": -0.8162119233823262,
+          "min_e5": -13.875734552537544,
+          "folds": [
+            3.725,
+            3.811,
+            3.64,
+            -13.876,
+            -1.382
+          ]
+        },
+        {
+          "main_fold": 2,
+          "pos5": 2,
+          "mean_e5": 1.257046595188882,
+          "min_e5": -4.315416592959309,
+          "folds": [
+            -0.326,
+            7.87,
+            3.08,
+            -0.023,
+            -4.315
+          ]
+        },
+        {
+          "main_fold": 3,
+          "pos5": 3,
+          "mean_e5": 1.8564465308168465,
+          "min_e5": -4.098941765251496,
+          "folds": [
+            0.458,
+            4.82,
+            -4.099,
+            11.309,
+            -3.206
+          ]
+        },
+        {
+          "main_fold": 4,
+          "pos5": 2,
+          "mean_e5": 0.45087129618037736,
+          "min_e5": -5.021534388427451,
+          "folds": [
+            -5.022,
+            6.45,
+            3.197,
+            -1.501,
+            -0.869
+          ]
+        }
+      ],
+      "pass_nested": false
+    },
+    "ATH+d1_v14_w0.04": {
+      "n_mainfolds_subfold_5of5": 0,
+      "per_main_fold": [
+        {
+          "main_fold": 0,
+          "pos5": 3,
+          "mean_e5": 0.6964690984134769,
+          "min_e5": -1.3689065477828777,
+          "folds": [
+            1.304,
+            -0.303,
+            2.551,
+            1.299,
+            -1.369
+          ]
+        },
+        {
+          "main_fold": 1,
+          "pos5": 2,
+          "mean_e5": -2.4791304450566543,
+          "min_e5": -7.653432062615373,
+          "folds": [
+            -2.716,
+            1.382,
+            0.016,
+            -7.653,
+            -3.423
+          ]
+        },
+        {
+          "main_fold": 2,
+          "pos5": 2,
+          "mean_e5": 0.77425226638006,
+          "min_e5": -3.577823931688595,
+          "folds": [
+            -0.877,
+            6.706,
+            -3.578,
+            2.847,
+            -1.226
+          ]
+        },
+        {
+          "main_fold": 3,
+          "pos5": 2,
+          "mean_e5": -2.637705649948252,
+          "min_e5": -5.4911819473479895,
+          "folds": [
+            0.179,
+            0.008,
+            -2.691,
+            -5.491,
+            -5.192
+          ]
+        },
+        {
+          "main_fold": 4,
+          "pos5": 3,
+          "mean_e5": 1.6280153306480472,
+          "min_e5": -3.593462784912127,
+          "folds": [
+            -3.593,
+            6.706,
+            -2.046,
+            1.252,
+            5.821
+          ]
+        }
+      ],
+      "pass_nested": false
+    },
+    "ATH+blend_v4v14_w0.04": {
+      "n_mainfolds_subfold_5of5": 0,
+      "per_main_fold": [
+        {
+          "main_fold": 0,
+          "pos5": 3,
+          "mean_e5": 5.022604677638043,
+          "min_e5": -1.6955774285065672,
+          "folds": [
+            11.362,
+            0.349,
+            15.097,
+            -1.696,
+            0.0
+          ]
+        },
+        {
+          "main_fold": 1,
+          "pos5": 3,
+          "mean_e5": -1.1290156378396254,
+          "min_e5": -16.123541327028867,
+          "folds": [
+            3.741,
+            4.564,
+            4.021,
+            -16.124,
+            -1.847
+          ]
+        },
+        {
+          "main_fold": 2,
+          "pos5": 2,
+          "mean_e5": 1.3984203149197683,
+          "min_e5": -4.889770599936227,
+          "folds": [
+            -0.536,
+            9.073,
+            3.624,
+            -0.28,
+            -4.89
+          ]
+        },
+        {
+          "main_fold": 3,
+          "pos5": 3,
+          "mean_e5": 2.077302997811614,
+          "min_e5": -4.736727770471294,
+          "folds": [
+            0.45,
+            5.635,
+            -4.737,
+            12.981,
+            -3.943
+          ]
+        },
+        {
+          "main_fold": 4,
+          "pos5": 2,
+          "mean_e5": 0.2880126874083011,
+          "min_e5": -6.255574524072216,
+          "folds": [
+            -6.256,
+            7.265,
+            4.262,
+            -2.256,
+            -1.576
+          ]
+        }
+      ],
+      "pass_nested": false
+    },
+    "ATH+d1_v4_w0.035": {
+      "n_mainfolds_subfold_5of5": 0,
+      "per_main_fold": [
+        {
+          "main_fold": 0,
+          "pos5": 3,
+          "mean_e5": 4.6213226729907575,
+          "min_e5": -3.4689336381510394,
+          "folds": [
+            11.999,
+            -0.419,
+            14.506,
+            -3.469,
+            0.49
+          ]
+        },
+        {
+          "main_fold": 1,
+          "pos5": 4,
+          "mean_e5": 0.3462659399566803,
+          "min_e5": -12.36682619871754,
+          "folds": [
+            5.363,
+            3.26,
+            5.367,
+            -12.367,
+            0.109
+          ]
+        },
+        {
+          "main_fold": 2,
+          "pos5": 2,
+          "mean_e5": 0.37069715421056415,
+          "min_e5": -5.285609172300809,
+          "folds": [
+            -0.955,
+            5.053,
+            6.316,
+            -3.274,
+            -5.286
+          ]
+        },
+        {
+          "main_fold": 3,
+          "pos5": 2,
+          "mean_e5": 3.7658623292347038,
+          "min_e5": -4.19227630260588,
+          "folds": [
+            -0.667,
+            5.2,
+            -4.192,
+            18.962,
+            -0.473
+          ]
+        },
+        {
+          "main_fold": 4,
+          "pos5": 2,
+          "mean_e5": -1.6057802144642253,
+          "min_e5": -6.504171051935348,
+          "folds": [
+            -5.751,
+            2.243,
+            6.059,
+            -4.076,
+            -6.504
+          ]
+        }
+      ],
+      "pass_nested": false
+    },
+    "ATH+d1_v4_w0.03": {
+      "n_mainfolds_subfold_5of5": 0,
+      "per_main_fold": [
+        {
+          "main_fold": 0,
+          "pos5": 2,
+          "mean_e5": 3.754069320192066,
+          "min_e5": -3.30559819776699,
+          "folds": [
+            10.152,
+            -0.341,
+            12.281,
+            -3.306,
+            -0.016
+          ]
+        },
+        {
+          "main_fold": 1,
+          "pos5": 4,
+          "mean_e5": 0.6106361088731305,
+          "min_e5": -10.756805429457117,
+          "folds": [
+            5.223,
+            3.299,
+            4.892,
+            -10.757,
+            0.396
+          ]
+        },
+        {
+          "main_fold": 2,
+          "pos5": 2,
+          "mean_e5": 0.3347819083887593,
+          "min_e5": -4.4706474056410705,
+          "folds": [
+            -0.737,
+            4.354,
+            5.196,
+            -2.668,
+            -4.471
+          ]
+        },
+        {
+          "main_fold": 3,
+          "pos5": 2,
+          "mean_e5": 3.541907327118121,
+          "min_e5": -3.095595488755709,
+          "folds": [
+            -0.559,
+            4.796,
+            -3.096,
+            16.855,
+            -0.287
+          ]
+        },
+        {
+          "main_fold": 4,
+          "pos5": 2,
+          "mean_e5": -1.1041813209122786,
+          "min_e5": -5.285609172278605,
+          "folds": [
+            -5.022,
+            2.305,
+            6.098,
+            -3.617,
+            -5.286
+          ]
+        }
+      ],
+      "pass_nested": false
+    }
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "path": "submissions/sub_v13p1_bold_d1_w0.035_NOSUBMIT.csv",
+    "sha16": "adf0decfdc5d6627",
+    "note": "L(bold)+0.035*unitize(d1); OOF 5/5 vs ATH proxy",
+    "1rho_vs_ath": 3.6766979460978177e-06
+  },
+  {
+    "path": "submissions/sub_v13p1_bold_d1_w0.04_NOSUBMIT.csv",
+    "sha16": "6982d557115001ac",
+    "note": "L(bold)+0.04*unitize(d1); OOF 5/5 vs ATH proxy",
+    "1rho_vs_ath": 1.4708130333662695e-05
+  },
+  {
+    "path": "submissions/sub_v13p1_ATH_plus_sov0.03_NOSUBMIT.csv",
+    "sha16": "167969fcde1f5ff7",
+    "note": "ATH+0.03*orth(sovereign); OOF 5/5 mean+1.74e-5",
+    "1rho_vs_ath": 2.031501099930555e-05
+  },
+  {
+    "path": "submissions/sub_v13p1_ATH_plus_newton0.04_NOSUBMIT.csv",
+    "sha16": "b38db75e08c5c015",
+    "note": "ATH+0.04*orth(newton12); OOF 5/5 mean+1.42e-5 best min",
+    "1rho_vs_ath": 1.6535825142494076e-07
+  }
+]

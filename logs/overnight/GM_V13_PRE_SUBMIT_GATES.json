@@ -1,0 +1,21 @@
+{
+  "sha_match_kernel_out": true,
+  "sha16": "043d28ce84112907",
+  "n": 299984,
+  "ids_ok": true,
+  "finite": true,
+  "std": 0.288675134593209,
+  "1rho_vs_ATH": 0.0008676787542586384,
+  "1rho_vs_Q17": 0.0007776377019538261,
+  "public_bold": 0.95386,
+  "public_balanced": 0.9538,
+  "ATH": 0.95371,
+  "higher_than_ATH_public": true,
+  "not_noop": true,
+  "PASS_SLOT1": true,
+  "bal_ids_ok": true,
+  "1rho_bal_vs_bold": 0.00015534663756966438,
+  "PASS_SLOT2_BALANCED": true,
+  "slot1": "submissions/sub_v13_slot1_PURE_goodpjw_bold095386_LIVE.csv",
+  "slot2": "submissions/sub_v13_slot2_PURE_goodpjw_balanced095380_LIVE.csv"
+}
